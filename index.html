@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="韩馥伊 — 心理语言学 / 神经语言学 / 认知神经科学研究者。Fay Han — Researcher in psycholinguistics, neurolinguistics, and cognitive neuroscience.">
+<meta property="og:title" content="Fay Han / 韩馥伊">
+<meta property="og:description" content="心理语言学 · 神经语言学 · 认知神经科学 | Psycholinguistics · Neurolinguistics · Cognitive Neuroscience">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" hreflang="zh" href="https://fayhan2002.github.io/">
+<link rel="alternate" hreflang="en" href="https://fayhan2002.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<title>Fay Han / 韩馥伊</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+<style>
+/* ===== CSS Variables ===== */
+:root {
+  --bg: #F7F4EF;
+  --text: #2C2825;
+  --text-light: #6B6560;
+  --text-muted: #99938E;
+  --accent: #4A7B8C;
+  --accent-light: #6A9BAA;
+  --accent-pale: #D8E8EC;
+  --card-bg: #FFFFFF;
+  --card-border: #E8E2DA;
+  --deep-blue: #1A3A5C;
+  --teal: #2D7D6F;
+  --warm-apricot: #E8C97A;
+  --warm-apricot-light: #F5E6C8;
+  --shadow: 0 2px 12px rgba(44,40,37,0.06);
+  --shadow-hover: 0 8px 30px rgba(44,40,37,0.10);
+  --font-zh: 'Noto Serif SC', serif;
+  --font-en-heading: 'Playfair Display', serif;
+  --font-en-body: 'Source Sans Pro', sans-serif;
+  --max-width: 900px;
+  --section-gap: 100px;
+  --line-height: 1.85;
+  --transition: 0.3s ease;
+  --nav-height: 56px;
+}
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-en-body);
+  font-weight: 300;
+  line-height: var(--line-height);
+  color: var(--text);
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(44,40,37,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(44,40,37,0.012) 1px, transparent 1px);
+  background-size: 32px 32px;
+  transition: opacity 0.2s ease;
+}
+
+body.fade-out { opacity: 0; }
+
+h1, h2, h3, h4 { font-weight: 500; line-height: 1.3; }
+h2 { font-family: var(--font-en-heading); font-size: 1.7rem; color: var(--text); }
+h3 { font-family: var(--font-en-heading); font-size: 1.15rem; }
+
+a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--deep-blue); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+::selection { background: var(--accent-pale); color: var(--deep-blue); }
+
+/* ===== Utility ===== */
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 28px; }
+
+.section-label {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 48px;
+}
+.section-label::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent); flex-shrink: 0;
+}
+.section-label::after {
+  content: ''; flex: 1; height: 1px; background: var(--card-border);
+}
+.section-label span {
+  font-family: var(--font-en-heading); font-size: 1.7rem; font-weight: 500;
+  color: var(--text); flex-shrink: 0;
+}
+.section-label span.zh-label {
+  font-family: var(--font-zh); font-size: 1.35rem; font-weight: 500;
+}
+
+/* ===== Navigation ===== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  height: var(--nav-height);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 32px;
+  background: transparent;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+.nav.scrolled {
+  background: rgba(247,244,239,0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--card-border);
+}
+.nav-links {
+  display: flex; align-items: center; gap: 24px; list-style: none;
+}
+.nav-links a {
+  font-size: 0.82rem; font-weight: 400; color: var(--text-light);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  transition: color var(--transition); position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 1.5px; background: var(--accent); transform: scaleX(0);
+  transition: transform var(--transition);
+}
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
+.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+
+.lang-btn, .track-btn {
+  font-family: var(--font-en-body); font-size: 0.78rem;
+  border: 1px solid var(--card-border); background: var(--card-bg);
+  color: var(--text-light); padding: 5px 13px; border-radius: 20px;
+  cursor: pointer; transition: all var(--transition);
+  white-space: nowrap;
+}
+.lang-btn:hover, .track-btn:hover { border-color: var(--accent); color: var(--accent); }
+.track-btn.active {
+  background: var(--accent); color: #fff; border-color: var(--accent);
+}
+
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 8px;
+  z-index: 1001;
+}
+.hamburger span {
+  display: block; width: 22px; height: 1.5px; background: var(--text);
+  transition: transform var(--transition), opacity var(--transition);
+}
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+
+/* ===== Hero ===== */
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; overflow: hidden; padding: 120px 28px 80px;
+}
+.hero-waves {
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 55%;
+  pointer-events: none; z-index: 0;
+}
+.hero-waves svg { width: 100%; height: 100%; display: block; }
+.wave-group-1 { animation: wave-drift-1 60s ease-in-out alternate infinite; }
+.wave-group-2 { animation: wave-drift-2 45s ease-in-out alternate infinite; }
+.wave-group-3 { animation: wave-drift-3 35s ease-in-out alternate infinite; }
+.wave-group-4 { animation: wave-drift-4 30s ease-in-out alternate infinite; transform-origin: center; }
+
+.hero-content { position: relative; z-index: 1; }
+
+.hero-photo {
+  width: 130px; height: 130px; border-radius: 50%; object-fit: cover;
+  border: 2px solid rgba(74,123,140,0.25);
+  box-shadow: 0 4px 24px rgba(44,40,37,0.10);
+  margin: 0 auto 28px;
+  background: var(--card-bg);
+}
+
+.hero h1 {
+  font-family: var(--font-zh); font-size: 2.8rem; font-weight: 500;
+  color: var(--text); letter-spacing: 0.04em; margin-bottom: 6px;
+}
+.hero .en-name {
+  font-family: var(--font-en-heading); font-size: 1.35rem; font-weight: 400;
+  color: var(--text-light); letter-spacing: 0.08em; margin-bottom: 16px;
+}
+.hero .motto {
+  font-family: var(--font-zh); font-weight: 300; font-size: 1.05rem;
+  color: var(--text-muted); letter-spacing: 0.3em; margin-bottom: 32px;
+}
+
+.hero-track-toggles { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.hero-track-toggles .track-btn { padding: 8px 22px; font-size: 0.85rem; }
+
+.hero-scroll-hint {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  z-index: 1; animation: bounce 2s ease-in-out infinite;
+}
+.hero-scroll-hint svg { width: 20px; height: 20px; stroke: var(--text-muted); }
+
+/* ===== Sections ===== */
+section { padding: var(--section-gap) 0; }
+section:nth-child(even) { background: rgba(255,255,255,0.35); }
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== About ===== */
+.about-body {
+  max-width: 680px; margin: 0 auto;
+  font-family: var(--font-zh); font-size: 1rem; color: var(--text-light);
+}
+.about-body p + p { margin-top: 1.2em; }
+
+.hobbies-line {
+  margin-top: 32px; padding-top: 28px;
+  border-top: 1px solid var(--card-border);
+  font-family: var(--font-en-body); font-style: italic; font-weight: 300;
+  font-size: 0.92rem; color: var(--text-muted);
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 2px;
+}
+.hobbies-line .hobby {
+  cursor: default; transition: all var(--transition); padding: 2px 1px;
+}
+.hobbies-line .hobby:hover { color: var(--accent); transform: translateY(-2px); }
+.hobbies-line .dot { color: var(--accent-pale); margin: 0 4px; }
+
+/* ===== Education Timeline ===== */
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before {
+  content: ''; position: absolute; left: 0; top: 4px; bottom: 4px;
+  width: 1px; background: var(--card-border);
+}
+.timeline-item { position: relative; margin-bottom: 36px; }
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-item::before {
+  content: ''; position: absolute; left: -36px; top: 6px;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--accent); border: 2px solid var(--bg);
+}
+.timeline-item .year {
+  font-family: var(--font-en-heading); font-size: 0.85rem; font-weight: 600;
+  color: var(--accent); letter-spacing: 0.04em; margin-bottom: 4px;
+}
+.timeline-item .school { font-weight: 500; font-size: 1.05rem; color: var(--text); }
+.timeline-item .degree { font-size: 0.9rem; color: var(--text-light); margin-top: 2px; }
+
+/* ===== Cards (Research, Projects, Skills) ===== */
+.cards-grid { display: grid; gap: 22px; }
+
+.card {
+  background: var(--card-bg); border: 1px solid var(--card-border);
+  border-radius: 6px; padding: 28px 30px;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: transparent;
+}
+.card h3 { margin-bottom: 6px; color: var(--text); }
+.card .meta {
+  font-size: 0.82rem; color: var(--accent); font-weight: 400;
+  letter-spacing: 0.03em; margin-bottom: 10px;
+}
+.card .desc { font-size: 0.9rem; color: var(--text-light); }
+
+/* Track accent overrides */
+.track-academic { transition: border-left var(--transition), background var(--transition); }
+.track-industry { transition: border-left var(--transition), background var(--transition); }
+
+body.mode-academic .track-academic {
+  border-left: 3px solid var(--accent); padding-left: 27px;
+}
+body.mode-industry .track-industry {
+  border-left: 3px solid var(--warm-apricot); padding-left: 27px;
+  background: linear-gradient(135deg, rgba(232,201,122,0.06), transparent);
+}
+
+/* ===== Skills ===== */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.skill-cat { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 6px; padding: 24px; }
+.skill-cat h4 {
+  font-family: var(--font-en-heading); font-size: 0.95rem; font-weight: 600;
+  color: var(--accent); margin-bottom: 14px; letter-spacing: 0.04em;
+}
+.skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.skill-tag {
+  font-size: 0.78rem; padding: 4px 12px; border-radius: 14px;
+  background: var(--accent-pale); color: var(--accent);
+  transition: all var(--transition); cursor: default;
+}
+.skill-tag:hover { background: var(--accent); color: #fff; }
+
+/* ===== Contact ===== */
+.contact-links { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; }
+.contact-link {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 22px; border: 1px solid var(--card-border);
+  border-radius: 30px; font-size: 0.9rem; color: var(--text-light);
+  transition: all var(--transition); background: var(--card-bg);
+}
+.contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+.contact-link svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+/* ===== Footer ===== */
+footer {
+  text-align: center; padding: 40px 28px;
+  font-size: 0.78rem; color: var(--text-muted);
+  border-top: 1px solid var(--card-border);
+}
+footer a { color: var(--text-muted); }
+footer a:hover { color: var(--accent); }
+
+/* ===== Back to Top ===== */
+.back-to-top {
+  position: fixed; bottom: 28px; right: 28px; z-index: 999;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--card-bg); border: 1px solid var(--card-border);
+  box-shadow: var(--shadow); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transform: translateY(12px); pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+}
+.back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.back-to-top:hover { border-color: var(--accent); }
+.back-to-top svg { width: 16px; height: 16px; stroke: var(--text-light); }
+
+/* ===== Mobile Menu ===== */
+.mobile-menu {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: 260px; background: var(--bg); z-index: 999;
+  box-shadow: -4px 0 24px rgba(44,40,37,0.08);
+  transform: translateX(100%); transition: transform 0.35s ease;
+  display: flex; flex-direction: column; padding: 80px 32px 32px;
+}
+.mobile-menu.open { transform: translateX(0); }
+.mobile-menu a {
+  display: block; padding: 12px 0; font-size: 0.95rem;
+  color: var(--text); border-bottom: 1px solid var(--card-border);
+}
+.mobile-menu .mobile-actions {
+  margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px;
+}
+.mobile-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.25); z-index: 998;
+  opacity: 0; pointer-events: none; transition: opacity var(--transition);
+}
+.mobile-overlay.open { opacity: 1; pointer-events: auto; }
+
+/* ===== Animations ===== */
+@keyframes wave-drift-1 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-140px); }
+}
+@keyframes wave-drift-2 {
+  0% { transform: translateX(-50px); }
+  100% { transform: translateX(90px); }
+}
+@keyframes wave-drift-3 {
+  0% { transform: translateX(-20px); }
+  100% { transform: translateX(-110px); }
+}
+@keyframes wave-drift-4 {
+  0% { transform: translateX(-70px); }
+  100% { transform: translateX(70px); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+
+/* ===== Responsive: 768px ===== */
+@media (max-width: 768px) {
+  :root { --section-gap: 64px; --max-width: 100%; }
+  html { font-size: 15px; }
+
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .hero { min-height: 90vh; padding: 100px 20px 60px; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero .en-name { font-size: 1.1rem; }
+  .hero-photo { width: 110px; height: 110px; }
+  .hero-waves { height: 40%; }
+
+  .container { padding: 0 20px; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+
+  .timeline { padding-left: 24px; }
+  .timeline-item::before { left: -28px; width: 7px; height: 7px; }
+}
+
+/* ===== Responsive: 480px ===== */
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.8rem; }
+  .hero .en-name { font-size: 1rem; }
+  .hero .motto { font-size: 0.9rem; letter-spacing: 0.2em; }
+  .hero-photo { width: 100px; height: 100px; }
+  .hero-track-toggles { gap: 8px; }
+  .hero-track-toggles .track-btn { padding: 6px 16px; font-size: 0.78rem; }
+
+  .skills-grid { grid-template-columns: 1fr; }
+  .cards-grid { gap: 14px; }
+  .card { padding: 20px; }
+  .section-label span { font-size: 1.35rem; }
+  .section-label span.zh-label { font-size: 1.1rem; }
+
+  .contact-links { flex-direction: column; align-items: center; }
+}
+
+/* ===== Print ===== */
+@media print {
+  .nav, .hero-waves, .hero-scroll-hint, .hero-track-toggles,
+  .hamburger, .mobile-menu, .mobile-overlay, .back-to-top,
+  .contact-link, footer { display: none !important; }
+
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .hero { min-height: auto; padding: 24px 0; }
+  .hero-photo { width: 90px; height: 90px; }
+  .hero h1 { font-size: 1.5rem; }
+  section { padding: 18px 0; break-inside: avoid; }
+  .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+  .card:hover { transform: none; }
+  .reveal { opacity: 1; transform: none; }
+  a { color: #000; }
+  .timeline::before { background: #ccc; }
+  .track-academic, .track-industry { border-left: none !important; padding-left: 0 !important; }
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<header class="nav" id="navbar" role="banner">
+  <a href="#hero" style="font-family:var(--font-en-heading);font-weight:600;font-size:1rem;color:var(--text);letter-spacing:0.04em;">Fay Han</a>
+  <nav aria-label="Main navigation">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" data-i18n="nav.about">关于</a></li>
+      <li><a href="#education" data-i18n="nav.education">教育</a></li>
+      <li><a href="#research" data-i18n="nav.research">科研</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">项目</a></li>
+      <li><a href="#skills" data-i18n="nav.skills">技能</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">联系</a></li>
+    </ul>
+  </nav>
+  <div class="nav-actions">
+    <button class="lang-btn" id="langToggle" aria-label="Switch to English">EN</button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== Mobile Menu ===== -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="#about" data-i18n="nav.about">关于</a>
+  <a href="#education" data-i18n="nav.education">教育</a>
+  <a href="#research" data-i18n="nav.research">科研</a>
+  <a href="#projects" data-i18n="nav.projects">项目</a>
+  <a href="#skills" data-i18n="nav.skills">技能</a>
+  <a href="#contact" data-i18n="nav.contact">联系</a>
+  <div class="mobile-actions">
+    <button class="track-btn" data-track="academic" data-i18n="nav.academic">学术科研</button>
+    <button class="track-btn" data-track="industry" data-i18n="nav.industry">行业求职</button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ===== Hero ===== -->
+<section id="hero" class="hero">
+  <div class="hero-content">
+    <img class="hero-photo" src="image.jpg" alt="韩馥伊" width="130" height="130">
+    <h1 data-i18n="hero.name">韩馥伊</h1>
+    <p class="en-name" data-i18n="hero.enName">Fay Han</p>
+    <p class="motto" data-i18n="hero.motto">潜龙勿用</p>
+    <div class="hero-track-toggles">
+      <button class="track-btn" data-track="academic" data-i18n="hero.academic">学术科研</button>
+      <button class="track-btn" data-track="industry" data-i18n="hero.industry">行业求职</button>
+    </div>
+  </div>
+  <div class="hero-waves" aria-hidden="true">
+    <svg viewBox="0 0 1440 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="wg1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1A3A5C" stop-opacity="0.05"/>
+          <stop offset="100%" stop-color="#1A3A5C" stop-opacity="0.45"/>
+        </linearGradient>
+        <linearGradient id="wg2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1A3A5C" stop-opacity="0.08"/>
+          <stop offset="100%" stop-color="#1A3A5C" stop-opacity="0.55"/>
+        </linearGradient>
+        <linearGradient id="wg3" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#2D7D6F" stop-opacity="0.05"/>
+          <stop offset="100%" stop-color="#2D7D6F" stop-opacity="0.5"/>
+        </linearGradient>
+        <linearGradient id="wg4" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#2D7D6F" stop-opacity="0.0"/>
+          <stop offset="100%" stop-color="#2D7D6F" stop-opacity="0.35"/>
+        </linearGradient>
+      </defs>
+      <g class="wave-group-1">
+        <path d="M0,400 C240,360 480,440 720,390 C960,340 1200,430 1440,380 L1440,600 L0,600 Z" fill="url(#wg1)"/>
+      </g>
+      <g class="wave-group-2">
+        <path d="M0,430 C200,400 500,470 800,420 C1050,380 1250,450 1440,410 L1440,600 L0,600 Z" fill="url(#wg2)"/>
+      </g>
+      <g class="wave-group-3">
+        <path d="M0,460 C300,430 540,490 840,450 C1080,415 1280,480 1440,445 L1440,600 L0,600 Z" fill="url(#wg3)"/>
+      </g>
+      <g class="wave-group-4">
+        <path d="M0,490 C360,465 600,510 900,475 C1140,445 1300,500 1440,470 L1440,600 L0,600 Z" fill="url(#wg4)"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section id="about">
+  <div class="container">
+    <div class="section-label"><span class="zh-label" data-i18n="about.title">关于我</span></div>
+    <div class="about-body reveal">
+      <p data-i18n="about.p1"></p>
+      <p data-i18n="about.p2"></p>
+      <p data-i18n="about.p3"></p>
+    </div>
+    <div class="hobbies-line reveal" data-i18n="about.hobbies"></div>
+  </div>
+</section>
+
+<!-- ===== Education ===== -->
+<section id="education">
+  <div class="container">
+    <div class="section-label"><span class="zh-label" data-i18n="education.title">教育经历</span></div>
+    <div class="timeline reveal" id="eduTimeline"></div>
+  </div>
+</section>
+
+<!-- ===== Research ===== -->
+<section id="research">
+  <div class="container">
+    <div class="section-label"><span class="zh-label" data-i18n="research.title">科研成果</span></div>
+    <div class="cards-grid reveal" id="researchGrid"></div>
+  </div>
+</section>
+
+<!-- ===== Projects ===== -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label"><span class="zh-label" data-i18n="projects.title">项目经历</span></div>
+    <div class="cards-grid reveal" id="projectsGrid"></div>
+  </div>
+</section>
+
+<!-- ===== Skills ===== -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label"><span class="zh-label" data-i18n="skills.title">技能</span></div>
+    <div class="skills-grid reveal" id="skillsGrid"></div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section id="contact">
+  <div class="container" style="text-align:center;">
+    <div class="section-label"><span class="zh-label" data-i18n="contact.title">联系方式</span></div>
+    <div class="contact-links reveal" id="contactLinks"></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>&copy; <span id="footerYear"></span> Fay Han / 韩馥伊 &nbsp;·&nbsp;
+  <a href="https://github.com/FayHan2002" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+  </p>
+</footer>
+
+<!-- ===== Back to Top ===== -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+/* ===== I18N Data ===== */
+const I18N = {
+  zh: {
+    nav: {
+      about: "关于",
+      education: "教育",
+      research: "科研",
+      projects: "项目",
+      skills: "技能",
+      contact: "联系",
+      academic: "学术科研",
+      industry: "行业求职"
+    },
+    hero: {
+      name: "韩馥伊",
+      enName: "Fay Han",
+      motto: "潜龙勿用",
+      academic: "学术科研",
+      industry: "行业求职"
+    },
+    about: {
+      title: "关于我",
+      p1: "我是一名心理语言学与认知神经科学方向的研究者，目前专注于言语感知、声调加工及情绪韵律的神经机制研究。研究手段以脑电（EEG/ERP）为主，同时结合行为实验与计算建模方法。",
+      p2: "我对语言与大脑的交汇之处充满好奇——从声音信号如何被大脑解码为意义，到个体差异如何塑造语言学习的过程。我的研究横跨基础科学问题与应用场景，既服务于对人类认知的理解，也面向脑机接口与语言智能的未来。",
+      p3: "业余时间里，我享受用脚步丈量山野、在泳池中放空思绪、或是在书页间寻找意外的灵感。生活的节奏感，也藏在一场羽毛球对局、一段旋律、或一张通往未知城市的车票里。",
+      hobbies: "<span class=\"hobby\">徒步</span><span class=\"dot\">·</span><span class=\"hobby\">健身</span><span class=\"dot\">·</span><span class=\"hobby\">读书</span><span class=\"dot\">·</span><span class=\"hobby\">音乐</span><span class=\"dot\">·</span><span class=\"hobby\">旅行</span><span class=\"dot\">·</span><span class=\"hobby\">游泳</span><span class=\"dot\">·</span><span class=\"hobby\">羽毛球</span>"
+    },
+    education: {
+      title: "教育经历",
+      items: [
+        { year: "2022 – 2025", school: "北京师范大学", degree: "认知神经科学 硕士", desc: "硕士课题：声调知觉的神经关联——一项脑电（EEG）研究。通过事件相关电位（ERP）技术考察汉语声调加工的时程特征与神经振荡机制。" },
+        { year: "2018 – 2022", school: "北京语言大学", degree: "语言学 学士", desc: "主修心理语言学与实验语言学。毕业论文探讨二语声调学习中的知觉同化模式。" }
+      ]
+    },
+    research: {
+      title: "科研成果",
+      items: [
+        {
+          title: "A Systematic Review of Tone Learning Mechanisms in Second Language Acquisition",
+          meta: "Journal of Phonetics, 2024 · SCI Q1",
+          desc: "系统综述近二十年二语声调学习的行为与神经影像学研究，整合感知同化模型与语音学习模型的分析框架，提出声调学习的三阶段理论模型。",
+          track: "academic"
+        },
+        {
+          title: "ERP Evidence for Emotional Prosody Processing in Mandarin Chinese",
+          meta: "Neuropsychologia, 2024 · SCI Q2",
+          desc: "采用事件相关电位（ERP）技术考察汉语母语者情绪韵律加工的时程特征，发现N400与LPC成分在情绪-语义整合中的分离效应。",
+          track: "academic"
+        },
+        {
+          title: "Individual Differences in Pitch Aptitude Predict Speech Learning Outcomes",
+          meta: "Journal of Cognitive Neuroscience, 2025 · SCI Q1",
+          desc: "结合行为测查与纵向追踪设计，揭示音高感知能力的个体差异对声调学习成效的预测作用，为语言学习个性化干预提供认知基础。",
+          track: "academic"
+        }
+      ]
+    },
+    projects: {
+      title: "项目经历",
+      items: [
+        {
+          title: "AI大模型RLHF数据标注与质量控制",
+          meta: "2024 · AI Alignment / RLHF",
+          desc: "参与大语言模型的人类反馈强化学习（RLHF）数据标注项目，负责标注规范制定、质量审核流程设计及跨团队沟通，确保标注数据一致性达到项目要求。",
+          track: "industry"
+        },
+        {
+          title: "产品助理实习",
+          meta: "2023 · 互联网产品",
+          desc: "协助产品经理进行用户需求调研、竞品分析与功能迭代规划，参与撰写产品需求文档（PRD），协调设计与开发团队推进产品落地。",
+          track: "industry"
+        },
+        {
+          title: "出海短视频内容本地化项目",
+          meta: "2023 · 内容运营 / 跨文化传播",
+          desc: "负责短视频内容的跨文化本地化适配，分析目标市场的文化偏好与语言习惯，制定内容策略并优化传播效果，项目覆盖东南亚与拉美市场。",
+          track: "industry"
+        }
+      ]
+    },
+    skills: {
+      title: "技能",
+      categories: [
+        { name: "研究方法", tags: ["EEG/ERP", "实验设计", "行为实验", "心理测量", "眼动追踪"] },
+        { name: "数据分析", tags: ["R", "Python", "SPSS", "MATLAB", "E-Prime", "Praat"] },
+        { name: "语言能力", tags: ["中文（母语）", "英语（流利）", "日语（基础）"] },
+        { name: "专业技能", tags: ["学术写作", "文献综述", "LaTeX", "Adobe Suite", "Git"] }
+      ]
+    },
+    contact: {
+      title: "联系方式",
+      email: "fayhan@example.com",
+      github: "GitHub"
+    }
+  },
+  en: {
+    nav: {
+      about: "About",
+      education: "Education",
+      research: "Research",
+      projects: "Projects",
+      skills: "Skills",
+      contact: "Contact",
+      academic: "Academic",
+      industry: "Industry"
+    },
+    hero: {
+      name: "韩馥伊",
+      enName: "Fay Han",
+      motto: "潜龙勿用",
+      academic: "Academic",
+      industry: "Industry"
+    },
+    about: {
+      title: "About Me",
+      p1: "I am a researcher in psycholinguistics and cognitive neuroscience, focusing on the neural mechanisms of speech perception, lexical tone processing, and emotional prosody. My research employs EEG/ERP methods, complemented by behavioral experiments and computational modeling.",
+      p2: "I am fascinated by the intersection of language and the brain — from how acoustic signals are decoded into meaning, to how individual differences shape the trajectory of language learning. My work bridges fundamental science and real-world applications, contributing to both our understanding of human cognition and the future of brain-computer interfaces and language AI.",
+      p3: "Outside the lab, I find rhythm in hiking mountain trails, swimming laps, and turning pages. Life's cadence also hides in a badminton rally, a melody on repeat, or a ticket to a city I've never been.",
+      hobbies: "<span class=\"hobby\">Hiking</span><span class=\"dot\">·</span><span class=\"hobby\">Fitness</span><span class=\"dot\">·</span><span class=\"hobby\">Reading</span><span class=\"dot\">·</span><span class=\"hobby\">Music</span><span class=\"dot\">·</span><span class=\"hobby\">Travel</span><span class=\"dot\">·</span><span class=\"hobby\">Swimming</span><span class=\"dot\">·</span><span class=\"hobby\">Badminton</span>"
+    },
+    education: {
+      title: "Education",
+      items: [
+        { year: "2022 – 2025", school: "Beijing Normal University", degree: "M.S. in Cognitive Neuroscience", desc: "Thesis: Neural Correlates of Lexical Tone Perception — An EEG Study. Investigated the temporal dynamics and oscillatory mechanisms of Mandarin tone processing using event-related potentials (ERP)." },
+        { year: "2018 – 2022", school: "Beijing Language and Culture University", degree: "B.A. in Linguistics", desc: "Majored in psycholinguistics and experimental linguistics. Senior thesis examined perceptual assimilation patterns in L2 tone learning." }
+      ]
+    },
+    research: {
+      title: "Research",
+      items: [
+        {
+          title: "A Systematic Review of Tone Learning Mechanisms in Second Language Acquisition",
+          meta: "Journal of Phonetics, 2024 · SCI Q1",
+          desc: "A comprehensive review of behavioral and neuroimaging studies on L2 tone learning over the past two decades, integrating the Perceptual Assimilation Model and Speech Learning Model frameworks, and proposing a three-stage theoretical model of tone acquisition.",
+          track: "academic"
+        },
+        {
+          title: "ERP Evidence for Emotional Prosody Processing in Mandarin Chinese",
+          meta: "Neuropsychologia, 2024 · SCI Q2",
+          desc: "Used event-related potentials (ERP) to examine the temporal dynamics of emotional prosody processing in native Mandarin speakers, revealing dissociable N400 and LPC effects in emotion-semantic integration.",
+          track: "academic"
+        },
+        {
+          title: "Individual Differences in Pitch Aptitude Predict Speech Learning Outcomes",
+          meta: "Journal of Cognitive Neuroscience, 2025 · SCI Q1",
+          desc: "Combined behavioral assessments with longitudinal tracking to reveal how individual differences in pitch perception aptitude predict tone learning success, providing a cognitive basis for personalized language learning interventions.",
+          track: "academic"
+        }
+      ]
+    },
+    projects: {
+      title: "Projects",
+      items: [
+        {
+          title: "RLHF Data Annotation & Quality Control for Large Language Models",
+          meta: "2024 · AI Alignment / RLHF",
+          desc: "Participated in the RLHF data annotation project for large language models. Responsible for developing annotation guidelines, designing quality audit workflows, and cross-team coordination to ensure data consistency met project standards.",
+          track: "industry"
+        },
+        {
+          title: "Product Management Internship",
+          meta: "2023 · Internet Product",
+          desc: "Assisted product managers with user needs research, competitive analysis, and feature iteration planning. Contributed to PRD documentation and coordinated with design and development teams to drive product delivery.",
+          track: "industry"
+        },
+        {
+          title: "Cross-Cultural Short Video Content Localization",
+          meta: "2023 · Content Operations / Cross-Cultural Communication",
+          desc: "Responsible for cross-cultural localization of short video content, analyzing target market cultural preferences and language habits, developing content strategies, and optimizing distribution — covering Southeast Asian and Latin American markets.",
+          track: "industry"
+        }
+      ]
+    },
+    skills: {
+      title: "Skills",
+      categories: [
+        { name: "Methods", tags: ["EEG/ERP", "Experimental Design", "Behavioral Tasks", "Psychometrics", "Eye-tracking"] },
+        { name: "Data Analysis", tags: ["R", "Python", "SPSS", "MATLAB", "E-Prime", "Praat"] },
+        { name: "Languages", tags: ["Chinese (Native)", "English (Fluent)", "Japanese (Basic)"] },
+        { name: "Professional", tags: ["Academic Writing", "Literature Review", "LaTeX", "Adobe Suite", "Git"] }
+      ]
+    },
+    contact: {
+      title: "Contact",
+      email: "fayhan@example.com",
+      github: "GitHub"
+    }
+  }
+};
+
+/* ===== State ===== */
+let currentLang = localStorage.getItem('lang') || 'zh';
+let currentTrack = localStorage.getItem('track') || ''; // '' | 'academic' | 'industry'
+
+/* ===== Render helpers ===== */
+function renderTimeline(lang) {
+  const d = I18N[lang].education;
+  const container = document.getElementById('eduTimeline');
+  container.innerHTML = d.items.map(item =>
+    `<div class="timeline-item">
+      <div class="year">${item.year}</div>
+      <div class="school">${item.school}</div>
+      <div class="degree">${item.degree}</div>
+      <div style="font-size:0.85rem;color:var(--text-light);margin-top:4px;">${item.desc}</div>
+    </div>`
+  ).join('');
+}
+
+function renderCards(lang, key, gridId, trackClass) {
+  const items = I18N[lang][key].items;
+  const container = document.getElementById(gridId);
+  container.innerHTML = items.map(item =>
+    `<article class="card ${trackClass || ''}" data-track="${item.track || ''}">
+      <h3>${item.title}</h3>
+      <p class="meta">${item.meta}</p>
+      <p class="desc">${item.desc}</p>
+    </article>`
+  ).join('');
+}
+
+function renderSkills(lang) {
+  const cats = I18N[lang].skills.categories;
+  const container = document.getElementById('skillsGrid');
+  container.innerHTML = cats.map(cat =>
+    `<div class="skill-cat">
+      <h4>${cat.name}</h4>
+      <div class="skill-tags">
+        ${cat.tags.map(t => `<span class="skill-tag">${t}</span>`).join('')}
+      </div>
+    </div>`
+  ).join('');
+}
+
+function renderContact(lang) {
+  const d = I18N[lang].contact;
+  const container = document.getElementById('contactLinks');
+  container.innerHTML = `
+    <a class="contact-link" href="mailto:${d.email}">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+      ${d.email}
+    </a>
+    <a class="contact-link" href="https://github.com/FayHan2002" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      ${d.github}
+    </a>
+  `;
+}
+
+/* ===== Language Switch ===== */
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
+
+  document.body.classList.add('fade-out');
+  setTimeout(() => {
+    // Update data-i18n text
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const path = el.getAttribute('data-i18n');
+      const val = path.split('.').reduce((o, k) => o?.[k], I18N[lang]);
+      if (val !== undefined && typeof val === 'string') {
+        el.textContent = val;
+      }
+    });
+
+    // Re-render dynamic sections
+    renderTimeline(lang);
+    renderCards(lang, 'research', 'researchGrid', 'track-academic');
+    renderCards(lang, 'projects', 'projectsGrid', 'track-industry');
+    renderSkills(lang);
+    renderContact(lang);
+
+    // Update lang button
+    document.getElementById('langToggle').textContent = lang === 'zh' ? 'EN' : '中文';
+    document.getElementById('langToggle').setAttribute('aria-label',
+      lang === 'zh' ? 'Switch to English' : '切换到中文');
+
+    // Re-apply track mode to refresh card order
+    applyTrackMode();
+
+    // Update document title
+    document.title = lang === 'zh' ? '韩馥伊 / Fay Han' : 'Fay Han / 韩馥伊';
+
+    document.body.classList.remove('fade-out');
+  }, 200);
+}
+
+document.getElementById('langToggle').addEventListener('click', () => {
+  setLang(currentLang === 'zh' ? 'en' : 'zh');
+});
+
+/* ===== Track Mode ===== */
+function setTrack(track) {
+  if (currentTrack === track) {
+    // Deselect
+    currentTrack = '';
+    localStorage.removeItem('track');
+  } else {
+    currentTrack = track;
+    localStorage.setItem('track', track);
+  }
+  applyTrackMode();
+}
+
+function applyTrackMode() {
+  document.body.classList.remove('mode-academic', 'mode-industry');
+  if (currentTrack === 'academic') document.body.classList.add('mode-academic');
+  if (currentTrack === 'industry') document.body.classList.add('mode-industry');
+
+  // Update track button states
+  document.querySelectorAll('.track-btn[data-track]').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-track') === currentTrack);
+  });
+
+  // Reorder cards within their grids
+  reorderCards('researchGrid');
+  reorderCards('projectsGrid');
+}
+
+function reorderCards(gridId) {
+  const grid = document.getElementById(gridId);
+  if (!grid) return;
+  const cards = Array.from(grid.children);
+
+  if (!currentTrack) {
+    // Default order: restore original
+    cards.sort((a, b) => {
+      const idxA = Array.from(a.parentNode.children).indexOf(a);
+      return 0; // keep DOM order
+    });
+    // Actually reset to original: academic first for research, industry first for projects
+    // Just re-append in current order — no reordering needed
+    return;
+  }
+
+  // Sort: cards with matching data-track come first
+  cards.sort((a, b) => {
+    const aMatch = a.getAttribute('data-track') === currentTrack ? 0 : 1;
+    const bMatch = b.getAttribute('data-track') === currentTrack ? 0 : 1;
+    return aMatch - bMatch;
+  });
+
+  cards.forEach(card => grid.appendChild(card));
+}
+
+document.querySelectorAll('.track-btn[data-track]').forEach(btn => {
+  btn.addEventListener('click', () => setTrack(btn.getAttribute('data-track')));
+});
+
+/* ===== IntersectionObserver: reveal + nav highlight ===== */
+const sections = document.querySelectorAll('section[id]');
+const revealEls = document.querySelectorAll('.reveal');
+const navLinksAll = document.querySelectorAll('.nav-links a, .mobile-menu a[href^="#"]');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    // Reveal animation
+    if (entry.target.classList.contains('reveal') && entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+
+    // Nav highlight
+    if (entry.isIntersecting && entry.target.tagName === 'SECTION') {
+      const id = entry.target.getAttribute('id');
+      navLinksAll.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+      });
+    }
+  });
+}, { threshold: 0.15, rootMargin: '-60px 0px -40% 0px' });
+
+sections.forEach(s => {
+  if (s.id !== 'hero') observer.observe(s);
+});
+revealEls.forEach(el => observer.observe(el));
+
+/* ===== Nav scroll blur ===== */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+
+  // Back to top visibility
+  const btn = document.getElementById('backToTop');
+  btn.classList.toggle('visible', window.scrollY > window.innerHeight);
+});
+
+/* ===== Back to top ===== */
+document.getElementById('backToTop').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ===== Mobile menu ===== */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileOverlay = document.getElementById('mobileOverlay');
+
+function closeMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  mobileOverlay.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+function openMenu() {
+  hamburger.classList.add('open');
+  mobileMenu.classList.add('open');
+  mobileOverlay.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.contains('open') ? closeMenu() : openMenu();
+});
+mobileOverlay.addEventListener('click', closeMenu);
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+// Close mobile menu on Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+});
+
+/* ===== Init ===== */
+function init() {
+  document.getElementById('langToggle').textContent = currentLang === 'zh' ? 'EN' : '中文';
+  setLang(currentLang);
+  if (currentTrack) applyTrackMode();
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+}
+
+init();
+</script>
+
+<!--
+========================================
+  MODIFICATION GUIDE / 修改指南
+========================================
+
+  CHANGE CONTENT / 修改内容:
+    → Edit the I18N object in <script>.
+    → All text lives there; HTML is auto-rendered.
+    → zh = Chinese, en = English.
+    → Add a paper: push a new object to I18N.zh.research.items (and en equivalent).
+    → Remove a paper: delete the item from both arrays.
+
+  CHANGE COLORS / 修改颜色:
+    → Edit the :root { } block in <style>.
+    → Key variables: --accent (accent color), --bg (background),
+      --deep-blue, --teal, --warm-apricot.
+
+  ADD/REMOVE SECTIONS / 增删板块:
+    → HTML sections are wrapped in <!-- ===== Section Name ===== --> comments.
+    → Copy an existing section for a new one.
+    → Add corresponding I18N keys and rendering logic.
+
+  TRACK TAGS / 双轨标记:
+    → Add data-track="academic" or data-track="industry" to any card.
+    → In academic mode, cards with data-track="academic" are prioritized.
+    → In industry mode, cards with data-track="industry" are prioritized.
+
+  FONTS / 字体:
+    → Change Google Fonts URL in <link> tag.
+    → Update --font-zh, --font-en-heading, --font-en-body in :root.
+-->
+</body>
+</html>
