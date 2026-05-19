@@ -5,43 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="韩馥伊 Han Fuyi — 语言病理学研究者，专注言语感知神经机制(EEG)与认知神经科学。">
 <meta property="og:title" content="Han Fuyi / 韩馥伊">
-<meta property="og:description" content="语言病理学 · 认知神经科学 · 言语感知(EEG) | Language Pathology · Cognitive Neuroscience · Speech Perception">
+<meta property="og:description" content="语言病理学 · 认知神经科学 · 言语感知(EEG)">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary">
 <link rel="alternate" hreflang="zh" href="https://fayhan2002.github.io/">
 <link rel="alternate" hreflang="en" href="https://fayhan2002.github.io/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <title>Han Fuyi / 韩馥伊</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
 <style>
 /* ===== CSS Variables ===== */
 :root {
-  --bg: #F9F6F0;
-  --bg-warm: #F5EFE6;
-  --text: #1E1B18;
-  --text-light: #5C5752;
-  --text-muted: #99928B;
-  --accent: #5B8C9E;
-  --accent-light: #7AACBB;
-  --accent-pale: #D6E8EF;
-  --card-bg: #FFFFFF;
-  --card-border: #E8E1D8;
-  --ocean-deep: #0A1628;
-  --ocean-dark: #112240;
-  --ocean-mid: #1A3550;
-  --ocean-teal: #1A4A5A;
-  --ocean-light: #216477;
-  --sand: #D4C5B2;
-  --sand-light: #E8DCD0;
-  --sand-pale: #F0E8DE;
-  --warm-gold: #B8977E;
-  --warm-gold-light: #D4BFA9;
-  --shadow: 0 2px 12px rgba(30,27,24,0.05);
-  --shadow-hover: 0 12px 40px rgba(30,27,24,0.10);
+  --bg-deep: #0A0F14;
+  --bg: #0D1117;
+  --bg-surface: #131A24;
+  --bg-card: #18212D;
+  --bg-card-hover: #1C2735;
+  --border: #1E2A38;
+  --border-light: #263240;
+  --text: #E0DCD5;
+  --text-light: #B0ACA5;
+  --text-muted: #706C66;
+  --text-dim: #4A4642;
+  --accent-ice: #7EC8D0;
+  --accent-ice-glow: rgba(126,200,208,0.15);
+  --accent-warm: #D4A574;
+  --accent-warm-glow: rgba(212,165,116,0.12);
+  --white-foam: #D8DEE9;
+  --ocean-abyss: #060C12;
+  --ocean-deep: #0B1620;
+  --ocean-mid: #0F1D2B;
+  --ocean-surface: #142636;
+  --shadow: 0 2px 16px rgba(0,0,0,0.3);
+  --shadow-hover: 0 8px 32px rgba(0,0,0,0.45);
   --font-zh: 'Noto Serif SC', serif;
   --font-en-heading: 'Playfair Display', serif;
   --font-en-body: 'Source Sans Pro', sans-serif;
@@ -60,25 +59,26 @@ body {
   font-family: var(--font-en-body); font-weight: 300;
   line-height: var(--line-height); color: var(--text);
   background-color: var(--bg);
-  background-image:
-    radial-gradient(ellipse at 50% 0%, rgba(90,130,150,0.03) 0%, transparent 70%),
-    radial-gradient(ellipse at 80% 30%, rgba(180,150,120,0.04) 0%, transparent 60%),
-    linear-gradient(rgba(30,27,24,0.008) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 28px 28px;
-  transition: opacity 0.25s ease;
-  overflow-x: hidden;
+  overflow-x: hidden; transition: opacity 0.25s ease;
 }
 body.fade-out { opacity: 0; }
 
-h1, h2, h3, h4 { font-weight: 500; line-height: 1.3; }
+/* Film grain overlay */
+body::after {
+  content: ''; position: fixed; inset: 0; z-index: 10000; pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+h1, h2, h3, h4 { font-weight: 400; line-height: 1.3; }
 h2 { font-family: var(--font-en-heading); font-size: 1.8rem; color: var(--text); }
 h3 { font-family: var(--font-en-heading); font-size: 1.1rem; }
-
-a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
-a:hover { color: var(--ocean-teal); }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+a { color: var(--accent-ice); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--accent-warm); }
+a:focus-visible { outline: 2px solid var(--accent-ice); outline-offset: 3px; border-radius: 2px; }
 img { max-width: 100%; height: auto; display: block; }
-::selection { background: var(--accent-pale); color: var(--ocean-dark); }
+::selection { background: rgba(126,200,208,0.25); color: var(--white-foam); }
 
 /* ===== Utility ===== */
 .container { max-width: var(--max-width); margin: 0 auto; padding: 0 30px; }
@@ -87,55 +87,55 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .section-label::before {
   content: ''; width: 8px; height: 8px; border-radius: 50%;
-  background: var(--accent); flex-shrink: 0;
+  background: var(--accent-ice); flex-shrink: 0;
 }
 .section-label::after {
   content: ''; flex: 1; height: 1px;
-  background: linear-gradient(90deg, var(--card-border), transparent);
+  background: linear-gradient(90deg, var(--border), transparent);
 }
 .section-label span {
   font-family: var(--font-en-heading); font-size: 1.8rem; font-weight: 500;
   color: var(--text); flex-shrink: 0;
 }
 .section-label span.zh-label {
-  font-family: var(--font-zh); font-size: 1.4rem; font-weight: 500;
+  font-family: var(--font-zh); font-size: 1.4rem; font-weight: 400;
 }
 
 /* ===== Navigation ===== */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   height: 56px; display: flex; align-items: center; justify-content: space-between;
-  padding: 0 34px; transition: background 0.4s ease, box-shadow 0.4s ease;
+  padding: 0 34px; transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 .nav.scrolled {
-  background: rgba(249,246,240,0.78);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+  background: rgba(13,17,23,0.82);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04);
 }
-.nav-links { display: flex; align-items: center; gap: 26px; list-style: none; }
+.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
 .nav-links a {
-  font-size: 0.8rem; font-weight: 400; color: var(--text-light);
-  text-transform: uppercase; letter-spacing: 0.08em; position: relative;
+  font-size: 0.78rem; font-weight: 400; color: var(--text-light);
+  text-transform: uppercase; letter-spacing: 0.1em; position: relative;
   transition: color var(--transition);
 }
 .nav-links a::after {
-  content: ''; position: absolute; bottom: -5px; left: 0; right: 0;
-  height: 1.5px; background: var(--accent); transform: scaleX(0);
-  transition: transform var(--transition); transform-origin: center;
+  content: ''; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%) scaleX(0);
+  width: 100%; height: 1.5px; background: var(--accent-ice);
+  transition: transform var(--transition);
 }
-.nav-links a:hover, .nav-links a.active { color: var(--accent); }
-.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+.nav-links a:hover, .nav-links a.active { color: var(--accent-ice); }
+.nav-links a:hover::after, .nav-links a.active::after { transform: translateX(-50%) scaleX(1); }
 .nav-actions { display: flex; align-items: center; gap: 10px; }
 
 .lang-btn, .track-btn {
-  font-family: var(--font-en-body); font-size: 0.76rem;
-  border: 1px solid var(--card-border); background: var(--card-bg);
-  color: var(--text-light); padding: 5px 14px; border-radius: 20px;
+  font-family: var(--font-en-body); font-size: 0.74rem;
+  border: 1px solid var(--border); background: transparent;
+  color: var(--text-light); padding: 5px 15px; border-radius: 20px;
   cursor: pointer; transition: all var(--transition); white-space: nowrap;
 }
-.lang-btn:hover, .track-btn:hover { border-color: var(--accent); color: var(--accent); }
+.lang-btn:hover, .track-btn:hover { border-color: var(--accent-ice); color: var(--accent-ice); }
 .track-btn.active {
-  background: var(--accent); color: #fff; border-color: var(--accent);
+  background: var(--accent-ice); color: var(--bg-deep); border-color: var(--accent-ice);
 }
 
 .hamburger {
@@ -143,7 +143,7 @@ img { max-width: 100%; height: auto; display: block; }
   background: none; border: none; cursor: pointer; padding: 8px; z-index: 1001;
 }
 .hamburger span {
-  display: block; width: 22px; height: 1.5px; background: var(--text);
+  display: block; width: 22px; height: 1.5px; background: var(--text-light);
   transition: transform var(--transition), opacity var(--transition);
 }
 .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
@@ -156,59 +156,62 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center; overflow: hidden; padding: 120px 30px 0;
   background: linear-gradient(180deg,
-    var(--bg) 0%,
-    var(--sand-pale) 35%,
-    var(--sand-light) 55%,
-    var(--sand) 70%,
-    #C4B8A6 82%,
-    var(--ocean-teal) 88%,
-    var(--ocean-dark) 100%);
+    var(--bg-deep) 0%,
+    #0C131A 20%,
+    var(--ocean-deep) 42%,
+    var(--ocean-mid) 58%,
+    var(--ocean-abyss) 75%,
+    #050A0E 100%);
 }
 .hero-waves {
-  position: absolute; bottom: 0; left: 0; width: 100%; height: 62%;
-  pointer-events: none; z-index: 0; opacity: 0.92;
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 65%;
+  pointer-events: none; z-index: 0;
 }
 .hero-waves svg { width: 100%; height: 100%; display: block; }
-.wave-layer { transform-origin: center; }
-.wave-1 { animation: drift-w1 72s ease-in-out alternate infinite; }
-.wave-2 { animation: drift-w2 55s ease-in-out alternate infinite; }
-.wave-3 { animation: drift-w3 48s ease-in-out alternate infinite; }
-.wave-4 { animation: drift-w4 38s ease-in-out alternate infinite; }
-.wave-5 { animation: drift-w5 30s ease-in-out alternate infinite; }
-.wave-6 { animation: drift-w6 40s ease-in-out alternate infinite; }
+
+.wave-body-1 { animation: drift-1 80s ease-in-out alternate infinite; }
+.wave-body-2 { animation: drift-2 60s ease-in-out alternate infinite; }
+.wave-body-3 { animation: drift-3 50s ease-in-out alternate infinite; }
+.wave-body-4 { animation: drift-4 40s ease-in-out alternate infinite; }
+.wave-body-5 { animation: drift-5 34s ease-in-out alternate infinite; }
+.wave-foam-1 { animation: drift-f1 45s ease-in-out alternate infinite; }
+.wave-foam-2 { animation: drift-f2 36s ease-in-out alternate infinite; }
+.wave-foam-3 { animation: drift-f3 30s ease-in-out alternate infinite; }
 
 .hero-content { position: relative; z-index: 2; padding-bottom: 100px; }
+
 .hero-photo {
   width: 136px; height: 136px; border-radius: 50%; object-fit: cover;
-  border: 2px solid rgba(91,140,158,0.22);
-  box-shadow: 0 6px 32px rgba(30,27,24,0.10);
-  margin: 0 auto 30px; background: var(--card-bg);
+  border: 2px solid rgba(126,200,208,0.3);
+  box-shadow: 0 0 40px rgba(126,200,208,0.08), 0 8px 32px rgba(0,0,0,0.4);
+  margin: 0 auto 32px; background: var(--bg-surface);
 }
+
 .hero h1 {
-  font-family: var(--font-zh); font-size: 3rem; font-weight: 500;
-  color: var(--text); letter-spacing: 0.05em; margin-bottom: 4px;
+  font-family: var(--font-zh); font-size: 3rem; font-weight: 300;
+  color: var(--white-foam); letter-spacing: 0.08em; margin-bottom: 4px;
 }
 .hero .en-name {
-  font-family: var(--font-decorative); font-size: 1.4rem; font-weight: 400;
-  font-style: italic; color: var(--text-light); letter-spacing: 0.1em; margin-bottom: 18px;
+  font-family: var(--font-decorative); font-size: 1.4rem; font-weight: 300;
+  font-style: italic; color: var(--text-light); letter-spacing: 0.14em; margin-bottom: 20px;
 }
 .hero .motto {
-  font-family: var(--font-zh); font-weight: 300; font-size: 1.05rem;
-  color: var(--text-muted); letter-spacing: 0.35em; margin-bottom: 36px;
+  font-family: var(--font-zh); font-weight: 200; font-size: 1rem;
+  color: var(--text-dim); letter-spacing: 0.4em; margin-bottom: 38px;
 }
 .hero-track-toggles { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-.hero-track-toggles .track-btn { padding: 9px 26px; font-size: 0.85rem; }
+.hero-track-toggles .track-btn { padding: 9px 26px; font-size: 0.84rem; }
 
 .hero-scroll-hint {
-  position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%);
+  position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
   z-index: 2; animation: float 3s ease-in-out infinite;
 }
-.hero-scroll-hint svg { width: 22px; height: 22px; stroke: rgba(255,255,255,0.5); }
+.hero-scroll-hint svg { width: 22px; height: 22px; stroke: rgba(255,255,255,0.25); }
 
 /* ===== Sections ===== */
 section { padding: var(--section-gap) 0; position: relative; }
 section:nth-child(odd) { background: var(--bg); }
-section:nth-child(even) { background: var(--bg-warm); }
+section:nth-child(even) { background: var(--bg-deep); }
 
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -216,13 +219,13 @@ section:nth-child(even) { background: var(--bg-warm); }
 /* ===== About ===== */
 .about-body { max-width: 700px; margin: 0 auto; }
 .about-body p {
-  font-family: var(--font-zh); font-size: 1rem; color: var(--text-light);
+  font-family: var(--font-zh); font-size: 0.98rem; color: var(--text-light); font-weight: 300;
 }
 .about-body p + p { margin-top: 1.3em; }
 
 .hobbies-line {
   margin-top: 36px; padding-top: 30px;
-  border-top: 1px solid var(--card-border);
+  border-top: 1px solid var(--border);
   font-family: var(--font-decorative); font-style: italic; font-weight: 400;
   font-size: 0.95rem; color: var(--text-muted);
   display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 2px;
@@ -230,180 +233,186 @@ section:nth-child(even) { background: var(--bg-warm); }
 .hobbies-line .hobby {
   cursor: default; transition: all var(--transition); padding: 2px 1px;
 }
-.hobbies-line .hobby:hover { color: var(--warm-gold); transform: translateY(-2px); }
-.hobbies-line .dot { color: var(--sand); margin: 0 5px; }
+.hobbies-line .hobby:hover { color: var(--accent-warm); transform: translateY(-2px); }
+.hobbies-line .dot { color: var(--border); margin: 0 5px; }
 
 /* ===== Education Timeline ===== */
 .timeline { position: relative; padding-left: 36px; }
 .timeline::before {
   content: ''; position: absolute; left: 0; top: 4px; bottom: 4px;
-  width: 1px; background: linear-gradient(180deg, var(--accent), var(--card-border), var(--card-border));
+  width: 1px;
+  background: linear-gradient(180deg, var(--accent-ice), var(--border), var(--border));
 }
 .timeline-item { position: relative; margin-bottom: 38px; }
 .timeline-item:last-child { margin-bottom: 0; }
 .timeline-item::before {
   content: ''; position: absolute; left: -40.5px; top: 8px;
   width: 10px; height: 10px; border-radius: 50%;
-  background: var(--accent); border: 2px solid var(--bg);
+  background: var(--accent-ice); border: 2px solid var(--bg);
 }
 .timeline-item .year {
   font-family: var(--font-decorative); font-size: 0.9rem; font-weight: 600;
-  color: var(--accent); letter-spacing: 0.05em; margin-bottom: 4px;
+  color: var(--accent-ice); letter-spacing: 0.05em; margin-bottom: 4px;
 }
-.timeline-item .school { font-weight: 500; font-size: 1.08rem; color: var(--text); }
+.timeline-item .school { font-weight: 400; font-size: 1.08rem; color: var(--text); }
 .timeline-item .degree { font-size: 0.9rem; color: var(--text-light); margin-top: 3px; }
 .timeline-item .extra { font-size: 0.85rem; color: var(--text-muted); margin-top: 2px; }
 
 /* ===== Cards ===== */
-.cards-grid { display: grid; gap: 22px; }
+.cards-grid { display: grid; gap: 19px; }
 .card {
-  background: var(--card-bg); border: 1px solid var(--card-border);
-  border-radius: 6px; padding: 30px 32px;
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-  position: relative;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 4px; padding: 28px 30px;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition);
+  position: relative; overflow: hidden;
+}
+.card::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-ice), transparent);
+  opacity: 0; transition: opacity var(--transition);
 }
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
-  border-color: transparent;
+  border-color: var(--border-light);
+  background: var(--bg-card-hover);
 }
-.card::before {
-  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
-  background: linear-gradient(90deg, var(--accent), transparent);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform var(--transition); border-radius: 6px 6px 0 0;
-}
-.card:hover::before { transform: scaleX(1); }
+.card:hover::after { opacity: 1; }
 
-.card h3 { margin-bottom: 8px; font-size: 1.05rem; color: var(--text); line-height: 1.45; }
+.card h3 { margin-bottom: 8px; font-size: 1.05rem; color: var(--text); line-height: 1.45; font-weight: 500; }
 .card .meta {
-  font-size: 0.82rem; color: var(--accent); font-weight: 400;
-  letter-spacing: 0.03em; margin-bottom: 10px;
+  font-size: 0.8rem; color: var(--accent-ice); font-weight: 400;
+  letter-spacing: 0.04em; margin-bottom: 10px;
 }
-.card .desc { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
-.card .authors { font-size: 0.78rem; color: var(--text-muted); font-style: italic; margin-bottom: 4px; }
+.card .desc { font-size: 0.88rem; color: var(--text-light); line-height: 1.7; font-weight: 300; }
+.card .authors { font-size: 0.76rem; color: var(--text-muted); font-style: italic; margin-bottom: 6px; }
 
-.card.academic-card { border-left: 3px solid var(--accent); padding-left: 29px; }
-.card.industry-card { border-left: 3px solid var(--warm-gold); padding-left: 29px; }
+.card.academic-card { border-left: 2px solid var(--accent-ice); padding-left: 28px; }
+.card.industry-card { border-left: 2px solid var(--accent-warm); padding-left: 28px; }
 
-/* ===== Section visibility by track mode ===== */
+/* ===== Section visibility ===== */
 .dynamic-section { transition: opacity 0.4s ease, max-height 0.4s ease; overflow: hidden; }
 .dynamic-section.hidden { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; margin: 0; pointer-events: none; }
 
 /* ===== Skills ===== */
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px; }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
 .skill-cat {
-  background: var(--card-bg); border: 1px solid var(--card-border);
-  border-radius: 6px; padding: 26px; transition: transform var(--transition), box-shadow var(--transition);
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 4px; padding: 26px;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
-.skill-cat:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+.skill-cat:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); border-color: var(--border-light); }
 .skill-cat h4 {
   font-family: var(--font-decorative); font-size: 1rem; font-weight: 600;
-  color: var(--accent); margin-bottom: 14px; letter-spacing: 0.05em;
+  color: var(--accent-ice); margin-bottom: 14px; letter-spacing: 0.05em;
 }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
 .skill-tag {
-  font-size: 0.77rem; padding: 4px 13px; border-radius: 14px;
-  background: var(--accent-pale); color: var(--accent);
+  font-size: 0.76rem; padding: 4px 13px; border-radius: 14px;
+  background: rgba(126,200,208,0.08); color: var(--accent-ice);
+  border: 1px solid rgba(126,200,208,0.12);
   transition: all var(--transition); cursor: default;
 }
-.skill-tag:hover { background: var(--accent); color: #fff; transform: translateY(-1px); }
+.skill-tag:hover { background: var(--accent-ice); color: var(--bg-deep); border-color: var(--accent-ice); }
 
 /* ===== Contact ===== */
 .contact-links { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; }
 .contact-link {
   display: flex; align-items: center; gap: 8px;
-  padding: 11px 24px; border: 1px solid var(--card-border);
-  border-radius: 30px; font-size: 0.9rem; color: var(--text-light);
-  transition: all var(--transition); background: var(--card-bg);
+  padding: 11px 24px; border: 1px solid var(--border);
+  border-radius: 30px; font-size: 0.88rem; color: var(--text-light);
+  transition: all var(--transition); background: transparent;
 }
-.contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow); }
+.contact-link:hover { border-color: var(--accent-ice); color: var(--accent-ice); transform: translateY(-2px); box-shadow: var(--shadow); }
 .contact-link svg { width: 18px; height: 18px; flex-shrink: 0; }
 
 /* ===== Footer ===== */
 footer {
   text-align: center; padding: 44px 30px;
-  font-size: 0.78rem; color: var(--text-muted);
-  border-top: 1px solid var(--card-border); background: var(--bg);
+  font-size: 0.76rem; color: var(--text-muted);
+  border-top: 1px solid var(--border); background: var(--bg-deep);
 }
 footer a { color: var(--text-muted); }
-footer a:hover { color: var(--accent); }
+footer a:hover { color: var(--accent-ice); }
 
 /* ===== Back to Top ===== */
 .back-to-top {
   position: fixed; bottom: 30px; right: 30px; z-index: 999;
   width: 42px; height: 42px; border-radius: 50%;
-  background: var(--card-bg); border: 1px solid var(--card-border);
+  background: var(--bg-card); border: 1px solid var(--border);
   box-shadow: var(--shadow); cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   opacity: 0; transform: translateY(12px); pointer-events: none;
   transition: opacity var(--transition), transform var(--transition), border-color var(--transition);
 }
 .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.back-to-top:hover { border-color: var(--accent); transform: translateY(-2px); }
+.back-to-top:hover { border-color: var(--accent-ice); transform: translateY(-2px); }
 .back-to-top svg { width: 16px; height: 16px; stroke: var(--text-light); }
 
 /* ===== Mobile Menu ===== */
 .mobile-menu {
   position: fixed; top: 0; right: 0; bottom: 0; width: 270px;
-  background: var(--bg); z-index: 999;
-  box-shadow: -6px 0 28px rgba(30,27,24,0.10);
+  background: var(--bg-surface); z-index: 999;
+  box-shadow: -6px 0 32px rgba(0,0,0,0.5);
   transform: translateX(100%); transition: transform 0.4s ease;
   display: flex; flex-direction: column; padding: 80px 34px 34px;
 }
 .mobile-menu.open { transform: translateX(0); }
 .mobile-menu a {
   display: block; padding: 13px 0; font-size: 0.95rem;
-  color: var(--text); border-bottom: 1px solid var(--card-border);
+  color: var(--text); border-bottom: 1px solid var(--border);
 }
 .mobile-menu .mobile-actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
 .mobile-overlay {
-  position: fixed; inset: 0; background: rgba(10,22,40,0.3); z-index: 998;
+  position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 998;
   opacity: 0; pointer-events: none; transition: opacity var(--transition);
 }
 .mobile-overlay.open { opacity: 1; pointer-events: auto; }
 
-/* ===== Sand Transition ===== */
-.sand-transition {
-  height: 120px; margin-top: -2px;
-  background: linear-gradient(180deg, var(--sand) 0%, var(--sand-light) 40%, var(--bg) 100%);
-  position: relative; z-index: 1;
-}
-
 /* ===== Animations ===== */
-@keyframes drift-w1 {
+@keyframes drift-1 {
   0% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(-3%) translateY(4px); }
-  100% { transform: translateX(-6%) translateY(0); }
+  50% { transform: translateX(-2.5%) translateY(5px); }
+  100% { transform: translateX(-5%) translateY(0); }
 }
-@keyframes drift-w2 {
-  0% { transform: translateX(-2%) translateY(0); }
-  50% { transform: translateX(2%) translateY(-3px); }
-  100% { transform: translateX(-4%) translateY(0); }
-}
-@keyframes drift-w3 {
-  0% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(4%) translateY(5px); }
-  100% { transform: translateX(-3%) translateY(0); }
-}
-@keyframes drift-w4 {
+@keyframes drift-2 {
   0% { transform: translateX(-1%) translateY(0); }
-  50% { transform: translateX(-5%) translateY(-4px); }
-  100% { transform: translateX(3%) translateY(0); }
+  50% { transform: translateX(2%) translateY(-4px); }
+  100% { transform: translateX(-3.5%) translateY(0); }
 }
-@keyframes drift-w5 {
-  0% { transform: translateX(2%) translateY(0); }
-  50% { transform: translateX(-3%) translateY(3px); }
-  100% { transform: translateX(5%) translateY(0); }
-}
-@keyframes drift-w6 {
+@keyframes drift-3 {
   0% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(4%) translateY(-2px); }
+  50% { transform: translateX(3.5%) translateY(6px); }
+  100% { transform: translateX(-2%) translateY(0); }
+}
+@keyframes drift-4 {
+  0% { transform: translateX(-0.5%) translateY(0); }
+  50% { transform: translateX(-4%) translateY(-5px); }
+  100% { transform: translateX(2.5%) translateY(0); }
+}
+@keyframes drift-5 {
+  0% { transform: translateX(1.5%) translateY(0); }
+  50% { transform: translateX(-2.5%) translateY(4px); }
+  100% { transform: translateX(4%) translateY(0); }
+}
+@keyframes drift-f1 {
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-3%) translateY(-3px); }
+  100% { transform: translateX(2%) translateY(0); }
+}
+@keyframes drift-f2 {
+  0% { transform: translateX(-1.5%) translateY(0); }
+  50% { transform: translateX(3%) translateY(3px); }
   100% { transform: translateX(-3%) translateY(0); }
+}
+@keyframes drift-f3 {
+  0% { transform: translateX(1%) translateY(0); }
+  50% { transform: translateX(-3.5%) translateY(-2px); }
+  100% { transform: translateX(2.5%) translateY(0); }
 }
 @keyframes float {
   0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-10px); }
+  50% { transform: translateX(-50%) translateY(-12px); }
 }
 
 /* ===== Responsive: 768px ===== */
@@ -416,9 +425,7 @@ footer a:hover { color: var(--accent); }
   .hero h1 { font-size: 2.4rem; }
   .hero .en-name { font-size: 1.15rem; }
   .hero-photo { width: 116px; height: 116px; }
-  .hero-waves { height: 52%; }
-  .hero-scroll-hint { bottom: 60px; }
-  .sand-transition { height: 80px; }
+  .hero-waves { height: 55%; }
   .container { padding: 0 22px; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .card { padding: 22px 20px; }
@@ -430,7 +437,7 @@ footer a:hover { color: var(--accent); }
 @media (max-width: 480px) {
   .hero h1 { font-size: 1.9rem; }
   .hero .en-name { font-size: 1rem; }
-  .hero .motto { font-size: 0.9rem; letter-spacing: 0.22em; }
+  .hero .motto { font-size: 0.88rem; letter-spacing: 0.25em; }
   .hero-photo { width: 104px; height: 104px; }
   .hero-track-toggles { gap: 8px; }
   .hero-track-toggles .track-btn { padding: 7px 18px; font-size: 0.78rem; }
@@ -447,18 +454,21 @@ footer a:hover { color: var(--accent); }
 @media print {
   .nav, .hero-waves, .hero-scroll-hint, .hero-track-toggles,
   .hamburger, .mobile-menu, .mobile-overlay, .back-to-top,
-  .contact-link, footer, .sand-transition { display: none !important; }
+  .contact-link, footer, body::after { display: none !important; }
   body { background: #fff; color: #000; font-size: 11pt; }
   .hero { min-height: auto; padding: 20px 0; background: none; }
   .hero-photo { width: 90px; height: 90px; }
-  .hero h1 { font-size: 1.4rem; }
-  section { padding: 16px 0; break-inside: avoid; }
-  .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
-  .card:hover, .card:hover::before { transform: none; }
+  .hero h1 { font-size: 1.4rem; color: #000; }
+  .hero .en-name, .hero .motto { color: #555; }
+  section { padding: 16px 0; break-inside: avoid; background: #fff !important; }
+  .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; background: #fff; }
+  .card:hover, .card:hover::after { transform: none; opacity: 0; }
+  .card h3, .card .desc, .card .meta { color: #000; }
   .reveal { opacity: 1; transform: none; }
   a { color: #000; }
   .timeline::before { background: #ccc; }
   .dynamic-section.hidden { opacity: 1; max-height: none; display: block; }
+  .skill-tag { background: #eee; color: #333; border-color: #ddd; }
 }
 
 /* ===== Reduced Motion ===== */
@@ -476,7 +486,7 @@ footer a:hover { color: var(--accent); }
 
 <!-- ===== Navigation ===== -->
 <header class="nav" id="navbar">
-  <a href="#hero" style="font-family:var(--font-decorative);font-weight:500;font-size:1.05rem;color:var(--text);letter-spacing:0.06em;font-style:italic;">Han Fuyi</a>
+  <a href="#hero" style="font-family:var(--font-decorative);font-weight:400;font-size:1.05rem;color:var(--text);letter-spacing:0.08em;font-style:italic;">Han Fuyi</a>
   <nav aria-label="Main navigation">
     <ul class="nav-links" id="navLinks">
       <li><a href="#about" data-i18n="nav.about">关于</a></li>
@@ -517,54 +527,70 @@ footer a:hover { color: var(--accent); }
   <div class="hero-waves" aria-hidden="true">
     <svg viewBox="0 0 1440 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="wg6" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#D4C5B2" stop-opacity="0.05"/>
-          <stop offset="100%" stop-color="#C4B8A6" stop-opacity="0.7"/>
+        <!-- Dark wave bodies -->
+        <linearGradient id="wb5" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#142636" stop-opacity="0.15"/>
+          <stop offset="100%" stop-color="#0F1D2B" stop-opacity="0.8"/>
         </linearGradient>
-        <linearGradient id="wg5" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#216477" stop-opacity="0.1"/>
-          <stop offset="100%" stop-color="#1A4A5A" stop-opacity="0.65"/>
+        <linearGradient id="wb4" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0F1D2B" stop-opacity="0.2"/>
+          <stop offset="100%" stop-color="#0B1620" stop-opacity="0.85"/>
         </linearGradient>
-        <linearGradient id="wg4" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#1A4A5A" stop-opacity="0.15"/>
-          <stop offset="100%" stop-color="#1A3550" stop-opacity="0.7"/>
+        <linearGradient id="wb3" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0B1620" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#081018" stop-opacity="0.9"/>
         </linearGradient>
-        <linearGradient id="wg3" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#1A3550" stop-opacity="0.2"/>
-          <stop offset="100%" stop-color="#112240" stop-opacity="0.75"/>
+        <linearGradient id="wb2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#081018" stop-opacity="0.4"/>
+          <stop offset="100%" stop-color="#060C12" stop-opacity="0.95"/>
         </linearGradient>
-        <linearGradient id="wg2" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#112240" stop-opacity="0.3"/>
-          <stop offset="100%" stop-color="#0A1628" stop-opacity="0.85"/>
+        <linearGradient id="wb1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#060C12" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#04080C" stop-opacity="1"/>
         </linearGradient>
-        <linearGradient id="wg1" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#0A1628" stop-opacity="0.5"/>
-          <stop offset="100%" stop-color="#060E1A" stop-opacity="0.95"/>
+        <!-- Foam: thin white/ice-blue lines -->
+        <linearGradient id="foam-grad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#7EC8D0" stop-opacity="0"/>
+          <stop offset="30%" stop-color="#D8DEE9" stop-opacity="0.5"/>
+          <stop offset="50%" stop-color="#D8DEE9" stop-opacity="0.75"/>
+          <stop offset="70%" stop-color="#7EC8D0" stop-opacity="0.4"/>
+          <stop offset="100%" stop-color="#7EC8D0" stop-opacity="0"/>
         </linearGradient>
       </defs>
-      <!-- Layer 6: Sand transition (top) -->
-      <g class="wave-layer wave-6">
-        <path d="M0,510 C300,480 540,530 840,500 C1080,475 1260,520 1440,495 L1440,800 L0,800 Z" fill="url(#wg6)"/>
+
+      <!-- Wave body 5 (topmost, lightest) -->
+      <g class="wave-body-5">
+        <path d="M0,480 C280,450 520,510 820,480 C1100,450 1300,510 1440,485 L1440,800 L0,800 Z" fill="url(#wb5)"/>
       </g>
-      <!-- Layer 5: Light teal -->
-      <g class="wave-layer wave-5">
-        <path d="M0,540 C240,510 600,560 960,530 C1200,505 1320,550 1440,525 L1440,800 L0,800 Z" fill="url(#wg5)"/>
+      <!-- Wave body 4 -->
+      <g class="wave-body-4">
+        <path d="M0,520 C340,485 540,550 860,515 C1140,480 1300,545 1440,525 L1440,800 L0,800 Z" fill="url(#wb4)"/>
       </g>
-      <!-- Layer 4: Dark teal -->
-      <g class="wave-layer wave-4">
-        <path d="M0,580 C360,545 540,600 840,565 C1140,530 1300,585 1440,560 L1440,800 L0,800 Z" fill="url(#wg4)"/>
+      <!-- Wave body 3 -->
+      <g class="wave-body-3">
+        <path d="M0,565 C300,525 480,600 800,555 C1100,515 1280,590 1440,560 L1440,800 L0,800 Z" fill="url(#wb3)"/>
       </g>
-      <!-- Layer 3: Mid navy -->
-      <g class="wave-layer wave-3">
-        <path d="M0,610 C280,575 480,640 780,600 C1080,560 1280,630 1440,595 L1440,800 L0,800 Z" fill="url(#wg3)"/>
+      <!-- Wave body 2 -->
+      <g class="wave-body-2">
+        <path d="M0,615 C350,565 520,650 840,600 C1140,550 1300,640 1440,610 L1440,800 L0,800 Z" fill="url(#wb2)"/>
       </g>
-      <!-- Layer 2: Dark navy -->
-      <g class="wave-layer wave-2">
-        <path d="M0,650 C320,610 540,690 860,640 C1140,595 1300,665 1440,635 L1440,800 L0,800 Z" fill="url(#wg2)"/>
+      <!-- Wave body 1 (deepest) -->
+      <g class="wave-body-1">
+        <path d="M0,670 C260,620 600,710 920,660 C1220,610 1360,700 1440,660 L1440,800 L0,800 Z" fill="url(#wb1)"/>
       </g>
-      <!-- Layer 1: Deepest -->
-      <g class="wave-layer wave-1">
-        <path d="M0,690 C240,650 600,730 920,680 C1200,635 1340,710 1440,675 L1440,800 L0,800 Z" fill="url(#wg1)"/>
+
+      <!-- Foam lines (thin paths riding atop wave crests) -->
+      <g class="wave-foam-1">
+        <path d="M0,478 C280,448 520,508 820,478 M820,478 C1100,448 1300,508 1440,483"
+              fill="none" stroke="url(#foam-grad)" stroke-width="2.5" opacity="0.7"/>
+      </g>
+      <g class="wave-foam-2">
+        <path d="M0,563 C300,523 480,598 800,553 M800,553 C1100,513 1280,588 1440,558"
+              fill="none" stroke="url(#foam-grad)" stroke-width="2" opacity="0.6"/>
+      </g>
+      <g class="wave-foam-3">
+        <path d="M0,665 C260,615 600,705 920,655 M920,655 C1220,605 1360,695 1440,655"
+              fill="none" stroke="url(#foam-grad)" stroke-width="1.5" opacity="0.45"/>
       </g>
     </svg>
   </div>
@@ -583,9 +609,6 @@ footer a:hover { color: var(--accent); }
     <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
   </div>
 </section>
-
-<!-- ===== Sand Transition ===== -->
-<div class="sand-transition" aria-hidden="true"></div>
 
 <!-- ===== About ===== -->
 <section id="about">
@@ -613,11 +636,11 @@ footer a:hover { color: var(--accent); }
   <div class="container">
     <div class="section-label"><span class="zh-label" data-i18n="research.title">科研成果</span></div>
     <div class="cards-grid reveal" id="researchGrid"></div>
-    <p style="text-align:right;margin-top:16px;font-size:0.78rem;color:var(--text-muted);font-style:italic;" data-i18n="research.note"></p>
+    <p style="text-align:right;margin-top:16px;font-size:0.76rem;color:var(--text-muted);font-style:italic;" data-i18n="research.note"></p>
   </div>
 </section>
 
-<!-- ===== Projects (dynamic: academic projects or industry projects) ===== -->
+<!-- ===== Projects (dynamic) ===== -->
 <section id="projects">
   <div class="container">
     <div class="section-label"><span class="zh-label" id="projectsTitle"></span></div>
@@ -625,7 +648,7 @@ footer a:hover { color: var(--accent); }
   </div>
 </section>
 
-<!-- ===== Internship (dynamic: visible in industry/all modes) ===== -->
+<!-- ===== Internship (dynamic) ===== -->
 <section id="internship" class="dynamic-section">
   <div class="container">
     <div class="section-label"><span class="zh-label" id="internshipTitle" data-i18n="internship.title">实习实践</span></div>
@@ -686,116 +709,86 @@ const I18N = {
       title:"科研成果",
       note:"* 三篇论文均为导师一作，目前处于在审阶段。",
       items: [
-        {
-          authors:"Dong, Y., Han, F., Li, H., & Zeng, J. (under review)",
+        { authors:"Dong, Y., Han, F., Li, H., & Zeng, J. (under review)",
           title:"Prosody Perception in Mandarin as a Second Language: Emotion-Specific Effects of L1 Typology, L2 Proficiency, and L1 Subgroup Variation",
           meta:"Bilingualism: Language and Cognition · SCI Q1",
-          desc:"完成数据收集与清洗；通过统计模型揭示母语类型与二语水平对情绪韵律识别的影响；负责论文初稿撰写。"
-        },
-        {
-          authors:"Dong, Y., Li, H., Han, F., Hong, W., Zhang, J., & Wu, J. (under review)",
+          desc:"完成数据收集与清洗；通过统计模型揭示母语类型与二语水平对情绪韵律识别的影响；负责论文初稿撰写。" },
+        { authors:"Dong, Y., Li, H., Han, F., Hong, W., Zhang, J., & Wu, J. (under review)",
           title:"Learner Trajectory Profiles Predict Multidimensional Generalization in L2 Tone Learning: Accuracy, Response Latency, and Error Topology",
           meta:"Applied Psycholinguistics · SCI Q1",
-          desc:"负责实验设计与数据采集；使用GAMM拟合学习轨迹并进行学习者聚类；参与论文写作。"
-        },
-        {
-          authors:"Dong, Y., Li, H., Han, F., Hong, W., Yu, F., & Zhang, J. (under review)",
+          desc:"负责实验设计与数据采集；使用GAMM拟合学习轨迹并进行学习者聚类；参与论文写作。" },
+        { authors:"Dong, Y., Li, H., Han, F., Hong, W., Yu, F., & Zhang, J. (under review)",
           title:"Residual Confusion in Mandarin Learners of Cantonese Tones: Register-Specific Structure and Generalization",
           meta:"Second Language Research · SCI Q1",
-          desc:"负责实验设计与数据采集；分析声调学习调域内残余混淆的方向性偏倚，并检验泛化规律；参与论文写作。"
-        }
+          desc:"负责实验设计与数据采集；分析声调学习调域内残余混淆的方向性偏倚，并检验泛化规律；参与论文写作。" }
       ]
     },
     academicProjects: {
       title:"科研项目",
       items: [
-        {
-          title:"二语声调学习的认知与神经机制研究",
+        { title:"二语声调学习的认知与神经机制研究",
           meta:"硕士课题 · 2026.01 – 至今",
           desc:"独立主导实验全流程，结合EEG范式，考察粤语声调范畴形成的学习机制、个体认知差异及其神经基础。",
-          cls:"academic-card"
-        },
-        {
-          title:"普通话情绪韵律感知中的噪声效应研究",
+          cls:"academic-card" },
+        { title:"普通话情绪韵律感知中的噪声效应研究",
           meta:"项目成员 · 2026.04 – 至今",
           desc:"考察不同噪声类型（SSN/MTB）与信噪比在母语背景和熟练度调节下对普通话情绪韵律感知的影响；参与实验设计与材料准备，负责被试招募与数据采集。",
-          cls:"academic-card"
-        },
-        {
-          title:"汉语二语口语流畅性主客观评估体系",
+          cls:"academic-card" },
+        { title:"汉语二语口语流畅性主客观评估体系",
           meta:"项目成员 · 2025.09 – 2026.02",
           desc:"构建主观评估和客观量化指标相结合的口语流利度评估体系；负责材料整理与数据采集。",
-          cls:"academic-card"
-        },
-        {
-          title:"AI大模型文献专利标注项目",
+          cls:"academic-card" },
+        { title:"AI大模型文献专利标注项目",
           meta:"线上参与 · 2025.03 – 2025.05",
           desc:"参与面向大模型训练的文献与专利数据标注工作，依据规范对文本进行分类、关键信息抽取与质量核验。",
-          cls:"academic-card"
-        }
+          cls:"academic-card" }
       ]
     },
     industryProjects: {
       title:"项目经历",
       items: [
-        {
-          title:"AI大模型文献专利标注项目",
+        { title:"AI大模型文献专利标注项目",
           meta:"线上参与 · 2025.03 – 2025.05",
           desc:"参与面向大模型训练的文献与专利数据标注工作，依据规范对文本进行分类、关键信息抽取与质量核验。",
-          cls:"industry-card"
-        },
-        {
-          title:"大学生创新创业训练计划 — 项目负责人",
+          cls:"industry-card" },
+        { title:"大学生创新创业训练计划 — 项目负责人",
           meta:"校级奖项 · 2022.04 – 2023.11",
           desc:"组织团队进行实地拍摄与素材采集，高效协调各方资源并确保项目按时完成；独立完成数据分析和论文撰写，获校级奖项。",
-          cls:"industry-card"
-        }
+          cls:"industry-card" }
       ]
     },
     internship: {
       title:"实习实践",
       items: [
-        {
-          title:"北京奥力来健身有限公司 — 产品助理（英文方向）",
+        { title:"北京奥力来健身有限公司 — 产品助理（英文方向）",
           meta:"2025.07 – 2025.08",
           desc:"负责产品中英双语文档翻译与整理，深度参与产品上线流程，理解产品功能逻辑与用户使用场景；制作产品演示PPT与中英文营销材料，结合用户使用场景优化展示逻辑。",
-          cls:"industry-card"
-        },
-        {
-          title:"一带一路国际听力大会 — 优秀志愿者",
+          cls:"industry-card" },
+        { title:"一带一路国际听力大会 — 优秀志愿者",
           meta:"2024.10",
           desc:"负责国际嘉宾的接送机与英语沟通协调工作，保障会议顺利进行；组织和指挥志愿者团队完成各项任务，提升活动效率与嘉宾满意度。",
-          cls:"industry-card"
-        },
-        {
-          title:"中国国际服务贸易交易会 — 优秀志愿者",
+          cls:"industry-card" },
+        { title:"中国国际服务贸易交易会 — 优秀志愿者",
           meta:"2024.10",
           desc:"负责参会行业专家的接待与会务协调，具备多任务统筹与跨团队协作能力。",
-          cls:"industry-card"
-        },
-        {
-          title:"\"汉语桥\"英国培优夏令营 — 优秀志愿者",
+          cls:"industry-card" },
+        { title:"\"汉语桥\"英国培优夏令营 — 优秀志愿者",
           meta:"2021.07",
           desc:"负责与参与夏令营的英国学生进行沟通协调，协助文化活动的组织与执行。",
-          cls:"industry-card"
-        },
-        {
-          title:"院学生会主席",
+          cls:"industry-card" },
+        { title:"院学生会主席",
           meta:"本科期间",
           desc:"统筹学生会整体工作，协调校内多部门资源，策划并执行多场学术活动，具备团队管理与跨部门协作经验。",
-          cls:"industry-card"
-        }
+          cls:"industry-card" }
       ]
     },
     skills: {
       title:"技能",
       categories: [
-        { name:"研究方法", tags:["EEG/ERP","行为实验","心理物理法","PsychoPy","E-Prime","Praat","实验设计"] },
-        { name:"数据分析", tags:["R","MATLAB","Python","Numpy/Pandas","Matplotlib","SQL","SPSS"] },
-        { name:"语言能力", tags:["英语专业八级（优秀）","普通话二级甲等","以英语为工作语言"] },
-        { name:"专业证书", tags:["高中英语教师资格证","计算机二级（MS Office）"] },
-        { name:"AI工具", tags:["ChatGPT","Grok","Claude","Gemini","Deepseek"] },
-        { name:"学生工作", tags:["院学生会主席","团队管理","跨部门协作","活动策划"] }
+        { name:"研究方法", tags:["EEG/ERP","行为实验","PsychoPy","E-Prime","Praat","实验设计"] },
+        { name:"数据分析", tags:["R","MATLAB","Python","Numpy/Pandas","Matplotlib","PyTorch","SQL","SPSS"] },
+        { name:"语言能力", tags:["英语专业八级（优秀）","普通话二级甲等"] },
+        { name:"专业证书", tags:["高中英语教师资格证","计算机二级（MS Office）"] }
       ]
     },
     contact: { title:"联系方式", email:"18242971016@163.com", github:"GitHub" }
@@ -821,116 +814,86 @@ const I18N = {
       title:"Research",
       note:"* All three papers with supervisor as first author, currently under review.",
       items: [
-        {
-          authors:"Dong, Y., Han, F., Li, H., & Zeng, J. (under review)",
+        { authors:"Dong, Y., Han, F., Li, H., & Zeng, J. (under review)",
           title:"Prosody Perception in Mandarin as a Second Language: Emotion-Specific Effects of L1 Typology, L2 Proficiency, and L1 Subgroup Variation",
           meta:"Bilingualism: Language and Cognition · SCI Q1",
-          desc:"Responsible for data collection and cleaning; revealed interactive effects of L1 typology and L2 proficiency on emotional prosody recognition through statistical modeling; led manuscript drafting."
-        },
-        {
-          authors:"Dong, Y., Li, H., Han, F., Hong, W., Zhang, J., & Wu, J. (under review)",
+          desc:"Responsible for data collection and cleaning; revealed interactive effects of L1 typology and L2 proficiency on emotional prosody recognition through statistical modeling; led manuscript drafting." },
+        { authors:"Dong, Y., Li, H., Han, F., Hong, W., Zhang, J., & Wu, J. (under review)",
           title:"Learner Trajectory Profiles Predict Multidimensional Generalization in L2 Tone Learning: Accuracy, Response Latency, and Error Topology",
           meta:"Applied Psycholinguistics · SCI Q1",
-          desc:"Responsible for experimental design and data collection; applied GAMM to model learning trajectories and performed learner clustering; contributed to manuscript writing."
-        },
-        {
-          authors:"Dong, Y., Li, H., Han, F., Hong, W., Yu, F., & Zhang, J. (under review)",
+          desc:"Responsible for experimental design and data collection; applied GAMM to model learning trajectories and performed learner clustering; contributed to manuscript writing." },
+        { authors:"Dong, Y., Li, H., Han, F., Hong, W., Yu, F., & Zhang, J. (under review)",
           title:"Residual Confusion in Mandarin Learners of Cantonese Tones: Register-Specific Structure and Generalization",
           meta:"Second Language Research · SCI Q1",
-          desc:"Responsible for experimental design and data collection; analyzed directional biases in register-specific residual confusions during tone learning and tested generalization patterns; contributed to manuscript writing."
-        }
+          desc:"Responsible for experimental design and data collection; analyzed directional biases in register-specific residual confusions during tone learning and tested generalization patterns; contributed to manuscript writing." }
       ]
     },
     academicProjects: {
       title:"Research Projects",
       items: [
-        {
-          title:"Cognitive and Neural Mechanisms of L2 Tone Learning",
+        { title:"Cognitive and Neural Mechanisms of L2 Tone Learning",
           meta:"Master's Thesis · 2026.01 – Present",
           desc:"Independently leading the full experimental workflow using EEG paradigms to investigate the learning mechanisms, individual cognitive differences, and neural basis of Cantonese tone category formation.",
-          cls:"academic-card"
-        },
-        {
-          title:"Noise Effects on Mandarin Emotional Prosody Perception",
+          cls:"academic-card" },
+        { title:"Noise Effects on Mandarin Emotional Prosody Perception",
           meta:"Project Member · 2026.04 – Present",
           desc:"Investigating how different noise types (SSN/MTB) and signal-to-noise ratios modulate Mandarin emotional prosody perception under the influence of L1 background and proficiency; responsible for participant recruitment and data collection.",
-          cls:"academic-card"
-        },
-        {
-          title:"Subjective and Objective Assessment Framework for L2 Mandarin Oral Fluency",
+          cls:"academic-card" },
+        { title:"Subjective and Objective Assessment Framework for L2 Mandarin Oral Fluency",
           meta:"Project Member · 2025.09 – 2026.02",
           desc:"Constructed an oral fluency assessment system integrating subjective evaluation with objective quantitative metrics; responsible for material organization and data collection.",
-          cls:"academic-card"
-        },
-        {
-          title:"AI Large Model Literature & Patent Annotation Project",
+          cls:"academic-card" },
+        { title:"AI Large Model Literature & Patent Annotation Project",
           meta:"Remote · 2025.03 – 2025.05",
           desc:"Participated in literature and patent data annotation for large language model training, performing text classification, key information extraction, and quality verification according to annotation guidelines.",
-          cls:"academic-card"
-        }
+          cls:"academic-card" }
       ]
     },
     industryProjects: {
       title:"Projects",
       items: [
-        {
-          title:"AI Large Model Literature & Patent Annotation",
+        { title:"AI Large Model Literature & Patent Annotation",
           meta:"Remote · 2025.03 – 2025.05",
           desc:"Participated in data annotation for large language model training, performing text classification, key information extraction, and quality verification according to guidelines.",
-          cls:"industry-card"
-        },
-        {
-          title:"National Undergraduate Innovation & Entrepreneurship Program — Project Lead",
+          cls:"industry-card" },
+        { title:"National Undergraduate Innovation & Entrepreneurship Program — Project Lead",
           meta:"University-Level Award · 2022.04 – 2023.11",
           desc:"Led field shooting and material collection; coordinated resources to ensure on-time project completion; independently completed data analysis and paper writing, received university-level award.",
-          cls:"industry-card"
-        }
+          cls:"industry-card" }
       ]
     },
     internship: {
       title:"Internship & Volunteer Experience",
       items: [
-        {
-          title:"Beijing Aolilai Fitness Co., Ltd. — Product Assistant (English)",
+        { title:"Beijing Aolilai Fitness Co., Ltd. — Product Assistant (English)",
           meta:"2025.07 – 2025.08",
           desc:"Handled bilingual product documentation translation and organization; participated in product launch workflows to understand product logic and user scenarios; created product PPTs and Chinese-English marketing materials.",
-          cls:"industry-card"
-        },
-        {
-          title:"Belt & Road International Audiology Conference — Outstanding Volunteer",
+          cls:"industry-card" },
+        { title:"Belt & Road International Audiology Conference — Outstanding Volunteer",
           meta:"2024.10",
           desc:"Responsible for airport接送 and English communication for international guests; organized and directed volunteer teams to ensure smooth conference operations and enhance guest satisfaction.",
-          cls:"industry-card"
-        },
-        {
-          title:"China International Fair for Trade in Services — Outstanding Volunteer",
+          cls:"industry-card" },
+        { title:"China International Fair for Trade in Services — Outstanding Volunteer",
           meta:"2024.10",
           desc:"Responsible for reception and coordination of attending industry experts; demonstrated strong multitasking and cross-team collaboration abilities.",
-          cls:"industry-card"
-        },
-        {
-          title:"\"Chinese Bridge\" UK Summer Camp — Outstanding Volunteer",
+          cls:"industry-card" },
+        { title:"\"Chinese Bridge\" UK Summer Camp — Outstanding Volunteer",
           meta:"2021.07",
           desc:"Communicated and coordinated with participating British students; assisted in organizing and executing cultural activities.",
-          cls:"industry-card"
-        },
-        {
-          title:"Student Union President",
+          cls:"industry-card" },
+        { title:"Student Union President",
           meta:"Undergraduate",
           desc:"Oversaw overall Student Union operations, coordinated cross-departmental resources, planned and executed multiple academic events; demonstrated team management and cross-departmental collaboration experience.",
-          cls:"industry-card"
-        }
+          cls:"industry-card" }
       ]
     },
     skills: {
       title:"Skills",
       categories: [
-        { name:"Research Methods", tags:["EEG/ERP","Behavioral Experiments","Psychophysics","PsychoPy","E-Prime","Praat","Experimental Design"] },
-        { name:"Data Analysis", tags:["R","MATLAB","Python","Numpy/Pandas","Matplotlib","SQL","SPSS"] },
-        { name:"Languages", tags:["TEM-8 (Excellent)","Mandarin Level 2A","English as working language"] },
-        { name:"Certifications", tags:["Teacher Qualification (High School English)","Computer Level 2 (MS Office)"] },
-        { name:"AI Tools", tags:["ChatGPT","Grok","Claude","Gemini","Deepseek"] },
-        { name:"Leadership", tags:["Student Union President","Team Management","Cross-team Collaboration","Event Planning"] }
+        { name:"Research Methods", tags:["EEG/ERP","Behavioral Experiments","PsychoPy","E-Prime","Praat","Experimental Design"] },
+        { name:"Data Analysis", tags:["R","MATLAB","Python","Numpy/Pandas","Matplotlib","PyTorch","SQL","SPSS"] },
+        { name:"Languages", tags:["TEM-8 (Excellent)","Mandarin Level 2A"] },
+        { name:"Certifications", tags:["Teacher Qualification (High School English)","Computer Level 2 (MS Office)"] }
       ]
     },
     contact: { title:"Contact", email:"18242971016@163.com", github:"GitHub" }
@@ -940,6 +903,21 @@ const I18N = {
 /* ===== State ===== */
 let currentLang = localStorage.getItem('lang') || 'zh';
 let currentTrack = localStorage.getItem('track') || '';
+
+/* ===== I18N Text Populator ===== */
+function populateI18nText(lang) {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const path = el.getAttribute('data-i18n');
+    const val = path.split('.').reduce((o, k) => o?.[k], I18N[lang]);
+    if (val !== undefined && typeof val === 'string') {
+      if (path === 'about.hobbies' || path === 'research.note') {
+        el.innerHTML = val;
+      } else {
+        el.textContent = val;
+      }
+    }
+  });
+}
 
 /* ===== Render helpers ===== */
 function renderTimeline(lang) {
@@ -964,30 +942,21 @@ function renderResearch(lang) {
       <p class="desc">${item.desc}</p>
     </article>`
   ).join('');
-  const noteEl = document.querySelector('#research + p') || document.querySelector('#research ~ p');
-  const note = I18N[lang].research.note;
-  const el = document.querySelector('#research').querySelector('[data-i18n="research.note"]');
-  if (el) el.textContent = note;
 }
 
 function renderProjects(lang, track) {
-  const section = document.getElementById('projects');
   const grid = document.getElementById('projectsGrid');
   const titleEl = document.getElementById('projectsTitle');
   let data;
-
   if (track === 'academic') {
     data = I18N[lang].academicProjects;
   } else if (track === 'industry') {
     data = I18N[lang].industryProjects;
   } else {
-    // Default: show all academic projects
     data = I18N[lang].academicProjects;
   }
-
   titleEl.textContent = data.title;
   titleEl.className = 'zh-label';
-
   grid.innerHTML = data.items.map(item =>
     `<article class="card ${item.cls || ''}">
       <h3>${item.title}</h3>
@@ -1011,11 +980,7 @@ function renderInternship(lang) {
 
 function toggleInternship(visible) {
   const section = document.getElementById('internship');
-  if (visible) {
-    section.classList.remove('hidden');
-  } else {
-    section.classList.add('hidden');
-  }
+  section.classList.toggle('hidden', !visible);
 }
 
 function renderSkills(lang) {
@@ -1042,8 +1007,8 @@ function renderContact(lang) {
   `;
 }
 
-/* ===== Full re-render (language change) ===== */
 function rerenderAll() {
+  populateI18nText(currentLang);
   renderTimeline(currentLang);
   renderResearch(currentLang);
   renderSkills(currentLang);
@@ -1057,17 +1022,6 @@ function setLang(lang) {
   localStorage.setItem('lang', lang);
   document.body.classList.add('fade-out');
   setTimeout(() => {
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const path = el.getAttribute('data-i18n');
-      const val = path.split('.').reduce((o, k) => o?.[k], I18N[lang]);
-      if (val !== undefined && typeof val === 'string') {
-        if (path === 'about.hobbies' || path === 'research.note') {
-          el.innerHTML = val;
-        } else {
-          el.textContent = val;
-        }
-      }
-    });
     rerenderAll();
     document.getElementById('langToggle').textContent = lang === 'zh' ? 'EN' : '中文';
     document.getElementById('langToggle').setAttribute('aria-label', lang === 'zh' ? 'Switch to English' : '切换到中文');
@@ -1082,13 +1036,8 @@ document.getElementById('langToggle').addEventListener('click', () => {
 
 /* ===== Track Mode ===== */
 function setTrack(track) {
-  if (currentTrack === track) {
-    currentTrack = '';
-    localStorage.removeItem('track');
-  } else {
-    currentTrack = track;
-    localStorage.setItem('track', track);
-  }
+  if (currentTrack === track) { currentTrack = ''; localStorage.removeItem('track'); }
+  else { currentTrack = track; localStorage.setItem('track', track); }
   applyTrackMode();
 }
 
@@ -1101,16 +1050,9 @@ function applyTrackMode() {
     btn.classList.toggle('active', btn.getAttribute('data-track') === currentTrack);
   });
 
-  // Render projects based on track
   renderProjects(currentLang, currentTrack);
-
-  // Internship: visible in industry mode or default mode, hidden in academic mode
   toggleInternship(currentTrack !== 'academic');
-  if (currentTrack !== 'academic') {
-    renderInternship(currentLang);
-  }
-
-  // Re-observe reveal elements
+  if (currentTrack !== 'academic') renderInternship(currentLang);
   refreshRevealObservers();
 }
 
@@ -1120,7 +1062,6 @@ document.querySelectorAll('.track-btn[data-track]').forEach(btn => {
 
 /* ===== IntersectionObserver ===== */
 let revealObserver;
-
 function setupRevealObserver() {
   revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -1130,7 +1071,6 @@ function setupRevealObserver() {
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 }
-
 function refreshRevealObservers() {
   if (revealObserver) revealObserver.disconnect();
   setupRevealObserver();
@@ -1138,10 +1078,9 @@ function refreshRevealObservers() {
     if (!el.classList.contains('visible')) revealObserver.observe(el);
   });
 }
-
 setupRevealObserver();
 
-/* ===== Nav highlight observer ===== */
+// Nav highlight
 const navObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting && entry.target.tagName === 'SECTION') {
@@ -1152,26 +1091,17 @@ const navObserver = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.25, rootMargin: '-60px 0px -50% 0px' });
+document.querySelectorAll('section[id]').forEach(s => { if (s.id !== 'hero') navObserver.observe(s); });
 
-document.querySelectorAll('section[id]').forEach(s => {
-  if (s.id !== 'hero') navObserver.observe(s);
-});
-
-/* ===== Nav scroll blur ===== */
+/* ===== Nav scroll blur + wave parallax ===== */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
-  const scrolled = window.scrollY > 50;
-  navbar.classList.toggle('scrolled', scrolled);
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
   document.getElementById('backToTop').classList.toggle('visible', window.scrollY > window.innerHeight);
 
-  // Parallax effect on waves
-  const hero = document.querySelector('.hero');
-  if (hero) {
-    const scrollPos = window.scrollY;
-    const waves = document.querySelector('.hero-waves');
-    if (waves && scrollPos < window.innerHeight) {
-      waves.style.transform = `translateY(${scrollPos * 0.15}px)`;
-    }
+  const waves = document.querySelector('.hero-waves');
+  if (waves && window.scrollY < window.innerHeight) {
+    waves.style.transform = `translateY(${window.scrollY * 0.12}px)`;
   }
 });
 
@@ -1184,7 +1114,6 @@ document.getElementById('backToTop').addEventListener('click', () => {
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 const mobileOverlay = document.getElementById('mobileOverlay');
-
 function closeMenu() {
   hamburger.classList.remove('open');
   mobileMenu.classList.remove('open');
@@ -1199,13 +1128,9 @@ function openMenu() {
   hamburger.setAttribute('aria-expanded', 'true');
   document.body.style.overflow = 'hidden';
 }
-hamburger.addEventListener('click', () => {
-  hamburger.classList.contains('open') ? closeMenu() : openMenu();
-});
+hamburger.addEventListener('click', () => hamburger.classList.contains('open') ? closeMenu() : openMenu());
 mobileOverlay.addEventListener('click', closeMenu);
-mobileMenu.querySelectorAll('a:not([data-track])').forEach(link => {
-  link.addEventListener('click', closeMenu);
-});
+mobileMenu.querySelectorAll('a:not([data-track])').forEach(link => link.addEventListener('click', closeMenu));
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
 });
@@ -1214,9 +1139,7 @@ document.addEventListener('keydown', (e) => {
 function init() {
   document.getElementById('langToggle').textContent = currentLang === 'zh' ? 'EN' : '中文';
   rerenderAll();
-  if (currentTrack) applyTrackMode();
   document.getElementById('footerYear').textContent = new Date().getFullYear();
-  // Initial reveal observation
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 }
 init();
@@ -1226,17 +1149,14 @@ init();
 ========================================
   MODIFICATION GUIDE
 ========================================
-  CONTENT: Edit the I18N object in <script>.
-    zh = Chinese, en = English.
-    Add a paper: push to I18N.zh.research.items (and en).
+  CONTENT: Edit the I18N object in <script>. zh = Chinese, en = English.
 
   COLORS: Edit :root{} in <style>.
-    Key: --accent, --bg, --ocean-*, --sand, --warm-gold.
+    Key: --bg, --bg-deep, --bg-card, --accent-ice, --accent-warm, --border.
 
   TRACKS:
-    Academic projects → I18N.*.academicProjects
-    Industry projects → I18N.*.industryProjects
-    Internship → I18N.*.internship
+    Academic → I18N.*.academicProjects
+    Industry → I18N.*.industryProjects + internship
 
   FONTS: Google Fonts <link> + --font-* variables.
 -->
