@@ -134,13 +134,6 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: var(--font-zh); font-size: 1.5rem; font-weight: 400;
   position: relative; z-index: 1;
 }
-.section-label-bg {
-  position: absolute; left: -4px; top: -1.6rem;
-  font-family: var(--font-en-heading); font-size: 4.5rem; font-weight: 600;
-  color: rgba(255,255,255,0.025); letter-spacing: -0.01em;
-  line-height: 1; pointer-events: none; white-space: nowrap; user-select: none;
-}
-
 @keyframes dot-pulse {
   0%, 100% { box-shadow: 0 0 8px var(--accent-ice-glow); }
   50% { box-shadow: 0 0 18px rgba(136,204,214,0.25); }
@@ -588,7 +581,6 @@ footer a:hover { color: var(--accent-ice); }
   .research-timeline { padding-left: 24px; }
   .research-entry { gap: 16px; }
   .research-body { padding: 18px 16px; }
-  .section-label-bg { font-size: 3.2rem; top: -1.2rem; }
 }
 
 /* ===== Responsive: 480px ===== */
@@ -604,7 +596,6 @@ footer a:hover { color: var(--accent-ice); }
   .cards-grid { gap: 14px; }
   .section-label span { font-size: 1.4rem; }
   .section-label span.zh-label { font-size: 1.15rem; }
-  .section-label-bg { font-size: 2.4rem; top: -0.9rem; }
   .contact-links { flex-direction: column; align-items: center; }
   .hobbies-line { font-size: 0.85rem; }
   .research-timeline { padding-left: 22px; }
@@ -617,7 +608,7 @@ footer a:hover { color: var(--accent-ice); }
   .nav, .hero-beach, .hero-scroll-hint, .hero-track-toggles,
   .hamburger, .mobile-menu, .mobile-overlay, .back-to-top,
   .contact-link, footer, body::after, body::before,
-  .hero-particles, .hero-eeg, .waveform-divider, .section-label-bg,
+  .hero-particles, .hero-eeg, .waveform-divider,
   canvas { display: none !important; }
   body { background: #fff; color: #000; font-size: 11pt; }
   .hero { min-height: auto; padding: 20px 0; background: none; }
@@ -1000,7 +991,7 @@ footer a:hover { color: var(--accent-ice); }
 <!-- ===== About ===== -->
 <section id="about">
   <div class="container">
-    <div class="section-label"><span class="section-label-bg" aria-hidden="true">About Me</span><span class="zh-label" data-i18n="about.title">关于我</span></div>
+    <div class="section-label"><span class="zh-label" data-i18n="about.title">关于我</span></div>
     <div class="about-body reveal">
       <p data-i18n="about.p1"></p>
       <p data-i18n="about.p2"></p>
@@ -1013,7 +1004,7 @@ footer a:hover { color: var(--accent-ice); }
 <!-- ===== Education ===== -->
 <section id="education">
   <div class="container">
-    <div class="section-label"><span class="section-label-bg" aria-hidden="true">Education</span><span class="zh-label" data-i18n="education.title">教育经历</span></div>
+    <div class="section-label"><span class="zh-label" data-i18n="education.title">教育经历</span></div>
     <div class="timeline reveal" id="eduTimeline"></div>
   </div>
 </section>
@@ -1023,7 +1014,7 @@ footer a:hover { color: var(--accent-ice); }
 <!-- ===== Research ===== -->
 <section id="research">
   <div class="container">
-    <div class="section-label"><span class="section-label-bg" aria-hidden="true">Research</span><span class="zh-label" data-i18n="research.title">科研成果</span></div>
+    <div class="section-label"><span class="zh-label" data-i18n="research.title">科研成果</span></div>
     <div class="research-timeline reveal" id="researchGrid"></div>
     <p style="text-align:right;margin-top:16px;font-size:0.76rem;color:var(--text-muted);font-style:italic;" data-i18n="research.note"></p>
   </div>
@@ -1034,7 +1025,7 @@ footer a:hover { color: var(--accent-ice); }
 <!-- ===== Projects (dynamic) ===== -->
 <section id="projects">
   <div class="container">
-    <div class="section-label"><span class="section-label-bg" aria-hidden="true">Projects</span><span class="zh-label" id="projectsTitle"></span></div>
+    <div class="section-label"><span class="zh-label" id="projectsTitle"></span></div>
     <div class="cards-grid reveal" id="projectsGrid"></div>
   </div>
 </section>
@@ -1042,7 +1033,7 @@ footer a:hover { color: var(--accent-ice); }
 <!-- ===== Internship (dynamic) ===== -->
 <section id="internship" class="dynamic-section">
   <div class="container">
-    <div class="section-label"><span class="section-label-bg" aria-hidden="true">Experience</span><span class="zh-label" id="internshipTitle" data-i18n="internship.title">实习实践</span></div>
+    <div class="section-label"><span class="zh-label" id="internshipTitle" data-i18n="internship.title">实习实践</span></div>
     <div class="cards-grid reveal" id="internshipGrid"></div>
   </div>
 </section>
@@ -1050,7 +1041,7 @@ footer a:hover { color: var(--accent-ice); }
 <!-- ===== Skills ===== -->
 <section id="skills">
   <div class="container">
-    <div class="section-label"><span class="section-label-bg" aria-hidden="true">Skills</span><span class="zh-label" data-i18n="skills.title">技能</span></div>
+    <div class="section-label"><span class="zh-label" data-i18n="skills.title">技能</span></div>
     <div class="skills-grid reveal" id="skillsGrid"></div>
   </div>
 </section>
@@ -1058,7 +1049,7 @@ footer a:hover { color: var(--accent-ice); }
 <!-- ===== Contact ===== -->
 <section id="contact">
   <div class="container" style="text-align:center;">
-    <div class="section-label"><span class="section-label-bg" aria-hidden="true">Contact</span><span class="zh-label" data-i18n="contact.title">联系方式</span></div>
+    <div class="section-label"><span class="zh-label" data-i18n="contact.title">联系方式</span></div>
     <div class="contact-links reveal" id="contactLinks"></div>
   </div>
 </section>
