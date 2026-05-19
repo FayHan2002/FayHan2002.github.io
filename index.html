@@ -19,33 +19,33 @@
 <style>
 /* ===== CSS Variables ===== */
 :root {
-  --bg-deep: #0A0F14;
-  --bg: #0D1117;
-  --bg-surface: #131A24;
-  --bg-card: #18212D;
-  --bg-card-hover: #1C2735;
-  --border: #1E2A38;
-  --border-light: #263240;
-  --text: #E0DCD5;
-  --text-light: #B0ACA5;
-  --text-muted: #706C66;
-  --text-dim: #4A4642;
-  --accent-ice: #7EC8D0;
-  --accent-ice-glow: rgba(126,200,208,0.15);
+  --beach: #0C0F13;
+  --beach-deep: #090C10;
+  --bg: #0E1117;
+  --bg-deep: #0A0D12;
+  --bg-surface: #11151D;
+  --bg-card: #151A24;
+  --bg-card-hover: #1A202C;
+  --border: #1C2330;
+  --border-light: #232B3A;
+  --text: #DCD8D2;
+  --text-light: #A8A49E;
+  --text-muted: #6E6A64;
+  --text-dim: #484540;
+  --accent-ice: #88CCD6;
+  --accent-ice-glow: rgba(136,204,214,0.12);
   --accent-warm: #D4A574;
-  --accent-warm-glow: rgba(212,165,116,0.12);
-  --white-foam: #D8DEE9;
-  --ocean-abyss: #060C12;
-  --ocean-deep: #0B1620;
-  --ocean-mid: #0F1D2B;
-  --ocean-surface: #142636;
-  --shadow: 0 2px 16px rgba(0,0,0,0.3);
-  --shadow-hover: 0 8px 32px rgba(0,0,0,0.45);
+  --accent-warm-glow: rgba(212,165,116,0.10);
+  --foam-white: #E4E8ED;
+  --water-clear: #8EC4CE;
+  --water-deep: #163038;
+  --shadow: 0 2px 16px rgba(0,0,0,0.35);
+  --shadow-hover: 0 8px 36px rgba(0,0,0,0.5);
   --font-zh: 'Noto Serif SC', serif;
   --font-en-heading: 'Playfair Display', serif;
   --font-en-body: 'Source Sans Pro', sans-serif;
   --font-decorative: 'Cormorant Garamond', serif;
-  --max-width: 920px;
+  --max-width: 900px;
   --section-gap: 100px;
   --line-height: 1.9;
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -63,11 +63,11 @@ body {
 }
 body.fade-out { opacity: 0; }
 
-/* Film grain overlay */
+/* Film grain overlay - stronger, more visible */
 body::after {
   content: ''; position: fixed; inset: 0; z-index: 10000; pointer-events: none;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
   background-size: 256px 256px;
 }
 
@@ -78,7 +78,7 @@ a { color: var(--accent-ice); text-decoration: none; transition: color var(--tra
 a:hover { color: var(--accent-warm); }
 a:focus-visible { outline: 2px solid var(--accent-ice); outline-offset: 3px; border-radius: 2px; }
 img { max-width: 100%; height: auto; display: block; }
-::selection { background: rgba(126,200,208,0.25); color: var(--white-foam); }
+::selection { background: rgba(136,204,214,0.22); color: var(--foam-white); }
 
 /* ===== Utility ===== */
 .container { max-width: var(--max-width); margin: 0 auto; padding: 0 30px; }
@@ -150,63 +150,68 @@ img { max-width: 100%; height: auto; display: block; }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
 
-/* ===== Hero ===== */
+/* ===== Hero: Black Sand Beach ===== */
 .hero {
   position: relative; min-height: 110vh;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; overflow: hidden; padding: 120px 30px 0;
+  text-align: center; overflow: hidden; padding: 100px 30px 60px;
+  /* The beach: dark matte charcoal, the dominant 2/3 negative space */
   background: linear-gradient(180deg,
-    var(--bg-deep) 0%,
-    #0C131A 20%,
-    var(--ocean-deep) 42%,
-    var(--ocean-mid) 58%,
-    var(--ocean-abyss) 75%,
-    #050A0E 100%);
+    var(--beach) 0%,
+    #0B0E13 55%,
+    #0A0E13 65%,
+    #0E161D 72%,
+    #132128 78%,
+    #0E1A20 84%,
+    #0A141A 92%,
+    #091117 100%);
 }
-.hero-waves {
-  position: absolute; bottom: 0; left: 0; width: 100%; height: 65%;
+
+/* Ocean strip: thin band at the very bottom */
+.hero-ocean {
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 22%;
   pointer-events: none; z-index: 0;
 }
-.hero-waves svg { width: 100%; height: 100%; display: block; }
+.hero-ocean svg { width: 100%; height: 100%; display: block; }
 
-.wave-body-1 { animation: drift-1 80s ease-in-out alternate infinite; }
-.wave-body-2 { animation: drift-2 60s ease-in-out alternate infinite; }
-.wave-body-3 { animation: drift-3 50s ease-in-out alternate infinite; }
-.wave-body-4 { animation: drift-4 40s ease-in-out alternate infinite; }
-.wave-body-5 { animation: drift-5 34s ease-in-out alternate infinite; }
-.wave-foam-1 { animation: drift-f1 45s ease-in-out alternate infinite; }
-.wave-foam-2 { animation: drift-f2 36s ease-in-out alternate infinite; }
-.wave-foam-3 { animation: drift-f3 30s ease-in-out alternate infinite; }
+.ocean-layer { transform-origin: center; }
+.ocean-1 { animation: ocean-swell-1 70s ease-in-out alternate infinite; }
+.ocean-2 { animation: ocean-swell-2 52s ease-in-out alternate infinite; }
+.ocean-3 { animation: ocean-swell-3 38s ease-in-out alternate infinite; }
 
-.hero-content { position: relative; z-index: 2; padding-bottom: 100px; }
+.foam-line { transform-origin: center; }
+.foam-1 { animation: foam-sketch-1 42s ease-in-out alternate infinite; }
+.foam-2 { animation: foam-sketch-2 34s ease-in-out alternate infinite; }
+
+.hero-content { position: relative; z-index: 2; padding-bottom: 80px; }
 
 .hero-photo {
   width: 136px; height: 136px; border-radius: 50%; object-fit: cover;
-  border: 2px solid rgba(126,200,208,0.3);
-  box-shadow: 0 0 40px rgba(126,200,208,0.08), 0 8px 32px rgba(0,0,0,0.4);
-  margin: 0 auto 32px; background: var(--bg-surface);
+  border: 1.5px solid rgba(136,204,214,0.25);
+  box-shadow: 0 0 48px rgba(136,204,214,0.06), 0 10px 36px rgba(0,0,0,0.5);
+  margin: 0 auto 36px; background: var(--bg-surface);
 }
 
 .hero h1 {
   font-family: var(--font-zh); font-size: 3rem; font-weight: 300;
-  color: var(--white-foam); letter-spacing: 0.08em; margin-bottom: 4px;
+  color: var(--foam-white); letter-spacing: 0.08em; margin-bottom: 2px;
 }
 .hero .en-name {
   font-family: var(--font-decorative); font-size: 1.4rem; font-weight: 300;
-  font-style: italic; color: var(--text-light); letter-spacing: 0.14em; margin-bottom: 20px;
+  font-style: italic; color: var(--text-light); letter-spacing: 0.16em; margin-bottom: 22px;
 }
 .hero .motto {
   font-family: var(--font-zh); font-weight: 200; font-size: 1rem;
-  color: var(--text-dim); letter-spacing: 0.4em; margin-bottom: 38px;
+  color: var(--text-dim); letter-spacing: 0.45em; margin-bottom: 40px;
 }
 .hero-track-toggles { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .hero-track-toggles .track-btn { padding: 9px 26px; font-size: 0.84rem; }
 
 .hero-scroll-hint {
-  position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+  position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
   z-index: 2; animation: float 3s ease-in-out infinite;
 }
-.hero-scroll-hint svg { width: 22px; height: 22px; stroke: rgba(255,255,255,0.25); }
+.hero-scroll-hint svg { width: 20px; height: 20px; stroke: rgba(255,255,255,0.2); }
 
 /* ===== Sections ===== */
 section { padding: var(--section-gap) 0; position: relative; }
@@ -370,45 +375,30 @@ footer a:hover { color: var(--accent-ice); }
 .mobile-overlay.open { opacity: 1; pointer-events: auto; }
 
 /* ===== Animations ===== */
-@keyframes drift-1 {
+@keyframes ocean-swell-1 {
   0% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(-2.5%) translateY(5px); }
-  100% { transform: translateX(-5%) translateY(0); }
+  50% { transform: translateX(-2%) translateY(6px); }
+  100% { transform: translateX(-4%) translateY(0); }
 }
-@keyframes drift-2 {
+@keyframes ocean-swell-2 {
   0% { transform: translateX(-1%) translateY(0); }
-  50% { transform: translateX(2%) translateY(-4px); }
-  100% { transform: translateX(-3.5%) translateY(0); }
-}
-@keyframes drift-3 {
-  0% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(3.5%) translateY(6px); }
-  100% { transform: translateX(-2%) translateY(0); }
-}
-@keyframes drift-4 {
-  0% { transform: translateX(-0.5%) translateY(0); }
-  50% { transform: translateX(-4%) translateY(-5px); }
-  100% { transform: translateX(2.5%) translateY(0); }
-}
-@keyframes drift-5 {
-  0% { transform: translateX(1.5%) translateY(0); }
-  50% { transform: translateX(-2.5%) translateY(4px); }
-  100% { transform: translateX(4%) translateY(0); }
-}
-@keyframes drift-f1 {
-  0% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(-3%) translateY(-3px); }
-  100% { transform: translateX(2%) translateY(0); }
-}
-@keyframes drift-f2 {
-  0% { transform: translateX(-1.5%) translateY(0); }
-  50% { transform: translateX(3%) translateY(3px); }
+  50% { transform: translateX(2.5%) translateY(-5px); }
   100% { transform: translateX(-3%) translateY(0); }
 }
-@keyframes drift-f3 {
-  0% { transform: translateX(1%) translateY(0); }
-  50% { transform: translateX(-3.5%) translateY(-2px); }
-  100% { transform: translateX(2.5%) translateY(0); }
+@keyframes ocean-swell-3 {
+  0% { transform: translateX(0.5%) translateY(0); }
+  50% { transform: translateX(-3%) translateY(4px); }
+  100% { transform: translateX(3%) translateY(0); }
+}
+@keyframes foam-sketch-1 {
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-2.5%) translateY(-2px); }
+  100% { transform: translateX(1.5%) translateY(0); }
+}
+@keyframes foam-sketch-2 {
+  0% { transform: translateX(-1%) translateY(0); }
+  50% { transform: translateX(2%) translateY(3px); }
+  100% { transform: translateX(-2%) translateY(0); }
 }
 @keyframes float {
   0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -425,7 +415,7 @@ footer a:hover { color: var(--accent-ice); }
   .hero h1 { font-size: 2.4rem; }
   .hero .en-name { font-size: 1.15rem; }
   .hero-photo { width: 116px; height: 116px; }
-  .hero-waves { height: 55%; }
+  .hero-ocean { height: 28%; }
   .container { padding: 0 22px; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .card { padding: 22px 20px; }
@@ -452,7 +442,7 @@ footer a:hover { color: var(--accent-ice); }
 
 /* ===== Print ===== */
 @media print {
-  .nav, .hero-waves, .hero-scroll-hint, .hero-track-toggles,
+  .nav, .hero-ocean, .hero-scroll-hint, .hero-track-toggles,
   .hamburger, .mobile-menu, .mobile-overlay, .back-to-top,
   .contact-link, footer, body::after { display: none !important; }
   body { background: #fff; color: #000; font-size: 11pt; }
@@ -524,73 +514,63 @@ footer a:hover { color: var(--accent-ice); }
 
 <!-- ===== Hero ===== -->
 <section id="hero" class="hero">
-  <div class="hero-waves" aria-hidden="true">
-    <svg viewBox="0 0 1440 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ocean: thin strip at bottom edge only -->
+  <div class="hero-ocean" aria-hidden="true">
+    <svg viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <!-- Dark wave bodies -->
-        <linearGradient id="wb5" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#142636" stop-opacity="0.15"/>
-          <stop offset="100%" stop-color="#0F1D2B" stop-opacity="0.8"/>
+        <!-- Dark water layers — thin, receding into depth -->
+        <linearGradient id="water-3" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#132128" stop-opacity="0.1"/>
+          <stop offset="100%" stop-color="#0E1A20" stop-opacity="0.7"/>
         </linearGradient>
-        <linearGradient id="wb4" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#0F1D2B" stop-opacity="0.2"/>
-          <stop offset="100%" stop-color="#0B1620" stop-opacity="0.85"/>
+        <linearGradient id="water-2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0E1A20" stop-opacity="0.2"/>
+          <stop offset="100%" stop-color="#0A141A" stop-opacity="0.85"/>
         </linearGradient>
-        <linearGradient id="wb3" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#0B1620" stop-opacity="0.3"/>
-          <stop offset="100%" stop-color="#081018" stop-opacity="0.9"/>
+        <linearGradient id="water-1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0A141A" stop-opacity="0.4"/>
+          <stop offset="100%" stop-color="#060E14" stop-opacity="1"/>
         </linearGradient>
-        <linearGradient id="wb2" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#081018" stop-opacity="0.4"/>
-          <stop offset="100%" stop-color="#060C12" stop-opacity="0.95"/>
+        <!-- Foam: cold white with ice-blue undertone, like a thin ray of light -->
+        <linearGradient id="foam-a" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#88CCD6" stop-opacity="0"/>
+          <stop offset="25%" stop-color="#E4E8ED" stop-opacity="0.35"/>
+          <stop offset="45%" stop-color="#E4E8ED" stop-opacity="0.65"/>
+          <stop offset="55%" stop-color="#D8DEE9" stop-opacity="0.55"/>
+          <stop offset="75%" stop-color="#88CCD6" stop-opacity="0.25"/>
+          <stop offset="100%" stop-color="#88CCD6" stop-opacity="0"/>
         </linearGradient>
-        <linearGradient id="wb1" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#060C12" stop-opacity="0.6"/>
-          <stop offset="100%" stop-color="#04080C" stop-opacity="1"/>
-        </linearGradient>
-        <!-- Foam: thin white/ice-blue lines -->
-        <linearGradient id="foam-grad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#7EC8D0" stop-opacity="0"/>
-          <stop offset="30%" stop-color="#D8DEE9" stop-opacity="0.5"/>
-          <stop offset="50%" stop-color="#D8DEE9" stop-opacity="0.75"/>
-          <stop offset="70%" stop-color="#7EC8D0" stop-opacity="0.4"/>
-          <stop offset="100%" stop-color="#7EC8D0" stop-opacity="0"/>
+        <linearGradient id="foam-b" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#88CCD6" stop-opacity="0"/>
+          <stop offset="35%" stop-color="#C8DDE6" stop-opacity="0.3"/>
+          <stop offset="50%" stop-color="#E4E8ED" stop-opacity="0.5"/>
+          <stop offset="65%" stop-color="#C8DDE6" stop-opacity="0.2"/>
+          <stop offset="100%" stop-color="#88CCD6" stop-opacity="0"/>
         </linearGradient>
       </defs>
 
-      <!-- Wave body 5 (topmost, lightest) -->
-      <g class="wave-body-5">
-        <path d="M0,480 C280,450 520,510 820,480 C1100,450 1300,510 1440,485 L1440,800 L0,800 Z" fill="url(#wb5)"/>
+      <!-- Layer 3: lightest water, closest to shore -->
+      <g class="ocean-layer ocean-3">
+        <path d="M0,120 C360,90 600,150 900,115 C1140,85 1320,140 1440,110 L1440,400 L0,400 Z" fill="url(#water-3)"/>
       </g>
-      <!-- Wave body 4 -->
-      <g class="wave-body-4">
-        <path d="M0,520 C340,485 540,550 860,515 C1140,480 1300,545 1440,525 L1440,800 L0,800 Z" fill="url(#wb4)"/>
+      <!-- Layer 2: mid water -->
+      <g class="ocean-layer ocean-2">
+        <path d="M0,200 C280,165 540,230 840,195 C1100,165 1280,225 1440,190 L1440,400 L0,400 Z" fill="url(#water-2)"/>
       </g>
-      <!-- Wave body 3 -->
-      <g class="wave-body-3">
-        <path d="M0,565 C300,525 480,600 800,555 C1100,515 1280,590 1440,560 L1440,800 L0,800 Z" fill="url(#wb3)"/>
-      </g>
-      <!-- Wave body 2 -->
-      <g class="wave-body-2">
-        <path d="M0,615 C350,565 520,650 840,600 C1140,550 1300,640 1440,610 L1440,800 L0,800 Z" fill="url(#wb2)"/>
-      </g>
-      <!-- Wave body 1 (deepest) -->
-      <g class="wave-body-1">
-        <path d="M0,670 C260,620 600,710 920,660 C1220,610 1360,700 1440,660 L1440,800 L0,800 Z" fill="url(#wb1)"/>
+      <!-- Layer 1: deepest water -->
+      <g class="ocean-layer ocean-1">
+        <path d="M0,280 C340,240 520,320 880,270 C1160,230 1340,310 1440,275 L1440,400 L0,400 Z" fill="url(#water-1)"/>
       </g>
 
-      <!-- Foam lines (thin paths riding atop wave crests) -->
-      <g class="wave-foam-1">
-        <path d="M0,478 C280,448 520,508 820,478 M820,478 C1100,448 1300,508 1440,483"
-              fill="none" stroke="url(#foam-grad)" stroke-width="2.5" opacity="0.7"/>
+      <!-- Foam line A: sharp, bright, like a thin ray of light on dark sand -->
+      <g class="foam-line foam-1">
+        <path d="M0,118 C360,88 600,148 900,113 M900,113 C1140,83 1320,138 1440,108"
+              fill="none" stroke="url(#foam-a)" stroke-width="1.8" opacity="0.7"/>
       </g>
-      <g class="wave-foam-2">
-        <path d="M0,563 C300,523 480,598 800,553 M800,553 C1100,513 1280,588 1440,558"
-              fill="none" stroke="url(#foam-grad)" stroke-width="2" opacity="0.6"/>
-      </g>
-      <g class="wave-foam-3">
-        <path d="M0,665 C260,615 600,705 920,655 M920,655 C1220,605 1360,695 1440,655"
-              fill="none" stroke="url(#foam-grad)" stroke-width="1.5" opacity="0.45"/>
+      <!-- Foam line B: softer, secondary accent -->
+      <g class="foam-line foam-2">
+        <path d="M0,278 C340,238 520,318 880,268 M880,268 C1160,228 1340,308 1440,273"
+              fill="none" stroke="url(#foam-b)" stroke-width="1.2" opacity="0.45"/>
       </g>
     </svg>
   </div>
@@ -1099,9 +1079,9 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 50);
   document.getElementById('backToTop').classList.toggle('visible', window.scrollY > window.innerHeight);
 
-  const waves = document.querySelector('.hero-waves');
+  const waves = document.querySelector('.hero-ocean');
   if (waves && window.scrollY < window.innerHeight) {
-    waves.style.transform = `translateY(${window.scrollY * 0.12}px)`;
+    waves.style.transform = `translateY(${window.scrollY * 0.08}px)`;
   }
 });
 
