@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "platform": "zhihu",
+    "title": "2型糖尿病患者如何科学减肥？",
+    "url": "https://www.zhihu.com/question/topic/2型糖尿病",
+    "category": "exercise",
+    "tags": ["减肥", "体重管理"],
+    "note": "内分泌科医生的专业回答，推荐阅读"
+  },
+  {
+    "id": 2,
+    "platform": "xiaohongshu",
+    "title": "糖友一周不重样食谱分享",
+    "url": "https://www.xiaohongshu.com/search_result/糖尿病食谱",
+    "category": "diet",
+    "tags": ["食谱", "家常菜"],
+    "note": "素人分享，实用接地气的日常菜谱"
+  },
+  {
+    "id": 3,
+    "platform": "wechat",
+    "title": "糖尿病之友：春季饮食五大要点",
+    "url": "https://mp.weixin.qq.com/糖尿病之友",
+    "category": "diet",
+    "tags": ["季节饮食", "春季"],
+    "note": "知名糖尿病科普公众号，每期都有实用内容"
+  },
+  {
+    "id": 4,
+    "platform": "bilibili",
+    "title": "协和医生教你10分钟饭后降糖操",
+    "url": "https://www.bilibili.com/search?keyword=降糖操",
+    "category": "exercise",
+    "tags": ["降糖操", "居家运动"],
+    "note": "简单易学，跟着视频做，适合中老年人"
+  },
+  {
+    "id": 5,
+    "platform": "douyin",
+    "title": "内分泌科陈医生：降糖药正确服用时间",
+    "url": "https://www.douyin.com/search/降糖药服用时间",
+    "category": "medication",
+    "tags": ["用药时间", "医生科普"],
+    "note": "三甲医院医生的短视频科普，讲得很清楚"
+  }
+]
