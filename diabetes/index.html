@@ -583,6 +583,74 @@ function openArticle(category, id) {
     }
   }, 100);
 }
+/* ===== Category Pages ===== */
+let currentTab = { medication: 'book', diet: 'book', exercise: 'book' };
+
+function renderCategoryPage(category, tab) {
+  currentTab[category] = tab || currentTab[category];
+  const tabBtns = document.querySelectorAll(`#page-${category} .tab`);
+  tabBtns.forEach(b => b.classList.toggle('active', b.dataset.tab === currentTab[category]));
+
+  const listEl = document.getElementById(category + 'List');
+  const filtered = articles.filter(a => {
+    if (a.category !== category) return false;
+    if (currentTab[category] === 'book') return a.sourceType === 'book';
+    return a.sourceType === 'platform' || links.some(l => l.category === category);
+  });
+
+  if (currentTab[category] === 'book') {
+    listEl.innerHTML = filtered.length === 0
+      ? '<div class="empty"><div class="empty-icon">📭</div>暂无基础知识文章</div>'
+      : filtered.map(a => renderArticleCard(a)).join('');
+  } else {
+    const catLinks = links.filter(l => l.category === category);
+    const platformArticles = articles.filter(a => a.category === category && a.sourceType === 'platform');
+    const linkItems = catLinks.map(renderLinkCard).join('');
+    const artItems = platformArticles.map(a => renderArticleCard(a)).join('');
+    listEl.innerHTML = (artItems + linkItems) || '<div class="empty"><div class="empty-icon">📭</div>暂无平台帖子链接</div>';
+  }
+}
+
+function renderArticleCard(a) {
+  return `
+    <div class="article-card" id="article-${a.id}">
+      <div class="article-title">${a.title}</div>
+      <div class="article-source">${a.sourceType === 'book' ? '📚' : '🔗'} 来源：${a.source}</div>
+      <div class="article-summary">${a.summary}</div>
+      <div class="article-tags">${(a.tags || []).map(t => `<span class="tag">${t}</span>`).join('')}</div>
+      ${a.content ? `<div class="article-full">${a.content}</div>` : ''}
+      ${a.url ? `<a href="${a.url}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:8px;display:inline-block;width:auto;padding:8px 20px;">查看原文 →</a>` : ''}
+    </div>`;
+}
+
+document.addEventListener('click', function(e) {
+  const card = e.target.closest('.article-card');
+  if (card) {
+    const full = card.querySelector('.article-full');
+    const btn = card.querySelector('.btn-outline');
+    if (full && !e.target.closest('.btn-outline')) {
+      full.classList.toggle('open');
+    }
+  }
+});
+
+/* ===== Tab Switching ===== */
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    const category = this.dataset.category;
+    const tabType = this.dataset.tab;
+    renderCategoryPage(category, tabType);
+  });
+});
+
+function renderLinkCard(l) {
+  return `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="article-card" style="display:block;text-decoration:none;color:var(--text);">
+    <div class="article-title">${l.title}</div>
+    <div class="article-source">🔗 ${l.platform} · ${(l.tags || []).join(' · ')}</div>
+    <div class="article-summary">${l.note || ''}</div>
+  </a>`;
+}
+
 </script>
 
 </body>
