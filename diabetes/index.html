@@ -839,6 +839,106 @@ function renderPlatformLinks() {
   }).join('');
 }
 
+/* ===== Search ===== */
+function search(query) {
+  if (!query || query.trim().length < 1) return [];
+  const q = query.trim().toLowerCase();
+  const results = [];
+
+  // Search articles
+  articles.forEach(a => {
+    if (a.title.toLowerCase().includes(q) ||
+        (a.summary && a.summary.toLowerCase().includes(q)) ||
+        (a.tags || []).some(t => t.toLowerCase().includes(q))) {
+      results.push({ type: 'article', title: a.title, category: a.category, id: a.id, tags: a.tags });
+    }
+  });
+
+  // Search FAQ
+  faqs.forEach((f, i) => {
+    if (f.q.toLowerCase().includes(q) || f.a.toLowerCase().includes(q)) {
+      results.push({ type: 'faq', title: f.q, category: f.category, id: i });
+    }
+  });
+
+  return results;
+}
+
+function showSearchResults(inputEl, resultsEl, isHome) {
+  const query = inputEl.value.trim();
+  if (!query) { resultsEl.classList.remove('open'); return; }
+  const results = search(query);
+  if (results.length === 0) {
+    resultsEl.innerHTML = '<div class="search-result-item" style="color:var(--text-muted)">未找到相关内容</div>';
+  } else {
+    const catNames = { medication: '💊 药物', diet: '🥗 饮食', exercise: '🏃 运动' };
+    resultsEl.innerHTML = results.slice(0, 10).map(r => {
+      if (r.type === 'faq') {
+        return `<div class="search-result-item" onclick="navigateToFaq('${r.category}', ${r.id})">
+          <div class="sr-title">${r.title}</div>
+          <div class="sr-cat">📌 常见问题 · ${catNames[r.category] || r.category}</div>
+        </div>`;
+      }
+      return `<div class="search-result-item" onclick="navigateToArticle('${r.category}', ${r.id})">
+        <div class="sr-title">${r.title}</div>
+        <div class="sr-cat">${catNames[r.category] || r.category}</div>
+      </div>`;
+    }).join('');
+  }
+  resultsEl.classList.add('open');
+}
+
+function navigateToFaq(category, faqIndex) {
+  navigateTo('home');
+  setTimeout(() => {
+    document.getElementById('searchHome').value = faqs[faqIndex] ? faqs[faqIndex].q : '';
+    const faqEl = document.getElementById('faq-' + faqIndex);
+    if (faqEl) {
+      faqEl.scrollIntoView({ behavior: 'smooth' });
+      faqEl.classList.add('open');
+    }
+  }, 100);
+  document.querySelectorAll('.search-results').forEach(el => el.classList.remove('open'));
+}
+
+function navigateToArticle(category, id) {
+  navigateTo(category);
+  setTimeout(() => {
+    const card = document.getElementById('article-' + id);
+    if (card) {
+      card.scrollIntoView({ behavior: 'smooth' });
+      const full = card.querySelector('.article-full');
+      if (full) full.classList.add('open');
+    }
+  }, 100);
+  document.querySelectorAll('.search-results').forEach(el => el.classList.remove('open'));
+}
+
+// Wire up search inputs
+function setupSearch(inputId, resultsId, isHome) {
+  const input = document.getElementById(inputId);
+  const results = document.getElementById(resultsId);
+  let debounceTimer;
+  input.addEventListener('input', function() {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => showSearchResults(input, results, isHome), 200);
+  });
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) showSearchResults(input, results, isHome);
+  });
+  // Close search on outside click
+  document.addEventListener('click', function(e) {
+    if (!input.contains(e.target) && !results.contains(e.target)) {
+      results.classList.remove('open');
+    }
+  });
+}
+
+setupSearch('searchHome', 'searchResultsHome', true);
+setupSearch('searchMedication', 'searchResultsMedication', false);
+setupSearch('searchDiet', 'searchResultsDiet', false);
+setupSearch('searchExercise', 'searchResultsExercise', false);
+
 </script>
 
 </body>
