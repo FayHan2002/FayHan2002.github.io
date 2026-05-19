@@ -523,6 +523,66 @@ async function init() {
   renderHome();
 }
 init();
+
+/* ===== Home Page ===== */
+function renderHome() {
+  renderCatCards();
+  renderFAQ();
+  renderRecent();
+  // Reset search
+  document.getElementById('searchHome').value = '';
+  document.getElementById('searchResultsHome').classList.remove('open');
+}
+
+function renderCatCards() {
+  document.getElementById('catCards').innerHTML = `
+    <div class="cat-card" onclick="navigateTo('medication')">
+      <span class="cat-icon">💊</span>药物
+    </div>
+    <div class="cat-card" onclick="navigateTo('diet')">
+      <span class="cat-icon">🥗</span>饮食
+    </div>
+    <div class="cat-card" onclick="navigateTo('exercise')">
+      <span class="cat-icon">🏃</span>运动
+    </div>`;
+}
+
+function renderFAQ() {
+  const topFaqs = faqs.slice(0, 5);
+  document.getElementById('faqList').innerHTML = topFaqs.map((faq, i) => `
+    <div class="faq-item" id="faq-${i}">
+      <div class="faq-q" onclick="toggleFAQ(${i})">${faq.q}</div>
+      <div class="faq-a">${faq.a}</div>
+    </div>`).join('');
+}
+
+function toggleFAQ(i) {
+  document.getElementById('faq-' + i).classList.toggle('open');
+}
+
+function renderRecent() {
+  const sorted = [...articles].sort((a, b) => b.date.localeCompare(a.date));
+  const recent = sorted.slice(0, 3);
+  document.getElementById('recentList').innerHTML = recent.length === 0
+    ? '<div class="empty"><div class="empty-icon">📭</div>暂无文章</div>'
+    : recent.map(a => `
+      <div class="recent-item" onclick="openArticle('${a.category}', ${a.id})">
+        <span class="ri-icon">${a.sourceType === 'book' ? '📚' : '🔗'}</span>
+        <span class="ri-title">${a.title}</span>
+        <span class="ri-date">${a.date}</span>
+      </div>`).join('');
+}
+
+function openArticle(category, id) {
+  navigateTo(category);
+  setTimeout(() => {
+    const card = document.getElementById('article-' + id);
+    if (card) {
+      card.scrollIntoView({ behavior: 'smooth' });
+      card.querySelector('.article-full').classList.add('open');
+    }
+  }, 100);
+}
 </script>
 
 </body>
