@@ -306,7 +306,7 @@ section:nth-child(even) { background: var(--bg-deep); }
 .dynamic-section.hidden { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; margin: 0; pointer-events: none; }
 
 /* ===== Skills ===== */
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .skill-cat {
   background: var(--bg-card); border: 1px solid var(--border);
   border-radius: 4px; padding: 26px;
@@ -987,10 +987,6 @@ const I18N = {
         { title:"\"汉语桥\"英国培优夏令营 — 优秀志愿者",
           meta:"2021.07",
           desc:"负责与参与夏令营的英国学生进行沟通协调，协助文化活动的组织与执行。",
-          cls:"industry-card" },
-        { title:"院学生会主席",
-          meta:"本科期间",
-          desc:"统筹学生会整体工作，协调校内多部门资源，策划并执行多场学术活动，具备团队管理与跨部门协作经验。",
           cls:"industry-card" }
       ]
     },
@@ -1092,10 +1088,6 @@ const I18N = {
         { title:"\"Chinese Bridge\" UK Summer Camp — Outstanding Volunteer",
           meta:"2021.07",
           desc:"Communicated and coordinated with participating British students; assisted in organizing and executing cultural activities.",
-          cls:"industry-card" },
-        { title:"Student Union President",
-          meta:"Undergraduate",
-          desc:"Oversaw overall Student Union operations, coordinated cross-departmental resources, planned and executed multiple academic events; demonstrated team management and cross-departmental collaboration experience.",
           cls:"industry-card" }
       ]
     },
