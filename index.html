@@ -150,46 +150,52 @@ img { max-width: 100%; height: auto; display: block; }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
 
-/* ===== Hero: Black Sand Beach ===== */
+/* ===== Hero: Aerial Black Sand Beach ===== */
 .hero {
   position: relative; min-height: 110vh;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; overflow: hidden; padding: 100px 30px 60px;
-  /* The beach: dark matte charcoal, the dominant 2/3 negative space */
-  background: linear-gradient(180deg,
-    var(--beach) 0%,
-    #0B0E13 55%,
-    #0A0E13 65%,
-    #0E161D 72%,
-    #132128 78%,
-    #0E1A20 84%,
-    #0A141A 92%,
-    #091117 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  text-align: center; overflow: hidden; padding: 140px 30px 0;
+  /* Base: pure black sand, matte */
+  background: #0A0D10;
 }
 
-/* Ocean strip: thin band at the very bottom */
-.hero-ocean {
-  position: absolute; bottom: 0; left: 0; width: 100%; height: 22%;
-  pointer-events: none; z-index: 0;
+/* Full-frame beach SVG */
+.hero-beach {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
 }
-.hero-ocean svg { width: 100%; height: 100%; display: block; }
+.hero-beach svg { width: 100%; height: 100%; display: block; }
 
-.ocean-layer { transform-origin: center; }
-.ocean-1 { animation: ocean-swell-1 70s ease-in-out alternate infinite; }
-.ocean-2 { animation: ocean-swell-2 52s ease-in-out alternate infinite; }
-.ocean-3 { animation: ocean-swell-3 38s ease-in-out alternate infinite; }
+/* Sand particles */
+.sand-particle { animation: particle-flicker 5s ease-in-out infinite; }
+.sand-particle:nth-child(odd) { animation-delay: 1.5s; animation-duration: 4s; }
+.sand-particle:nth-child(3n) { animation-delay: 3s; animation-duration: 6s; }
 
-.foam-line { transform-origin: center; }
-.foam-1 { animation: foam-sketch-1 42s ease-in-out alternate infinite; }
-.foam-2 { animation: foam-sketch-2 34s ease-in-out alternate infinite; }
+/* Wet sand reflection band */
+.wet-sand { animation: wet-shift 20s ease-in-out infinite; }
 
-.hero-content { position: relative; z-index: 2; padding-bottom: 80px; }
+/* Ocean water body */
+.ocean-water { animation: water-shift 25s ease-in-out infinite; }
+
+/* Foam layers — pulsing like waves */
+.foam-layer { transform-origin: center; }
+.foam-a { animation: foam-surge 8s ease-in-out infinite; }
+.foam-b { animation: foam-surge 7s ease-in-out 2s infinite; }
+.foam-c { animation: foam-surge 9s ease-in-out 4s infinite; }
+.foam-d { animation: foam-surge 6.5s ease-in-out 1s infinite; }
+
+/* Water traces on sand — appearing and fading */
+.water-trace { animation: trace-fade 10s ease-in-out infinite; }
+.water-trace:nth-child(2) { animation-delay: 3s; animation-duration: 8s; }
+.water-trace:nth-child(3) { animation-delay: 6s; animation-duration: 11s; }
+.water-trace:nth-child(4) { animation-delay: 2s; animation-duration: 9s; }
+
+.hero-content { position: relative; z-index: 2; padding-bottom: 60px; }
 
 .hero-photo {
   width: 136px; height: 136px; border-radius: 50%; object-fit: cover;
-  border: 1.5px solid rgba(136,204,214,0.25);
-  box-shadow: 0 0 48px rgba(136,204,214,0.06), 0 10px 36px rgba(0,0,0,0.5);
-  margin: 0 auto 36px; background: var(--bg-surface);
+  border: 1.5px solid rgba(136,204,214,0.2);
+  box-shadow: 0 0 48px rgba(136,204,214,0.04), 0 10px 36px rgba(0,0,0,0.55);
+  margin: 0 auto 40px; background: #0F1318;
 }
 
 .hero h1 {
@@ -198,20 +204,20 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .hero .en-name {
   font-family: var(--font-decorative); font-size: 1.4rem; font-weight: 300;
-  font-style: italic; color: var(--text-light); letter-spacing: 0.16em; margin-bottom: 22px;
+  font-style: italic; color: var(--text-light); letter-spacing: 0.16em; margin-bottom: 24px;
 }
 .hero .motto {
   font-family: var(--font-zh); font-weight: 200; font-size: 1rem;
-  color: var(--text-dim); letter-spacing: 0.45em; margin-bottom: 40px;
+  color: var(--text-dim); letter-spacing: 0.45em; margin-bottom: 42px;
 }
 .hero-track-toggles { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .hero-track-toggles .track-btn { padding: 9px 26px; font-size: 0.84rem; }
 
 .hero-scroll-hint {
-  position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+  position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
   z-index: 2; animation: float 3s ease-in-out infinite;
 }
-.hero-scroll-hint svg { width: 20px; height: 20px; stroke: rgba(255,255,255,0.2); }
+.hero-scroll-hint svg { width: 20px; height: 20px; stroke: rgba(255,255,255,0.18); }
 
 /* ===== Sections ===== */
 section { padding: var(--section-gap) 0; position: relative; }
@@ -375,30 +381,33 @@ footer a:hover { color: var(--accent-ice); }
 .mobile-overlay.open { opacity: 1; pointer-events: auto; }
 
 /* ===== Animations ===== */
-@keyframes ocean-swell-1 {
-  0% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(-2%) translateY(6px); }
-  100% { transform: translateX(-4%) translateY(0); }
+/* Particle subtle twinkle */
+@keyframes particle-flicker {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.45; }
 }
-@keyframes ocean-swell-2 {
-  0% { transform: translateX(-1%) translateY(0); }
-  50% { transform: translateX(2.5%) translateY(-5px); }
-  100% { transform: translateX(-3%) translateY(0); }
+/* Wet sand reflection slowly shifts */
+@keyframes wet-shift {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 0.7; }
 }
-@keyframes ocean-swell-3 {
-  0% { transform: translateX(0.5%) translateY(0); }
-  50% { transform: translateX(-3%) translateY(4px); }
-  100% { transform: translateX(3%) translateY(0); }
+/* Ocean water gentle movement */
+@keyframes water-shift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(1.5%); }
 }
-@keyframes foam-sketch-1 {
-  0% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(-2.5%) translateY(-2px); }
-  100% { transform: translateX(1.5%) translateY(0); }
+/* Foam layers surging — translate + scale */
+@keyframes foam-surge {
+  0%   { transform: translateX(0) scaleX(1); opacity: 0.5; }
+  50%  { transform: translateX(8px) scaleX(1.04); opacity: 0.75; }
+  100% { transform: translateX(-4px) scaleX(0.97); opacity: 0.55; }
 }
-@keyframes foam-sketch-2 {
-  0% { transform: translateX(-1%) translateY(0); }
-  50% { transform: translateX(2%) translateY(3px); }
-  100% { transform: translateX(-2%) translateY(0); }
+/* Water traces fading in/out */
+@keyframes trace-fade {
+  0%, 100% { opacity: 0; }
+  30% { opacity: 0.35; }
+  60% { opacity: 0.5; }
+  85% { opacity: 0.1; }
 }
 @keyframes float {
   0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -411,11 +420,11 @@ footer a:hover { color: var(--accent-ice); }
   html { font-size: 15px; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
-  .hero { min-height: 100vh; padding: 100px 20px 0; }
+  .hero { min-height: 100vh; padding: 110px 20px 0; }
   .hero h1 { font-size: 2.4rem; }
   .hero .en-name { font-size: 1.15rem; }
   .hero-photo { width: 116px; height: 116px; }
-  .hero-ocean { height: 28%; }
+  .hero-beach { /* full-frame */ }
   .container { padding: 0 22px; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .card { padding: 22px 20px; }
@@ -442,7 +451,7 @@ footer a:hover { color: var(--accent-ice); }
 
 /* ===== Print ===== */
 @media print {
-  .nav, .hero-ocean, .hero-scroll-hint, .hero-track-toggles,
+  .nav, .hero-beach, .hero-scroll-hint, .hero-track-toggles,
   .hamburger, .mobile-menu, .mobile-overlay, .back-to-top,
   .contact-link, footer, body::after { display: none !important; }
   body { background: #fff; color: #000; font-size: 11pt; }
@@ -514,63 +523,286 @@ footer a:hover { color: var(--accent-ice); }
 
 <!-- ===== Hero ===== -->
 <section id="hero" class="hero">
-  <!-- Ocean: thin strip at bottom edge only -->
-  <div class="hero-ocean" aria-hidden="true">
-    <svg viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Aerial black sand beach: coastline dividing sand (left/top) from ocean (right/bottom) -->
+  <div class="hero-beach" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <!-- Dark water layers — thin, receding into depth -->
-        <linearGradient id="water-3" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#132128" stop-opacity="0.1"/>
-          <stop offset="100%" stop-color="#0E1A20" stop-opacity="0.7"/>
+        <!-- Ocean water gradient -->
+        <linearGradient id="oceanGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#1E333A"/>
+          <stop offset="40%" stop-color="#243E47"/>
+          <stop offset="70%" stop-color="#1C3036"/>
+          <stop offset="100%" stop-color="#15262B"/>
         </linearGradient>
-        <linearGradient id="water-2" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#0E1A20" stop-opacity="0.2"/>
-          <stop offset="100%" stop-color="#0A141A" stop-opacity="0.85"/>
+        <!-- Wet sand reflection gradient -->
+        <linearGradient id="wetSandGrad" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0%" stop-color="#2A4048" stop-opacity="0"/>
+          <stop offset="30%" stop-color="#2A4048" stop-opacity="0.25"/>
+          <stop offset="60%" stop-color="#1E3338" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#1E3338" stop-opacity="0"/>
         </linearGradient>
-        <linearGradient id="water-1" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#0A141A" stop-opacity="0.4"/>
-          <stop offset="100%" stop-color="#060E14" stop-opacity="1"/>
+        <!-- Foam gradients -->
+        <linearGradient id="foamGrad1" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#C8D8E0" stop-opacity="0.15"/>
+          <stop offset="25%" stop-color="#E8EEF2" stop-opacity="0.55"/>
+          <stop offset="50%" stop-color="#F0F4F6" stop-opacity="0.7"/>
+          <stop offset="75%" stop-color="#D8E4EA" stop-opacity="0.45"/>
+          <stop offset="100%" stop-color="#B0C8D4" stop-opacity="0.1"/>
         </linearGradient>
-        <!-- Foam: cold white with ice-blue undertone, like a thin ray of light -->
-        <linearGradient id="foam-a" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#88CCD6" stop-opacity="0"/>
-          <stop offset="25%" stop-color="#E4E8ED" stop-opacity="0.35"/>
-          <stop offset="45%" stop-color="#E4E8ED" stop-opacity="0.65"/>
-          <stop offset="55%" stop-color="#D8DEE9" stop-opacity="0.55"/>
-          <stop offset="75%" stop-color="#88CCD6" stop-opacity="0.25"/>
-          <stop offset="100%" stop-color="#88CCD6" stop-opacity="0"/>
+        <linearGradient id="foamGrad2" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#B8CCD6" stop-opacity="0.1"/>
+          <stop offset="30%" stop-color="#DCE6EC" stop-opacity="0.4"/>
+          <stop offset="55%" stop-color="#E8EEF2" stop-opacity="0.55"/>
+          <stop offset="80%" stop-color="#D0DEE4" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#A0BCC6" stop-opacity="0.05"/>
         </linearGradient>
-        <linearGradient id="foam-b" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#88CCD6" stop-opacity="0"/>
-          <stop offset="35%" stop-color="#C8DDE6" stop-opacity="0.3"/>
-          <stop offset="50%" stop-color="#E4E8ED" stop-opacity="0.5"/>
-          <stop offset="65%" stop-color="#C8DDE6" stop-opacity="0.2"/>
-          <stop offset="100%" stop-color="#88CCD6" stop-opacity="0"/>
+        <!-- Trace gradient: thin winding water on sand -->
+        <linearGradient id="traceGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#D8E0E6" stop-opacity="0.5"/>
+          <stop offset="50%" stop-color="#E0E6EB" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#C0D0D8" stop-opacity="0.3"/>
         </linearGradient>
+        <!-- Sand texture filter for subtle grain on beach -->
+        <filter id="sandGrain">
+          <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="3" stitchTiles="stitch"/>
+          <feColorMatrix type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0   0 0 0 0.06 0"/>
+        </filter>
       </defs>
 
-      <!-- Layer 3: lightest water, closest to shore -->
-      <g class="ocean-layer ocean-3">
-        <path d="M0,120 C360,90 600,150 900,115 C1140,85 1320,140 1440,110 L1440,400 L0,400 Z" fill="url(#water-3)"/>
-      </g>
-      <!-- Layer 2: mid water -->
-      <g class="ocean-layer ocean-2">
-        <path d="M0,200 C280,165 540,230 840,195 C1100,165 1280,225 1440,190 L1440,400 L0,400 Z" fill="url(#water-2)"/>
-      </g>
-      <!-- Layer 1: deepest water -->
-      <g class="ocean-layer ocean-1">
-        <path d="M0,280 C340,240 520,320 880,270 C1160,230 1340,310 1440,275 L1440,400 L0,400 Z" fill="url(#water-1)"/>
+      <!-- ===== SAND BASE: pure black, matte ===== -->
+      <rect x="0" y="0" width="1440" height="900" fill="#0A0D10"/>
+
+      <!-- ===== SAND TEXTURE OVERLAY: subtle grain ===== -->
+      <rect x="0" y="0" width="1440" height="900" fill="#0A0D10" filter="url(#sandGrain)"/>
+
+      <!-- ===== SAND PARTICLES: white shell fragments ===== -->
+      <g fill="#D0D8DD" opacity="0.18">
+        <circle cx="120" cy="180" r="1.2" class="sand-particle"/><circle cx="340" cy="95" r="0.8" class="sand-particle"/>
+        <circle cx="680" cy="200" r="1.5" class="sand-particle"/><circle cx="890" cy="130" r="0.7" class="sand-particle"/>
+        <circle cx="1050" cy="260" r="1.1" class="sand-particle"/><circle cx="150" cy="380" r="0.9" class="sand-particle"/>
+        <circle cx="420" cy="310" r="1.3" class="sand-particle"/><circle cx="760" cy="350" r="0.6" class="sand-particle"/>
+        <circle cx="940" cy="420" r="1.4" class="sand-particle"/><circle cx="200" cy="520" r="0.8" class="sand-particle"/>
+        <circle cx="560" cy="480" r="1.1" class="sand-particle"/><circle cx="820" cy="540" r="0.7" class="sand-particle"/>
+        <circle cx="110" cy="660" r="1.0" class="sand-particle"/><circle cx="380" cy="610" r="0.6" class="sand-particle"/>
+        <circle cx="700" cy="670" r="1.3" class="sand-particle"/><circle cx="160" cy="780" r="0.9" class="sand-particle"/>
+        <circle cx="450" cy="740" r="0.7" class="sand-particle"/><circle cx="620" cy="810" r="1.1" class="sand-particle"/>
+        <circle cx="300" cy="160" r="0.6" class="sand-particle"/><circle cx="1020" cy="360" r="0.9" class="sand-particle"/>
+        <circle cx="80" cy="440" r="1.2" class="sand-particle"/><circle cx="540" cy="590" r="0.5" class="sand-particle"/>
+        <circle cx="880" cy="720" r="0.8" class="sand-particle"/><circle cx="260" cy="700" r="1.0" class="sand-particle"/>
+        <circle cx="980" cy="580" r="0.7" class="sand-particle"/><circle cx="50" cy="290" r="1.4" class="sand-particle"/>
       </g>
 
-      <!-- Foam line A: sharp, bright, like a thin ray of light on dark sand -->
-      <g class="foam-line foam-1">
-        <path d="M0,118 C360,88 600,148 900,113 M900,113 C1140,83 1320,138 1440,108"
-              fill="none" stroke="url(#foam-a)" stroke-width="1.8" opacity="0.7"/>
+      <!-- ===== OCEAN WATER: right and bottom portion ===== -->
+      <!-- Coastline path: jagged diagonal from upper-middle-left to lower-right -->
+      <!-- Sand above/left, ocean below/right -->
+      <g class="ocean-water">
+        <path d="
+          M1440,380
+          C1400,400 1370,370 1340,395
+          C1300,425 1270,390 1240,410
+          C1200,435 1180,400 1150,420
+          C1110,445 1090,415 1060,435
+          C1020,460 1000,430 970,450
+          C930,475 910,445 880,465
+          C840,490 820,460 790,480
+          C750,505 730,475 700,495
+          C660,520 640,495 610,515
+          C570,540 550,510 520,530
+          C480,555 460,525 430,545
+          C390,570 370,540 340,560
+          C300,585 270,555 240,580
+          C200,610 170,580 140,600
+          C110,620 80,600 50,615
+          C20,630 0,610 0,620
+          L0,900
+          L1440,900
+          Z
+        " fill="url(#oceanGrad)"/>
       </g>
-      <!-- Foam line B: softer, secondary accent -->
-      <g class="foam-line foam-2">
-        <path d="M0,278 C340,238 520,318 880,268 M880,268 C1160,228 1340,308 1440,273"
-              fill="none" stroke="url(#foam-b)" stroke-width="1.2" opacity="0.45"/>
+
+      <!-- ===== WET SAND REFLECTION: blue-gray band along shore on sand side ===== -->
+      <g class="wet-sand">
+        <path d="
+          M1440,380
+          C1400,400 1370,370 1340,395
+          C1300,425 1270,390 1240,410
+          C1200,435 1180,400 1150,420
+          C1110,445 1090,415 1060,435
+          C1020,460 1000,430 970,450
+          C930,475 910,445 880,465
+          C840,490 820,460 790,480
+          C750,505 730,475 700,495
+          C660,520 640,495 610,515
+          C570,540 550,510 520,530
+          C480,555 460,525 430,545
+          C390,570 370,540 340,560
+          C300,585 270,555 240,580
+          C200,610 170,580 140,600
+          C110,620 80,600 50,615
+          C20,630 0,610 0,620
+          L0,630
+          C20,620 50,635 80,625
+          C140,610 200,620 270,590
+          C340,570 390,585 460,555
+          C520,530 570,550 640,525
+          C700,500 750,515 820,490
+          C880,470 930,485 1000,460
+          C1060,440 1110,455 1180,430
+          C1240,410 1300,425 1370,400
+          C1400,390 1420,395 1440,385
+          Z
+        " fill="url(#wetSandGrad)"/>
+      </g>
+
+      <!-- ===== FOAM LAYERS: white foam crashing along coastline ===== -->
+      <!-- Layer A: densest foam, closest to the water -->
+      <g class="foam-layer foam-a">
+        <path d="
+          M1440,378
+          C1420,385 1400,408 1370,395
+          C1340,380 1310,405 1280,398
+          C1250,388 1220,412 1190,408
+          C1160,400 1130,425 1100,418
+          C1070,410 1040,435 1010,428
+          C980,420 950,445 920,438
+          C890,430 860,455 830,448
+          C800,440 770,470 740,460
+          C710,448 680,478 650,468
+          C620,458 590,485 560,475
+          C530,462 500,492 470,480
+          C440,468 410,498 380,485
+          C350,472 320,502 290,490
+          C260,478 230,508 200,495
+          C170,482 140,515 110,500
+          C80,488 50,520 20,508
+          C10,502 0,510 0,515
+          L0,525
+          C20,518 50,530 80,520
+          C140,505 200,525 260,510
+          C320,498 380,515 440,500
+          C500,485 560,505 620,490
+          C680,478 740,500 800,485
+          C860,470 920,490 980,475
+          C1040,460 1100,480 1160,465
+          C1220,448 1280,470 1340,455
+          C1400,438 1420,450 1440,440
+          Z
+        " fill="url(#foamGrad1)"/>
+      </g>
+      <!-- Layer B: secondary foam band -->
+      <g class="foam-layer foam-b">
+        <path d="
+          M1440,385
+          C1410,392 1380,415 1350,402
+          C1320,388 1290,412 1260,405
+          C1230,395 1200,420 1170,412
+          C1140,402 1110,430 1080,422
+          C1050,412 1020,440 990,432
+          C960,422 930,450 900,442
+          C870,432 840,462 810,450
+          C780,440 750,472 720,460
+          C690,448 660,480 630,468
+          C600,458 570,490 540,478
+          C510,465 480,498 450,485
+          C420,472 390,505 360,490
+          C330,478 300,510 270,496
+          C240,482 210,515 180,500
+          C150,488 120,520 90,505
+          C60,492 30,525 10,512
+          L0,520
+          L0,532
+          C30,540 60,530 90,518
+          C150,498 210,528 270,510
+          C330,495 390,520 450,505
+          C510,488 570,515 630,500
+          C690,485 750,510 810,495
+          C870,478 930,505 990,490
+          C1050,475 1110,500 1170,485
+          C1230,468 1290,495 1350,478
+          C1410,460 1420,476 1440,466
+          Z
+        " fill="url(#foamGrad2)"/>
+      </g>
+      <!-- Layer C: outer foam edge, more broken -->
+      <g class="foam-layer foam-c">
+        <path d="
+          M1440,395
+          C1420,400 1390,418 1360,412
+          C1330,402 1300,425 1270,420
+          C1240,412 1210,436 1180,430
+          C1150,420 1120,445 1090,440
+          C1060,432 1030,458 1000,450
+          C970,440 940,465 910,458
+          C880,448 850,475 820,465
+          C790,455 760,482 730,472
+          C700,462 670,490 640,478
+          C610,468 580,496 550,485
+          C520,472 490,505 460,492
+          C430,480 400,512 370,498
+          C340,486 310,518 280,505
+          C250,492 220,525 190,512
+          C160,498 130,530 100,515
+          C70,502 40,535 20,525
+          L0,520
+          L0,540
+          C40,545 70,532 100,525
+          C160,510 220,540 280,525
+          C340,510 400,535 460,518
+          C520,502 580,530 640,515
+          C700,498 760,528 820,512
+          C880,496 940,525 1000,510
+          C1060,495 1120,520 1180,505
+          C1240,488 1300,515 1360,498
+          C1390,492 1420,505 1440,498
+          Z
+        " fill="#E8EEF2" fill-opacity="0.3"/>
+      </g>
+      <!-- Layer D: thin, outermost spray -->
+      <g class="foam-layer foam-d">
+        <path d="
+          M1440,405
+          C1420,410 1390,430 1360,425
+          C1330,418 1300,440 1270,435
+          C1240,428 1210,450 1180,445
+          C1150,438 1120,460 1090,455
+          C1060,448 1030,470 1000,465
+          C970,458 940,480 910,475
+          C880,468 850,490 820,485
+          C790,478 760,500 730,495
+          C700,488 670,510 640,505
+          C610,498 580,518 550,512
+          C520,504 490,525 460,518
+          C430,508 400,530 370,522
+          C340,514 310,536 280,528
+          C250,518 220,540 190,532
+          C160,524 130,545 100,536
+          C70,526 40,548 20,542
+          L0,538
+          L0,556
+          C40,560 70,548 100,542
+          C160,535 220,555 280,545
+          C340,538 400,555 460,542
+          C520,530 580,552 640,540
+          C700,528 760,550 820,538
+          C880,525 940,548 1000,535
+          C1060,522 1120,545 1180,532
+          C1240,518 1300,542 1360,528
+          C1390,522 1420,535 1440,530
+          Z
+        " fill="#F0F4F6" fill-opacity="0.18"/>
+      </g>
+
+      <!-- ===== WATER TRACES: winding foam lines left on the dark sand ===== -->
+      <g fill="none" stroke="url(#traceGrad)" stroke-width="0.8">
+        <path d="M820,490 C800,480 780,485 760,478 C740,470 720,475 700,468 C680,460 660,465 640,458" class="water-trace"/>
+        <path d="M910,458 C890,450 870,452 850,445 C830,438 810,442 790,435" class="water-trace"/>
+        <path d="M640,505 C620,498 600,500 580,492 C560,484 540,488 520,482" class="water-trace"/>
+        <path d="M500,492 C480,488 460,482 440,475 C420,468 400,472 380,465" class="water-trace"/>
+      </g>
+      <!-- Thinner traces -->
+      <g fill="none" stroke="url(#traceGrad)" stroke-width="0.5" opacity="0.6">
+        <path d="M730,472 C715,465 700,468 685,462 C670,455 655,460 640,453" class="water-trace"/>
+        <path d="M550,485 C535,480 520,478 505,472 C490,465 475,470 460,463" class="water-trace"/>
       </g>
     </svg>
   </div>
@@ -1079,9 +1311,9 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 50);
   document.getElementById('backToTop').classList.toggle('visible', window.scrollY > window.innerHeight);
 
-  const waves = document.querySelector('.hero-ocean');
-  if (waves && window.scrollY < window.innerHeight) {
-    waves.style.transform = `translateY(${window.scrollY * 0.08}px)`;
+  const beach = document.querySelector('.hero-beach');
+  if (beach && window.scrollY < window.innerHeight) {
+    beach.style.transform = `translateY(${window.scrollY * 0.06}px)`;
   }
 });
 
