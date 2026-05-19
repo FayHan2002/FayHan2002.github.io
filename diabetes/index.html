@@ -651,6 +651,194 @@ function renderLinkCard(l) {
   </a>`;
 }
 
+/* ===== Tools Page ===== */
+function renderTools() {
+  renderBloodSugar();
+  renderMedChecklist();
+  renderPlatformLinks();
+}
+
+/* ===== Blood Sugar Tracker ===== */
+function renderBloodSugar() {
+  const records = getBloodSugarRecords();
+  const today = new Date().toISOString().slice(0, 10);
+  const todayRecords = records.filter(r => r.date === today).sort((a, b) => a.time.localeCompare(b.time));
+
+  // Stats
+  if (todayRecords.length > 0) {
+    const vals = todayRecords.map(r => r.value);
+    const min = Math.min(...vals);
+    const max = Math.max(...vals);
+    const avg = (vals.reduce((a, b) => a + b, 0) / vals.length).toFixed(1);
+    document.getElementById('bsStats').innerHTML = `
+      <div class="bs-stat"><div class="bs-val">${min}</div><div class="bs-label">最低</div></div>
+      <div class="bs-stat"><div class="bs-val">${max}</div><div class="bs-label">最高</div></div>
+      <div class="bs-stat"><div class="bs-val">${avg}</div><div class="bs-label">平均</div></div>`;
+  } else {
+    document.getElementById('bsStats').innerHTML = '<div class="empty" style="padding:12px;width:100%">今日暂无记录</div>';
+  }
+
+  // Records list
+  const typeNames = { fasting: '空腹', 'after-breakfast': '早餐后2h', 'after-lunch': '午餐后2h', 'after-dinner': '晚餐后2h', bedtime: '睡前' };
+  document.getElementById('bsRecords').innerHTML = todayRecords.length === 0
+    ? '<div class="empty"><div class="empty-icon">📋</div>点击下方按钮记录血糖</div>'
+    : todayRecords.map(r => {
+        let cls = 'bs-normal';
+        if (r.type === 'fasting' && (r.value < 4.4 || r.value > 7.0)) cls = r.value < 4.4 ? 'bs-low' : 'bs-high';
+        else if (r.type !== 'fasting' && (r.value < 4.4 || r.value > 10.0)) cls = r.value < 4.4 ? 'bs-low' : 'bs-high';
+        return `<div class="bs-record">
+          <span class="bs-type">${typeNames[r.type] || r.type}</span>
+          <span class="bs-value ${cls}">${r.value} mmol/L</span>
+          <span class="bs-time">${r.time}</span>
+        </div>`;
+      }).join('');
+
+  document.getElementById('addRecordForm').style.display = 'none';
+}
+
+document.getElementById('btnAddRecord').addEventListener('click', function() {
+  document.getElementById('addRecordForm').style.display = 'block';
+  document.getElementById('recordValue').value = '';
+  document.getElementById('recordValue').focus();
+});
+
+document.getElementById('btnCancelRecord').addEventListener('click', function() {
+  document.getElementById('addRecordForm').style.display = 'none';
+});
+
+document.getElementById('btnSaveRecord').addEventListener('click', function() {
+  const type = document.getElementById('recordType').value;
+  const value = parseFloat(document.getElementById('recordValue').value);
+  if (isNaN(value) || value < 1 || value > 30) {
+    alert('请输入有效的血糖值（1-30 mmol/L）');
+    return;
+  }
+  const now = new Date();
+  const record = {
+    date: now.toISOString().slice(0, 10),
+    time: now.toTimeString().slice(0, 5),
+    type: type,
+    value: value
+  };
+  const records = getBloodSugarRecords();
+  records.push(record);
+  saveBloodSugarRecords(records);
+  renderBloodSugar();
+});
+
+/* ===== Medication Checklist ===== */
+function renderMedChecklist() {
+  const meds = getMedications();
+  const checks = getMedChecks();
+  const container = document.getElementById('medChecklist');
+
+  if (meds.length === 0) {
+    container.innerHTML = `
+      <div class="empty" style="padding:16px">
+        <div class="empty-icon">💊</div>
+        <p>还没有添加用药</p>
+        <p style="font-size:0.85rem">点击下方按钮添加每日用药清单</p>
+      </div>`;
+  } else {
+    container.innerHTML = meds.map(m => {
+      const checked = checks[m.id] || false;
+      return `<div class="med-item ${checked ? 'done' : ''}" onclick="toggleMedCheck(${m.id})">
+        <input type="checkbox" ${checked ? 'checked' : ''} id="med-cb-${m.id}">
+        <div class="med-info">
+          <div class="med-name">${m.name} ${m.dosage}</div>
+          <div class="med-meta">${m.timing === 'after-breakfast' ? '早饭后' : m.timing === 'after-lunch' ? '午饭后' : m.timing === 'after-dinner' ? '晚饭后' : '睡前'}</div>
+        </div>
+      </div>`;
+    }).join('');
+  }
+}
+
+function toggleMedCheck(id) {
+  const checks = getMedChecks();
+  checks[id] = !checks[id];
+  saveMedChecks(checks);
+  renderMedChecklist();
+}
+
+document.getElementById('btnEditMeds').addEventListener('click', function() {
+  const formEl = document.getElementById('editMedsForm');
+  if (formEl.style.display === 'block') {
+    formEl.style.display = 'none';
+    return;
+  }
+  const meds = getMedications();
+  formEl.style.display = 'block';
+  formEl.innerHTML = `
+    <div style="margin-bottom:12px">
+      ${meds.map((m, i) => `
+        <div style="display:flex;gap:8px;align-items:center;margin-bottom:6px">
+          <span style="flex:1;font-size:0.9rem">${m.name} ${m.dosage} — ${m.timing}</span>
+          <button class="btn btn-danger" style="width:auto;padding:6px 12px;font-size:0.8rem;min-height:auto" onclick="removeMed(${i})">删除</button>
+        </div>`).join('')}
+    </div>
+    <div class="form-row">
+      <input class="form-input" id="newMedName" placeholder="药名" style="flex:1;width:auto">
+      <input class="form-input" id="newMedDosage" placeholder="剂量" style="width:100px">
+    </div>
+    <div class="form-row">
+      <select class="form-select" id="newMedTiming">
+        <option value="after-breakfast">早饭后</option>
+        <option value="after-lunch">午饭后</option>
+        <option value="after-dinner">晚饭后</option>
+        <option value="bedtime">睡前</option>
+      </select>
+    </div>
+    <button class="btn btn-primary" id="btnAddMed">添加药物</button>`;
+
+  document.getElementById('btnAddMed').addEventListener('click', function() {
+    const name = document.getElementById('newMedName').value.trim();
+    const dosage = document.getElementById('newMedDosage').value.trim();
+    const timing = document.getElementById('newMedTiming').value;
+    if (!name) { alert('请输入药物名称'); return; }
+    const meds = getMedications();
+    meds.push({ id: Date.now(), name, dosage, timing });
+    saveMedications(meds);
+    renderMedChecklist();
+    document.getElementById('editMedsForm').style.display = 'none';
+  });
+});
+
+function removeMed(index) {
+  const meds = getMedications();
+  meds.splice(index, 1);
+  saveMedications(meds);
+  renderMedChecklist();
+  document.getElementById('editMedsForm').style.display = 'none';
+}
+
+/* ===== Platform Links ===== */
+function renderPlatformLinks() {
+  const container = document.getElementById('platformLinks');
+  const platforms = [
+    { key: 'wechat', name: '微信公众号', icon: '📱' },
+    { key: 'zhihu', name: '知乎', icon: '📘' },
+    { key: 'xiaohongshu', name: '小红书', icon: '📕' },
+    { key: 'bilibili', name: 'B站', icon: '🎬' },
+    { key: 'douyin', name: '抖音', icon: '🎵' }
+  ];
+
+  container.innerHTML = platforms.map(p => {
+    const plinks = links.filter(l => l.platform === p.key);
+    if (plinks.length === 0) return '';
+    return `<div class="platform-group">
+      <div class="platform-group-title"><span>${p.icon}</span> ${p.name}</div>
+      ${plinks.map(l => `
+        <a href="${l.url}" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="link-info">
+            <div class="link-title">${l.title}</div>
+            <div class="link-note">${l.note || ''} · ${(l.tags || []).join(' · ')}</div>
+          </div>
+          <span style="color:var(--text-muted)">→</span>
+        </a>`).join('')}
+    </div>`;
+  }).join('');
+}
+
 </script>
 
 </body>
