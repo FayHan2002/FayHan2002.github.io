@@ -323,6 +323,13 @@ a { color: var(--green); text-decoration: none; }
   font-size: var(--font-size-base); color: var(--green);
   margin-bottom: 12px; cursor: pointer; background: none; border: none;
 }
+
+/* ===== Responsive for small screens ===== */
+@media (max-width: 360px) {
+  .cat-cards { gap: 6px; }
+  .cat-card { padding: 14px 6px; font-size: 0.85rem; }
+  .cat-card .cat-icon { font-size: 1.5rem; }
+}
 </style>
 </head>
 <body>
@@ -520,6 +527,15 @@ function checkDayReset() {
 async function init() {
   checkDayReset();
   await loadData();
+
+  // Seed default medications if none exist
+  if (getMedications().length === 0) {
+    saveMedications([
+      { id: 1, name: '二甲双胍', dosage: '500mg', timing: 'after-breakfast' },
+      { id: 2, name: '二甲双胍', dosage: '500mg', timing: 'after-dinner' }
+    ]);
+  }
+
   renderHome();
 }
 init();
