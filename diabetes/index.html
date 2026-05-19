@@ -434,7 +434,95 @@ a { color: var(--green); text-decoration: none; }
 </nav>
 
 <script>
-// JS will be added in subsequent tasks
+/* ===== State ===== */
+let articles = [];
+let links = [];
+let faqs = [];
+let currentPage = 'home';
+
+/* ===== Routing ===== */
+function navigateTo(page) {
+  currentPage = page;
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('page-' + page);
+  if (target) target.classList.add('active');
+
+  document.querySelectorAll('.nav-item').forEach(n => {
+    n.classList.toggle('active', n.dataset.page === page);
+  });
+
+  if (page === 'home') renderHome();
+  else if (page === 'medication') renderCategoryPage('medication', 'book');
+  else if (page === 'diet') renderCategoryPage('diet', 'book');
+  else if (page === 'exercise') renderCategoryPage('exercise', 'book');
+  else if (page === 'tools') renderTools();
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ===== Bottom Nav ===== */
+document.querySelectorAll('.nav-item').forEach(btn => {
+  btn.addEventListener('click', () => navigateTo(btn.dataset.page));
+});
+
+/* ===== Data Loading ===== */
+async function loadData() {
+  try {
+    const [a, l, f] = await Promise.all([
+      fetch('data/articles.json').then(r => r.json()),
+      fetch('data/links.json').then(r => r.json()),
+      fetch('data/faq.json').then(r => r.json())
+    ]);
+    articles = a;
+    links = l;
+    faqs = f;
+  } catch (e) {
+    console.error('Failed to load data:', e);
+  }
+}
+
+/* ===== localStorage Helpers ===== */
+function getBloodSugarRecords() {
+  try { return JSON.parse(localStorage.getItem('bs_records') || '[]'); }
+  catch { return []; }
+}
+function saveBloodSugarRecords(records) {
+  localStorage.setItem('bs_records', JSON.stringify(records));
+}
+
+function getMedications() {
+  try { return JSON.parse(localStorage.getItem('medications') || '[]'); }
+  catch { return []; }
+}
+function saveMedications(meds) {
+  localStorage.setItem('medications', JSON.stringify(meds));
+}
+
+function getMedChecks() {
+  try { return JSON.parse(localStorage.getItem('med_checks') || '{}'); }
+  catch { return {}; }
+}
+function saveMedChecks(checks) {
+  localStorage.setItem('med_checks', JSON.stringify(checks));
+}
+
+// Reset medication checks if it's a new day
+function checkDayReset() {
+  const today = new Date().toISOString().slice(0, 10);
+  const lastDate = localStorage.getItem('med_check_date');
+  if (lastDate !== today) {
+    localStorage.setItem('med_check_date', today);
+    localStorage.setItem('med_checks', '{}');
+  }
+}
+
+/* ===== Initialize ===== */
+async function init() {
+  checkDayReset();
+  await loadData();
+  renderHome();
+}
+init();
 </script>
 
 </body>
