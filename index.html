@@ -13,7 +13,7 @@
 <link rel="alternate" hreflang="en" href="https://fayhan2002.github.io/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Caveat:wght@400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Long+Cang&family=Noto+Serif+SC:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Caveat:wght@400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <title>Han Fuyi / 韩馥伊</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
 <style>
@@ -25,7 +25,7 @@
   --bg-card: rgba(18,34,54,0.55);
   --bg-card-hover: rgba(24,42,64,0.72);
   --bg-card-solid: #122236;
-  --border: rgba(200,216,232,0.06);
+  --border: rgba(200,216,232,0.12);
   --border-light: rgba(200,216,232,0.10);
   --text: #E4E8EE;
   --text-light: #B0BCC8;
@@ -58,6 +58,7 @@
   --font-decorative: 'Cormorant Garamond', serif;
   --font-hand: 'Caveat', cursive;
   --font-mono: 'DM Mono', monospace;
+  --font-quote-zh: 'Long Cang', cursive;
   --max-width: 900px;
   --section-gap: 100px;
   --line-height: 1.9;
@@ -90,20 +91,20 @@ body::before {
   opacity: 0.85;
   background:
     radial-gradient(ellipse 80% 60% at 20% 15%, rgba(126,200,200,0.28) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 50% at 75% 10%, rgba(184,160,216,0.24) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 75% 10%, rgba(184,160,216,0.30) 0%, transparent 55%),
     radial-gradient(ellipse 50% 70% at 10% 55%, rgba(200,216,232,0.26) 0%, transparent 60%),
-    radial-gradient(ellipse 70% 40% at 50% 85%, rgba(126,200,200,0.20) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 40% at 50% 85%, rgba(126,200,200,0.25) 0%, transparent 55%),
     radial-gradient(ellipse 40% 35% at 85% 80%, rgba(200,216,232,0.24) 0%, transparent 50%),
     radial-gradient(ellipse 50% 30% at 60% 50%, rgba(240,200,160,0.15) 0%, transparent 50%);
-  animation: aurora-drift 20s ease-in-out infinite;
+  animation: aurora-drift 30s ease-in-out infinite;
   will-change: opacity, transform;
 }
 
 @keyframes aurora-drift {
-  0%, 100% { opacity: 0.55; transform: scale(1.00) translate(0, 0); }
-  25% { opacity: 0.78; transform: scale(1.06) translate(-0.5%, 0.3%); }
-  50% { opacity: 0.68; transform: scale(1.03) translate(0.3%, -0.4%); }
-  75% { opacity: 0.88; transform: scale(1.12) translate(0.4%, 0.2%); }
+  0%, 100% { opacity: 0.60; transform: scale(1.00) translate(0, 0); }
+  25% { opacity: 0.82; transform: scale(1.05) translate(-1.5%, 1.0%); }
+  50% { opacity: 0.72; transform: scale(1.02) translate(1.0%, -1.2%); }
+  75% { opacity: 0.90; transform: scale(1.06) translate(1.2%, 0.8%); }
 }
 
 h1, h2, h3, h4 { font-weight: 400; line-height: 1.3; }
@@ -124,7 +125,7 @@ img { max-width: 100%; height: auto; display: block; }
 .section-label::before {
   content: ''; width: 22px; height: 14px; flex-shrink: 0;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 14'%3E%3Cpath d='M0 7 Q3 0,6 7 T12 7 T18 7 T22 7' fill='none' stroke='%237EC8C8' stroke-width='1.8' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E") center/contain no-repeat;
-  animation: squiggle-shift 4s ease-in-out infinite;
+  animation: squiggle-shift 6s ease-in-out infinite;
 }
 @keyframes squiggle-shift {
   0%, 100% { opacity: 0.6; }
@@ -132,7 +133,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .section-label::after {
   content: ''; flex: 1; height: 1px;
-  background: linear-gradient(90deg, rgba(255,255,255,0.08), transparent);
+  background: linear-gradient(90deg, rgba(255,255,255,0.14), transparent);
 }
 .section-label span {
   font-family: var(--font-en-heading); font-size: 1.8rem; font-weight: 500;
@@ -172,7 +173,7 @@ section:hover .section-decor { opacity: 0.60; }
   background: rgba(8,12,19,0.78);
   backdrop-filter: blur(var(--glass-blur-strong)) saturate(1.4);
   -webkit-backdrop-filter: blur(var(--glass-blur-strong)) saturate(1.4);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 4px 24px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.08), 0 4px 24px rgba(0,0,0,0.3);
 }
 .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
 .nav-links a {
@@ -232,45 +233,61 @@ section:hover .section-decor { opacity: 0.60; }
 .hero-diver {
   position: absolute; z-index: 1; pointer-events: none;
   bottom: 18%; left: 12%; width: 80px; height: 100px;
-  opacity: 0.55; transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0.70; transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
   cursor: pointer; pointer-events: auto;
+  filter: drop-shadow(0 0 8px rgba(126,200,200,0.30));
 }
-.hero-diver:hover { opacity: 0.85; transform: scale(1.08); }
+.hero-diver:hover { opacity: 0.90; transform: scale(1.08); filter: drop-shadow(0 0 14px rgba(126,200,200,0.45)); }
 
 /* Hand-drawn jellyfish companion */
 .hero-jellyfish {
   position: absolute; z-index: 1; pointer-events: none;
   top: 22%; right: 18%; width: 50px; height: 70px;
-  opacity: 0.4;
+  opacity: 0.60; cursor: pointer; pointer-events: auto;
+  filter: drop-shadow(0 0 6px rgba(184,160,216,0.25));
+  transition: opacity 0.5s ease, filter 0.5s ease;
 }
+.hero-jellyfish:hover { opacity: 0.80; filter: drop-shadow(0 0 12px rgba(184,160,216,0.40)); }
 
 /* Octopus with glasses */
 .hero-octopus {
   position: absolute; z-index: 1; pointer-events: none;
   bottom: 12%; right: 22%; width: 55px; height: 65px;
-  opacity: 0.45;
+  opacity: 0.65; cursor: pointer; pointer-events: auto;
+  filter: drop-shadow(0 0 6px rgba(126,200,200,0.25));
+  transition: opacity 0.5s ease, filter 0.5s ease;
 }
+.hero-octopus:hover { opacity: 0.85; filter: drop-shadow(0 0 12px rgba(126,200,200,0.40)); }
 
 /* Seahorse with graduation cap */
 .hero-seahorse {
   position: absolute; z-index: 1; pointer-events: none;
   top: 28%; left: 20%; width: 35px; height: 60px;
-  opacity: 0.45;
+  opacity: 0.65; cursor: pointer; pointer-events: auto;
+  filter: drop-shadow(0 0 6px rgba(240,200,160,0.25));
+  transition: opacity 0.5s ease, filter 0.5s ease;
 }
+.hero-seahorse:hover { opacity: 0.85; filter: drop-shadow(0 0 12px rgba(240,200,160,0.40)); }
 
 /* Bubble clusters */
 .hero-bubbles {
   position: absolute; z-index: 1; pointer-events: none;
   bottom: 8%; left: 45%; width: 50px; height: 70px;
-  opacity: 0.35;
+  opacity: 0.55; cursor: pointer; pointer-events: auto;
+  filter: drop-shadow(0 0 4px rgba(200,216,232,0.30));
+  transition: opacity 0.5s ease, filter 0.5s ease;
 }
+.hero-bubbles:hover { opacity: 0.75; filter: drop-shadow(0 0 10px rgba(200,216,232,0.45)); }
 
 /* Starfish */
 .hero-starfish {
   position: absolute; z-index: 1; pointer-events: none;
   bottom: 28%; right: 10%; width: 35px; height: 35px;
-  opacity: 0.4;
+  opacity: 0.60; cursor: pointer; pointer-events: auto;
+  filter: drop-shadow(0 0 6px rgba(240,200,160,0.25));
+  transition: opacity 0.5s ease, filter 0.5s ease;
 }
+.hero-starfish:hover { opacity: 0.80; filter: drop-shadow(0 0 12px rgba(240,200,160,0.40)); }
 
 .hero-content { position: relative; z-index: 2; padding-bottom: 60px; }
 
@@ -292,14 +309,14 @@ section:hover .section-decor { opacity: 0.60; }
 }
 .hero .motto {
   font-family: var(--font-zh); font-weight: 200; font-size: 1.05rem;
-  color: var(--text-light); letter-spacing: 0.55em; margin-bottom: 42px;
+  color: var(--text-light); letter-spacing: 0.08em; margin-bottom: 42px;
 }
 .hero-track-toggles { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .hero-track-toggles .track-btn { padding: 9px 26px; font-size: 0.84rem; }
 
 .hero-scroll-hint {
   position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
-  z-index: 2; animation: float 3s ease-in-out infinite;
+  z-index: 2; animation: float 5s ease-in-out infinite;
 }
 .hero-scroll-hint svg { width: 20px; height: 20px; stroke: rgba(255,255,255,0.22); filter: drop-shadow(0 0 4px rgba(136,204,214,0.15)); }
 
@@ -311,9 +328,9 @@ section { padding: var(--section-gap) 0; position: relative; overflow: hidden; }
 #about {
   background-color: #141210;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Cpath d='M47,23 Q103,8 167,23 Q188,53 167,103 Q123,123 63,113 Q17,93 27,43 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.8' opacity='0.2'/%3E%3Cpath d='M263,183 Q303,168 343,183 Q358,203 348,233 Q318,248 278,238 Q253,223 258,193 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.7' opacity='0.15'/%3E%3Cpath d='M157,223 Q187,208 217,223 Q232,243 222,263 Q197,273 167,263 Q147,248 157,223 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.5' opacity='0.12'/%3E%3Ccircle cx='83' cy='67' r='1.5' fill='%23D8E4F0' opacity='0.3'/%3E%3Ccircle cx='287' cy='207' r='1.2' fill='%23D8E4F0' opacity='0.25'/%3E%3Ccircle cx='177' cy='77' r='0.9' fill='%23F0C8A0' opacity='0.22'/%3E%3Ccircle cx='337' cy='93' r='1.1' fill='%23D8E4F0' opacity='0.2'/%3E%3Ccircle cx='53' cy='177' r='0.8' fill='%23F0C8A0' opacity='0.18'/%3E%3Ccircle cx='383' cy='257' r='1.3' fill='%23D8E4F0' opacity='0.22'/%3E%3Ccircle cx='217' cy='137' r='1' fill='%237EC8C8' opacity='0.2'/%3E%3Ccircle cx='127' cy='277' r='0.7' fill='%23D8E4F0' opacity='0.15'/%3E%3Ccircle cx='363' cy='37' r='0.9' fill='%23F0C8A0' opacity='0.18'/%3E%3Cpath d='M37,107 Q83,83 133,107' fill='none' stroke='%237EC8C8' stroke-width='0.6' opacity='0.18'/%3E%3Cpath d='M237,283 Q287,263 327,283' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.15'/%3E%3Cpath d='M73,257 Q53,237 73,217' fill='none' stroke='%23F0C8A0' stroke-width='0.4' opacity='0.12'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse 65% 40% at 70% 60%, rgba(240,200,160,0.22), transparent 55%),
-    radial-gradient(ellipse 35% 25% at 25% 35%, rgba(126,200,200,0.12), transparent 50%);
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Cpath d='M47,23 Q103,8 167,23 Q188,53 167,103 Q123,123 63,113 Q17,93 27,43 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.8' opacity='0.55'/%3E%3Cpath d='M263,183 Q303,168 343,183 Q358,203 348,233 Q318,248 278,238 Q253,223 258,193 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.7' opacity='0.41'/%3E%3Cpath d='M157,223 Q187,208 217,223 Q232,243 222,263 Q197,273 167,263 Q147,248 157,223 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.5' opacity='0.33'/%3E%3Ccircle cx='83' cy='67' r='1.5' fill='%23D8E4F0' opacity='0.82'/%3E%3Ccircle cx='287' cy='207' r='1.2' fill='%23D8E4F0' opacity='0.69'/%3E%3Ccircle cx='177' cy='77' r='0.9' fill='%23F0C8A0' opacity='0.60'/%3E%3Ccircle cx='337' cy='93' r='1.1' fill='%23D8E4F0' opacity='0.55'/%3E%3Ccircle cx='53' cy='177' r='0.8' fill='%23F0C8A0' opacity='0.50'/%3E%3Ccircle cx='383' cy='257' r='1.3' fill='%23D8E4F0' opacity='0.60'/%3E%3Ccircle cx='217' cy='137' r='1' fill='%237EC8C8' opacity='0.55'/%3E%3Ccircle cx='127' cy='277' r='0.7' fill='%23D8E4F0' opacity='0.41'/%3E%3Ccircle cx='363' cy='37' r='0.9' fill='%23F0C8A0' opacity='0.50'/%3E%3Cpath d='M37,107 Q83,83 133,107' fill='none' stroke='%237EC8C8' stroke-width='0.6' opacity='0.50'/%3E%3Cpath d='M237,283 Q287,263 327,283' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.41'/%3E%3Cpath d='M73,257 Q53,237 73,217' fill='none' stroke='%23F0C8A0' stroke-width='0.4' opacity='0.33'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 65% 40% at 70% 60%, rgba(240,200,160,0.28), transparent 55%),
+    radial-gradient(ellipse 35% 25% at 25% 35%, rgba(126,200,200,0.15), transparent 50%);
   background-repeat: repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
 }
@@ -322,9 +339,9 @@ section { padding: var(--section-gap) 0; position: relative; overflow: hidden; }
 #education {
   background-color: #0E1A1E;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Cellipse cx='63' cy='53' rx='18' ry='13' fill='none' stroke='%237EC8C8' stroke-width='0.6' opacity='0.2'/%3E%3Ccircle cx='54' cy='49' r='4' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.18'/%3E%3Ccircle cx='72' cy='49' r='4' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.18'/%3E%3Cpath d='M38,63 Q31,88 25,100' fill='none' stroke='%237EC8C8' stroke-width='1.2' opacity='0.15'/%3E%3Cpath d='M48,63 Q44,90 42,104' fill='none' stroke='%237EC8C8' stroke-width='1.2' opacity='0.15'/%3E%3Cpath d='M63,63 Q63,92 63,106' fill='none' stroke='%237EC8C8' stroke-width='1.2' opacity='0.15'/%3E%3Cpath d='M78,63 Q82,90 84,104' fill='none' stroke='%237EC8C8' stroke-width='1.2' opacity='0.15'/%3E%3Cpath d='M88,63 Q95,88 102,100' fill='none' stroke='%237EC8C8' stroke-width='1.2' opacity='0.15'/%3E%3Crect x='233' y='37' width='22' height='34' rx='2' fill='none' stroke='%23B8A0D8' stroke-width='0.6' opacity='0.15'/%3E%3Crect x='237' y='37' width='18' height='34' rx='1' fill='none' stroke='%23B8A0D8' stroke-width='0.4' opacity='0.1'/%3E%3Cpath d='M233,43 L255,43' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.12'/%3E%3Cellipse cx='143' cy='217' rx='15' ry='11' fill='none' stroke='%237EC8C8' stroke-width='0.55' opacity='0.16'/%3E%3Ccircle cx='135' cy='213' r='3.5' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.14'/%3E%3Ccircle cx='151' cy='213' r='3.5' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.14'/%3E%3Cpath d='M123,228 Q119,248 115,257' fill='none' stroke='%237EC8C8' stroke-width='1' opacity='0.12'/%3E%3Cpath d='M131,228 Q128,252 126,261' fill='none' stroke='%237EC8C8' stroke-width='1' opacity='0.12'/%3E%3Cpath d='M143,228 Q143,254 143,263' fill='none' stroke='%237EC8C8' stroke-width='1' opacity='0.12'/%3E%3Cpath d='M155,228 Q158,252 160,261' fill='none' stroke='%237EC8C8' stroke-width='1' opacity='0.12'/%3E%3Cpath d='M163,228 Q168,248 172,257' fill='none' stroke='%237EC8C8' stroke-width='1' opacity='0.12'/%3E%3Ccircle cx='337' cy='83' r='1.3' fill='%23D8E4F0' opacity='0.25'/%3E%3Ccircle cx='73' cy='163' r='0.9' fill='%23D8E4F0' opacity='0.2'/%3E%3Ccircle cx='273' cy='257' r='1.1' fill='%237EC8C8' opacity='0.22'/%3E%3Ccircle cx='363' cy='187' r='0.8' fill='%23D8E4F0' opacity='0.18'/%3E%3Ccircle cx='23' cy='253' r='1' fill='%237EC8C8' opacity='0.2'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse 55% 35% at 30% 55%, rgba(126,200,200,0.22), transparent 55%),
-    radial-gradient(ellipse 30% 25% at 75% 35%, rgba(184,160,216,0.14), transparent 50%);
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Cellipse cx='63' cy='53' rx='18' ry='13' fill='none' stroke='%237EC8C8' stroke-width='0.6' opacity='0.55'/%3E%3Ccircle cx='54' cy='49' r='4' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.50'/%3E%3Ccircle cx='72' cy='49' r='4' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.50'/%3E%3Cpath d='M38,63 Q31,88 25,100' fill='none' stroke='%237EC8C8' stroke-width='1.2' opacity='0.41'/%3E%3Cpath d='M48,63 Q44,90 42,104' fill='none' stroke='%237EC8C8' stroke-width='1.2' opacity='0.41'/%3E%3Cpath d='M63,63 Q63,92 63,106' fill='none' stroke='%237EC8C8' stroke-width='1.2' opacity='0.41'/%3E%3Cpath d='M78,63 Q82,90 84,104' fill='none' stroke='%237EC8C8' stroke-width='1.2' opacity='0.41'/%3E%3Cpath d='M88,63 Q95,88 102,100' fill='none' stroke='%237EC8C8' stroke-width='1.2' opacity='0.41'/%3E%3Crect x='233' y='37' width='22' height='34' rx='2' fill='none' stroke='%23B8A0D8' stroke-width='0.6' opacity='0.41'/%3E%3Crect x='237' y='37' width='18' height='34' rx='1' fill='none' stroke='%23B8A0D8' stroke-width='0.4' opacity='0.28'/%3E%3Cpath d='M233,43 L255,43' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.33'/%3E%3Cellipse cx='143' cy='217' rx='15' ry='11' fill='none' stroke='%237EC8C8' stroke-width='0.55' opacity='0.44'/%3E%3Ccircle cx='135' cy='213' r='3.5' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.38'/%3E%3Ccircle cx='151' cy='213' r='3.5' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.38'/%3E%3Cpath d='M123,228 Q119,248 115,257' fill='none' stroke='%237EC8C8' stroke-width='1' opacity='0.33'/%3E%3Cpath d='M131,228 Q128,252 126,261' fill='none' stroke='%237EC8C8' stroke-width='1' opacity='0.33'/%3E%3Cpath d='M143,228 Q143,254 143,263' fill='none' stroke='%237EC8C8' stroke-width='1' opacity='0.33'/%3E%3Cpath d='M155,228 Q158,252 160,261' fill='none' stroke='%237EC8C8' stroke-width='1' opacity='0.33'/%3E%3Cpath d='M163,228 Q168,248 172,257' fill='none' stroke='%237EC8C8' stroke-width='1' opacity='0.33'/%3E%3Ccircle cx='337' cy='83' r='1.3' fill='%23D8E4F0' opacity='0.69'/%3E%3Ccircle cx='73' cy='163' r='0.9' fill='%23D8E4F0' opacity='0.55'/%3E%3Ccircle cx='273' cy='257' r='1.1' fill='%237EC8C8' opacity='0.60'/%3E%3Ccircle cx='363' cy='187' r='0.8' fill='%23D8E4F0' opacity='0.50'/%3E%3Ccircle cx='23' cy='253' r='1' fill='%237EC8C8' opacity='0.55'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 55% 35% at 30% 55%, rgba(126,200,200,0.28), transparent 55%),
+    radial-gradient(ellipse 30% 25% at 75% 35%, rgba(184,160,216,0.18), transparent 50%);
   background-repeat: repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
 }
@@ -333,9 +350,9 @@ section { padding: var(--section-gap) 0; position: relative; overflow: hidden; }
 #research {
   background-color: #121420;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Cpath d='M0,53 Q37,17 73,53 T147,53 T220,53 T293,53 T367,53 T400,53' fill='none' stroke='%237EC8C8' stroke-width='0.7' opacity='0.25'/%3E%3Cpath d='M0,77 Q37,43 73,77 T147,77 T220,77 T293,77 T367,77 T400,77' fill='none' stroke='%23B8A0D8' stroke-width='0.55' opacity='0.2'/%3E%3Cpath d='M0,101 Q37,67 73,101 T147,101 T220,101 T293,101 T367,101 T400,101' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.17'/%3E%3Cpath d='M0,173 Q37,143 73,173 T147,173 T220,173 T293,173 T367,173 T400,173' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.16'/%3E%3Cpath d='M0,237 Q37,207 73,237 T147,237 T220,237 T293,237 T367,237 T400,237' fill='none' stroke='%237EC8C8' stroke-width='0.4' opacity='0.14'/%3E%3Ccircle cx='47' cy='37' r='3' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.28'/%3E%3Ccircle cx='113' cy='63' r='3.5' fill='none' stroke='%23B8A0D8' stroke-width='0.55' opacity='0.3'/%3E%3Ccircle cx='187' cy='43' r='2.5' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.25'/%3E%3Ccircle cx='273' cy='73' r='2.8' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.27'/%3E%3Ccircle cx='347' cy='47' r='2.2' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.22'/%3E%3Ccircle cx='73' cy='163' r='2.5' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.2'/%3E%3Ccircle cx='183' cy='197' r='3' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.22'/%3E%3Ccircle cx='293' cy='157' r='2' fill='none' stroke='%237EC8C8' stroke-width='0.4' opacity='0.18'/%3E%3Ccircle cx='357' cy='213' r='2.3' fill='none' stroke='%23B8A0D8' stroke-width='0.45' opacity='0.2'/%3E%3Cline x1='47' y1='37' x2='113' y2='63' stroke='%237EC8C8' stroke-width='0.3' opacity='0.15'/%3E%3Cline x1='113' y1='63' x2='187' y2='43' stroke='%23B8A0D8' stroke-width='0.3' opacity='0.15'/%3E%3Cline x1='187' y1='43' x2='273' y2='73' stroke='%237EC8C8' stroke-width='0.3' opacity='0.15'/%3E%3Cline x1='273' y1='73' x2='347' y2='47' stroke='%23B8A0D8' stroke-width='0.3' opacity='0.15'/%3E%3Cline x1='73' y1='163' x2='183' y2='197' stroke='%237EC8C8' stroke-width='0.3' opacity='0.13'/%3E%3Cline x1='183' y1='197' x2='293' y2='157' stroke='%23B8A0D8' stroke-width='0.3' opacity='0.13'/%3E%3Cline x1='293' y1='157' x2='357' y2='213' stroke='%237EC8C8' stroke-width='0.3' opacity='0.13'/%3E%3Ccircle cx='133' cy='123' r='1.2' fill='%23D8E4F0' opacity='0.25'/%3E%3Ccircle cx='323' cy='263' r='1' fill='%23D8E4F0' opacity='0.2'/%3E%3Ccircle cx='37' cy='277' r='0.9' fill='%237EC8C8' opacity='0.18'/%3E%3Ccircle cx='237' cy='133' r='1.1' fill='%23D8E4F0' opacity='0.2'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse 60% 40% at 75% 35%, rgba(184,160,216,0.24), transparent 55%),
-    radial-gradient(ellipse 45% 35% at 25% 65%, rgba(126,200,200,0.20), transparent 55%);
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Cpath d='M0,53 Q37,17 73,53 T147,53 T220,53 T293,53 T367,53 T400,53' fill='none' stroke='%237EC8C8' stroke-width='0.7' opacity='0.69'/%3E%3Cpath d='M0,77 Q37,43 73,77 T147,77 T220,77 T293,77 T367,77 T400,77' fill='none' stroke='%23B8A0D8' stroke-width='0.55' opacity='0.55'/%3E%3Cpath d='M0,101 Q37,67 73,101 T147,101 T220,101 T293,101 T367,101 T400,101' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.47'/%3E%3Cpath d='M0,173 Q37,143 73,173 T147,173 T220,173 T293,173 T367,173 T400,173' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.44'/%3E%3Cpath d='M0,237 Q37,207 73,237 T147,237 T220,237 T293,237 T367,237 T400,237' fill='none' stroke='%237EC8C8' stroke-width='0.4' opacity='0.38'/%3E%3Ccircle cx='47' cy='37' r='3' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.77'/%3E%3Ccircle cx='113' cy='63' r='3.5' fill='none' stroke='%23B8A0D8' stroke-width='0.55' opacity='0.82'/%3E%3Ccircle cx='187' cy='43' r='2.5' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.69'/%3E%3Ccircle cx='273' cy='73' r='2.8' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.74'/%3E%3Ccircle cx='347' cy='47' r='2.2' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.60'/%3E%3Ccircle cx='73' cy='163' r='2.5' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.55'/%3E%3Ccircle cx='183' cy='197' r='3' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.60'/%3E%3Ccircle cx='293' cy='157' r='2' fill='none' stroke='%237EC8C8' stroke-width='0.4' opacity='0.50'/%3E%3Ccircle cx='357' cy='213' r='2.3' fill='none' stroke='%23B8A0D8' stroke-width='0.45' opacity='0.55'/%3E%3Cline x1='47' y1='37' x2='113' y2='63' stroke='%237EC8C8' stroke-width='0.3' opacity='0.41'/%3E%3Cline x1='113' y1='63' x2='187' y2='43' stroke='%23B8A0D8' stroke-width='0.3' opacity='0.41'/%3E%3Cline x1='187' y1='43' x2='273' y2='73' stroke='%237EC8C8' stroke-width='0.3' opacity='0.41'/%3E%3Cline x1='273' y1='73' x2='347' y2='47' stroke='%23B8A0D8' stroke-width='0.3' opacity='0.41'/%3E%3Cline x1='73' y1='163' x2='183' y2='197' stroke='%237EC8C8' stroke-width='0.3' opacity='0.36'/%3E%3Cline x1='183' y1='197' x2='293' y2='157' stroke='%23B8A0D8' stroke-width='0.3' opacity='0.36'/%3E%3Cline x1='293' y1='157' x2='357' y2='213' stroke='%237EC8C8' stroke-width='0.3' opacity='0.36'/%3E%3Ccircle cx='133' cy='123' r='1.2' fill='%23D8E4F0' opacity='0.69'/%3E%3Ccircle cx='323' cy='263' r='1' fill='%23D8E4F0' opacity='0.55'/%3E%3Ccircle cx='37' cy='277' r='0.9' fill='%237EC8C8' opacity='0.50'/%3E%3Ccircle cx='237' cy='133' r='1.1' fill='%23D8E4F0' opacity='0.55'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 60% 40% at 75% 35%, rgba(184,160,216,0.30), transparent 55%),
+    radial-gradient(ellipse 45% 35% at 25% 65%, rgba(126,200,200,0.25), transparent 55%);
   background-repeat: repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
 }
@@ -344,9 +361,9 @@ section { padding: var(--section-gap) 0; position: relative; overflow: hidden; }
 #projects {
   background-color: #141210;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Cpath d='M53,57 L57,73 L73,73 L60,82 L65,99 L53,89 L41,99 L46,82 L33,73 L49,73 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.7' opacity='0.2'/%3E%3Cpath d='M263,193 L266,203 L277,203 L268,210 L271,221 L263,214 L255,221 L258,210 L249,203 L260,203 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.55' opacity='0.16'/%3E%3Cpath d='M153,43 L155,49 L162,49 L156,54 L158,61 L153,57 L148,61 L150,54 L144,49 L151,49 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.5' opacity='0.14'/%3E%3Cpath d='M333,123 L335,128 L340,128 L336,132 L337,137 L333,134 L329,137 L330,132 L326,128 L331,128 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.45' opacity='0.13'/%3E%3Cpath d='M0,273 Q67,253 133,273 T267,273 T400,273' fill='none' stroke='%237EC8C8' stroke-width='0.7' opacity='0.22'/%3E%3Cpath d='M0,283 Q73,263 147,283 T293,283 T400,281' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.16'/%3E%3Cpath d='M0,173 Q57,153 113,173 T227,173 T340,173 T400,173' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.14'/%3E%3Ccircle cx='87' cy='87' r='1.2' fill='%23D8E4F0' opacity='0.28'/%3E%3Ccircle cx='297' cy='67' r='1' fill='%23F0C8A0' opacity='0.22'/%3E%3Ccircle cx='187' cy='237' r='0.9' fill='%23D8E4F0' opacity='0.2'/%3E%3Ccircle cx='357' cy='177' r='1.1' fill='%237EC8C8' opacity='0.22'/%3E%3Ccircle cx='47' cy='207' r='0.8' fill='%23D8E4F0' opacity='0.18'/%3E%3Ccircle cx='217' cy='127' r='1.3' fill='%23F0C8A0' opacity='0.2'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse 50% 30% at 80% 70%, rgba(240,200,160,0.20), transparent 55%),
-    radial-gradient(ellipse 40% 25% at 20% 40%, rgba(126,200,200,0.17), transparent 50%);
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Cpath d='M53,57 L57,73 L73,73 L60,82 L65,99 L53,89 L41,99 L46,82 L33,73 L49,73 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.7' opacity='0.55'/%3E%3Cpath d='M263,193 L266,203 L277,203 L268,210 L271,221 L263,214 L255,221 L258,210 L249,203 L260,203 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.55' opacity='0.44'/%3E%3Cpath d='M153,43 L155,49 L162,49 L156,54 L158,61 L153,57 L148,61 L150,54 L144,49 L151,49 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.5' opacity='0.38'/%3E%3Cpath d='M333,123 L335,128 L340,128 L336,132 L337,137 L333,134 L329,137 L330,132 L326,128 L331,128 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.45' opacity='0.36'/%3E%3Cpath d='M0,273 Q67,253 133,273 T267,273 T400,273' fill='none' stroke='%237EC8C8' stroke-width='0.7' opacity='0.60'/%3E%3Cpath d='M0,283 Q73,263 147,283 T293,283 T400,281' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.44'/%3E%3Cpath d='M0,173 Q57,153 113,173 T227,173 T340,173 T400,173' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.38'/%3E%3Ccircle cx='87' cy='87' r='1.2' fill='%23D8E4F0' opacity='0.77'/%3E%3Ccircle cx='297' cy='67' r='1' fill='%23F0C8A0' opacity='0.60'/%3E%3Ccircle cx='187' cy='237' r='0.9' fill='%23D8E4F0' opacity='0.55'/%3E%3Ccircle cx='357' cy='177' r='1.1' fill='%237EC8C8' opacity='0.60'/%3E%3Ccircle cx='47' cy='207' r='0.8' fill='%23D8E4F0' opacity='0.50'/%3E%3Ccircle cx='217' cy='127' r='1.3' fill='%23F0C8A0' opacity='0.55'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 50% 30% at 80% 70%, rgba(240,200,160,0.25), transparent 55%),
+    radial-gradient(ellipse 40% 25% at 20% 40%, rgba(126,200,200,0.21), transparent 50%);
   background-repeat: repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
 }
@@ -355,9 +372,9 @@ section { padding: var(--section-gap) 0; position: relative; overflow: hidden; }
 #internship {
   background-color: #101A1E;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Ccircle cx='83' cy='73' r='24' fill='none' stroke='%237EC8C8' stroke-width='0.7' opacity='0.22'/%3E%3Ccircle cx='83' cy='73' r='5' fill='none' stroke='%237EC8C8' stroke-width='0.55' opacity='0.18'/%3E%3Cline x1='83' y1='49' x2='83' y2='59' stroke='%237EC8C8' stroke-width='0.7' opacity='0.2'/%3E%3Cline x1='107' y1='73' x2='97' y2='73' stroke='%237EC8C8' stroke-width='0.7' opacity='0.2'/%3E%3Cline x1='83' y1='49' x2='107' y2='73' stroke='%23D8E4F0' stroke-width='0.4' opacity='0.12'/%3E%3Ccircle cx='273' cy='203' r='18' fill='none' stroke='%237EC8C8' stroke-width='0.6' opacity='0.18'/%3E%3Ccircle cx='273' cy='203' r='3.5' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.15'/%3E%3Cline x1='273' y1='185' x2='273' y2='193' stroke='%237EC8C8' stroke-width='0.6' opacity='0.16'/%3E%3Cline x1='291' y1='203' x2='283' y2='203' stroke='%237EC8C8' stroke-width='0.6' opacity='0.16'/%3E%3Cpath d='M37,253 Q117,193 197,253' fill='none' stroke='%23D8E4F0' stroke-width='0.55' opacity='0.16' stroke-dasharray='6,5'/%3E%3Cpath d='M217,73 Q277,113 337,73' fill='none' stroke='%23D8E4F0' stroke-width='0.5' opacity='0.14' stroke-dasharray='5,6'/%3E%3Ccircle cx='357' cy='53' r='1.2' fill='%23D8E4F0' opacity='0.3'/%3E%3Ccircle cx='63' cy='163' r='1' fill='%237EC8C8' opacity='0.22'/%3E%3Ccircle cx='343' cy='253' r='0.9' fill='%23D8E4F0' opacity='0.2'/%3E%3Ccircle cx='163' cy='113' r='1.1' fill='%237EC8C8' opacity='0.22'/%3E%3Ccircle cx='33' cy='77' r='0.8' fill='%23D8E4F0' opacity='0.18'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse 50% 30% at 40% 50%, rgba(126,200,200,0.22), transparent 55%),
-    radial-gradient(ellipse 30% 25% at 70% 30%, rgba(184,160,216,0.14), transparent 50%);
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Ccircle cx='83' cy='73' r='24' fill='none' stroke='%237EC8C8' stroke-width='0.7' opacity='0.60'/%3E%3Ccircle cx='83' cy='73' r='5' fill='none' stroke='%237EC8C8' stroke-width='0.55' opacity='0.50'/%3E%3Cline x1='83' y1='49' x2='83' y2='59' stroke='%237EC8C8' stroke-width='0.7' opacity='0.55'/%3E%3Cline x1='107' y1='73' x2='97' y2='73' stroke='%237EC8C8' stroke-width='0.7' opacity='0.55'/%3E%3Cline x1='83' y1='49' x2='107' y2='73' stroke='%23D8E4F0' stroke-width='0.4' opacity='0.33'/%3E%3Ccircle cx='273' cy='203' r='18' fill='none' stroke='%237EC8C8' stroke-width='0.6' opacity='0.50'/%3E%3Ccircle cx='273' cy='203' r='3.5' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.41'/%3E%3Cline x1='273' y1='185' x2='273' y2='193' stroke='%237EC8C8' stroke-width='0.6' opacity='0.44'/%3E%3Cline x1='291' y1='203' x2='283' y2='203' stroke='%237EC8C8' stroke-width='0.6' opacity='0.44'/%3E%3Cpath d='M37,253 Q117,193 197,253' fill='none' stroke='%23D8E4F0' stroke-width='0.55' opacity='0.44' stroke-dasharray='6,5'/%3E%3Cpath d='M217,73 Q277,113 337,73' fill='none' stroke='%23D8E4F0' stroke-width='0.5' opacity='0.38' stroke-dasharray='5,6'/%3E%3Ccircle cx='357' cy='53' r='1.2' fill='%23D8E4F0' opacity='0.82'/%3E%3Ccircle cx='63' cy='163' r='1' fill='%237EC8C8' opacity='0.60'/%3E%3Ccircle cx='343' cy='253' r='0.9' fill='%23D8E4F0' opacity='0.55'/%3E%3Ccircle cx='163' cy='113' r='1.1' fill='%237EC8C8' opacity='0.60'/%3E%3Ccircle cx='33' cy='77' r='0.8' fill='%23D8E4F0' opacity='0.50'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 50% 30% at 40% 50%, rgba(126,200,200,0.28), transparent 55%),
+    radial-gradient(ellipse 30% 25% at 70% 30%, rgba(184,160,216,0.18), transparent 50%);
   background-repeat: repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
 }
@@ -366,9 +383,9 @@ section { padding: var(--section-gap) 0; position: relative; overflow: hidden; }
 #skills {
   background-color: #141220;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Ccircle cx='47' cy='47' r='13' fill='none' stroke='%237EC8C8' stroke-width='0.6' opacity='0.2'/%3E%3Ccircle cx='117' cy='37' r='8' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.18'/%3E%3Ccircle cx='197' cy='57' r='17' fill='none' stroke='%23B8A0D8' stroke-width='0.6' opacity='0.18'/%3E%3Ccircle cx='83' cy='97' r='6' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.16'/%3E%3Ccircle cx='157' cy='73' r='10' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.17'/%3E%3Ccircle cx='253' cy='117' r='5' fill='none' stroke='%23B8A0D8' stroke-width='0.45' opacity='0.15'/%3E%3Ccircle cx='33' cy='157' r='4' fill='none' stroke='%237EC8C8' stroke-width='0.4' opacity='0.13'/%3E%3Cpath d='M197,57 Q233,67 253,117' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.13'/%3E%3Ccircle cx='323' cy='63' r='9' fill='none' stroke='%23B8A0D8' stroke-width='0.55' opacity='0.17'/%3E%3Ccircle cx='357' cy='133' r='7' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.16'/%3E%3Ccircle cx='283' cy='193' r='11' fill='none' stroke='%23B8A0D8' stroke-width='0.55' opacity='0.15'/%3E%3Ccircle cx='143' cy='173' r='6' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.14'/%3E%3Ccircle cx='73' cy='227' r='8' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.15'/%3E%3Ccircle cx='217' cy='243' r='5' fill='none' stroke='%237EC8C8' stroke-width='0.4' opacity='0.13'/%3E%3Ccircle cx='367' cy='237' r='6' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.14'/%3E%3Ccircle cx='173' cy='137' r='1.2' fill='%23D8E4F0' opacity='0.25'/%3E%3Ccircle cx='313' cy='83' r='1' fill='%23D8E4F0' opacity='0.22'/%3E%3Ccircle cx='113' cy='137' r='0.9' fill='%237EC8C8' opacity='0.2'/%3E%3Ccircle cx='343' cy='187' r='1.1' fill='%23D8E4F0' opacity='0.18'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse 55% 35% at 65% 45%, rgba(184,160,216,0.24), transparent 55%),
-    radial-gradient(ellipse 40% 30% at 30% 60%, rgba(126,200,200,0.18), transparent 50%);
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Ccircle cx='47' cy='47' r='13' fill='none' stroke='%237EC8C8' stroke-width='0.6' opacity='0.55'/%3E%3Ccircle cx='117' cy='37' r='8' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.50'/%3E%3Ccircle cx='197' cy='57' r='17' fill='none' stroke='%23B8A0D8' stroke-width='0.6' opacity='0.50'/%3E%3Ccircle cx='83' cy='97' r='6' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.44'/%3E%3Ccircle cx='157' cy='73' r='10' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.47'/%3E%3Ccircle cx='253' cy='117' r='5' fill='none' stroke='%23B8A0D8' stroke-width='0.45' opacity='0.41'/%3E%3Ccircle cx='33' cy='157' r='4' fill='none' stroke='%237EC8C8' stroke-width='0.4' opacity='0.36'/%3E%3Cpath d='M197,57 Q233,67 253,117' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.36'/%3E%3Ccircle cx='323' cy='63' r='9' fill='none' stroke='%23B8A0D8' stroke-width='0.55' opacity='0.47'/%3E%3Ccircle cx='357' cy='133' r='7' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.44'/%3E%3Ccircle cx='283' cy='193' r='11' fill='none' stroke='%23B8A0D8' stroke-width='0.55' opacity='0.41'/%3E%3Ccircle cx='143' cy='173' r='6' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.38'/%3E%3Ccircle cx='73' cy='227' r='8' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.41'/%3E%3Ccircle cx='217' cy='243' r='5' fill='none' stroke='%237EC8C8' stroke-width='0.4' opacity='0.36'/%3E%3Ccircle cx='367' cy='237' r='6' fill='none' stroke='%237EC8C8' stroke-width='0.45' opacity='0.38'/%3E%3Ccircle cx='173' cy='137' r='1.2' fill='%23D8E4F0' opacity='0.69'/%3E%3Ccircle cx='313' cy='83' r='1' fill='%23D8E4F0' opacity='0.60'/%3E%3Ccircle cx='113' cy='137' r='0.9' fill='%237EC8C8' opacity='0.55'/%3E%3Ccircle cx='343' cy='187' r='1.1' fill='%23D8E4F0' opacity='0.50'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 55% 35% at 65% 45%, rgba(184,160,216,0.30), transparent 55%),
+    radial-gradient(ellipse 40% 30% at 30% 60%, rgba(126,200,200,0.23), transparent 50%);
   background-repeat: repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
 }
@@ -377,9 +394,9 @@ section { padding: var(--section-gap) 0; position: relative; overflow: hidden; }
 #contact {
   background-color: #14120E;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect x='97' y='27' width='20' height='42' rx='5' fill='none' stroke='%23F0C8A0' stroke-width='0.7' opacity='0.2'/%3E%3Cpath d='M107,10 L107,27' stroke='%23F0C8A0' stroke-width='0.55' opacity='0.17'/%3E%3Cpath d='M102,12 L112,12' stroke='%23F0C8A0' stroke-width='0.45' opacity='0.13'/%3E%3Cpath d='M267,177 Q267,157 287,157 Q307,157 307,177' fill='none' stroke='%23B8A0D8' stroke-width='0.7' opacity='0.17'/%3E%3Cpath d='M273,177 Q270,197 277,210' fill='none' stroke='%23B8A0D8' stroke-width='0.45' opacity='0.13'/%3E%3Cpath d='M287,177 Q287,195 282,207' fill='none' stroke='%23B8A0D8' stroke-width='0.45' opacity='0.13'/%3E%3Cpath d='M301,177 Q304,195 298,207' fill='none' stroke='%23B8A0D8' stroke-width='0.45' opacity='0.13'/%3E%3Cpath d='M0,273 Q53,243 107,273 T213,273 T320,273 T400,273' fill='none' stroke='%237EC8C8' stroke-width='0.6' opacity='0.18'/%3E%3Crect x='307' y='77' width='16' height='32' rx='4' fill='none' stroke='%23F0C8A0' stroke-width='0.6' opacity='0.16'/%3E%3Cpath d='M315,63 L315,77' stroke='%23F0C8A0' stroke-width='0.5' opacity='0.14'/%3E%3Cpath d='M311,65 L319,65' stroke='%23F0C8A0' stroke-width='0.4' opacity='0.11'/%3E%3Ccircle cx='67' cy='97' r='1.3' fill='%23D8E4F0' opacity='0.25'/%3E%3Ccircle cx='237' cy='87' r='1' fill='%23F0C8A0' opacity='0.2'/%3E%3Ccircle cx='357' cy='157' r='1.1' fill='%23D8E4F0' opacity='0.22'/%3E%3Ccircle cx='147' cy='207' r='0.9' fill='%237EC8C8' opacity='0.18'/%3E%3Ccircle cx='337' cy='247' r='1.2' fill='%23D8E4F0' opacity='0.2'/%3E%3Ccircle cx='47' cy='227' r='0.8' fill='%23F0C8A0' opacity='0.16'/%3E%3Cpath d='M83,163 Q78,147 83,133' fill='none' stroke='%23B8A0D8' stroke-width='0.45' opacity='0.12'/%3E%3Cpath d='M87,163 Q92,147 87,133' fill='none' stroke='%23B8A0D8' stroke-width='0.4' opacity='0.1'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse 60% 35% at 40% 55%, rgba(240,200,160,0.22), transparent 55%),
-    radial-gradient(ellipse 35% 25% at 75% 30%, rgba(126,200,200,0.14), transparent 50%);
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect x='97' y='27' width='20' height='42' rx='5' fill='none' stroke='%23F0C8A0' stroke-width='0.7' opacity='0.55'/%3E%3Cpath d='M107,10 L107,27' stroke='%23F0C8A0' stroke-width='0.55' opacity='0.47'/%3E%3Cpath d='M102,12 L112,12' stroke='%23F0C8A0' stroke-width='0.45' opacity='0.36'/%3E%3Cpath d='M267,177 Q267,157 287,157 Q307,157 307,177' fill='none' stroke='%23B8A0D8' stroke-width='0.7' opacity='0.47'/%3E%3Cpath d='M273,177 Q270,197 277,210' fill='none' stroke='%23B8A0D8' stroke-width='0.45' opacity='0.36'/%3E%3Cpath d='M287,177 Q287,195 282,207' fill='none' stroke='%23B8A0D8' stroke-width='0.45' opacity='0.36'/%3E%3Cpath d='M301,177 Q304,195 298,207' fill='none' stroke='%23B8A0D8' stroke-width='0.45' opacity='0.36'/%3E%3Cpath d='M0,273 Q53,243 107,273 T213,273 T320,273 T400,273' fill='none' stroke='%237EC8C8' stroke-width='0.6' opacity='0.50'/%3E%3Crect x='307' y='77' width='16' height='32' rx='4' fill='none' stroke='%23F0C8A0' stroke-width='0.6' opacity='0.44'/%3E%3Cpath d='M315,63 L315,77' stroke='%23F0C8A0' stroke-width='0.5' opacity='0.38'/%3E%3Cpath d='M311,65 L319,65' stroke='%23F0C8A0' stroke-width='0.4' opacity='0.30'/%3E%3Ccircle cx='67' cy='97' r='1.3' fill='%23D8E4F0' opacity='0.69'/%3E%3Ccircle cx='237' cy='87' r='1' fill='%23F0C8A0' opacity='0.55'/%3E%3Ccircle cx='357' cy='157' r='1.1' fill='%23D8E4F0' opacity='0.60'/%3E%3Ccircle cx='147' cy='207' r='0.9' fill='%237EC8C8' opacity='0.50'/%3E%3Ccircle cx='337' cy='247' r='1.2' fill='%23D8E4F0' opacity='0.55'/%3E%3Ccircle cx='47' cy='227' r='0.8' fill='%23F0C8A0' opacity='0.44'/%3E%3Cpath d='M83,163 Q78,147 83,133' fill='none' stroke='%23B8A0D8' stroke-width='0.45' opacity='0.33'/%3E%3Cpath d='M87,163 Q92,147 87,133' fill='none' stroke='%23B8A0D8' stroke-width='0.4' opacity='0.28'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 60% 35% at 40% 55%, rgba(240,200,160,0.28), transparent 55%),
+    radial-gradient(ellipse 35% 25% at 75% 30%, rgba(126,200,200,0.18), transparent 50%);
   background-repeat: repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
 }
@@ -398,26 +415,17 @@ section { padding: var(--section-gap) 0; position: relative; overflow: hidden; }
 .research-timeline.reveal.visible .research-entry:nth-child(3) { transition-delay: 0.16s; }
 .cards-grid.reveal.visible .card:nth-child(4) { transition-delay: 0.24s; }
 
-/* ===== Waveform Divider ===== */
-.waveform-divider {
-  height: 32px; margin: 0 auto; max-width: var(--max-width);
-  position: relative; opacity: 0.40;
-  box-shadow: var(--glow-silver);
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 32' preserveAspectRatio='none'%3E%3Cpath d='M0 16 Q20 8,40 14 T80 16 T120 18 T160 15 Q180 10,200 16 T240 17 T280 15 T320 16 T360 14 T400 16 Q420 22,440 15 T480 16 T520 17 T560 15 T600 16 Q620 10,640 15 T680 17 T720 16 T760 14 T800 16' fill='none' stroke='%237EC8C8' stroke-width='0.8' opacity='0.5'/%3E%3Cpath d='M0 16 Q20 24,40 18 T80 16 T120 14 T160 17 Q180 22,200 16 T240 15 T280 17 T320 16 T360 18 T400 16 Q420 10,440 17 T480 16 T520 15 T560 17 T600 16 Q620 22,640 17 T680 15 T720 16 T760 18 T800 16' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.35'/%3E%3C/svg%3E") center/100% 100% no-repeat;
-  mask-image: linear-gradient(90deg, transparent 5%, white 15%, white 85%, transparent 95%);
-  -webkit-mask-image: linear-gradient(90deg, transparent 5%, white 15%, white 85%, transparent 95%);
+/* ===== Transition Quote (embedded at section bottom) ===== */
+.section-transition-quote {
+  display: block; text-align: right; padding: 0 0 16px 0; margin: 0;
+  font-family: var(--font-quote-zh); font-size: 0.75rem;
+  color: #C8D8E8; opacity: 0.55; letter-spacing: 0.06em;
+  max-width: var(--max-width); margin: 0 auto;
+  pointer-events: none; user-select: none;
 }
-
-/* ===== Transition Quote ===== */
-.transition-quote {
-  max-width: var(--max-width); margin: 8px auto 0; padding: 16px 0 32px;
-  text-align: center; position: relative;
-}
-.transition-quote p {
-  font-family: var(--font-hand); font-size: 1.2rem; font-weight: 500;
-  color: var(--silver-light); opacity: 0.65; letter-spacing: 0.06em;
-  text-shadow: 0 0 30px rgba(200,216,232,0.25), 0 0 60px rgba(126,200,200,0.12);
-  margin: 0; line-height: 1.6;
+[lang="en"] .section-transition-quote {
+  font-family: var(--font-hand);
+  font-size: 0.85rem;
 }
 
 /* ===== Bottle Quote ===== */
@@ -434,6 +442,102 @@ section { padding: var(--section-gap) 0; position: relative; overflow: hidden; }
 .bottle-quote.pos-br { bottom: 48px; right: 28px; text-align: right; }
 .bottle-quote.pos-tr { top: 100px; right: 22px; text-align: right; }
 .bottle-quote.pos-tl { top: 90px; left: 26px; text-align: left; }
+
+/* ===== Depth Gauge ===== */
+.depth-gauge {
+  position: fixed; right: 24px; top: 70vh; bottom: 5vh; z-index: 50;
+  display: flex; flex-direction: column; align-items: center;
+  pointer-events: none;
+}
+.depth-track {
+  flex: 1; width: 3px; background: rgba(200,216,232,0.10);
+  border-radius: 2px; position: relative;
+}
+.depth-dot {
+  position: absolute; left: 50%; top: 0; width: 8px; height: 8px;
+  margin-left: -4px; margin-top: -4px;
+  background: #7EC8C8; border-radius: 50%;
+  box-shadow: 0 0 12px rgba(126,200,200,0.6), 0 0 24px rgba(126,200,200,0.3);
+  transition: top 0.3s ease-out;
+}
+.depth-labels {
+  display: flex; flex-direction: column; justify-content: space-between;
+  position: absolute; right: 100%; top: 0; bottom: 0;
+  padding-right: 10px; text-align: right;
+}
+.depth-labels span {
+  font-family: var(--font-zh); font-size: 0.55rem;
+  color: var(--text-muted); opacity: 0.5; letter-spacing: 0.08em;
+  transition: opacity 0.3s, color 0.3s;
+}
+.depth-labels span.active {
+  opacity: 0.9; color: var(--accent-ice);
+  text-shadow: 0 0 8px rgba(126,200,200,0.3);
+}
+
+/* ===== Cursor Bubble Trail ===== */
+.cursor-bubble {
+  position: fixed; pointer-events: none; z-index: 9999;
+  border-radius: 50%; border: 0.5px solid;
+  animation: bubble-rise 1.2s ease-out forwards;
+  will-change: transform, opacity;
+}
+@keyframes bubble-rise {
+  0% { transform: translateY(0) scale(1); opacity: 0.7; }
+  100% { transform: translateY(-50px) scale(0.3); opacity: 0; }
+}
+
+/* ===== Specimen Collection ===== */
+.specimen-jar {
+  position: fixed; bottom: 24px; left: 24px; z-index: 50;
+  cursor: pointer; opacity: 0.5; transition: opacity 0.3s;
+}
+.specimen-jar:hover { opacity: 0.85; }
+.specimen-drawer {
+  position: absolute; bottom: 44px; left: 0;
+  background: rgba(18,34,54,0.92); border: 1px solid rgba(200,216,232,0.15);
+  border-radius: 12px; padding: 10px; display: flex; gap: 6px; flex-wrap: wrap;
+  backdrop-filter: blur(12px); max-width: 200px;
+}
+.specimen-drawer .specimen-icon {
+  width: 24px; height: 24px; opacity: 0.5; filter: grayscale(1);
+  font-size: 0.85rem; text-align: center; line-height: 24px;
+}
+.specimen-drawer .specimen-icon.collected {
+  opacity: 1; filter: none;
+}
+.hidden-specimen {
+  position: absolute; width: 28px; height: 28px; z-index: 5;
+  opacity: 0.18; cursor: pointer; pointer-events: auto;
+  transition: opacity 0.3s, transform 0.3s;
+  animation: specimen-pulse 3s ease-in-out infinite;
+}
+.hidden-specimen:hover { opacity: 0.5; transform: scale(1.2); }
+.hidden-specimen.collected { opacity: 0; pointer-events: none; animation: none; }
+@keyframes specimen-pulse {
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 0.25; }
+}
+.completion-overlay {
+  position: fixed; inset: 0; z-index: 300;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(4,10,18,0.85);
+  font-family: var(--font-zh); font-size: 1.6rem;
+  color: #D8E4F0; opacity: 0; pointer-events: none;
+  transition: opacity 0.8s ease;
+  text-shadow: 0 0 40px rgba(126,200,200,0.5);
+}
+.completion-overlay.show { opacity: 1; }
+
+/* ===== Soundscape ===== */
+.soundscape-toggle {
+  position: fixed; bottom: 80px; left: 24px; z-index: 50;
+  background: none; border: none; cursor: pointer;
+  font-size: 1.1rem; opacity: 0.35; transition: opacity 0.3s;
+  padding: 6px;
+}
+.soundscape-toggle:hover { opacity: 0.7; }
+.soundscape-toggle.active { opacity: 0.6; }
 
 /* ===== Diver Popup ===== */
 .diver-popup {
@@ -600,7 +704,7 @@ section { padding: var(--section-gap) 0; position: relative; overflow: hidden; }
   padding: 8px 18px; border-radius: 8px; font-size: 0.8rem; font-family: var(--font-zh);
   cursor: pointer; border: none; transition: all var(--transition); letter-spacing: 0.04em;
 }
-.cms-btn-primary { background: rgba(126,200,200,0.18); color: var(--accent-ice); border: 1px solid rgba(126,200,200,0.3); }
+.cms-btn-primary { background: rgba(126,200,200,0.23); color: var(--accent-ice); border: 1px solid rgba(126,200,200,0.3); }
 .cms-btn-primary:hover { background: rgba(126,200,200,0.28); }
 .cms-btn-ghost { background: none; color: var(--text-light); border: 1px solid var(--border); }
 .cms-btn-ghost:hover { border-color: var(--text-light); color: var(--text); }
@@ -904,7 +1008,7 @@ footer a:hover { color: var(--accent-ice); }
 /* ===== Animations ===== */
 @keyframes float {
   0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-12px); }
+  50% { transform: translateX(-50%) translateY(-18px); }
 }
 
 /* ===== Responsive: 768px ===== */
@@ -932,8 +1036,7 @@ footer a:hover { color: var(--accent-ice); }
   .research-timeline { padding-left: 24px; }
   .research-entry { gap: 16px; }
   .research-body { padding: 18px 16px; }
-  .transition-quote { margin: 6px auto 0; padding: 12px 0 24px; }
-  .transition-quote p { font-size: 1.05rem; }
+  .section-transition-quote { font-size: 0.7rem; padding: 0 0 12px 0; }
   .bottle-quote { font-size: 0.72rem; max-width: 150px; }
   .knowledge-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
   .diary-timeline { padding-left: 30px; }
@@ -941,13 +1044,17 @@ footer a:hover { color: var(--accent-ice); }
   .cms-panel-header { padding: 12px 16px; }
   .cms-panel-header h2 { font-size: 1rem; }
   .cms-content { padding: 16px; }
+  .depth-gauge { right: 6px; }
+  .depth-track { width: 2px; }
+  .depth-dot { width: 5px; height: 5px; margin-left: -2.5px; margin-top: -2.5px; }
+  .depth-labels { display: none; }
 }
 
 /* ===== Responsive: 480px ===== */
 @media (max-width: 480px) {
   .hero h1 { font-size: 1.9rem; }
   .hero .en-name { font-size: 1rem; }
-  .hero .motto { font-size: 0.88rem; letter-spacing: 0.25em; }
+  .hero .motto { font-size: 0.88rem; letter-spacing: 0.06em; }
   .hero-photo { width: 104px; height: 104px; }
   .hero-track-toggles { gap: 8px; }
   .hero-track-toggles .track-btn { padding: 7px 18px; font-size: 0.78rem; }
@@ -967,8 +1074,7 @@ footer a:hover { color: var(--accent-ice); }
   .research-timeline { padding-left: 22px; }
   .research-entry { gap: 12px; }
   .research-body { padding: 16px 14px; }
-  .transition-quote { margin: 4px auto 0; padding: 10px 0 20px; }
-  .transition-quote p { font-size: 0.95rem; }
+  .section-transition-quote { font-size: 0.65rem; padding: 0 0 10px 0; }
   .knowledge-grid { grid-template-columns: 1fr; gap: 12px; }
   .diary-timeline { padding-left: 24px; }
   .diary-entry { padding: 16px; }
@@ -981,7 +1087,7 @@ footer a:hover { color: var(--accent-ice); }
   .hamburger, .mobile-menu, .mobile-overlay, .back-to-top,
   .contact-link, footer, body::after, body::before,
   .hero-particles, .hero-diver, .hero-jellyfish, .hero-octopus, .hero-seahorse, .hero-bubbles, .hero-starfish,
-  .waveform-divider, .transition-quote, .bottle-quote,
+  .section-transition-quote, .bottle-quote,
   .diver-popup, .hidden-page, .cms-overlay, .cms-panel,
   canvas { display: none !important; }
   body { background: #fff; color: #000; font-size: 11pt; }
@@ -1011,6 +1117,9 @@ footer a:hover { color: var(--accent-ice); }
     transition-duration: 0.01ms !important;
   }
   html { scroll-behavior: auto; }
+  .hero-particles { display: none; }
+  .cursor-bubble { display: none; }
+  .depth-dot { transition: none !important; }
 }
 </style>
 </head>
@@ -1188,7 +1297,6 @@ footer a:hover { color: var(--accent-ice); }
   </div>
 </section>
 
-<div class="transition-quote" aria-hidden="true"><p data-i18n="quotes.research2projects">用脑电探索人类思维的边界，用艺术记录那些隐秘的共振</p></div>
 
 <!-- ===== Projects (dynamic) ===== -->
 <section id="projects">
@@ -1202,7 +1310,6 @@ footer a:hover { color: var(--accent-ice); }
   </div>
 </section>
 
-<div class="transition-quote" aria-hidden="true"><p data-i18n="quotes.projects2internship">有些信号，只有在寂静中才能被听见</p></div>
 
 <!-- ===== Internship (dynamic) ===== -->
 <section id="internship" class="dynamic-section">
@@ -1228,7 +1335,6 @@ footer a:hover { color: var(--accent-ice); }
   </div>
 </section>
 
-<div class="transition-quote" aria-hidden="true"><p data-i18n="quotes.skills2contact">语言是浪潮，冲刷出思维的形状</p></div>
 
 <!-- ===== Contact ===== -->
 <section id="contact">
@@ -1344,18 +1450,21 @@ const I18N = {
       p1:"我就读于北京语言大学语言病理学专业，目前专注于言语感知的神经机制（EEG）研究。本科就读于沈阳师范大学英语专业，具备以英语为工作语言的实际能力。",
       p2:"我对认知神经科学、脑机接口与自然语言处理的交叉地带保持持续的关注与探索，也对跨文化传播与国际化产品有浓厚兴趣。",
       p3:"业余时间里，我享受用脚步丈量山野，或是在书页间寻找意外的灵感。生活的节奏感，也藏在每段旋律或一张张通往未知城市的车票里。",
-      hobbies:"<span class=\"hobby\">徒步</span><span class=\"dot\">·</span><span class=\"hobby\">健身</span><span class=\"dot\">·</span><span class=\"hobby\">读书</span><span class=\"dot\">·</span><span class=\"hobby\">音乐</span><span class=\"dot\">·</span><span class=\"hobby\">旅行</span><span class=\"dot\">·</span><span class=\"hobby\">游泳</span><span class=\"dot\">·</span><span class=\"hobby\">羽毛球</span>"
+      hobbies:"<span class=\"hobby\">徒步</span><span class=\"dot\">·</span><span class=\"hobby\">健身</span><span class=\"dot\">·</span><span class=\"hobby\">读书</span><span class=\"dot\">·</span><span class=\"hobby\">音乐</span><span class=\"dot\">·</span><span class=\"hobby\">旅行</span><span class=\"dot\">·</span><span class=\"hobby\">游泳</span><span class=\"dot\">·</span><span class=\"hobby\">羽毛球</span>",
+      transitionQuote:"—— 深海暗涌，载着声音 ——"
     },
     education: {
       title:"教育经历",
       items: [
         { year:"2024.09 – 至今", school:"北京语言大学", degree:"语言病理学 硕士", extra:"主修：人工智能技术与健康大数据挖掘、语音与构音障碍、行为与脑科学实验方法等" },
         { year:"2020.09 – 2024.06", school:"沈阳师范大学", degree:"英语 学士", extra:"英语专业八级（优秀）· 校一等奖学金" }
-      ]
+      ],
+      transitionQuote:"—— 知识如洋流，推着人向前 ——"
     },
     research: {
       title:"科研成果",
       note:"* 三篇论文均为导师一作，目前处于在审阶段。",
+      transitionQuote:"—— 用脑电探索人类思维的边界，用艺术记录那些隐秘的共振 ——",
       items: [
         { authors:"Dong, Y., Han, F., Li, H., & Zeng, J. (under review)",
           title:"Prosody Perception in Mandarin as a Second Language: Emotion-Specific Effects of L1 Typology, L2 Proficiency, and L1 Subgroup Variation",
@@ -1373,6 +1482,7 @@ const I18N = {
     },
     academicProjects: {
       title:"科研项目",
+      transitionQuote:"—— 有些信号，只有在寂静中才能被听见 ——",
       items: [
         { title:"二语声调学习的认知与神经机制研究",
           meta:"硕士课题 · 2026.01 – 至今",
@@ -1394,6 +1504,7 @@ const I18N = {
     },
     industryProjects: {
       title:"项目经历",
+      transitionQuote:"—— 有些信号，只有在寂静中才能被听见 ——",
       items: [
         { title:"AI大模型文献专利标注项目",
           meta:"线上参与 · 2025.03 – 2025.05",
@@ -1407,6 +1518,7 @@ const I18N = {
     },
     internship: {
       title:"实习实践",
+      transitionQuote:"—— 潜行者，终将浮出水面 ——",
       items: [
         { title:"北京奥力来健身有限公司 — 产品助理（英文方向）",
           meta:"2025.07 – 2025.08",
@@ -1428,6 +1540,7 @@ const I18N = {
     },
     skills: {
       title:"技能",
+      transitionQuote:"—— 语言是浪潮，冲刷出思维的形状 ——",
       categories: [
         { name:"研究方法", tags:["EEG/ERP","行为实验","PsychoPy","E-Prime","Praat","实验设计"] },
         { name:"数据分析", tags:["R","MATLAB","Python","Numpy/Pandas","Matplotlib","PyTorch","SQL","SPSS"] },
@@ -1473,18 +1586,21 @@ const I18N = {
       p1:"I am a graduate student in Language Pathology at Beijing Language and Culture University, currently focusing on the neural mechanisms of speech perception using EEG. I completed my undergraduate studies in English at Shenyang Normal University, and I am fully capable of working in English as my professional language.",
       p2:"I maintain an active interest in the intersection of cognitive neuroscience, brain-computer interfaces, and natural language processing. I am equally drawn to cross-cultural communication and international product development.",
       p3:"Outside of work, I find peace in wandering through mountains and forests, or discovering unexpected inspiration between the pages of a book. Life's rhythm also reveals itself in every melody, and in every ticket to a city I have yet to know.",
-      hobbies:"<span class=\"hobby\">Hiking</span><span class=\"dot\">·</span><span class=\"hobby\">Fitness</span><span class=\"dot\">·</span><span class=\"hobby\">Reading</span><span class=\"dot\">·</span><span class=\"hobby\">Music</span><span class=\"dot\">·</span><span class=\"hobby\">Travel</span><span class=\"dot\">·</span><span class=\"hobby\">Swimming</span><span class=\"dot\">·</span><span class=\"hobby\">Badminton</span>"
+      hobbies:"<span class=\"hobby\">Hiking</span><span class=\"dot\">·</span><span class=\"hobby\">Fitness</span><span class=\"dot\">·</span><span class=\"hobby\">Reading</span><span class=\"dot\">·</span><span class=\"hobby\">Music</span><span class=\"dot\">·</span><span class=\"hobby\">Travel</span><span class=\"dot\">·</span><span class=\"hobby\">Swimming</span><span class=\"dot\">·</span><span class=\"hobby\">Badminton</span>",
+      transitionQuote:"—— deep currents carry voices ——"
     },
     education: {
       title:"Education",
       items: [
         { year:"2024.09 – Present", school:"Beijing Language and Culture University", degree:"M.A. in Language Pathology", extra:"Courses: AI & Health Big Data Mining, Speech & Articulation Disorders, Behavioral & Brain Science Research Methods" },
         { year:"2020.09 – 2024.06", school:"Shenyang Normal University", degree:"B.A. in English", extra:"TEM-8 (Excellent) · First-Class Scholarship" }
-      ]
+      ],
+      transitionQuote:"—— knowledge flows like ocean currents ——"
     },
     research: {
       title:"Research",
       note:"* All three papers with supervisor as first author, currently under review.",
+      transitionQuote:"—— Exploring the boundaries of thought with EEG, recording those hidden resonances through art ——",
       items: [
         { authors:"Dong, Y., Han, F., Li, H., & Zeng, J. (under review)",
           title:"Prosody Perception in Mandarin as a Second Language: Emotion-Specific Effects of L1 Typology, L2 Proficiency, and L1 Subgroup Variation",
@@ -1502,6 +1618,7 @@ const I18N = {
     },
     academicProjects: {
       title:"Research Projects",
+      transitionQuote:"—— Some signals are only heard in silence ——",
       items: [
         { title:"Cognitive and Neural Mechanisms of L2 Tone Learning",
           meta:"Master's Thesis · 2026.01 – Present",
@@ -1523,6 +1640,7 @@ const I18N = {
     },
     industryProjects: {
       title:"Projects",
+      transitionQuote:"—— Some signals are only heard in silence ——",
       items: [
         { title:"AI Large Model Literature & Patent Annotation",
           meta:"Remote · 2025.03 – 2025.05",
@@ -1536,6 +1654,7 @@ const I18N = {
     },
     internship: {
       title:"Internship & Volunteer Experience",
+      transitionQuote:"—— those who dive deep will surface ——",
       items: [
         { title:"Beijing Aolilai Fitness Co., Ltd. — Product Assistant (English)",
           meta:"2025.07 – 2025.08",
@@ -1557,6 +1676,7 @@ const I18N = {
     },
     skills: {
       title:"Skills",
+      transitionQuote:"—— Language is the tide, shaping the coastline of thought ——",
       categories: [
         { name:"Research Methods", tags:["EEG/ERP","Behavioral Experiments","PsychoPy","E-Prime","Praat","Experimental Design"] },
         { name:"Data Analysis", tags:["R","MATLAB","Python","Numpy/Pandas","Matplotlib","PyTorch","SQL","SPSS"] },
@@ -1729,7 +1849,7 @@ function renderContact(lang) {
 }
 
 function cmsData(key, fallback) {
-  try { const v = localStorage.getItem('fay_cms_' + key); return v ? JSON.parse(v) : fallback; }
+  try { const v = localStorage.getItem('fay_cms_' + currentLang + '_' + key); return v ? JSON.parse(v) : fallback; }
   catch { return fallback; }
 }
 
@@ -1767,6 +1887,23 @@ function rerenderAll() {
   renderSkills(currentLang);
   renderContact(currentLang);
   applyTrackMode();
+  /* Render transition quotes at section bottoms */
+  document.querySelectorAll('section[id]').forEach(section => {
+    const existing = section.querySelector('.section-transition-quote');
+    if (existing) existing.remove();
+    const sectionId = section.id;
+    if (sectionId === 'hero' || sectionId === 'contact') return;
+    let i18nData = I18N[currentLang][sectionId];
+    if (!i18nData && sectionId === 'projects') {
+      i18nData = currentTrack === 'academic' ? I18N[currentLang].academicProjects : I18N[currentLang].industryProjects;
+    }
+    if (i18nData && i18nData.transitionQuote) {
+      const quote = document.createElement('div');
+      quote.className = 'section-transition-quote';
+      quote.textContent = i18nData.transitionQuote;
+      section.appendChild(quote);
+    }
+  });
 }
 
 /* ===== Language Switch ===== */
@@ -1952,6 +2089,22 @@ function defaultDiaryEntries() {
   });
 })();
 
+/* Creature Click Interactions */
+(function(){
+  var j=document.querySelector('.hero-jellyfish');
+  j&&j.addEventListener('click',function(e){e.stopPropagation();j.style.transition='all 0.3s ease';j.style.transform='scale(1.2)';j.style.filter='drop-shadow(0 0 16px rgba(184,160,216,0.6))';setTimeout(function(){j.style.transform='scale(1)';j.style.filter='drop-shadow(0 0 6px rgba(184,160,216,0.25))'},300);var t=j.style.top,r=j.style.right;j.style.top=(parseFloat(t)+(Math.random()-0.5)*10)+'%';j.style.right=(parseFloat(r)+(Math.random()-0.5)*8)+'%';setTimeout(function(){j.style.top=t;j.style.right=r},1500)});
+  var o=document.querySelector('.hero-octopus');
+  o&&o.addEventListener('click',function(e){e.stopPropagation();var r=o.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;for(var i=0;i<6;i++){var ink=document.createElement('div');ink.style.cssText='position:fixed;left:'+cx+'px;top:'+cy+'px;width:'+(3+Math.random()*5)+'px;height:'+(3+Math.random()*5)+'px;background:#4A3A6A;border-radius:50%;pointer-events:none;z-index:200;opacity:0.7;transition:all 0.8s ease-out;';document.body.appendChild(ink);requestAnimationFrame(function(){ink.style.transform='translate('+(Math.random()-0.5)*60+'px,'+(Math.random()-0.5)*60+'px)';ink.style.opacity='0'});setTimeout(function(){ink.remove()},900)}o.style.opacity='0';setTimeout(function(){o.style.opacity='0.65'},600)});
+  var s=document.querySelector('.hero-seahorse');
+  s&&s.addEventListener('click',function(e){e.stopPropagation();s.style.transition='transform 0.6s ease';s.style.transform='rotate(360deg)';setTimeout(function(){s.style.transform='rotate(0deg)'},600)});
+  var sf=document.querySelector('.hero-starfish');
+  sf&&sf.addEventListener('click',function(e){e.stopPropagation();sf.style.transition='transform 1s ease, filter 0.5s ease';sf.style.transform='rotate(720deg)';sf.style.filter='drop-shadow(0 0 16px rgba(240,200,160,0.7))';setTimeout(function(){sf.style.transform='rotate(0deg)';sf.style.filter='drop-shadow(0 0 6px rgba(240,200,160,0.25))'},1000)});
+  var b=document.querySelector('.hero-bubbles');
+  b&&b.addEventListener('click',function(e){e.stopPropagation();var r=b.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,ps=[];for(var i=0;i<8;i++){var p=document.createElement('div');p.style.cssText='position:fixed;left:'+cx+'px;top:'+cy+'px;width:4px;height:4px;background:#D8E4F0;border-radius:50%;pointer-events:none;z-index:200;opacity:0.6;transition:all 1s ease-out;';document.body.appendChild(p);ps.push(p);requestAnimationFrame(function(){p.style.transform='translate('+(Math.random()-0.5)*80+'px,'+(Math.random()-0.5)*80+'px)';p.style.opacity='0'})}b.style.opacity='0.2';setTimeout(function(){ps.forEach(function(p){p.remove()});b.style.opacity='0.55'},1200)});
+  var d=document.querySelector('.hero-diver');
+  d&&d.addEventListener('click',function(e){var r=d.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/3;for(var i=0;i<5;i++){var bub=document.createElement('div');bub.style.cssText='position:fixed;left:'+(cx+(Math.random()-0.5)*20)+'px;top:'+cy+'px;width:'+(3+Math.random()*4)+'px;height:'+(3+Math.random()*4)+'px;border:0.5px solid #7EC8C8;border-radius:50%;pointer-events:none;z-index:200;opacity:0.6;transition:all 1s ease-out;';document.body.appendChild(bub);requestAnimationFrame(function(){bub.style.transform='translate('+(Math.random()-0.5)*30+'px,-'+(20+Math.random()*40)+'px)';bub.style.opacity='0'});setTimeout(function(){bub.remove()},1100)}});
+})();
+
 /* Knowledge Page */
 function openKnowledgePage() {
   const page = document.getElementById('knowledgePage');
@@ -2059,10 +2212,10 @@ function escHtml(s) {
   const CMS_KEYS = ['avatar', 'signature', 'about', 'education', 'research', 'academic_projects', 'industry_projects', 'internship', 'skills', 'contact', 'knowledge_cards', 'diary_entries'];
 
   function cmsGet(key) {
-    try { const v = localStorage.getItem(CMS_STORAGE_PREFIX + key); return v ? JSON.parse(v) : null; } catch { return null; }
+    try { const v = localStorage.getItem(CMS_STORAGE_PREFIX + currentLang + '_' + key); return v ? JSON.parse(v) : null; } catch { return null; }
   }
   function cmsSet(key, val) {
-    try { localStorage.setItem(CMS_STORAGE_PREFIX + key, JSON.stringify(val)); } catch {}
+    try { localStorage.setItem(CMS_STORAGE_PREFIX + currentLang + '_' + key, JSON.stringify(val)); } catch {}
   }
   function cmsGetPassword() {
     return localStorage.getItem('fay_cms_password') || DEFAULT_PASSWORD;
@@ -2137,6 +2290,14 @@ function escHtml(s) {
     document.body.style.overflow = '';
   }
   document.getElementById('cmsClose').addEventListener('click', closePanel);
+
+  /* Click outside panel to close */
+  panel.addEventListener('click', (e) => {
+    if (e.target === panel) closePanel();
+  });
+  pwdOverlay.addEventListener('click', (e) => {
+    if (e.target === pwdOverlay) closePwdModal();
+  });
 
   /* Tab switching */
   let currentTab = 'basic';
@@ -2457,13 +2618,20 @@ function escHtml(s) {
     }
     showToast(I18N[currentLang].cms.saved);
     /* Re-render main site with new data */
-    setTimeout(() => { rerenderAll(); }, 300);
+    setTimeout(() => { rerenderAll(); closePanel(); }, 300);
   });
 
   /* Export */
   document.getElementById('cmsExport').addEventListener('click', () => {
-    const data = {};
-    CMS_KEYS.forEach(k => { data[k] = cmsGet(k); });
+    const data = { zh: {}, en: {} };
+    ['zh', 'en'].forEach(lang => {
+      CMS_KEYS.forEach(k => {
+        try {
+          const v = localStorage.getItem(CMS_STORAGE_PREFIX + lang + '_' + k);
+          data[lang][k] = v ? JSON.parse(v) : null;
+        } catch { data[lang][k] = null; }
+      });
+    });
     data._password = cmsGetPassword();
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -2481,9 +2649,21 @@ function escHtml(s) {
     reader.onload = function(e) {
       try {
         const data = JSON.parse(e.target.result);
-        CMS_KEYS.forEach(k => {
-          if (data[k] !== undefined) cmsSet(k, data[k]);
-        });
+        if (data.zh || data.en) {
+          ['zh', 'en'].forEach(lang => {
+            if (data[lang]) {
+              CMS_KEYS.forEach(k => {
+                if (data[lang][k] !== undefined && data[lang][k] !== null) {
+                  try { localStorage.setItem(CMS_STORAGE_PREFIX + lang + '_' + k, JSON.stringify(data[lang][k])); } catch {}
+                }
+              });
+            }
+          });
+        } else {
+          CMS_KEYS.forEach(k => {
+            if (data[k] !== undefined) cmsSet(k, data[k]);
+          });
+        }
         if (data._password) cmsSetPassword(data._password);
         showToast(I18N[currentLang].cms.imported);
         rerenderAll();
@@ -2523,8 +2703,8 @@ function escHtml(s) {
     return {
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.18,
-      vy: (Math.random() - 0.5) * 0.18,
+      vx: (Math.random() - 0.5) * 0.09,
+      vy: (Math.random() - 0.5) * 0.09,
       r: Math.random() * 1.4 + 0.5,
       opacity: Math.random() * 0.35 + 0.15,
       phase: Math.random() * Math.PI * 2,
@@ -2539,8 +2719,8 @@ function escHtml(s) {
     particles.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.12,
-      vy: (Math.random() - 0.5) * 0.12,
+      vx: (Math.random() - 0.5) * 0.06,
+      vy: (Math.random() - 0.5) * 0.06,
       r: Math.random() * 1.0 + 0.3,
       opacity: Math.random() * 0.25 + 0.10,
       phase: Math.random() * Math.PI * 2,
@@ -2647,9 +2827,9 @@ function escHtml(s) {
       drifters.push({
         el,
         x: xPct, y: yPct,
-        vx: (Math.random() - 0.5) * 0.04,
-        vy: (Math.random() - 0.5) * 0.03,
-        wobAmp: 0.8 + Math.random() * 2,
+        vx: (Math.random() - 0.5) * 0.02,
+        vy: (Math.random() - 0.5) * 0.015,
+        wobAmp: 1.6 + Math.random() * 4,
         wobFreq: 0.005 + Math.random() * 0.01,
         wobPhase: Math.random() * Math.PI * 2,
       });
@@ -2870,9 +3050,9 @@ function escHtml(s) {
       el, section, id,
       x: cfg.x, y: cfg.y,
       w: cfg.w, h: cfg.h,
-      vx: (Math.random() - 0.5) * 0.022,
-      vy: (Math.random() - 0.5) * 0.016,
-      wobAmp: 1.5 + Math.random() * 3.5,
+      vx: (Math.random() - 0.5) * 0.011,
+      vy: (Math.random() - 0.5) * 0.008,
+      wobAmp: 3.0 + Math.random() * 7.0,
       wobFreq: 0.002 + Math.random() * 0.006,
       wobPhase: Math.random() * Math.PI * 2,
     });
@@ -2961,6 +3141,256 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
 });
 
+/* ===== Depth Gauge ===== */
+(function() {
+  const depthDot = document.getElementById('depthDot');
+  const depthLabels = document.querySelectorAll('.depth-labels span');
+  if (!depthDot) return;
+
+  const sectionDepths = { hero:0, about:50, education:80, research:120, projects:160, internship:200, skills:250, contact:300 };
+  const maxDepth = 300;
+
+  const observer = new IntersectionObserver((entries) => {
+    updateGauge();
+  }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+
+  document.querySelectorAll('section[id]').forEach(s => observer.observe(s));
+
+  function updateGauge() {
+    const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+    const depth = Math.min(maxDepth, Math.round(scrollPercent * maxDepth));
+    const dotPercent = (depth / maxDepth) * 100;
+    depthDot.style.top = dotPercent + '%';
+    depthLabels.forEach(label => {
+      const threshold = parseInt(label.dataset.depth);
+      label.classList.toggle('active', depth >= threshold);
+    });
+  }
+
+  window.addEventListener('scroll', updateGauge, { passive: true });
+  updateGauge();
+})();
+
+/* ===== Cursor Bubble Trail ===== */
+(function() {
+  if ('ontouchstart' in window) return;
+  const colors = ['#7EC8C8', '#B8A0D8', '#F0C8A0', '#D8E4F0'];
+  const bubbles = [];
+  const MAX_BUBBLES = 20;
+  let lastSpawn = 0;
+  const SPAWN_INTERVAL = 40;
+
+  document.addEventListener('mousemove', (e) => {
+    const now = Date.now();
+    if (now - lastSpawn < SPAWN_INTERVAL) return;
+    lastSpawn = now;
+
+    const bubble = document.createElement('div');
+    bubble.className = 'cursor-bubble';
+    const size = 3 + Math.random() * 4;
+    bubble.style.width = size + 'px';
+    bubble.style.height = size + 'px';
+    bubble.style.left = (e.clientX + (Math.random() - 0.5) * 6) + 'px';
+    bubble.style.top = (e.clientY + (Math.random() - 0.5) * 6) + 'px';
+    bubble.style.borderColor = colors[Math.floor(Math.random() * colors.length)];
+    document.body.appendChild(bubble);
+    bubbles.push(bubble);
+
+    while (bubbles.length > MAX_BUBBLES) {
+      const old = bubbles.shift();
+      if (old && old.parentNode) old.remove();
+    }
+
+    bubble.addEventListener('animationend', () => {
+      bubble.remove();
+      const idx = bubbles.indexOf(bubble);
+      if (idx > -1) bubbles.splice(idx, 1);
+    });
+  });
+})();
+
+/* ===== Hidden Specimen Collection ===== */
+(function(){
+  var STORAGE_KEY='fayhan_specimens',TOTAL=6;
+  var collected=[];
+  try{collected=JSON.parse(localStorage.getItem(STORAGE_KEY))||[]}catch(e){collected=[]}
+  function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify(collected))}
+  function updateJar(){
+    var c=document.getElementById('jarCount'),d=document.getElementById('specimenDrawer');
+    if(c)c.textContent=collected.length+'/'+TOTAL;
+    if(d&&d.style.display!=='none')renderDrawer();
+    if(collected.length>=TOTAL)showCompletion();
+  }
+  function renderDrawer(){
+    var d=document.getElementById('specimenDrawer');
+    var names=['seahorse','turtle','anglerfish','nautilus','manta','dumbo'];
+    d.innerHTML=names.map(function(n){return '<div class="specimen-icon'+(collected.indexOf(n)>-1?' collected':'')+'">'+(collected.indexOf(n)>-1?'●':'○')+'</div>'}).join('');
+  }
+  function showCompletion(){
+    var ov=document.createElement('div');ov.className='completion-overlay';
+    ov.textContent='深海标本全集齐！';document.body.appendChild(ov);
+    requestAnimationFrame(function(){ov.classList.add('show')});
+    for(var i=0;i<30;i++){
+      var b=document.createElement('div');
+      b.style.cssText='position:fixed;left:'+Math.random()*100+'%;top:50%;width:'+(4+Math.random()*8)+'px;height:'+(4+Math.random()*8)+'px;border-radius:50%;border:1px solid '+['#7EC8C8','#B8A0D8','#F0C8A0','#D8E4F0'][Math.floor(Math.random()*4)]+';pointer-events:none;z-index:301;opacity:0.8;transition:all '+(1+Math.random()*2)+'s ease-out;';
+      document.body.appendChild(b);
+      requestAnimationFrame(function(){b.style.transform='translate('+(Math.random()-0.5)*300+'px,-'+(100+Math.random()*300)+'px)';b.style.opacity='0'});
+      setTimeout(function(){b.remove()},3000);
+    }
+    setTimeout(function(){ov.classList.remove('show');setTimeout(function(){ov.remove()},800)},3000);
+  }
+
+  /* Create hidden specimen SVGs in sections */
+  var specimens=[
+    {id:'seahorse',section:'about',style:'top:30%;right:15%',svg:'<svg width="28" height="28" viewBox="0 0 28 28"><path d="M14,4 Q18,2 20,7 Q22,14 18,18 Q16,22 14,24 Q12,22 10,18 Q6,14 8,7 Q10,2 14,4Z" fill="none" stroke="#F0C8A0" stroke-width="1"/><circle cx="17" cy="8" r="1" fill="#F0C8A0"/></svg>'},
+    {id:'turtle',section:'education',style:'bottom:20%;left:10%',svg:'<svg width="28" height="28" viewBox="0 0 28 28"><ellipse cx="14" cy="16" rx="10" ry="7" fill="none" stroke="#7EC8C8" stroke-width="1"/><circle cx="14" cy="14" r="3" fill="none" stroke="#7EC8C8" stroke-width="0.8"/><line x1="6" y1="14" x2="9" y2="12" stroke="#7EC8C8" stroke-width="0.8"/><line x1="22" y1="14" x2="19" y2="12" stroke="#7EC8C8" stroke-width="0.8"/></svg>'},
+    {id:'anglerfish',section:'research',style:'top:15%;right:20%',svg:'<svg width="28" height="28" viewBox="0 0 28 28"><ellipse cx="14" cy="16" rx="6" ry="5" fill="none" stroke="#B8A0D8" stroke-width="1"/><path d="M14,11 L14,4 L19,6" fill="none" stroke="#B8A0D8" stroke-width="0.8"/><circle cx="19" cy="6" r="1.5" fill="#B8A0D8"/></svg>'},
+    {id:'nautilus',section:'projects',style:'bottom:25%;right:18%',svg:'<svg width="28" height="28" viewBox="0 0 28 28"><path d="M14,14 Q18,8 22,10 Q24,16 18,20 Q12,22 10,18 Q8,14 14,14Z" fill="none" stroke="#F0C8A0" stroke-width="1"/><circle cx="15" cy="14" r="1" fill="#F0C8A0"/></svg>'},
+    {id:'manta',section:'internship',style:'top:40%;left:8%',svg:'<svg width="28" height="28" viewBox="0 0 28 28"><path d="M4,14 Q10,20 14,14 Q18,8 24,14" fill="none" stroke="#C8D8E8" stroke-width="1"/><line x1="4" y1="14" x2="2" y2="10" stroke="#C8D8E8" stroke-width="0.6"/><line x1="24" y1="14" x2="26" y2="10" stroke="#C8D8E8" stroke-width="0.6"/></svg>'},
+    {id:'dumbo',section:'skills',style:'bottom:30%;right:12%',svg:'<svg width="28" height="28" viewBox="0 0 28 28"><ellipse cx="14" cy="18" rx="7" ry="6" fill="none" stroke="#7EC8C8" stroke-width="1"/><circle cx="9" cy="16" r="2.5" fill="none" stroke="#7EC8C8" stroke-width="0.8"/><circle cx="19" cy="16" r="2.5" fill="none" stroke="#7EC8C8" stroke-width="0.8"/><path d="M14,14 L14,10 Q12,6 14,4 Q16,6 14,10Z" fill="none" stroke="#7EC8C8" stroke-width="0.7"/></svg>'}
+  ];
+
+  specimens.forEach(function(spec){
+    var section=document.getElementById(spec.section);
+    if(!section)return;
+    var el=document.createElement('div');
+    el.className='hidden-specimen';
+    el.setAttribute('data-specimen',spec.id);
+    el.style.cssText=spec.style;
+    el.innerHTML=spec.svg;
+    if(collected.indexOf(spec.id)>-1)el.classList.add('collected');
+    el.addEventListener('click',function(e){
+      e.stopPropagation();
+      if(collected.indexOf(spec.id)>-1)return;
+      collected.push(spec.id);save();el.classList.add('collected');updateJar();
+      var caught=document.createElement('div');
+      caught.style.cssText='position:fixed;inset:0;z-index:200;pointer-events:none;display:flex;align-items:center;justify-content:center;font-family:var(--font-zh);font-size:1.5rem;color:#D8E4F0;opacity:0;transition:opacity 0.5s ease;text-shadow:0 0 30px rgba(126,200,200,0.4);';
+      caught.textContent='标本 +1';document.body.appendChild(caught);
+      requestAnimationFrame(function(){caught.style.opacity='1'});
+      setTimeout(function(){caught.style.opacity='0';setTimeout(function(){caught.remove()},500)},1500);
+    });
+    section.style.position=section.style.position||'relative';
+    section.appendChild(el);
+  });
+
+  document.getElementById('specimenJar').addEventListener('click',function(e){
+    e.stopPropagation();
+    var d=document.getElementById('specimenDrawer');
+    var isOpen=d.style.display!=='none';
+    d.style.display=isOpen?'none':'flex';
+    if(!isOpen)renderDrawer();
+  });
+  updateJar();
+})();
+
+/* ===== Deep Sea Soundscape ===== */
+(function(){
+  var audioCtx=null,masterGain=null,isPlaying=false,bubbleTimer=null;
+  function createEngine(){
+    audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+    masterGain=audioCtx.createGain();masterGain.gain.value=0;masterGain.connect(audioCtx.destination);
+    var buf=audioCtx.createBuffer(1,audioCtx.sampleRate*4,audioCtx.sampleRate);
+    var data=buf.getChannelData(0);for(var i=0;i<data.length;i++)data[i]=Math.random()*2-1;
+    var rumble=audioCtx.createBufferSource();rumble.buffer=buf;rumble.loop=true;
+    var lp=audioCtx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=200;
+    var rg=audioCtx.createGain();rg.gain.value=0.06;
+    rumble.connect(lp);lp.connect(rg);rg.connect(masterGain);
+    var whale=audioCtx.createOscillator();whale.type='sine';whale.frequency.value=50;
+    var lfo=audioCtx.createOscillator();lfo.type='sine';lfo.frequency.value=0.1;
+    var lfoG=audioCtx.createGain();lfoG.gain.value=20;
+    lfo.connect(lfoG);lfoG.connect(whale.frequency);
+    var wg=audioCtx.createGain();wg.gain.value=0.03;
+    whale.connect(wg);wg.connect(masterGain);lfo.start();rumble.start();whale.start();
+  }
+  function startBubbles(){
+    bubbleTimer=setInterval(function(){
+      if(!isPlaying||!audioCtx)return;
+      if(Math.random()>0.4)return;
+      var osc=audioCtx.createOscillator();osc.type='sine';osc.frequency.value=400+Math.random()*600;
+      var g=audioCtx.createGain();g.gain.setValueAtTime(0.02,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(0.001,audioCtx.currentTime+0.15);
+      var hp=audioCtx.createBiquadFilter();hp.type='highpass';hp.frequency.value=800;
+      osc.connect(hp);hp.connect(g);g.connect(masterGain);osc.start();osc.stop(audioCtx.currentTime+0.2);
+    },2000+Math.random()*4000);
+  }
+  function stopBubbles(){if(bubbleTimer){clearInterval(bubbleTimer);bubbleTimer=null}}
+  function fadeIn(){if(!audioCtx)createEngine();if(audioCtx.state==='suspended')audioCtx.resume();masterGain.gain.linearRampToValueAtTime(0.12,audioCtx.currentTime+1.5);startBubbles();isPlaying=true}
+  function fadeOut(){if(!audioCtx)return;masterGain.gain.linearRampToValueAtTime(0,audioCtx.currentTime+1.5);stopBubbles();isPlaying=false}
+  document.addEventListener('visibilitychange',function(){
+    if(!audioCtx)return;
+    if(document.hidden&&isPlaying)audioCtx.suspend();
+    else if(!document.hidden&&isPlaying)audioCtx.resume();
+  });
+  var toggle=document.getElementById('soundscapeToggle');
+  var iconOff=toggle.querySelector('.sound-icon-off');
+  var iconOn=toggle.querySelector('.sound-icon-on');
+  toggle.addEventListener('click',function(){
+    if(isPlaying){fadeOut();toggle.classList.remove('active');iconOff.style.display='';iconOn.style.display='none'}
+    else{fadeIn();toggle.classList.add('active');iconOff.style.display='none';iconOn.style.display=''}
+  });
+})();
+
+/* ===== Academic Easter Eggs ===== */
+(function(){
+  var skillClickCount=0,skillClickTimer=null,lastSkillClicked='';
+  var skillToasts={'EEG':'⚡ 脑电波共振启动','Statistics':'📊 显著性 p < 0.001','default':'🎓 你发现了隐藏技能：咖啡因代谢 MAX'};
+  document.addEventListener('click',function(e){
+    var tag=e.target.closest('.skill-tag');
+    if(!tag){skillClickCount=0;return}
+    var name=tag.textContent.trim();
+    if(name!==lastSkillClicked){skillClickCount=0;lastSkillClicked=name}
+    skillClickCount++;
+    if(skillClickTimer)clearTimeout(skillClickTimer);
+    skillClickTimer=setTimeout(function(){skillClickCount=0},3000);
+    if(skillClickCount>=5){
+      skillClickCount=0;
+      var msg=skillToasts[name]||skillToasts['default'];
+      var toast=document.createElement('div');
+      toast.style.cssText='position:fixed;bottom:120px;left:50%;transform:translateX(-50%);background:rgba(18,34,54,0.92);color:#D8E4F0;padding:12px 24px;border-radius:24px;z-index:400;font-family:var(--font-zh);font-size:0.9rem;border:1px solid rgba(126,200,200,0.2);box-shadow:0 0 30px rgba(126,200,200,0.2);pointer-events:none;opacity:0;transition:opacity 0.4s;';
+      toast.textContent=msg;document.body.appendChild(toast);
+      requestAnimationFrame(function(){toast.style.opacity='1'});
+      setTimeout(function(){toast.style.opacity='0';setTimeout(function(){toast.remove()},400)},2500);
+    }
+  });
+
+  var KONAMI=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight'];
+  var konamiIdx=0;
+  document.addEventListener('keydown',function(e){
+    if(e.key===KONAMI[konamiIdx]){konamiIdx++;if(konamiIdx===KONAMI.length){konamiIdx=0;activateShallowReef()}}
+    else{konamiIdx=0}
+  });
+  function activateShallowReef(){
+    var root=document.documentElement;
+    root.style.setProperty('--bg','#0A2A3A');root.style.setProperty('--bg-deep','#061A28');root.style.setProperty('--bg-surface','#103040');
+    root.style.transition='all 3s ease';
+    var aurora=document.querySelector('body');
+    if(aurora)aurora.style.background='radial-gradient(ellipse 80% 60% at 20% 15%,rgba(240,200,160,0.30) 0%,transparent 55%),radial-gradient(ellipse 60% 50% at 75% 10%,rgba(240,200,160,0.20) 0%,transparent 55%)';
+    setTimeout(function(){
+      root.style.transition='all 3s ease';root.style.removeProperty('--bg');root.style.removeProperty('--bg-deep');root.style.removeProperty('--bg-surface');
+      if(aurora)aurora.style.removeProperty('background');
+      setTimeout(function(){root.style.transition=''},3000);
+    },3000);
+  }
+
+  /* Hidden click zone in Contact email */
+  setTimeout(function(){
+    var contactLink=document.querySelector('.contact-link');
+    if(contactLink){
+      var dot=document.createElement('span');
+      dot.style.cssText='cursor:pointer;display:inline-block;width:6px;height:6px;';
+      dot.addEventListener('click',function(e){
+        e.stopPropagation();
+        var msg=document.createElement('div');
+        msg.style.cssText='position:fixed;inset:0;z-index:400;pointer-events:none;display:flex;align-items:center;justify-content:center;font-family:var(--font-hand);font-size:1.2rem;color:#D8E4F0;opacity:0;transition:opacity 1s;text-shadow:0 0 20px rgba(126,200,200,0.3);';
+        msg.textContent='You found the deepest secret. — Han';
+        document.body.appendChild(msg);
+        requestAnimationFrame(function(){msg.style.opacity='1'});
+        setTimeout(function(){msg.style.opacity='0';setTimeout(function(){msg.remove()},1000)},3000);
+      });
+      contactLink.appendChild(dot);
+    }
+  },500);
+})();
+
 /* ===== Init ===== */
 function init() {
   document.getElementById('langToggle').textContent = currentLang === 'zh' ? 'EN' : '中文';
@@ -2994,5 +3424,24 @@ init();
 
   FONTS: Google Fonts <link> + --font-* variables.
 -->
+<div class="depth-gauge" aria-hidden="true">
+  <div class="depth-track">
+    <div class="depth-dot" id="depthDot"></div>
+  </div>
+  <div class="depth-labels">
+    <span data-depth="0">海面</span>
+    <span data-depth="50">浅海</span>
+    <span data-depth="200">深海</span>
+    <span data-depth="300">海底</span>
+  </div>
+</div>
+<button class="soundscape-toggle" id="soundscapeToggle" aria-label="深海声景" title="深海声景">
+  <span class="sound-icon-off">🔇</span>
+  <span class="sound-icon-on" style="display:none">🔊</span>
+</button>
+<div class="specimen-jar" id="specimenJar" title="标本收集">
+  <svg width="28" height="34" viewBox="0 0 28 34"><rect x="6" y="2" width="16" height="28" rx="8" fill="none" stroke="rgba(200,216,232,0.25)" stroke-width="1"/><rect x="4" y="0" width="20" height="5" rx="2" fill="none" stroke="rgba(200,216,232,0.2)" stroke-width="0.8"/><text x="14" y="22" text-anchor="middle" font-size="10" fill="rgba(200,216,232,0.3)" id="jarCount">0/6</text></svg>
+  <div class="specimen-drawer" id="specimenDrawer" style="display:none"></div>
+</div>
 </body>
 </html>
