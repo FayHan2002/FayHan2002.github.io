@@ -13,40 +13,42 @@
 <link rel="alternate" hreflang="en" href="https://fayhan2002.github.io/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Caveat:wght@400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <title>Han Fuyi / 韩馥伊</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
 <style>
 /* ===== CSS Variables ===== */
 :root {
-  --bg: #080C13;
-  --bg-deep: #060910;
-  --bg-surface: #0C1018;
-  --bg-card: rgba(18,24,34,0.55);
-  --bg-card-hover: rgba(22,30,42,0.72);
-  --bg-card-solid: #141A25;
-  --border: rgba(255,255,255,0.05);
-  --border-light: rgba(255,255,255,0.08);
-  --text: #E6E3DE;
-  --text-light: #ABA7A0;
-  --text-muted: #6B6760;
-  --text-dim: #484540;
-  --accent-ice: #88CCD6;
-  --accent-ice-glow: rgba(136,204,214,0.15);
-  --accent-warm: #D4A574;
-  --accent-warm-glow: rgba(212,165,116,0.10);
-  --accent-aurora-teal: #5EC4B0;
-  --accent-aurora-purple: #7B8CDE;
-  --accent-aurora-blue: #5B9BD5;
-  --foam-white: #E4E8ED;
-  --glow-ice: 0 0 80px rgba(136,204,214,0.08);
-  --glow-teal: 0 0 60px rgba(94,196,176,0.06);
-  --glow-purple: 0 0 70px rgba(123,140,222,0.05);
+  --bg: #060E18;
+  --bg-deep: #040A12;
+  --bg-surface: #0C1A2B;
+  --bg-card: rgba(18,34,54,0.55);
+  --bg-card-hover: rgba(24,42,64,0.72);
+  --bg-card-solid: #122236;
+  --border: rgba(200,216,232,0.06);
+  --border-light: rgba(200,216,232,0.10);
+  --text: #E4E8EE;
+  --text-light: #B0BCC8;
+  --text-muted: #6E7A88;
+  --text-dim: #3A4450;
+  --accent-ice: #7EC8C8;
+  --accent-ice-glow: rgba(126,200,200,0.15);
+  --accent-warm: #F0C8A0;
+  --accent-warm-glow: rgba(240,200,160,0.10);
+  --accent-purple: #B8A0D8;
+  --accent-purple-glow: rgba(184,160,216,0.12);
+  --silver: #C8D8E8;
+  --silver-light: #D8E4F0;
+  --silver-mist: #E8EEF4;
+  --foam-white: #E8EEF4;
+  --glow-ice: 0 0 80px rgba(126,200,200,0.08);
+  --glow-silver: 0 0 60px rgba(200,216,232,0.06);
+  --glow-purple: 0 0 70px rgba(184,160,216,0.05);
   --glass-blur: 16px;
   --glass-blur-strong: 24px;
   --shadow: 0 4px 20px rgba(0,0,0,0.4);
   --shadow-hover: 0 12px 40px rgba(0,0,0,0.55);
-  --shadow-glow: 0 0 40px rgba(136,204,214,0.06);
+  --shadow-glow: 0 0 40px rgba(126,200,200,0.06);
   --radius-sm: 6px;
   --radius: 10px;
   --radius-lg: 16px;
@@ -54,9 +56,11 @@
   --font-en-heading: 'Playfair Display', serif;
   --font-en-body: 'Source Sans Pro', sans-serif;
   --font-decorative: 'Cormorant Garamond', serif;
+  --font-hand: 'Caveat', cursive;
+  --font-mono: 'DM Mono', monospace;
   --max-width: 900px;
   --section-gap: 100px;
-  --line-height: 1.85;
+  --line-height: 1.9;
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -80,25 +84,25 @@ body::after {
   background-size: 256px 256px;
 }
 
-/* Aurora ambient background */
+/* Aurora ambient background — deep sea silver-moon */
 body::before {
   content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
-  opacity: 0.55;
+  opacity: 0.42;
   background:
-    radial-gradient(ellipse 80% 60% at 20% 15%, rgba(94,196,176,0.09) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 75% 10%, rgba(136,204,214,0.07) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 70% at 10% 55%, rgba(123,140,222,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 70% 40% at 50% 85%, rgba(94,196,176,0.05) 0%, transparent 55%),
-    radial-gradient(ellipse 40% 35% at 85% 80%, rgba(136,204,214,0.06) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 60% at 20% 15%, rgba(126,200,200,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 75% 10%, rgba(184,160,216,0.04) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 70% at 10% 55%, rgba(200,216,232,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 40% at 50% 85%, rgba(126,200,200,0.04) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 35% at 85% 80%, rgba(200,216,232,0.05) 0%, transparent 50%);
   animation: aurora-drift 30s ease-in-out infinite;
   will-change: opacity, transform;
 }
 
 @keyframes aurora-drift {
-  0%, 100% { opacity: 0.50; transform: scale(1) translate(0, 0); }
-  25% { opacity: 0.60; transform: scale(1.03) translate(-0.3%, 0.2%); }
-  50% { opacity: 0.52; transform: scale(1.01) translate(0.2%, -0.3%); }
-  75% { opacity: 0.58; transform: scale(1.04) translate(0.3%, 0.1%); }
+  0%, 100% { opacity: 0.40; transform: scale(1) translate(0, 0); }
+  25% { opacity: 0.48; transform: scale(1.03) translate(-0.3%, 0.2%); }
+  50% { opacity: 0.42; transform: scale(1.01) translate(0.2%, -0.3%); }
+  75% { opacity: 0.50; transform: scale(1.04) translate(0.3%, 0.1%); }
 }
 
 h1, h2, h3, h4 { font-weight: 400; line-height: 1.3; }
@@ -189,63 +193,54 @@ img { max-width: 100%; height: auto; display: block; }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
 
-/* ===== Hero: Aerial Black Sand Beach ===== */
+/* ===== Hero: Silver-Moon Black Sand Beach ===== */
 .hero {
   position: relative; min-height: 110vh;
   display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
   text-align: center; overflow: hidden; padding: 140px 30px 0;
-  background:
-    radial-gradient(ellipse 70% 40% at 30% 25%, rgba(94,196,176,0.08) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 35% at 70% 60%, rgba(123,140,222,0.06) 0%, transparent 50%),
-    #080C10;
+  background: linear-gradient(0deg, rgba(6,14,24,0.55) 0%, rgba(6,14,24,0.15) 40%, rgba(6,14,24,0.05) 100%), url('首页图.jpg') center 35%/cover no-repeat;
 }
-
-/* Full-frame beach SVG */
-.hero-beach {
-  position: absolute; inset: 0; z-index: 0; pointer-events: none;
-}
-.hero-beach svg { width: 100%; height: 100%; display: block; }
 
 /* Neural particle canvas */
-.hero-particles { position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.55; }
+.hero-particles { position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.45; }
 
-/* EEG trace SVG */
-.hero-eeg {
-  position: absolute; bottom: 60px; left: 0; width: 100%; height: 40px;
-  z-index: 1; pointer-events: none; opacity: 0.18;
+/* Hand-drawn diver SVG */
+.hero-diver {
+  position: absolute; z-index: 1; pointer-events: none;
+  bottom: 18%; left: 12%; width: 80px; height: 100px;
+  opacity: 0.55; transition: opacity 0.5s ease, transform 0.5s ease;
+  cursor: pointer; pointer-events: auto;
+  animation: diver-float 6s ease-in-out infinite;
+}
+.hero-diver:hover { opacity: 0.85; transform: scale(1.08); }
+
+/* Hand-drawn jellyfish companion */
+.hero-jellyfish {
+  position: absolute; z-index: 1; pointer-events: none;
+  top: 22%; right: 18%; width: 50px; height: 70px;
+  opacity: 0.4;
+  animation: jelly-drift 8s ease-in-out infinite;
 }
 
-/* Sand particles */
-.sand-particle { animation: particle-flicker 5s ease-in-out infinite; }
-.sand-particle:nth-child(odd) { animation-delay: 1.5s; animation-duration: 4s; }
-.sand-particle:nth-child(3n) { animation-delay: 3s; animation-duration: 6s; }
-
-/* Wet sand reflection band */
-.wet-sand { animation: wet-shift 20s ease-in-out infinite; }
-
-/* Ocean water body */
-.ocean-water { animation: water-shift 25s ease-in-out infinite; }
-
-/* Foam layers — pulsing like waves */
-.foam-layer { transform-origin: center; }
-.foam-a { animation: foam-surge 8s ease-in-out infinite; }
-.foam-b { animation: foam-surge 7s ease-in-out 2s infinite; }
-.foam-c { animation: foam-surge 9s ease-in-out 4s infinite; }
-.foam-d { animation: foam-surge 6.5s ease-in-out 1s infinite; }
-
-/* Water traces on sand — appearing and fading */
-.water-trace { animation: trace-fade 10s ease-in-out infinite; }
-.water-trace:nth-child(2) { animation-delay: 3s; animation-duration: 8s; }
-.water-trace:nth-child(3) { animation-delay: 6s; animation-duration: 11s; }
-.water-trace:nth-child(4) { animation-delay: 2s; animation-duration: 9s; }
+@keyframes diver-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  30% { transform: translateY(-6px) rotate(0.5deg); }
+  60% { transform: translateY(-2px) rotate(-0.3deg); }
+}
+@keyframes jelly-drift {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-8px) translateX(4px); }
+  50% { transform: translateY(-4px) translateX(-2px); }
+  75% { transform: translateY(-10px) translateX(-4px); }
+}
 
 .hero-content { position: relative; z-index: 2; padding-bottom: 60px; }
 
 .hero-photo {
   width: 136px; height: 136px; border-radius: 50%; object-fit: cover;
-  border: 1.5px solid rgba(136,204,214,0.2);
-  box-shadow: 0 0 80px rgba(136,204,214,0.06), 0 0 30px rgba(94,196,176,0.04), 0 10px 36px rgba(0,0,0,0.55);
-  margin: 0 auto 40px; background: #0F1318;
+  border: 1.5px solid rgba(200,216,232,0.25);
+  box-shadow: 0 0 80px rgba(126,200,200,0.08), 0 0 30px rgba(184,160,216,0.05), 0 10px 36px rgba(0,0,0,0.55);
+  margin: 0 auto 40px; background: #0C1A2B;
 }
 
 .hero h1 {
@@ -298,6 +293,270 @@ section:nth-child(even) { background: var(--bg-deep); }
   mask-image: linear-gradient(90deg, transparent 5%, white 15%, white 85%, transparent 95%);
   -webkit-mask-image: linear-gradient(90deg, transparent 5%, white 15%, white 85%, transparent 95%);
 }
+
+/* ===== Transition Quote ===== */
+.transition-quote {
+  max-width: var(--max-width); margin: 56px auto; padding: 28px 0;
+  text-align: center; position: relative;
+}
+.transition-quote p {
+  font-family: var(--font-hand); font-size: 1.1rem; font-weight: 500;
+  color: var(--silver); opacity: 0.55; letter-spacing: 0.06em;
+  text-shadow: 0 0 40px rgba(200,216,232,0.15), 0 0 80px rgba(126,200,200,0.08);
+  margin: 0; line-height: 1.6;
+}
+.transition-quote::before,
+.transition-quote::after {
+  content: ''; display: block; width: 60px; height: 1px; margin: 0 auto;
+  background: linear-gradient(90deg, transparent, var(--silver), transparent);
+  opacity: 0.2;
+}
+.transition-quote::before { margin-bottom: 24px; }
+.transition-quote::after { margin-top: 24px; }
+
+/* ===== Bottle Quote ===== */
+.bottle-quote {
+  position: fixed; z-index: 5; pointer-events: none;
+  font-family: var(--font-hand); font-size: 0.85rem; font-weight: 500;
+  color: var(--silver); letter-spacing: 0.05em;
+  text-shadow: 0 0 30px rgba(200,216,232,0.2), 0 0 60px rgba(126,200,200,0.1);
+  opacity: 0; transition: opacity 1.2s ease;
+  max-width: 200px; line-height: 1.5;
+}
+.bottle-quote.visible { opacity: 0.38; }
+.bottle-quote.pos-bl { bottom: 60px; left: 24px; text-align: left; }
+.bottle-quote.pos-br { bottom: 48px; right: 28px; text-align: right; }
+.bottle-quote.pos-tr { top: 100px; right: 22px; text-align: right; }
+.bottle-quote.pos-tl { top: 90px; left: 26px; text-align: left; }
+
+/* ===== Diver Popup ===== */
+.diver-popup {
+  position: fixed; z-index: 99; display: none; flex-direction: column; gap: 10px;
+  opacity: 0; transform: scale(0.9); transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.diver-popup.open {
+  display: flex; opacity: 1; transform: scale(1);
+}
+.bubble-btn {
+  background: rgba(18,34,54,0.85); border: 1px solid rgba(200,216,232,0.18);
+  color: var(--silver); font-family: var(--font-zh); font-size: 0.82rem;
+  padding: 10px 18px; border-radius: 28px; cursor: pointer;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  transition: all var(--transition); letter-spacing: 0.04em;
+  box-shadow: 0 0 30px rgba(126,200,200,0.06);
+}
+.bubble-btn:hover {
+  background: rgba(24,42,64,0.92); border-color: var(--accent-ice);
+  box-shadow: 0 0 40px rgba(126,200,200,0.15); color: #fff;
+}
+
+/* ===== Hidden Pages ===== */
+.hidden-page {
+  position: fixed; inset: 0; z-index: 100; background: var(--bg);
+  overflow-y: auto; display: none; flex-direction: column;
+  opacity: 0; transition: opacity 0.35s ease;
+  padding: 60px 24px 80px;
+}
+.hidden-page.open { display: flex; opacity: 1; }
+.hidden-page-header {
+  max-width: var(--max-width); margin: 0 auto 40px; width: 100%;
+  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+}
+.hidden-page-header h2 {
+  font-family: var(--font-en-heading); font-size: 1.6rem; font-weight: 500;
+  color: var(--silver-light); letter-spacing: 0.04em; flex: 1;
+}
+.hidden-back-btn {
+  background: none; border: 1px solid rgba(200,216,232,0.12); color: var(--text-light);
+  font-family: var(--font-zh); font-size: 0.82rem; padding: 8px 16px; border-radius: 20px;
+  cursor: pointer; transition: all var(--transition); letter-spacing: 0.04em;
+}
+.hidden-back-btn:hover { border-color: var(--accent-ice); color: var(--accent-ice); }
+
+/* ===== Knowledge Grid ===== */
+.knowledge-search {
+  max-width: var(--max-width); margin: 0 auto 32px; width: 100%;
+}
+.knowledge-search input {
+  width: 100%; padding: 12px 20px; border-radius: 28px;
+  background: rgba(18,34,54,0.5); border: 1px solid rgba(200,216,232,0.1);
+  color: var(--text); font-family: var(--font-zh); font-size: 0.88rem;
+  outline: none; transition: all var(--transition);
+}
+.knowledge-search input:focus { border-color: var(--accent-ice); box-shadow: 0 0 24px rgba(126,200,200,0.08); }
+.knowledge-search input::placeholder { color: var(--text-muted); }
+
+.knowledge-grid {
+  max-width: 960px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px; align-items: start;
+}
+.knowledge-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 22px; cursor: default;
+  transition: all var(--transition); position: relative;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.knowledge-card:hover {
+  background: var(--bg-card-hover); border-color: var(--border-light);
+  transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+}
+.knowledge-card h3 {
+  font-family: var(--font-zh); font-size: 0.95rem; font-weight: 500;
+  color: var(--text); margin-bottom: 8px; line-height: 1.5;
+}
+.knowledge-card .card-summary {
+  font-size: 0.8rem; color: var(--text-light); line-height: 1.6; margin-bottom: 12px;
+}
+.knowledge-card .card-meta {
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+  font-size: 0.7rem; color: var(--text-muted);
+}
+.knowledge-card .card-tag {
+  background: rgba(126,200,200,0.08); color: var(--accent-ice);
+  padding: 2px 10px; border-radius: 12px; font-size: 0.7rem; letter-spacing: 0.03em;
+}
+.knowledge-card .card-date { font-family: var(--font-mono); font-size: 0.68rem; }
+.hidden-empty-state { text-align: center; color: var(--text-muted); font-size: 0.85rem; display: none; margin-top: 40px; }
+.hidden-empty-state.show { display: block; }
+.hidden-page-footer { max-width: 960px; margin: 0 auto; width: 100%; }
+
+/* ===== Diary Timeline ===== */
+.diary-timeline {
+  max-width: 700px; margin: 0 auto; width: 100%;
+  position: relative; padding-left: 40px;
+}
+.diary-timeline::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px;
+  background: linear-gradient(180deg, var(--accent-ice), var(--accent-purple), var(--border));
+}
+.diary-entry {
+  position: relative; margin-bottom: 40px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 24px; transition: all var(--transition);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.diary-entry:hover { background: var(--bg-card-hover); border-color: var(--border-light); }
+.diary-entry::before {
+  content: ''; position: absolute; left: -33px; top: 22px;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--accent-ice); box-shadow: 0 0 12px var(--accent-ice-glow);
+}
+.diary-entry .entry-date {
+  font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);
+  letter-spacing: 0.06em; margin-bottom: 8px;
+}
+.diary-entry .entry-mood {
+  display: inline-block; font-size: 0.7rem; padding: 2px 10px; border-radius: 12px;
+  margin-bottom: 10px; letter-spacing: 0.04em;
+}
+.mood-happy { background: rgba(126,200,200,0.1); color: var(--accent-ice); }
+.mood-calm { background: rgba(200,216,232,0.08); color: var(--silver); }
+.mood-thoughtful { background: rgba(184,160,216,0.1); color: var(--accent-purple); }
+.mood-excited { background: rgba(240,200,160,0.1); color: var(--accent-warm); }
+.diary-entry h3 {
+  font-family: var(--font-zh); font-size: 1rem; font-weight: 500;
+  color: var(--text); margin-bottom: 10px; line-height: 1.5;
+}
+.diary-entry .entry-body {
+  font-size: 0.85rem; color: var(--text-light); line-height: 1.8;
+}
+
+/* ===== CMS Editor ===== */
+.cms-overlay {
+  position: fixed; inset: 0; z-index: 200; background: rgba(4,10,18,0.88);
+  display: none; align-items: center; justify-content: center;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.cms-overlay.open { display: flex; }
+.cms-modal { background: var(--bg-surface); border: 1px solid var(--border-light); border-radius: 14px; padding: 36px; max-width: 400px; width: 90%; text-align: center; }
+.cms-modal h3 { font-family: var(--font-zh); font-size: 1.1rem; color: var(--silver-light); margin-bottom: 8px; }
+.cms-modal p { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 20px; }
+.cms-modal input[type="password"] {
+  width: 100%; padding: 12px 16px; border-radius: 8px; background: rgba(6,14,24,0.6); border: 1px solid var(--border); color: var(--text); font-size: 1rem; text-align: center; outline: none; letter-spacing: 0.2em;
+}
+.cms-modal input[type="password"]:focus { border-color: var(--accent-ice); }
+.cms-pwd-actions { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
+.cms-pwd-error { color: #e08080; font-size: 0.78rem; margin-top: 12px; min-height: 18px; }
+
+.cms-panel {
+  position: fixed; inset: 0; z-index: 201; background: var(--bg); display: flex; flex-direction: column;
+}
+.cms-panel-header {
+  display: flex; align-items: center; justify-content: space-between; padding: 16px 24px;
+  border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 12px;
+}
+.cms-panel-header h2 { font-family: var(--font-en-heading); font-size: 1.2rem; color: var(--silver-light); }
+.cms-panel-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.cms-btn {
+  padding: 8px 18px; border-radius: 8px; font-size: 0.8rem; font-family: var(--font-zh);
+  cursor: pointer; border: none; transition: all var(--transition); letter-spacing: 0.04em;
+}
+.cms-btn-primary { background: rgba(126,200,200,0.18); color: var(--accent-ice); border: 1px solid rgba(126,200,200,0.3); }
+.cms-btn-primary:hover { background: rgba(126,200,200,0.28); }
+.cms-btn-ghost { background: none; color: var(--text-light); border: 1px solid var(--border); }
+.cms-btn-ghost:hover { border-color: var(--text-light); color: var(--text); }
+.cms-btn-danger { background: none; color: #e08080; border: 1px solid rgba(224,128,128,0.2); }
+.cms-btn-danger:hover { border-color: #e08080; background: rgba(224,128,128,0.08); }
+
+.cms-tabs {
+  display: flex; gap: 0; border-bottom: 1px solid var(--border); overflow-x: auto;
+  padding: 0 12px; -webkit-overflow-scrolling: touch;
+}
+.cms-tab {
+  padding: 12px 16px; font-size: 0.78rem; font-family: var(--font-zh); color: var(--text-muted);
+  background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer;
+  white-space: nowrap; transition: all var(--transition); letter-spacing: 0.03em;
+}
+.cms-tab:hover { color: var(--text-light); }
+.cms-tab.active { color: var(--accent-ice); border-bottom-color: var(--accent-ice); }
+
+.cms-content { flex: 1; overflow-y: auto; padding: 24px; max-width: 800px; margin: 0 auto; width: 100%; }
+.cms-form-group { margin-bottom: 20px; }
+.cms-form-group label { display: block; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 6px; letter-spacing: 0.04em; }
+.cms-form-group input, .cms-form-group textarea {
+  width: 100%; padding: 10px 14px; border-radius: 8px; background: rgba(6,14,24,0.5);
+  border: 1px solid var(--border); color: var(--text); font-size: 0.88rem;
+  font-family: var(--font-zh); outline: none; resize: vertical; transition: border-color var(--transition);
+}
+.cms-form-group textarea { min-height: 80px; line-height: 1.6; }
+.cms-form-group input:focus, .cms-form-group textarea:focus { border-color: var(--accent-ice); }
+.cms-form-group .cms-hint { font-size: 0.7rem; color: var(--text-dim); margin-top: 4px; }
+
+.cms-list-item {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 16px; margin-bottom: 12px; position: relative;
+}
+.cms-list-item .cms-item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.cms-list-item .cms-item-header span { font-size: 0.8rem; color: var(--text-muted); }
+.cms-list-item .cms-item-fields { display: grid; gap: 10px; }
+.cms-list-item input, .cms-list-item textarea {
+  width: 100%; padding: 8px 12px; border-radius: 6px; background: rgba(6,14,24,0.4);
+  border: 1px solid var(--border); color: var(--text); font-size: 0.82rem;
+  font-family: var(--font-zh); outline: none;
+}
+.cms-list-item input:focus, .cms-list-item textarea:focus { border-color: var(--accent-ice); }
+.cms-list-item textarea { min-height: 50px; resize: vertical; }
+.cms-item-actions { display: flex; gap: 6px; }
+.cms-add-btn { margin-top: 8px; }
+.cms-tags-input { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.cms-tags-input .cms-tag-item {
+  background: rgba(126,200,200,0.1); color: var(--accent-ice); padding: 3px 10px;
+  border-radius: 14px; font-size: 0.72rem; display: flex; align-items: center; gap: 4px;
+}
+.cms-tags-input .cms-tag-remove { cursor: pointer; opacity: 0.5; }
+.cms-tags-input .cms-tag-remove:hover { opacity: 1; }
+.cms-tags-input input { flex: 1; min-width: 100px; }
+
+.cms-toast {
+  position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%);
+  background: var(--accent-ice); color: var(--bg); padding: 10px 28px; border-radius: 24px;
+  font-size: 0.82rem; font-family: var(--font-zh); letter-spacing: 0.04em;
+  opacity: 0; transition: opacity 0.3s ease; pointer-events: none; z-index: 300;
+}
+.cms-toast.show { opacity: 1; }
+.cms-toast.error { background: #e08080; color: #fff; }
 
 /* ===== About ===== */
 .about-body { max-width: 700px; margin: 0 auto; }
@@ -571,8 +830,9 @@ footer a:hover { color: var(--accent-ice); }
   .hero h1 { font-size: 2.4rem; }
   .hero .en-name { font-size: 1.15rem; }
   .hero-photo { width: 116px; height: 116px; }
-  .hero-beach { /* full-frame */ }
-  .hero-particles, .hero-eeg { display: none; }
+  .hero-particles { display: none; }
+  .hero-diver { width: 56px; height: 70px; bottom: 22%; left: 8%; }
+  .hero-jellyfish { width: 36px; height: 50px; top: 18%; right: 12%; }
   .container { padding: 0 22px; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .card { padding: 22px 20px; }
@@ -581,6 +841,15 @@ footer a:hover { color: var(--accent-ice); }
   .research-timeline { padding-left: 24px; }
   .research-entry { gap: 16px; }
   .research-body { padding: 18px 16px; }
+  .transition-quote { margin: 40px auto; padding: 20px 0; }
+  .transition-quote p { font-size: 0.95rem; }
+  .bottle-quote { font-size: 0.72rem; max-width: 150px; }
+  .knowledge-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+  .diary-timeline { padding-left: 30px; }
+  .cms-tabs { overflow-x: auto; }
+  .cms-panel-header { padding: 12px 16px; }
+  .cms-panel-header h2 { font-size: 1rem; }
+  .cms-content { padding: 16px; }
 }
 
 /* ===== Responsive: 480px ===== */
@@ -592,6 +861,8 @@ footer a:hover { color: var(--accent-ice); }
   .hero-track-toggles { gap: 8px; }
   .hero-track-toggles .track-btn { padding: 7px 18px; font-size: 0.78rem; }
   .hero-content { padding-bottom: 70px; }
+  .hero-diver { width: 44px; height: 55px; bottom: 24%; left: 6%; }
+  .hero-jellyfish { display: none; }
   .skills-grid { grid-template-columns: 1fr; }
   .cards-grid { gap: 14px; }
   .section-label span { font-size: 1.4rem; }
@@ -601,14 +872,22 @@ footer a:hover { color: var(--accent-ice); }
   .research-timeline { padding-left: 22px; }
   .research-entry { gap: 12px; }
   .research-body { padding: 16px 14px; }
+  .transition-quote { margin: 32px auto; padding: 16px 0; }
+  .transition-quote p { font-size: 0.85rem; }
+  .knowledge-grid { grid-template-columns: 1fr; gap: 12px; }
+  .diary-timeline { padding-left: 24px; }
+  .diary-entry { padding: 16px; }
+  .cms-tab { padding: 10px 12px; font-size: 0.72rem; }
 }
 
 /* ===== Print ===== */
 @media print {
-  .nav, .hero-beach, .hero-scroll-hint, .hero-track-toggles,
+  .nav, .hero-scroll-hint, .hero-track-toggles,
   .hamburger, .mobile-menu, .mobile-overlay, .back-to-top,
   .contact-link, footer, body::after, body::before,
-  .hero-particles, .hero-eeg, .waveform-divider,
+  .hero-particles, .hero-diver, .hero-jellyfish,
+  .waveform-divider, .transition-quote, .bottle-quote,
+  .diver-popup, .hidden-page, .cms-overlay, .cms-panel,
   canvas { display: none !important; }
   body { background: #fff; color: #000; font-size: 11pt; }
   .hero { min-height: auto; padding: 20px 0; background: none; }
@@ -682,289 +961,36 @@ footer a:hover { color: var(--accent-ice); }
 
 <!-- ===== Hero ===== -->
 <section id="hero" class="hero">
-  <!-- Aerial black sand beach: coastline dividing sand (left/top) from ocean (right/bottom) -->
-  <div class="hero-beach" aria-hidden="true">
-    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <!-- Ocean water gradient -->
-        <linearGradient id="oceanGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#1E333A"/>
-          <stop offset="40%" stop-color="#243E47"/>
-          <stop offset="70%" stop-color="#1C3036"/>
-          <stop offset="100%" stop-color="#15262B"/>
-        </linearGradient>
-        <!-- Wet sand reflection gradient -->
-        <linearGradient id="wetSandGrad" x1="0" y1="1" x2="1" y2="0">
-          <stop offset="0%" stop-color="#2A4048" stop-opacity="0"/>
-          <stop offset="30%" stop-color="#2A4048" stop-opacity="0.25"/>
-          <stop offset="60%" stop-color="#1E3338" stop-opacity="0.12"/>
-          <stop offset="100%" stop-color="#1E3338" stop-opacity="0"/>
-        </linearGradient>
-        <!-- Foam gradients -->
-        <linearGradient id="foamGrad1" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#C8D8E0" stop-opacity="0.15"/>
-          <stop offset="25%" stop-color="#E8EEF2" stop-opacity="0.55"/>
-          <stop offset="50%" stop-color="#F0F4F6" stop-opacity="0.7"/>
-          <stop offset="75%" stop-color="#D8E4EA" stop-opacity="0.45"/>
-          <stop offset="100%" stop-color="#B0C8D4" stop-opacity="0.1"/>
-        </linearGradient>
-        <linearGradient id="foamGrad2" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#B8CCD6" stop-opacity="0.1"/>
-          <stop offset="30%" stop-color="#DCE6EC" stop-opacity="0.4"/>
-          <stop offset="55%" stop-color="#E8EEF2" stop-opacity="0.55"/>
-          <stop offset="80%" stop-color="#D0DEE4" stop-opacity="0.3"/>
-          <stop offset="100%" stop-color="#A0BCC6" stop-opacity="0.05"/>
-        </linearGradient>
-        <!-- Trace gradient: thin winding water on sand -->
-        <linearGradient id="traceGrad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#D8E0E6" stop-opacity="0.5"/>
-          <stop offset="50%" stop-color="#E0E6EB" stop-opacity="0.6"/>
-          <stop offset="100%" stop-color="#C0D0D8" stop-opacity="0.3"/>
-        </linearGradient>
-        <!-- Sand texture filter for subtle grain on beach -->
-        <filter id="sandGrain">
-          <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="3" stitchTiles="stitch"/>
-          <feColorMatrix type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0   0 0 0 0.06 0"/>
-        </filter>
-      </defs>
+  <svg class="hero-diver" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-label="Diver mascot">
+    <circle cx="40" cy="22" r="16" fill="none" stroke="#D8E4F0" stroke-width="1.2" opacity="0.7"/>
+    <circle cx="40" cy="22" r="13" fill="none" stroke="#D8E4F0" stroke-width="0.5" opacity="0.4"/>
+    <path d="M28,22 Q40,12 52,22" fill="none" stroke="#D8E4F0" stroke-width="0.8" opacity="0.5"/>
+    <path d="M40,38 L40,68" stroke="#D8E4F0" stroke-width="1.5" opacity="0.65"/>
+    <rect x="30" y="44" width="8" height="16" rx="3" fill="none" stroke="#D8E4F0" stroke-width="1" opacity="0.5"/>
+    <path d="M40,48 Q28,52 24,46" fill="none" stroke="#D8E4F0" stroke-width="1" opacity="0.55"/>
+    <path d="M40,48 Q52,45 56,50" fill="none" stroke="#D8E4F0" stroke-width="1" opacity="0.55"/>
+    <path d="M40,68 Q32,82 26,88" fill="none" stroke="#D8E4F0" stroke-width="1.2" opacity="0.5"/>
+    <path d="M40,68 Q48,82 54,88" fill="none" stroke="#D8E4F0" stroke-width="1.2" opacity="0.5"/>
+    <path d="M26,88 Q18,92 20,86" fill="none" stroke="#D8E4F0" stroke-width="0.8" opacity="0.45"/>
+    <path d="M54,88 Q62,92 60,86" fill="none" stroke="#D8E4F0" stroke-width="0.8" opacity="0.45"/>
+    <rect x="52" y="46" width="8" height="11" rx="1" fill="none" stroke="#D8E4F0" stroke-width="0.7" opacity="0.5" transform="rotate(10,56,51)"/>
+    <circle cx="48" cy="30" r="2" fill="none" stroke="#D8E4F0" stroke-width="0.5" opacity="0.35"/>
+    <circle cx="52" cy="24" r="1.5" fill="none" stroke="#D8E4F0" stroke-width="0.4" opacity="0.25"/>
+    <circle cx="50" cy="18" r="1" fill="none" stroke="#D8E4F0" stroke-width="0.3" opacity="0.2"/>
+  </svg>
 
-      <!-- ===== SAND BASE: pure black, matte ===== -->
-      <rect x="0" y="0" width="1440" height="900" fill="#0A0D10"/>
-
-      <!-- ===== SAND TEXTURE OVERLAY: subtle grain ===== -->
-      <rect x="0" y="0" width="1440" height="900" fill="#0A0D10" filter="url(#sandGrain)"/>
-
-      <!-- ===== SAND PARTICLES: white shell fragments ===== -->
-      <g fill="#D0D8DD" opacity="0.18">
-        <circle cx="120" cy="180" r="1.2" class="sand-particle"/><circle cx="340" cy="95" r="0.8" class="sand-particle"/>
-        <circle cx="680" cy="200" r="1.5" class="sand-particle"/><circle cx="890" cy="130" r="0.7" class="sand-particle"/>
-        <circle cx="1050" cy="260" r="1.1" class="sand-particle"/><circle cx="150" cy="380" r="0.9" class="sand-particle"/>
-        <circle cx="420" cy="310" r="1.3" class="sand-particle"/><circle cx="760" cy="350" r="0.6" class="sand-particle"/>
-        <circle cx="940" cy="420" r="1.4" class="sand-particle"/><circle cx="200" cy="520" r="0.8" class="sand-particle"/>
-        <circle cx="560" cy="480" r="1.1" class="sand-particle"/><circle cx="820" cy="540" r="0.7" class="sand-particle"/>
-        <circle cx="110" cy="660" r="1.0" class="sand-particle"/><circle cx="380" cy="610" r="0.6" class="sand-particle"/>
-        <circle cx="700" cy="670" r="1.3" class="sand-particle"/><circle cx="160" cy="780" r="0.9" class="sand-particle"/>
-        <circle cx="450" cy="740" r="0.7" class="sand-particle"/><circle cx="620" cy="810" r="1.1" class="sand-particle"/>
-        <circle cx="300" cy="160" r="0.6" class="sand-particle"/><circle cx="1020" cy="360" r="0.9" class="sand-particle"/>
-        <circle cx="80" cy="440" r="1.2" class="sand-particle"/><circle cx="540" cy="590" r="0.5" class="sand-particle"/>
-        <circle cx="880" cy="720" r="0.8" class="sand-particle"/><circle cx="260" cy="700" r="1.0" class="sand-particle"/>
-        <circle cx="980" cy="580" r="0.7" class="sand-particle"/><circle cx="50" cy="290" r="1.4" class="sand-particle"/>
-      </g>
-
-      <!-- ===== OCEAN WATER: right and bottom portion ===== -->
-      <!-- Coastline path: jagged diagonal from upper-middle-left to lower-right -->
-      <!-- Sand above/left, ocean below/right -->
-      <g class="ocean-water">
-        <path d="
-          M1440,380
-          C1400,400 1370,370 1340,395
-          C1300,425 1270,390 1240,410
-          C1200,435 1180,400 1150,420
-          C1110,445 1090,415 1060,435
-          C1020,460 1000,430 970,450
-          C930,475 910,445 880,465
-          C840,490 820,460 790,480
-          C750,505 730,475 700,495
-          C660,520 640,495 610,515
-          C570,540 550,510 520,530
-          C480,555 460,525 430,545
-          C390,570 370,540 340,560
-          C300,585 270,555 240,580
-          C200,610 170,580 140,600
-          C110,620 80,600 50,615
-          C20,630 0,610 0,620
-          L0,900
-          L1440,900
-          Z
-        " fill="url(#oceanGrad)"/>
-      </g>
-
-      <!-- ===== WET SAND REFLECTION: blue-gray band along shore on sand side ===== -->
-      <g class="wet-sand">
-        <path d="
-          M1440,380
-          C1400,400 1370,370 1340,395
-          C1300,425 1270,390 1240,410
-          C1200,435 1180,400 1150,420
-          C1110,445 1090,415 1060,435
-          C1020,460 1000,430 970,450
-          C930,475 910,445 880,465
-          C840,490 820,460 790,480
-          C750,505 730,475 700,495
-          C660,520 640,495 610,515
-          C570,540 550,510 520,530
-          C480,555 460,525 430,545
-          C390,570 370,540 340,560
-          C300,585 270,555 240,580
-          C200,610 170,580 140,600
-          C110,620 80,600 50,615
-          C20,630 0,610 0,620
-          L0,630
-          C20,620 50,635 80,625
-          C140,610 200,620 270,590
-          C340,570 390,585 460,555
-          C520,530 570,550 640,525
-          C700,500 750,515 820,490
-          C880,470 930,485 1000,460
-          C1060,440 1110,455 1180,430
-          C1240,410 1300,425 1370,400
-          C1400,390 1420,395 1440,385
-          Z
-        " fill="url(#wetSandGrad)"/>
-      </g>
-
-      <!-- ===== FOAM LAYERS: white foam crashing along coastline ===== -->
-      <!-- Layer A: densest foam, closest to the water -->
-      <g class="foam-layer foam-a">
-        <path d="
-          M1440,378
-          C1420,385 1400,408 1370,395
-          C1340,380 1310,405 1280,398
-          C1250,388 1220,412 1190,408
-          C1160,400 1130,425 1100,418
-          C1070,410 1040,435 1010,428
-          C980,420 950,445 920,438
-          C890,430 860,455 830,448
-          C800,440 770,470 740,460
-          C710,448 680,478 650,468
-          C620,458 590,485 560,475
-          C530,462 500,492 470,480
-          C440,468 410,498 380,485
-          C350,472 320,502 290,490
-          C260,478 230,508 200,495
-          C170,482 140,515 110,500
-          C80,488 50,520 20,508
-          C10,502 0,510 0,515
-          L0,525
-          C20,518 50,530 80,520
-          C140,505 200,525 260,510
-          C320,498 380,515 440,500
-          C500,485 560,505 620,490
-          C680,478 740,500 800,485
-          C860,470 920,490 980,475
-          C1040,460 1100,480 1160,465
-          C1220,448 1280,470 1340,455
-          C1400,438 1420,450 1440,440
-          Z
-        " fill="url(#foamGrad1)"/>
-      </g>
-      <!-- Layer B: secondary foam band -->
-      <g class="foam-layer foam-b">
-        <path d="
-          M1440,385
-          C1410,392 1380,415 1350,402
-          C1320,388 1290,412 1260,405
-          C1230,395 1200,420 1170,412
-          C1140,402 1110,430 1080,422
-          C1050,412 1020,440 990,432
-          C960,422 930,450 900,442
-          C870,432 840,462 810,450
-          C780,440 750,472 720,460
-          C690,448 660,480 630,468
-          C600,458 570,490 540,478
-          C510,465 480,498 450,485
-          C420,472 390,505 360,490
-          C330,478 300,510 270,496
-          C240,482 210,515 180,500
-          C150,488 120,520 90,505
-          C60,492 30,525 10,512
-          L0,520
-          L0,532
-          C30,540 60,530 90,518
-          C150,498 210,528 270,510
-          C330,495 390,520 450,505
-          C510,488 570,515 630,500
-          C690,485 750,510 810,495
-          C870,478 930,505 990,490
-          C1050,475 1110,500 1170,485
-          C1230,468 1290,495 1350,478
-          C1410,460 1420,476 1440,466
-          Z
-        " fill="url(#foamGrad2)"/>
-      </g>
-      <!-- Layer C: outer foam edge, more broken -->
-      <g class="foam-layer foam-c">
-        <path d="
-          M1440,395
-          C1420,400 1390,418 1360,412
-          C1330,402 1300,425 1270,420
-          C1240,412 1210,436 1180,430
-          C1150,420 1120,445 1090,440
-          C1060,432 1030,458 1000,450
-          C970,440 940,465 910,458
-          C880,448 850,475 820,465
-          C790,455 760,482 730,472
-          C700,462 670,490 640,478
-          C610,468 580,496 550,485
-          C520,472 490,505 460,492
-          C430,480 400,512 370,498
-          C340,486 310,518 280,505
-          C250,492 220,525 190,512
-          C160,498 130,530 100,515
-          C70,502 40,535 20,525
-          L0,520
-          L0,540
-          C40,545 70,532 100,525
-          C160,510 220,540 280,525
-          C340,510 400,535 460,518
-          C520,502 580,530 640,515
-          C700,498 760,528 820,512
-          C880,496 940,525 1000,510
-          C1060,495 1120,520 1180,505
-          C1240,488 1300,515 1360,498
-          C1390,492 1420,505 1440,498
-          Z
-        " fill="#E8EEF2" fill-opacity="0.3"/>
-      </g>
-      <!-- Layer D: thin, outermost spray -->
-      <g class="foam-layer foam-d">
-        <path d="
-          M1440,405
-          C1420,410 1390,430 1360,425
-          C1330,418 1300,440 1270,435
-          C1240,428 1210,450 1180,445
-          C1150,438 1120,460 1090,455
-          C1060,448 1030,470 1000,465
-          C970,458 940,480 910,475
-          C880,468 850,490 820,485
-          C790,478 760,500 730,495
-          C700,488 670,510 640,505
-          C610,498 580,518 550,512
-          C520,504 490,525 460,518
-          C430,508 400,530 370,522
-          C340,514 310,536 280,528
-          C250,518 220,540 190,532
-          C160,524 130,545 100,536
-          C70,526 40,548 20,542
-          L0,538
-          L0,556
-          C40,560 70,548 100,542
-          C160,535 220,555 280,545
-          C340,538 400,555 460,542
-          C520,530 580,552 640,540
-          C700,528 760,550 820,538
-          C880,525 940,548 1000,535
-          C1060,522 1120,545 1180,532
-          C1240,518 1300,542 1360,528
-          C1390,522 1420,535 1440,530
-          Z
-        " fill="#F0F4F6" fill-opacity="0.18"/>
-      </g>
-
-      <!-- ===== WATER TRACES: winding foam lines left on the dark sand ===== -->
-      <g fill="none" stroke="url(#traceGrad)" stroke-width="0.8">
-        <path d="M820,490 C800,480 780,485 760,478 C740,470 720,475 700,468 C680,460 660,465 640,458" class="water-trace"/>
-        <path d="M910,458 C890,450 870,452 850,445 C830,438 810,442 790,435" class="water-trace"/>
-        <path d="M640,505 C620,498 600,500 580,492 C560,484 540,488 520,482" class="water-trace"/>
-        <path d="M500,492 C480,488 460,482 440,475 C420,468 400,472 380,465" class="water-trace"/>
-      </g>
-      <!-- Thinner traces -->
-      <g fill="none" stroke="url(#traceGrad)" stroke-width="0.5" opacity="0.6">
-        <path d="M730,472 C715,465 700,468 685,462 C670,455 655,460 640,453" class="water-trace"/>
-        <path d="M550,485 C535,480 520,478 505,472 C490,465 475,470 460,463" class="water-trace"/>
-      </g>
-    </svg>
-  </div>
+  <svg class="hero-jellyfish" viewBox="0 0 50 70" xmlns="http://www.w3.org/2000/svg" aria-label="Jellyfish">
+    <path d="M8,22 Q8,6 25,6 Q42,6 42,22" fill="none" stroke="#D8E4F0" stroke-width="1" opacity="0.55"/>
+    <path d="M12,20 Q14,10 25,10 Q36,10 38,20" fill="none" stroke="#D8E4F0" stroke-width="0.5" opacity="0.3"/>
+    <path d="M12,20 Q10,32 14,42 Q18,52 12,62" fill="none" stroke="#D8E4F0" stroke-width="0.7" opacity="0.4"/>
+    <path d="M18,22 Q20,35 16,48 Q12,58 18,66" fill="none" stroke="#D8E4F0" stroke-width="0.6" opacity="0.35"/>
+    <path d="M25,22 Q26,38 22,50 Q20,58 25,68" fill="none" stroke="#D8E4F0" stroke-width="0.7" opacity="0.4"/>
+    <path d="M32,22 Q30,38 34,50 Q36,58 30,66" fill="none" stroke="#D8E4F0" stroke-width="0.6" opacity="0.35"/>
+    <path d="M38,20 Q40,32 36,42 Q32,52 36,62" fill="none" stroke="#D8E4F0" stroke-width="0.7" opacity="0.4"/>
+    <circle cx="25" cy="16" r="1.5" fill="#7EC8C8" opacity="0.5"/>
+    <circle cx="20" cy="14" r="1" fill="#7EC8C8" opacity="0.35"/>
+    <circle cx="30" cy="14" r="1" fill="#7EC8C8" opacity="0.35"/>
+  </svg>
 
   <canvas class="hero-particles" id="heroParticles" aria-hidden="true"></canvas>
 
@@ -978,11 +1004,6 @@ footer a:hover { color: var(--accent-ice); }
       <button class="track-btn" data-track="industry" data-i18n="hero.industry">行业求职</button>
     </div>
   </div>
-  <svg class="hero-eeg" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,20 C40,20 60,20 80,18 C100,4 110,4 130,20 C150,36 160,36 180,20 C200,4 220,4 240,20 C260,36 280,36 300,20 C320,4 330,4 350,20 C370,36 390,36 410,20 C430,4 450,8 470,18 C490,30 510,30 530,20 C550,10 570,8 590,20 C610,32 630,32 650,20 C670,8 680,6 700,20 C720,34 740,34 760,20 C780,6 800,8 820,20 C840,32 860,32 880,20 C900,8 920,10 940,20 C960,30 980,30 1000,20 C1020,10 1040,8 1060,20 C1080,32 1100,32 1120,20 C1140,8 1160,6 1180,20 L1200,20" fill="none" stroke="#88CCD6" stroke-width="0.6" opacity="0.5">
-      <animate attributeName="stroke-dashoffset" from="1200" to="0" dur="8s" fill="freeze" begin="0.5s"/>
-    </path>
-  </svg>
   <div class="hero-scroll-hint" aria-hidden="true">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
   </div>
@@ -1009,7 +1030,7 @@ footer a:hover { color: var(--accent-ice); }
   </div>
 </section>
 
-<div class="waveform-divider" aria-hidden="true"></div>
+<div class="transition-quote" aria-hidden="true"><p data-i18n="quotes.edu2research">每一个波峰，都是一次内在的涌动</p></div>
 
 <!-- ===== Research ===== -->
 <section id="research">
@@ -1020,7 +1041,7 @@ footer a:hover { color: var(--accent-ice); }
   </div>
 </section>
 
-<div class="waveform-divider" aria-hidden="true"></div>
+<div class="transition-quote" aria-hidden="true"><p data-i18n="quotes.research2projects">用脑电探索人类思维的边界，用艺术记录那些隐秘的共振</p></div>
 
 <!-- ===== Projects (dynamic) ===== -->
 <section id="projects">
@@ -1030,6 +1051,8 @@ footer a:hover { color: var(--accent-ice); }
   </div>
 </section>
 
+<div class="transition-quote" aria-hidden="true"><p data-i18n="quotes.projects2internship">有些信号，只有在寂静中才能被听见</p></div>
+
 <!-- ===== Internship (dynamic) ===== -->
 <section id="internship" class="dynamic-section">
   <div class="container">
@@ -1038,6 +1061,8 @@ footer a:hover { color: var(--accent-ice); }
   </div>
 </section>
 
+<div class="transition-quote" aria-hidden="true"><p data-i18n="quotes.internship2skills">深海从不喧哗，却藏着最古老的故事</p></div>
+
 <!-- ===== Skills ===== -->
 <section id="skills">
   <div class="container">
@@ -1045,6 +1070,8 @@ footer a:hover { color: var(--accent-ice); }
     <div class="skills-grid reveal" id="skillsGrid"></div>
   </div>
 </section>
+
+<div class="transition-quote" aria-hidden="true"><p data-i18n="quotes.skills2contact">语言是浪潮，冲刷出思维的形状</p></div>
 
 <!-- ===== Contact ===== -->
 <section id="contact">
@@ -1061,6 +1088,82 @@ footer a:hover { color: var(--accent-ice); }
   <a href="https://github.com/FayHan2002" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
   </p>
 </footer>
+
+<!-- ===== Diver Popup ===== -->
+<div class="diver-popup" id="diverPopup" aria-hidden="true">
+  <button class="bubble-btn" data-target="knowledge" data-i18n="hidden.knowledge">知识探索</button>
+  <button class="bubble-btn" data-target="diary" data-i18n="hidden.diary">思维日记</button>
+</div>
+
+<!-- ===== Knowledge Exploration (Hidden) ===== -->
+<div class="hidden-page" id="knowledgePage" aria-hidden="true">
+  <div class="hidden-page-header">
+    <button class="hidden-back-btn" id="knowledgeBack">← <span data-i18n="hidden.back">返回</span></button>
+    <h2 data-i18n="hidden.knowledge">知识探索</h2>
+    <div class="knowledge-search">
+      <input type="text" id="knowledgeSearch" placeholder="搜索关键词或标签..." data-i18n-placeholder="hidden.searchPlaceholder">
+    </div>
+  </div>
+  <div class="knowledge-grid" id="knowledgeGrid"></div>
+  <div class="hidden-page-footer">
+    <p class="hidden-empty-state" id="knowledgeEmpty" data-i18n="hidden.noResults">没有找到匹配的内容</p>
+  </div>
+</div>
+
+<!-- ===== Thought Diary (Hidden) ===== -->
+<div class="hidden-page" id="diaryPage" aria-hidden="true">
+  <div class="hidden-page-header">
+    <button class="hidden-back-btn" id="diaryBack">← <span data-i18n="hidden.back">返回</span></button>
+    <h2 data-i18n="hidden.diary">思维日记</h2>
+  </div>
+  <div class="diary-timeline" id="diaryTimeline"></div>
+</div>
+
+<!-- ===== CMS Password Modal ===== -->
+<div class="cms-overlay" id="cmsPwdOverlay" aria-hidden="true">
+  <div class="cms-modal cms-pwd-modal">
+    <h3 data-i18n="cms.passwordTitle">管理员验证</h3>
+    <p data-i18n="cms.passwordHint">请输入管理密码以进入编辑模式</p>
+    <input type="password" id="cmsPwdInput" placeholder="••••••" autocomplete="off">
+    <div class="cms-pwd-actions">
+      <button class="cms-btn cms-btn-primary" id="cmsPwdSubmit" data-i18n="cms.confirm">确认</button>
+      <button class="cms-btn cms-btn-ghost" id="cmsPwdCancel" data-i18n="cms.cancel">取消</button>
+    </div>
+    <p class="cms-pwd-error" id="cmsPwdError"></p>
+  </div>
+</div>
+
+<!-- ===== CMS Editor Panel ===== -->
+<div class="cms-overlay" id="cmsPanel" aria-hidden="true">
+  <div class="cms-panel">
+    <div class="cms-panel-header">
+      <h2 data-i18n="cms.title">内容管理</h2>
+      <div class="cms-panel-actions">
+        <button class="cms-btn cms-btn-ghost" id="cmsExport" data-i18n="cms.export">导出JSON</button>
+        <label class="cms-btn cms-btn-ghost" data-i18n="cms.import" style="cursor:pointer;">导入JSON<input type="file" id="cmsImportFile" accept=".json" hidden></label>
+        <button class="cms-btn cms-btn-primary" id="cmsSave" data-i18n="cms.saveAll">保存全部</button>
+        <button class="cms-btn cms-btn-ghost" id="cmsClose" data-i18n="cms.close">关闭</button>
+      </div>
+    </div>
+    <div class="cms-tabs" id="cmsTabs">
+      <button class="cms-tab active" data-tab="basic" data-i18n="cms.tabBasic">基本信息</button>
+      <button class="cms-tab" data-tab="education" data-i18n="cms.tabEducation">教育</button>
+      <button class="cms-tab" data-tab="research" data-i18n="cms.tabResearch">科研</button>
+      <button class="cms-tab" data-tab="projects" data-i18n="cms.tabProjects">项目</button>
+      <button class="cms-tab" data-tab="internship" data-i18n="cms.tabInternship">实习</button>
+      <button class="cms-tab" data-tab="skills" data-i18n="cms.tabSkills">技能</button>
+      <button class="cms-tab" data-tab="contact" data-i18n="cms.tabContact">联系</button>
+      <button class="cms-tab" data-tab="knowledge" data-i18n="cms.tabKnowledge">知识探索</button>
+      <button class="cms-tab" data-tab="diary" data-i18n="cms.tabDiary">思维日记</button>
+      <button class="cms-tab" data-tab="password" data-i18n="cms.tabPassword">修改密码</button>
+    </div>
+    <div class="cms-content" id="cmsContent"></div>
+    <div class="cms-toast" id="cmsToast"></div>
+  </div>
+</div>
+
+<!-- ===== Bottle Quote ===== -->
+<div class="bottle-quote pos-br" id="bottleQuote" aria-hidden="true"></div>
 
 <!-- ===== Back to Top ===== -->
 <button class="back-to-top" id="backToTop" aria-label="Back to top">
@@ -1169,7 +1272,30 @@ const I18N = {
         { name:"专业证书", tags:["高中英语教师资格证","计算机二级（MS Office）"] }
       ]
     },
-    contact: { title:"联系方式", email:"18242971016@163.com", github:"GitHub" }
+    contact: { title:"联系方式", email:"18242971016@163.com", github:"GitHub" },
+    hidden: { knowledge:"知识探索", diary:"思维日记", back:"返回", searchPlaceholder:"搜索关键词或标签...", noResults:"没有找到匹配的内容" },
+    cms: {
+      passwordTitle:"管理员验证", passwordHint:"请输入管理密码以进入编辑模式", confirm:"确认", cancel:"取消",
+      title:"内容管理", export:"导出JSON", import:"导入JSON", saveAll:"保存全部", close:"关闭",
+      tabBasic:"基本信息", tabEducation:"教育", tabResearch:"科研", tabProjects:"项目", tabInternship:"实习",
+      tabSkills:"技能", tabContact:"联系", tabKnowledge:"知识探索", tabDiary:"思维日记", tabPassword:"修改密码",
+      wrongPassword:"密码错误，请重试", saved:"保存成功", exported:"已导出 JSON 文件", imported:"已导入数据",
+      importError:"导入失败：文件格式不正确", addItem:"添加条目", removeItem:"删除", passwordChanged:"密码已更新",
+      newPasswordHint:"新密码（留空则不变）", defaultPasswordWarning:"默认密码为 admin，请尽快修改"
+    },
+    quotes: {
+      edu2research: "每一个波峰，都是一次内在的涌动",
+      research2projects: "用脑电探索人类思维的边界，用艺术记录那些隐秘的共振",
+      projects2internship: "有些信号，只有在寂静中才能被听见",
+      internship2skills: "深海从不喧哗，却藏着最古老的故事",
+      skills2contact: "语言是浪潮，冲刷出思维的形状",
+      bottle: [
+        "神经元的每一次放电，都是灵魂在低语",
+        "不完美的线条，才是最诚实的思考轨迹",
+        "潜入深处，不是为了沉没，而是为了发现光亮",
+        "有些信号，只有在寂静中才能被听见"
+      ]
+    }
   },
   en: {
     nav: { about:"About", education:"Education", research:"Research", projects:"Projects", skills:"Skills", contact:"Contact", academic:"Academic", industry:"Industry" },
@@ -1270,7 +1396,30 @@ const I18N = {
         { name:"Certifications", tags:["Teacher Qualification (High School English)","Computer Level 2 (MS Office)"] }
       ]
     },
-    contact: { title:"Contact", email:"18242971016@163.com", github:"GitHub" }
+    contact: { title:"Contact", email:"18242971016@163.com", github:"GitHub" },
+    hidden: { knowledge:"Knowledge Exploration", diary:"Thought Diary", back:"Back", searchPlaceholder:"Search keywords or tags...", noResults:"No matching content found" },
+    cms: {
+      passwordTitle:"Admin Verification", passwordHint:"Enter admin password to access editor", confirm:"Confirm", cancel:"Cancel",
+      title:"Content Management", export:"Export JSON", import:"Import JSON", saveAll:"Save All", close:"Close",
+      tabBasic:"Basic Info", tabEducation:"Education", tabResearch:"Research", tabProjects:"Projects", tabInternship:"Internship",
+      tabSkills:"Skills", tabContact:"Contact", tabKnowledge:"Knowledge", tabDiary:"Diary", tabPassword:"Change Password",
+      wrongPassword:"Incorrect password, please retry", saved:"Saved successfully", exported:"JSON file exported", imported:"Data imported",
+      importError:"Import failed: invalid file format", addItem:"Add Item", removeItem:"Remove", passwordChanged:"Password updated",
+      newPasswordHint:"New password (leave blank to keep current)", defaultPasswordWarning:"Default password is admin, please change soon"
+    },
+    quotes: {
+      edu2research: "Every crest, an inner surge",
+      research2projects: "Exploring the boundaries of thought with EEG, recording those hidden resonances through art",
+      projects2internship: "Some signals are only heard in silence",
+      internship2skills: "The deep sea never speaks loudly, yet holds the oldest stories",
+      skills2contact: "Language is the tide, shaping the coastline of thought",
+      bottle: [
+        "Every neural firing, a whisper of the soul",
+        "Imperfect lines trace the most honest thoughts",
+        "Diving deep, not to sink, but to find light",
+        "Some signals are only heard in silence"
+      ]
+    }
   }
 };
 
@@ -1291,23 +1440,32 @@ function populateI18nText(lang) {
       }
     }
   });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const path = el.getAttribute('data-i18n-placeholder');
+    const val = path.split('.').reduce((o, k) => o?.[k], I18N[lang]);
+    if (val !== undefined && typeof val === 'string') {
+      el.placeholder = val;
+    }
+  });
 }
 
 /* ===== Render helpers ===== */
 function renderTimeline(lang) {
-  const d = I18N[lang].education;
-  document.getElementById('eduTimeline').innerHTML = d.items.map(item =>
+  const cmsItems = cmsData('education', null);
+  const items = cmsItems || I18N[lang].education.items;
+  document.getElementById('eduTimeline').innerHTML = items.map(item =>
     `<div class="timeline-item">
-      <div class="year">${item.year}</div>
-      <div class="school">${item.school}</div>
-      <div class="degree">${item.degree}</div>
-      ${item.extra ? `<div class="extra">${item.extra}</div>` : ''}
+      <div class="year">${escHtml(item.year || '')}</div>
+      <div class="school">${escHtml(item.school || '')}</div>
+      <div class="degree">${escHtml(item.degree || '')}</div>
+      ${item.extra ? `<div class="extra">${escHtml(item.extra)}</div>` : ''}
     </div>`
   ).join('');
 }
 
 function renderResearch(lang) {
-  const items = I18N[lang].research.items;
+  const cmsItems = cmsData('research', null);
+  const items = cmsItems || I18N[lang].research.items;
   document.getElementById('researchGrid').innerHTML = items.map((item, i) =>
     `<article class="research-entry">
       <div class="research-node">
@@ -1315,10 +1473,10 @@ function renderResearch(lang) {
         ${i < items.length - 1 ? '<div class="research-line"></div>' : ''}
       </div>
       <div class="research-body">
-        <p class="authors">${item.authors}</p>
-        <h3>${item.title}</h3>
-        <p class="meta">${item.meta}</p>
-        <p class="desc">${item.desc}</p>
+        <p class="authors">${escHtml(item.authors || '')}</p>
+        <h3>${escHtml(item.title || '')}</h3>
+        <p class="meta">${escHtml(item.meta || '')}</p>
+        <p class="desc">${escHtml(item.desc || '')}</p>
       </div>
     </article>`
   ).join('');
@@ -1327,33 +1485,41 @@ function renderResearch(lang) {
 function renderProjects(lang, track) {
   const grid = document.getElementById('projectsGrid');
   const titleEl = document.getElementById('projectsTitle');
-  let data;
+  let data, title;
   if (track === 'academic') {
-    data = I18N[lang].academicProjects;
+    const cmsItems = cmsData('academic_projects', null);
+    data = cmsItems || I18N[lang].academicProjects.items;
+    title = I18N[lang].academicProjects.title;
   } else if (track === 'industry') {
-    data = I18N[lang].industryProjects;
+    const cmsItems = cmsData('industry_projects', null);
+    data = cmsItems || I18N[lang].industryProjects.items;
+    title = I18N[lang].industryProjects.title;
   } else {
-    data = I18N[lang].academicProjects;
+    const cmsItems = cmsData('academic_projects', null);
+    data = cmsItems || I18N[lang].academicProjects.items;
+    title = I18N[lang].academicProjects.title;
   }
-  titleEl.textContent = data.title;
+  titleEl.textContent = title;
   titleEl.className = 'zh-label';
-  grid.innerHTML = data.items.map(item =>
+  grid.innerHTML = data.map(item =>
     `<article class="card ${item.cls || ''}">
-      <h3>${item.title}</h3>
-      <p class="meta">${item.meta}</p>
-      <p class="desc">${item.desc}</p>
+      <h3>${escHtml(item.title || '')}</h3>
+      <p class="meta">${escHtml(item.meta || '')}</p>
+      <p class="desc">${escHtml(item.desc || '')}</p>
     </article>`
   ).join('');
 }
 
 function renderInternship(lang) {
-  const data = I18N[lang].internship;
-  document.getElementById('internshipTitle').textContent = data.title;
-  document.getElementById('internshipGrid').innerHTML = data.items.map(item =>
+  const i18nData = I18N[lang].internship;
+  const cmsItems = cmsData('internship', null);
+  const items = cmsItems || i18nData.items;
+  document.getElementById('internshipTitle').textContent = i18nData.title;
+  document.getElementById('internshipGrid').innerHTML = items.map(item =>
     `<article class="card ${item.cls || ''}">
-      <h3>${item.title}</h3>
-      <p class="meta">${item.meta}</p>
-      <p class="desc">${item.desc}</p>
+      <h3>${escHtml(item.title || '')}</h3>
+      <p class="meta">${escHtml(item.meta || '')}</p>
+      <p class="desc">${escHtml(item.desc || '')}</p>
     </article>`
   ).join('');
 }
@@ -1364,31 +1530,65 @@ function toggleInternship(visible) {
 }
 
 function renderSkills(lang) {
-  const cats = I18N[lang].skills.categories;
+  const cmsItems = cmsData('skills', null);
+  const cats = cmsItems || I18N[lang].skills.categories;
   document.getElementById('skillsGrid').innerHTML = cats.map(cat =>
     `<div class="skill-cat">
-      <h4>${cat.name}</h4>
-      <div class="skill-tags">${cat.tags.map(t => `<span class="skill-tag">${t}</span>`).join('')}</div>
+      <h4>${escHtml(cat.name || '')}</h4>
+      <div class="skill-tags">${(cat.tags || []).map(t => `<span class="skill-tag">${escHtml(t)}</span>`).join('')}</div>
     </div>`
   ).join('');
 }
 
 function renderContact(lang) {
-  const d = I18N[lang].contact;
+  const cmsContact = cmsData('contact', null);
+  const d = cmsContact || I18N[lang].contact;
   document.getElementById('contactLinks').innerHTML = `
-    <a class="contact-link" href="mailto:${d.email}">
+    <a class="contact-link" href="mailto:${escHtml(d.email || '')}">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
-      ${d.email}
+      ${escHtml(d.email || '')}
     </a>
     <a class="contact-link" href="https://github.com/FayHan2002" target="_blank" rel="noopener noreferrer">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-      ${d.github}
+      ${escHtml(d.github || '')}
     </a>
   `;
 }
 
+function cmsData(key, fallback) {
+  try { const v = localStorage.getItem('fay_cms_' + key); return v ? JSON.parse(v) : fallback; }
+  catch { return fallback; }
+}
+
 function rerenderAll() {
   populateI18nText(currentLang);
+  /* Apply CMS data to about text */
+  const cmsAbout = cmsData('about', null);
+  if (cmsAbout) {
+    const aboutP1 = document.querySelector('[data-i18n="about.p1"]');
+    const aboutP2 = document.querySelector('[data-i18n="about.p2"]');
+    const aboutP3 = document.querySelector('[data-i18n="about.p3"]');
+    const hobbiesEl = document.querySelector('[data-i18n="about.hobbies"]');
+    if (aboutP1) aboutP1.textContent = cmsAbout.p1 || '';
+    if (aboutP2) aboutP2.textContent = cmsAbout.p2 || '';
+    if (aboutP3) aboutP3.textContent = cmsAbout.p3 || '';
+    if (hobbiesEl && cmsAbout.hobbies) {
+      const parts = cmsAbout.hobbies.split(/[,，]/).map(s => s.trim()).filter(Boolean);
+      hobbiesEl.innerHTML = parts.map(h => `<span class="hobby">${escHtml(h)}</span>`).join('<span class="dot">·</span>');
+    }
+  }
+  /* Apply CMS avatar */
+  const cmsAvatar = cmsData('avatar', null);
+  if (cmsAvatar) {
+    const photo = document.querySelector('.hero-photo');
+    if (photo) photo.src = cmsAvatar;
+  }
+  /* Apply CMS signature */
+  const cmsSig = cmsData('signature', null);
+  if (cmsSig) {
+    const motto = document.querySelector('.motto');
+    if (motto) motto.textContent = cmsSig;
+  }
   renderTimeline(currentLang);
   renderResearch(currentLang);
   renderSkills(currentLang);
@@ -1406,6 +1606,7 @@ function setLang(lang) {
     document.getElementById('langToggle').textContent = lang === 'zh' ? 'EN' : '中文';
     document.getElementById('langToggle').setAttribute('aria-label', lang === 'zh' ? 'Switch to English' : '切换到中文');
     document.title = lang === 'zh' ? '韩馥伊 / Han Fuyi' : 'Han Fuyi / 韩馥伊';
+    startBottleRotation();
     document.body.classList.remove('fade-out');
   }, 200);
 }
@@ -1413,6 +1614,31 @@ function setLang(lang) {
 document.getElementById('langToggle').addEventListener('click', () => {
   setLang(currentLang === 'zh' ? 'en' : 'zh');
 });
+
+/* ===== Bottle Quote Rotation ===== */
+const bottleEl = document.getElementById('bottleQuote');
+const bottlePositions = ['pos-bl', 'pos-br', 'pos-tr', 'pos-tl'];
+let bottleTimer = null;
+
+function rotateBottleQuote() {
+  const quotes = I18N[currentLang].quotes.bottle;
+  const idx = Math.floor(Math.random() * quotes.length);
+  const pos = bottlePositions[Math.floor(Math.random() * bottlePositions.length)];
+  bottleEl.className = 'bottle-quote ' + pos;
+  bottleEl.textContent = quotes[idx];
+  requestAnimationFrame(() => {
+    bottleEl.classList.add('visible');
+  });
+}
+
+function startBottleRotation() {
+  rotateBottleQuote();
+  if (bottleTimer) clearInterval(bottleTimer);
+  bottleTimer = setInterval(() => {
+    bottleEl.classList.remove('visible');
+    setTimeout(() => rotateBottleQuote(), 1200);
+  }, 30000);
+}
 
 /* ===== Track Mode ===== */
 function setTrack(track) {
@@ -1479,11 +1705,636 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 50);
   document.getElementById('backToTop').classList.toggle('visible', window.scrollY > window.innerHeight);
 
-  const beach = document.querySelector('.hero-beach');
-  if (beach && window.scrollY < window.innerHeight) {
-    beach.style.transform = `translateY(${window.scrollY * 0.06}px)`;
+
+});
+
+/* ===== Hidden Sections ===== */
+const STORAGE_KNOWLEDGE = 'fay_cms_knowledge_cards';
+const STORAGE_DIARY = 'fay_cms_diary_entries';
+
+function getStorage(key, fallback) {
+  try {
+    const raw = localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : fallback;
+  } catch { return fallback; }
+}
+
+function setStorage(key, data) {
+  try { localStorage.setItem(key, JSON.stringify(data)); } catch {}
+}
+
+function defaultKnowledgeCards() {
+  return [
+    { title:"语言类型学与认知神经科学", summary:"探索不同母语背景如何影响第二语言语音感知的神经机制，结合EEG与行为实验方法。", tags:["神经语言学","EEG","语言类型学"], date:"2026-03" },
+    { title:"脑电数据处理入门指南", summary:"从原始EEG信号到ERP分析的完整流程，包括预处理、伪迹去除、时频分析和统计检验。", tags:["EEG","数据分析","教程"], date:"2026-01" },
+    { title:"声调学习中的范畴化感知", summary:"考察二语声调习得过程中范畴化感知的形成机制，以及学习者个体差异的影响。", tags:["声调","范畴化","二语习得"], date:"2025-12" },
+    { title:"语言病理学中的言语评估方法", summary:"综述当前言语障碍评估的主要范式，包括行为评估、声学分析和神经影像技术的应用。", tags:["语言病理学","评估方法","综述"], date:"2025-10" },
+    { title:"脑机接口在言语康复中的应用", summary:"BCI技术为言语障碍患者提供替代性沟通渠道的最新进展与挑战。", tags:["脑机接口","言语康复","综述"], date:"2025-08" },
+    { title:"机器学习与神经语言学交叉前沿", summary:"深度学习模型在语音分析和语言障碍诊断中的最新应用，以及未来发展方向。", tags:["机器学习","神经语言学","AI"], date:"2025-06" },
+  ];
+}
+
+function defaultDiaryEntries() {
+  return [
+    { date:"2026-05-15", title:"EEG实验的第一次独立完成", mood:"excited", body:"今天终于独立跑完了一整组EEG实验。从被试准备到数据采集，每一步都自己来。虽然中间电极阻抗出了问题反复调整，但最终的数据质量还不错。导师说这个范式设计得巧妙，小小开心。回到宿舍已经晚上十点，但一点不觉得累。" },
+    { date:"2026-04-28", title:"论文被拒后的反思", mood:"thoughtful", body:"收到Bilingualism的desk reject，说不适合这本期刊。说不难过是假的，但仔细想想，审稿人的建议其实有道理——我们的切入点确实偏认知了一些。和导师讨论后决定转投Applied Psycholinguistics。学术这条路，习惯了被拒绝也就没那么可怕了。" },
+    { date:"2026-03-12", title:"徒步京西古道", mood:"happy", body:"周末和实验室的同学一起去走了京西古道。春天的山里空气冷冽但干净，走了四个小时的山路，腿酸得不行但心情很好。在山顶看到了很漂亮的晚霞，像深海里透进来的一束光。突然觉得做科研和徒步很像——你得不停走，但路上的风景值得。" },
+    { date:"2026-02-20", title:"读《意识的河流》", mood:"calm", body:"Oliver Sacks写的东西永远能让人安静下来。他说每一个知觉的瞬间，意识都在不断地被重新编辑和构造。想到我们做EEG研究，其实就是在捕捉这些被编辑过的微小信号——它们如此脆弱，又如此真实。" },
+    { date:"2026-01-08", title:"新学期计划", mood:"calm", body:"新的一年想要更系统地学习R语言和线性混合模型。之前在分析范畴化数据的时候发现自己统计基础还是不够扎实。另外也想开始写一些科普类的东西，把实验室里发生的事情讲给更多人听。" },
+  ];
+}
+
+/* Diver Popup */
+(function() {
+  const diver = document.querySelector('.hero-diver');
+  const popup = document.getElementById('diverPopup');
+  let popupVisible = false;
+
+  function positionPopup() {
+    const rect = diver.getBoundingClientRect();
+    popup.style.left = (rect.left + rect.width / 2 - 72) + 'px';
+    popup.style.top = (rect.top - 100) + 'px';
+  }
+
+  function showPopup() {
+    positionPopup();
+    popup.classList.add('open');
+    popupVisible = true;
+  }
+
+  function hidePopup() {
+    popup.classList.remove('open');
+    popupVisible = false;
+  }
+
+  if (diver && popup) {
+    diver.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (popupVisible) hidePopup();
+      else { positionPopup(); showPopup(); }
+    });
+    window.addEventListener('resize', () => { if (popupVisible) positionPopup(); });
+    window.addEventListener('scroll', () => { if (popupVisible) positionPopup(); });
+    document.addEventListener('click', (e) => {
+      if (popupVisible && !popup.contains(e.target) && e.target !== diver) hidePopup();
+    });
+  }
+
+  /* Bubble buttons → open hidden pages */
+  popup.querySelectorAll('.bubble-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      hidePopup();
+      const target = btn.getAttribute('data-target');
+      if (target === 'knowledge') openKnowledgePage();
+      else if (target === 'diary') openDiaryPage();
+    });
+  });
+})();
+
+/* Knowledge Page */
+function openKnowledgePage() {
+  const page = document.getElementById('knowledgePage');
+  page.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  renderKnowledgeCards();
+}
+function closeKnowledgePage() {
+  const page = document.getElementById('knowledgePage');
+  page.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function renderKnowledgeCards(filter) {
+  const grid = document.getElementById('knowledgeGrid');
+  const emptyEl = document.getElementById('knowledgeEmpty');
+  let cards = getStorage(STORAGE_KNOWLEDGE, defaultKnowledgeCards());
+  const q = (filter || '').toLowerCase().trim();
+  if (q) {
+    cards = cards.filter(c =>
+      c.title.toLowerCase().includes(q) ||
+      c.summary.toLowerCase().includes(q) ||
+      (c.tags || []).some(t => t.toLowerCase().includes(q))
+    );
+  }
+  if (cards.length === 0) {
+    grid.innerHTML = '';
+    emptyEl.classList.add('show');
+  } else {
+    emptyEl.classList.remove('show');
+    grid.innerHTML = cards.map(c => `
+      <article class="knowledge-card">
+        <h3>${escHtml(c.title)}</h3>
+        <p class="card-summary">${escHtml(c.summary)}</p>
+        <div class="card-meta">
+          <span class="card-date">${escHtml(c.date)}</span>
+          ${(c.tags || []).map(t => `<span class="card-tag">${escHtml(t)}</span>`).join('')}
+        </div>
+      </article>
+    `).join('');
+  }
+}
+document.getElementById('knowledgeBack').addEventListener('click', closeKnowledgePage);
+document.getElementById('knowledgeSearch').addEventListener('input', function() {
+  renderKnowledgeCards(this.value);
+});
+
+/* Diary Page */
+function openDiaryPage() {
+  const page = document.getElementById('diaryPage');
+  page.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  renderDiaryEntries();
+}
+function closeDiaryPage() {
+  const page = document.getElementById('diaryPage');
+  page.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function renderDiaryEntries() {
+  const tl = document.getElementById('diaryTimeline');
+  const entries = getStorage(STORAGE_DIARY, defaultDiaryEntries());
+  entries.sort((a, b) => b.date.localeCompare(a.date));
+  tl.innerHTML = entries.map(e => `
+    <article class="diary-entry">
+      <div class="entry-date">${escHtml(e.date)}</div>
+      ${e.mood ? `<span class="entry-mood mood-${escHtml(e.mood)}">${moodLabel(e.mood)}</span>` : ''}
+      <h3>${escHtml(e.title)}</h3>
+      <div class="entry-body">${escHtml(e.body)}</div>
+    </article>
+  `).join('');
+}
+function moodLabel(m) {
+  const map = { happy: currentLang === 'zh' ? '愉快' : 'Happy', calm: currentLang === 'zh' ? '平静' : 'Calm', thoughtful: currentLang === 'zh' ? '沉思' : 'Thoughtful', excited: currentLang === 'zh' ? '兴奋' : 'Excited' };
+  return map[m] || m;
+}
+document.getElementById('diaryBack').addEventListener('click', closeDiaryPage);
+
+/* Escape key to close hidden pages */
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeKnowledgePage();
+    closeDiaryPage();
+    const popup = document.getElementById('diverPopup');
+    if (popup) popup.classList.remove('open');
   }
 });
+
+function escHtml(s) {
+  const div = document.createElement('div');
+  div.textContent = s;
+  return div.innerHTML;
+}
+
+/* ===== CMS Editor ===== */
+(function() {
+  const CMS_STORAGE_PREFIX = 'fay_cms_';
+  const DEFAULT_PASSWORD = 'admin';
+  const CMS_KEYS = ['avatar', 'signature', 'about', 'education', 'research', 'academic_projects', 'industry_projects', 'internship', 'skills', 'contact', 'knowledge_cards', 'diary_entries'];
+
+  function cmsGet(key) {
+    try { const v = localStorage.getItem(CMS_STORAGE_PREFIX + key); return v ? JSON.parse(v) : null; } catch { return null; }
+  }
+  function cmsSet(key, val) {
+    try { localStorage.setItem(CMS_STORAGE_PREFIX + key, JSON.stringify(val)); } catch {}
+  }
+  function cmsGetPassword() {
+    return localStorage.getItem('fay_cms_password') || DEFAULT_PASSWORD;
+  }
+  function cmsSetPassword(pw) {
+    localStorage.setItem('fay_cms_password', pw);
+  }
+
+  const pwdOverlay = document.getElementById('cmsPwdOverlay');
+  const pwdInput = document.getElementById('cmsPwdInput');
+  const pwdError = document.getElementById('cmsPwdError');
+  const panel = document.getElementById('cmsPanel');
+  const content = document.getElementById('cmsContent');
+  const toast = document.getElementById('cmsToast');
+
+  let toastTimer = null;
+  function showToast(msg, isErr) {
+    if (toastTimer) clearTimeout(toastTimer);
+    toast.textContent = msg;
+    toast.className = 'cms-toast ' + (isErr ? 'error' : '') + ' show';
+    toastTimer = setTimeout(() => { toast.classList.remove('show'); }, 2500);
+  }
+
+  /* Long-press on footer */
+  const footerLink = document.querySelector('footer p');
+  let longPressTimer = null;
+  if (footerLink) {
+    footerLink.style.cursor = 'default';
+    footerLink.addEventListener('mousedown', (e) => {
+      longPressTimer = setTimeout(() => openPwdModal(), 3000);
+    });
+    footerLink.addEventListener('mouseup', () => { if (longPressTimer) clearTimeout(longPressTimer); });
+    footerLink.addEventListener('mouseleave', () => { if (longPressTimer) clearTimeout(longPressTimer); });
+    footerLink.addEventListener('touchstart', (e) => {
+      longPressTimer = setTimeout(() => openPwdModal(), 3000);
+    }, { passive: true });
+    footerLink.addEventListener('touchend', () => { if (longPressTimer) clearTimeout(longPressTimer); });
+    footerLink.addEventListener('touchmove', () => { if (longPressTimer) clearTimeout(longPressTimer); });
+  }
+
+  function openPwdModal() {
+    pwdOverlay.classList.add('open');
+    pwdInput.value = '';
+    pwdError.textContent = '';
+    setTimeout(() => pwdInput.focus(), 100);
+  }
+  function closePwdModal() {
+    pwdOverlay.classList.remove('open');
+  }
+
+  document.getElementById('cmsPwdSubmit').addEventListener('click', () => {
+    if (pwdInput.value === cmsGetPassword()) {
+      closePwdModal();
+      openPanel();
+    } else {
+      pwdError.textContent = I18N[currentLang].cms.wrongPassword;
+      pwdInput.value = '';
+    }
+  });
+  pwdInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') document.getElementById('cmsPwdSubmit').click();
+    if (e.key === 'Escape') closePwdModal();
+  });
+  document.getElementById('cmsPwdCancel').addEventListener('click', closePwdModal);
+
+  function openPanel() {
+    panel.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    switchTab('basic');
+  }
+  function closePanel() {
+    panel.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  document.getElementById('cmsClose').addEventListener('click', closePanel);
+
+  /* Tab switching */
+  let currentTab = 'basic';
+  document.getElementById('cmsTabs').addEventListener('click', (e) => {
+    if (e.target.classList.contains('cms-tab')) {
+      switchTab(e.target.dataset.tab);
+    }
+  });
+
+  function switchTab(tab) {
+    currentTab = tab;
+    document.querySelectorAll('.cms-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
+    renderTabContent(tab);
+  }
+
+  /* ===== Tab Rendering ===== */
+  function renderTabContent(tab) {
+    const renderers = {
+      basic: renderBasicTab,
+      education: renderListTab,
+      research: renderListTab,
+      projects: renderProjectsTab,
+      internship: renderListTab,
+      skills: renderSkillsTab,
+      contact: renderContactTab,
+      knowledge: renderKnowledgeTab,
+      diary: renderDiaryTab,
+      password: renderPasswordTab,
+    };
+    if (renderers[tab]) renderers[tab](tab);
+  }
+
+  function field(label, name, value, hint, type) {
+    const t = type || 'text';
+    const v = value || '';
+    return `<div class="cms-form-group">
+      <label>${escHtml(label)}</label>
+      ${t === 'textarea' ? `<textarea name="${name}" rows="4">${escHtml(v)}</textarea>` : `<input type="${t}" name="${name}" value="${escHtml(v)}">`}
+      ${hint ? `<div class="cms-hint">${escHtml(hint)}</div>` : ''}
+    </div>`;
+  }
+
+  /* Basic Info Tab */
+  function renderBasicTab() {
+    const avatar = cmsGet('avatar') || 'selfimage.jpg';
+    const signature = cmsGet('signature') || '';
+    const about = cmsGet('about') || { p1: '', p2: '', p3: '', hobbies: '' };
+    content.innerHTML = `
+      ${field('头像 URL', 'avatar', avatar, '可输入图片文件名或完整URL')}
+      ${field('个性签名 / 座右铭', 'signature', signature)}
+      ${field('关于我 — 第一段', 'about_p1', about.p1 || '', '', 'textarea')}
+      ${field('关于我 — 第二段', 'about_p2', about.p2 || '', '', 'textarea')}
+      ${field('关于我 — 第三段', 'about_p3', about.p3 || '', '', 'textarea')}
+      ${field('兴趣爱好 (用逗号分隔)', 'about_hobbies', about.hobbies || '', '格式：徒步, 健身, 读书')}
+    `;
+  }
+
+  /* List Tab (education / research / internship) */
+  function renderListTab(tab) {
+    const keyMap = { education: 'education', research: 'research', internship: 'internship' };
+    const key = keyMap[tab];
+    const items = cmsGet(key) || [];
+    const fieldDefs = {
+      education: [
+        { name: 'year', label: '时间段', placeholder: '2024.09 – 至今' },
+        { name: 'school', label: '学校', placeholder: '北京语言大学' },
+        { name: 'degree', label: '学位', placeholder: '语言病理学 硕士' },
+        { name: 'extra', label: '额外信息', placeholder: '主修课程...' },
+      ],
+      research: [
+        { name: 'authors', label: '作者', placeholder: 'Dong, Y., Han, F., ...' },
+        { name: 'title', label: '论文标题', placeholder: '' },
+        { name: 'meta', label: '期刊信息', placeholder: 'Bilingualism: Language and Cognition · SCI Q1' },
+        { name: 'desc', label: '个人贡献', placeholder: '' },
+      ],
+      internship: [
+        { name: 'title', label: '标题', placeholder: '公司 — 职位' },
+        { name: 'meta', label: '时间', placeholder: '2025.07 – 2025.08' },
+        { name: 'desc', label: '描述', placeholder: '' },
+        { name: 'cls', label: 'CSS class', placeholder: 'industry-card' },
+      ],
+    };
+    const defs = fieldDefs[key];
+    let html = items.map((item, i) => `
+      <div class="cms-list-item">
+        <div class="cms-item-header">
+          <span>#${i + 1}</span>
+          <div class="cms-item-actions">
+            <button class="cms-btn cms-btn-danger cms-remove-item" data-index="${i}" data-key="${key}">${escHtml(I18N[currentLang].cms.removeItem)}</button>
+          </div>
+        </div>
+        <div class="cms-item-fields">
+          ${defs.map(d => {
+            const val = item[d.name] || '';
+            return d.name === 'desc' || d.name === 'extra'
+              ? `<textarea placeholder="${d.placeholder || ''}" data-key="${key}" data-index="${i}" data-field="${d.name}" rows="3">${escHtml(val)}</textarea>`
+              : `<input type="text" placeholder="${d.placeholder || ''}" data-key="${key}" data-index="${i}" data-field="${d.name}" value="${escHtml(val)}">`;
+          }).join('')}
+        </div>
+      </div>
+    `).join('');
+    html += `<button class="cms-btn cms-btn-primary cms-add-btn" data-key="${key}">+ ${escHtml(I18N[currentLang].cms.addItem)}</button>`;
+    content.innerHTML = html;
+    bindListEvents(key, defs);
+  }
+
+  /* Projects Tab */
+  function renderProjectsTab() {
+    const academic = cmsGet('academic_projects') || [];
+    const industry = cmsGet('industry_projects') || [];
+    const defs = [
+      { name: 'title', label: '标题' },
+      { name: 'meta', label: '元信息' },
+      { name: 'desc', label: '描述' },
+      { name: 'cls', label: 'CSS class', placeholder: 'academic-card / industry-card' },
+    ];
+    function renderSection(label, items, key) {
+      let h = `<h3 style="color:var(--silver);margin:20px 0 12px;font-size:0.9rem;">${label}</h3>`;
+      h += items.map((item, i) => `
+        <div class="cms-list-item">
+          <div class="cms-item-header">
+            <span>#${i + 1}</span>
+            <div class="cms-item-actions">
+              <button class="cms-btn cms-btn-danger cms-remove-item" data-index="${i}" data-key="${key}">${escHtml(I18N[currentLang].cms.removeItem)}</button>
+            </div>
+          </div>
+          <div class="cms-item-fields">
+            ${defs.map(d => {
+              const val = item[d.name] || '';
+              return d.name === 'desc'
+                ? `<textarea placeholder="${d.placeholder || ''}" data-key="${key}" data-index="${i}" data-field="${d.name}" rows="3">${escHtml(val)}</textarea>`
+                : `<input type="text" placeholder="${d.placeholder || ''}" data-key="${key}" data-index="${i}" data-field="${d.name}" value="${escHtml(val)}">`;
+            }).join('')}
+          </div>
+        </div>
+      `).join('');
+      h += `<button class="cms-btn cms-btn-primary cms-add-btn" data-key="${key}">+ ${escHtml(I18N[currentLang].cms.addItem)}</button>`;
+      return h;
+    }
+    content.innerHTML = renderSection('学术项目', academic, 'academic_projects') + renderSection('行业项目', industry, 'industry_projects');
+    bindListEvents('academic_projects', defs);
+    bindListEvents('industry_projects', defs);
+  }
+
+  /* Skills Tab */
+  function renderSkillsTab() {
+    const skills = cmsGet('skills') || [];
+    let html = skills.map((cat, i) => `
+      <div class="cms-list-item">
+        <div class="cms-item-header">
+          <span>${escHtml(cat.name || '分类 ' + (i+1))}</span>
+          <div class="cms-item-actions">
+            <button class="cms-btn cms-btn-danger cms-remove-item" data-index="${i}" data-key="skills">${escHtml(I18N[currentLang].cms.removeItem)}</button>
+          </div>
+        </div>
+        <div class="cms-item-fields">
+          <input type="text" placeholder="分类名" data-key="skills" data-index="${i}" data-field="name" value="${escHtml(cat.name || '')}">
+          <input type="text" placeholder="标签（逗号分隔）" data-key="skills" data-index="${i}" data-field="tags" value="${escHtml((cat.tags || []).join(', '))}">
+        </div>
+      </div>
+    `).join('');
+    html += `<button class="cms-btn cms-btn-primary cms-add-btn" data-key="skills">+ ${escHtml(I18N[currentLang].cms.addItem)}</button>`;
+    content.innerHTML = html;
+    bindListEvents('skills', [{ name: 'name', label: '' }, { name: 'tags', label: '' }]);
+  }
+
+  /* Contact Tab */
+  function renderContactTab() {
+    const contact = cmsGet('contact') || { email: '18242971016@163.com', github: 'GitHub' };
+    content.innerHTML = `
+      ${field('邮箱', 'contact_email', contact.email || '')}
+      ${field('GitHub 标签', 'contact_github', contact.github || '')}
+    `;
+  }
+
+  /* Knowledge Tab */
+  function renderKnowledgeTab() {
+    const cards = cmsGet('knowledge_cards') || [];
+    const defs = [
+      { name: 'title', label: '标题' },
+      { name: 'summary', label: '摘要' },
+      { name: 'tags', label: '标签（逗号分隔）' },
+      { name: 'date', label: '日期', placeholder: '2026-03' },
+    ];
+    let html = cards.map((c, i) => `
+      <div class="cms-list-item">
+        <div class="cms-item-header">
+          <span>${escHtml(c.title || '# ' + (i+1))}</span>
+          <div class="cms-item-actions">
+            <button class="cms-btn cms-btn-danger cms-remove-item" data-index="${i}" data-key="knowledge_cards">${escHtml(I18N[currentLang].cms.removeItem)}</button>
+          </div>
+        </div>
+        <div class="cms-item-fields">
+          ${defs.map(d => {
+            const val = d.name === 'tags' ? (c[d.name] || []).join(', ') : (c[d.name] || '');
+            return d.name === 'summary'
+              ? `<textarea placeholder="${d.placeholder || ''}" data-key="knowledge_cards" data-index="${i}" data-field="${d.name}" rows="3">${escHtml(val)}</textarea>`
+              : `<input type="text" placeholder="${d.placeholder || ''}" data-key="knowledge_cards" data-index="${i}" data-field="${d.name}" value="${escHtml(val)}">`;
+          }).join('')}
+        </div>
+      </div>
+    `).join('');
+    html += `<button class="cms-btn cms-btn-primary cms-add-btn" data-key="knowledge_cards">+ ${escHtml(I18N[currentLang].cms.addItem)}</button>`;
+    content.innerHTML = html;
+    bindListEvents('knowledge_cards', defs);
+  }
+
+  /* Diary Tab */
+  function renderDiaryTab() {
+    const entries = cmsGet('diary_entries') || [];
+    const defs = [
+      { name: 'date', label: '日期', placeholder: '2026-05-15' },
+      { name: 'title', label: '标题' },
+      { name: 'mood', label: '心情', placeholder: 'happy / calm / thoughtful / excited' },
+      { name: 'body', label: '正文' },
+    ];
+    let html = entries.map((e, i) => `
+      <div class="cms-list-item">
+        <div class="cms-item-header">
+          <span>${escHtml(e.title || '# ' + (i+1))}</span>
+          <div class="cms-item-actions">
+            <button class="cms-btn cms-btn-danger cms-remove-item" data-index="${i}" data-key="diary_entries">${escHtml(I18N[currentLang].cms.removeItem)}</button>
+          </div>
+        </div>
+        <div class="cms-item-fields">
+          ${defs.map(d => {
+            const val = e[d.name] || '';
+            return d.name === 'body'
+              ? `<textarea placeholder="" data-key="diary_entries" data-index="${i}" data-field="${d.name}" rows="5">${escHtml(val)}</textarea>`
+              : `<input type="text" placeholder="${d.placeholder || ''}" data-key="diary_entries" data-index="${i}" data-field="${d.name}" value="${escHtml(val)}">`;
+          }).join('')}
+        </div>
+      </div>
+    `).join('');
+    html += `<button class="cms-btn cms-btn-primary cms-add-btn" data-key="diary_entries">+ ${escHtml(I18N[currentLang].cms.addItem)}</button>`;
+    content.innerHTML = html;
+    bindListEvents('diary_entries', defs);
+  }
+
+  /* Password Tab */
+  function renderPasswordTab() {
+    content.innerHTML = `
+      <div class="cms-form-group">
+        <label>${escHtml(I18N[currentLang].cms.newPasswordHint)}</label>
+        <input type="password" id="cmsNewPwd" placeholder="••••••">
+        <div class="cms-hint">${escHtml(I18N[currentLang].cms.defaultPasswordWarning)}</div>
+      </div>
+      <button class="cms-btn cms-btn-primary" id="cmsChangePwd">${escHtml(I18N[currentLang].cms.passwordChanged)}</button>
+    `;
+    document.getElementById('cmsChangePwd').addEventListener('click', () => {
+      const p = document.getElementById('cmsNewPwd').value.trim();
+      if (p) { cmsSetPassword(p); showToast(I18N[currentLang].cms.passwordChanged); }
+      switchTab('basic');
+    });
+  }
+
+  /* List event binding */
+  function bindListEvents(key, defs) {
+    content.querySelectorAll('.cms-remove-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.dataset.index);
+        const k = btn.dataset.key;
+        const items = cmsGet(k) || [];
+        items.splice(idx, 1);
+        cmsSet(k, items);
+        renderTabContent(currentTab);
+      });
+    });
+    content.querySelectorAll('.cms-add-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const k = btn.dataset.key;
+        const items = cmsGet(k) || [];
+        const newItem = {};
+        defs.forEach(d => {
+          newItem[d.name] = d.name === 'tags' ? [] : '';
+        });
+        items.push(newItem);
+        cmsSet(k, items);
+        renderTabContent(currentTab);
+      });
+    });
+    content.querySelectorAll('input, textarea').forEach(input => {
+      input.addEventListener('input', () => {
+        const k = input.dataset.key;
+        const idx = parseInt(input.dataset.index);
+        const field = input.dataset.field;
+        if (k && !isNaN(idx) && field) {
+          const items = cmsGet(k) || [];
+          if (items[idx]) {
+            items[idx][field] = field === 'tags' ? input.value.split(',').map(s => s.trim()).filter(Boolean) : input.value;
+            cmsSet(k, items);
+          }
+        }
+      });
+    });
+  }
+
+  /* Save All */
+  document.getElementById('cmsSave').addEventListener('click', () => {
+    /* Read from form fields on current tab and save */
+    if (currentTab === 'basic') {
+      const avatar = content.querySelector('[name="avatar"]')?.value || '';
+      const signature = content.querySelector('[name="signature"]')?.value || '';
+      const about = {
+        p1: content.querySelector('[name="about_p1"]')?.value || '',
+        p2: content.querySelector('[name="about_p2"]')?.value || '',
+        p3: content.querySelector('[name="about_p3"]')?.value || '',
+        hobbies: content.querySelector('[name="about_hobbies"]')?.value || '',
+      };
+      cmsSet('avatar', avatar);
+      cmsSet('signature', signature);
+      cmsSet('about', about);
+    } else if (currentTab === 'contact') {
+      cmsSet('contact', {
+        email: content.querySelector('[name="contact_email"]')?.value || '',
+        github: content.querySelector('[name="contact_github"]')?.value || '',
+      });
+    }
+    showToast(I18N[currentLang].cms.saved);
+    /* Re-render main site with new data */
+    setTimeout(() => { rerenderAll(); }, 300);
+  });
+
+  /* Export */
+  document.getElementById('cmsExport').addEventListener('click', () => {
+    const data = {};
+    CMS_KEYS.forEach(k => { data[k] = cmsGet(k); });
+    data._password = cmsGetPassword();
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'fay-cms-backup-' + new Date().toISOString().slice(0,10) + '.json';
+    a.click(); URL.revokeObjectURL(url);
+    showToast(I18N[currentLang].cms.exported);
+  });
+
+  /* Import */
+  document.getElementById('cmsImportFile').addEventListener('change', function() {
+    const file = this.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      try {
+        const data = JSON.parse(e.target.result);
+        CMS_KEYS.forEach(k => {
+          if (data[k] !== undefined) cmsSet(k, data[k]);
+        });
+        if (data._password) cmsSetPassword(data._password);
+        showToast(I18N[currentLang].cms.imported);
+        rerenderAll();
+      } catch { showToast(I18N[currentLang].cms.importError, true); }
+    };
+    reader.readAsText(file);
+    this.value = '';
+  });
+
+  /* Keyboard shortcuts */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      if (panel.style.display === 'flex') closePanel();
+      if (pwdOverlay.classList.contains('open')) closePwdModal();
+    }
+  });
+})();
 
 /* ===== Neural particle system ===== */
 (function() {
@@ -1609,6 +2460,7 @@ document.addEventListener('keydown', (e) => {
 function init() {
   document.getElementById('langToggle').textContent = currentLang === 'zh' ? 'EN' : '中文';
   rerenderAll();
+  startBottleRotation();
   document.getElementById('footerYear').textContent = new Date().getFullYear();
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 }
@@ -1619,10 +2471,17 @@ init();
 ========================================
   MODIFICATION GUIDE
 ========================================
+  CMS EDITOR: Long-press footer © text 3s → password (default: admin).
+    Edit all content through the visual panel. Export/import JSON backup.
+
   CONTENT: Edit the I18N object in <script>. zh = Chinese, en = English.
+    CMS localStorage overrides take precedence over I18N defaults.
 
   COLORS: Edit :root{} in <style>.
     Key: --bg, --bg-deep, --bg-card, --accent-ice, --accent-warm, --border.
+
+  HIDDEN SECTIONS: Click the diver in hero → bubble popup →
+    Knowledge Exploration (card wall) / Thought Diary (timeline).
 
   TRACKS:
     Academic → I18N.*.academicProjects
