@@ -253,6 +253,22 @@ section:hover .section-decor { opacity: 0.60; }
   animation: jellyfish-drift 35s ease-in-out infinite;
 }
 
+/* Section jellyfish */
+.section-jellyfish {
+  position: absolute; z-index: 0; pointer-events: none;
+  width: 38px; height: 53px; opacity: 0.32;
+  filter: drop-shadow(0 0 5px rgba(184,160,216,0.18));
+  animation: jellyfish-breathe 7s ease-in-out infinite;
+}
+.section-jellyfish:nth-child(odd) { animation-duration: 8.5s; animation-delay: 1s; }
+.section-jellyfish:nth-child(3n) { animation-duration: 9.2s; animation-delay: 2s; }
+@keyframes jellyfish-breathe {
+  0%, 100% { transform: scale(1.00, 1.00); }
+  30% { transform: scale(1.07, 0.82); }
+  60% { transform: scale(0.96, 1.04); }
+  85% { transform: scale(1.04, 0.90); }
+}
+
 
 .hero-content { position: relative; z-index: 2; padding-bottom: 60px; }
 
@@ -293,78 +309,73 @@ section { padding: var(--section-gap) 0; position: relative; overflow: hidden; }
 #about {
   background-color: #060E18;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Cpath d='M47,23 Q103,8 167,23 Q188,53 167,103 Q123,123 63,113 Q17,93 27,43 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.8' opacity='0.55'/%3E%3Cpath d='M263,183 Q303,168 343,183 Q358,203 348,233 Q318,248 278,238 Q253,223 258,193 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.7' opacity='0.41'/%3E%3Cpath d='M157,223 Q187,208 217,223 Q232,243 222,263 Q197,273 167,263 Q147,248 157,223 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.5' opacity='0.33'/%3E%3Ccircle cx='83' cy='67' r='1.5' fill='%23D8E4F0' opacity='0.82'/%3E%3Ccircle cx='287' cy='207' r='1.2' fill='%23D8E4F0' opacity='0.69'/%3E%3Cpath d='M37,107 Q83,83 133,107' fill='none' stroke='%237EC8C8' stroke-width='0.6' opacity='0.50'/%3E%3C/svg%3E"),
     radial-gradient(ellipse 65% 40% at 70% 60%, rgba(240,200,160,0.28), transparent 55%),
     radial-gradient(ellipse 35% 25% at 25% 35%, rgba(126,200,200,0.15), transparent 50%);
-  background-repeat: repeat, no-repeat, no-repeat;
-  background-position: 0 0, 0 0, 0 0;
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0 0, 0 0;
 }
 
 /* Education: deep teal tint + octopus + books */
 #education {
   background-color: #060E18;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Cellipse cx='63' cy='53' rx='18' ry='13' fill='none' stroke='%237EC8C8' stroke-width='0.6' opacity='0.55'/%3E%3Ccircle cx='54' cy='49' r='4' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.50'/%3E%3Ccircle cx='72' cy='49' r='4' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.50'/%3E%3Cpath d='M38,63 Q31,88 25,100' fill='none' stroke='%237EC8C8' stroke-width='1.2' opacity='0.41'/%3E%3Cpath d='M48,63 Q44,90 42,104' fill='none' stroke='%237EC8C8' stroke-width='1.2' opacity='0.41'/%3E%3Cpath d='M63,63 Q63,92 63,106' fill='none' stroke='%237EC8C8' stroke-width='1.2' opacity='0.41'/%3E%3Crect x='233' y='37' width='22' height='34' rx='2' fill='none' stroke='%23B8A0D8' stroke-width='0.6' opacity='0.41'/%3E%3Ccircle cx='337' cy='83' r='1.3' fill='%23D8E4F0' opacity='0.69'/%3E%3Ccircle cx='73' cy='163' r='0.9' fill='%23D8E4F0' opacity='0.55'/%3E%3C/svg%3E"),
     radial-gradient(ellipse 55% 35% at 30% 55%, rgba(126,200,200,0.28), transparent 55%),
     radial-gradient(ellipse 30% 25% at 75% 35%, rgba(184,160,216,0.18), transparent 50%);
-  background-repeat: repeat, no-repeat, no-repeat;
-  background-position: 0 0, 0 0, 0 0;
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0 0, 0 0;
 }
 
 /* Research: deep purple tint + EEG traces + neuron nodes */
 #research {
   background-color: #060E18;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Cpath d='M0,53 Q37,17 73,53 T147,53 T220,53 T293,53 T367,53 T400,53' fill='none' stroke='%237EC8C8' stroke-width='0.7' opacity='0.69'/%3E%3Cpath d='M0,77 Q37,43 73,77 T147,77 T220,77 T293,77 T367,77 T400,77' fill='none' stroke='%23B8A0D8' stroke-width='0.55' opacity='0.55'/%3E%3Ccircle cx='113' cy='63' r='3.5' fill='none' stroke='%23B8A0D8' stroke-width='0.55' opacity='0.82'/%3E%3Ccircle cx='187' cy='43' r='2.5' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.69'/%3E%3Ccircle cx='273' cy='73' r='2.8' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.74'/%3E%3Ccircle cx='183' cy='197' r='3' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.60'/%3E%3Cline x1='113' y1='63' x2='187' y2='43' stroke='%23B8A0D8' stroke-width='0.3' opacity='0.41'/%3E%3Ccircle cx='133' cy='123' r='1.2' fill='%23D8E4F0' opacity='0.69'/%3E%3C/svg%3E"),
     radial-gradient(ellipse 35% 25% at 75% 35%, rgba(184,160,216,0.30), transparent 55%),
     radial-gradient(ellipse 25% 20% at 25% 65%, rgba(126,200,200,0.25), transparent 55%);
-  background-repeat: repeat, no-repeat, no-repeat;
-  background-position: 0 0, 0 0, 0 0;
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0 0, 0 0;
 }
 
 /* Projects: warm dark base + starfish + waves */
 #projects {
   background-color: #060E18;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Cpath d='M53,57 L57,73 L73,73 L60,82 L65,99 L53,89 L41,99 L46,82 L33,73 L49,73 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.7' opacity='0.55'/%3E%3Cpath d='M263,193 L266,203 L277,203 L268,210 L271,221 L263,214 L255,221 L258,210 L249,203 L260,203 Z' fill='none' stroke='%23F0C8A0' stroke-width='0.55' opacity='0.44'/%3E%3Cpath d='M0,273 Q67,253 133,273 T267,273 T400,273' fill='none' stroke='%237EC8C8' stroke-width='0.7' opacity='0.60'/%3E%3Ccircle cx='87' cy='87' r='1.2' fill='%23D8E4F0' opacity='0.77'/%3E%3Ccircle cx='297' cy='67' r='1' fill='%23F0C8A0' opacity='0.60'/%3E%3C/svg%3E"),
     radial-gradient(ellipse 50% 30% at 80% 70%, rgba(240,200,160,0.25), transparent 55%),
     radial-gradient(ellipse 40% 25% at 20% 40%, rgba(126,200,200,0.21), transparent 50%);
-  background-repeat: repeat, no-repeat, no-repeat;
-  background-position: 0 0, 0 0, 0 0;
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0 0, 0 0;
 }
 
 /* Internship: teal tint + compass + nautical lines */
 #internship {
   background-color: #060E18;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Ccircle cx='83' cy='73' r='24' fill='none' stroke='%237EC8C8' stroke-width='0.7' opacity='0.60'/%3E%3Ccircle cx='83' cy='73' r='5' fill='none' stroke='%237EC8C8' stroke-width='0.55' opacity='0.50'/%3E%3Cline x1='83' y1='49' x2='83' y2='59' stroke='%237EC8C8' stroke-width='0.7' opacity='0.55'/%3E%3Cline x1='107' y1='73' x2='97' y2='73' stroke='%237EC8C8' stroke-width='0.7' opacity='0.55'/%3E%3Cpath d='M37,253 Q117,193 197,253' fill='none' stroke='%23D8E4F0' stroke-width='0.55' opacity='0.44' stroke-dasharray='6,5'/%3E%3Ccircle cx='357' cy='53' r='1.2' fill='%23D8E4F0' opacity='0.82'/%3E%3Ccircle cx='63' cy='163' r='1' fill='%237EC8C8' opacity='0.60'/%3E%3C/svg%3E"),
     radial-gradient(ellipse 50% 30% at 40% 50%, rgba(126,200,200,0.28), transparent 55%),
     radial-gradient(ellipse 30% 25% at 70% 30%, rgba(184,160,216,0.18), transparent 50%);
-  background-repeat: repeat, no-repeat, no-repeat;
-  background-position: 0 0, 0 0, 0 0;
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0 0, 0 0;
 }
 
 /* Skills: purple tint + bubbles + neuron network */
 #skills {
   background-color: #060E18;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Ccircle cx='47' cy='47' r='13' fill='none' stroke='%237EC8C8' stroke-width='0.6' opacity='0.55'/%3E%3Ccircle cx='117' cy='37' r='8' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.50'/%3E%3Ccircle cx='197' cy='57' r='17' fill='none' stroke='%23B8A0D8' stroke-width='0.6' opacity='0.50'/%3E%3Ccircle cx='157' cy='73' r='10' fill='none' stroke='%237EC8C8' stroke-width='0.5' opacity='0.47'/%3E%3Cpath d='M197,57 Q233,67 253,117' fill='none' stroke='%23B8A0D8' stroke-width='0.5' opacity='0.36'/%3E%3Ccircle cx='323' cy='63' r='9' fill='none' stroke='%23B8A0D8' stroke-width='0.55' opacity='0.47'/%3E%3Ccircle cx='283' cy='193' r='11' fill='none' stroke='%23B8A0D8' stroke-width='0.55' opacity='0.41'/%3E%3Ccircle cx='173' cy='137' r='1.2' fill='%23D8E4F0' opacity='0.69'/%3E%3C/svg%3E"),
     radial-gradient(ellipse 30% 20% at 65% 45%, rgba(184,160,216,0.30), transparent 55%),
     radial-gradient(ellipse 25% 18% at 30% 60%, rgba(126,200,200,0.23), transparent 50%);
-  background-repeat: repeat, no-repeat, no-repeat;
-  background-position: 0 0, 0 0, 0 0;
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0 0, 0 0;
 }
 
 /* Contact: warm dark base + bottles + jellyfish + waves */
 #contact {
   background-color: #060E18;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect x='97' y='27' width='20' height='42' rx='5' fill='none' stroke='%23F0C8A0' stroke-width='0.7' opacity='0.55'/%3E%3Cpath d='M107,10 L107,27' stroke='%23F0C8A0' stroke-width='0.55' opacity='0.47'/%3E%3Cpath d='M102,12 L112,12' stroke='%23F0C8A0' stroke-width='0.45' opacity='0.36'/%3E%3Cpath d='M267,177 Q267,157 287,157 Q307,157 307,177' fill='none' stroke='%23B8A0D8' stroke-width='0.7' opacity='0.47'/%3E%3Cpath d='M273,177 Q270,197 277,210' fill='none' stroke='%23B8A0D8' stroke-width='0.45' opacity='0.36'/%3E%3Cpath d='M287,177 Q287,195 282,207' fill='none' stroke='%23B8A0D8' stroke-width='0.45' opacity='0.36'/%3E%3Cpath d='M0,273 Q53,243 107,273 T213,273 T320,273 T400,273' fill='none' stroke='%237EC8C8' stroke-width='0.6' opacity='0.50'/%3E%3Ccircle cx='67' cy='97' r='1.3' fill='%23D8E4F0' opacity='0.69'/%3E%3Ccircle cx='237' cy='87' r='1' fill='%23F0C8A0' opacity='0.55'/%3E%3C/svg%3E"),
     radial-gradient(ellipse 60% 35% at 40% 55%, rgba(240,200,160,0.28), transparent 55%),
     radial-gradient(ellipse 35% 25% at 75% 30%, rgba(126,200,200,0.18), transparent 50%);
-  background-repeat: repeat, no-repeat, no-repeat;
-  background-position: 0 0, 0 0, 0 0;
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0 0, 0 0;
 }
+
+section[id]:not(#hero) { position: relative; }
 
 .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -409,37 +420,6 @@ section { padding: var(--section-gap) 0; position: relative; overflow: hidden; }
 .bottle-quote.pos-tl { top: 90px; left: 26px; text-align: left; }
 
 /* ===== Depth Gauge ===== */
-.depth-gauge {
-  position: fixed; right: 24px; top: 70vh; bottom: 5vh; z-index: 50;
-  display: flex; flex-direction: column; align-items: center;
-  pointer-events: none;
-}
-.depth-track {
-  flex: 1; width: 3px; background: rgba(200,216,232,0.10);
-  border-radius: 2px; position: relative;
-}
-.depth-dot {
-  position: absolute; left: 50%; top: 0; width: 8px; height: 8px;
-  margin-left: -4px; margin-top: -4px;
-  background: #7EC8C8; border-radius: 50%;
-  box-shadow: 0 0 12px rgba(126,200,200,0.6), 0 0 24px rgba(126,200,200,0.3);
-  transition: top 0.3s ease-out;
-}
-.depth-labels {
-  display: flex; flex-direction: column; justify-content: space-between;
-  position: absolute; right: 100%; top: 0; bottom: 0;
-  padding-right: 10px; text-align: right;
-}
-.depth-labels span {
-  font-family: var(--font-zh); font-size: 0.55rem;
-  color: var(--text-muted); opacity: 0.5; letter-spacing: 0.08em;
-  transition: opacity 0.3s, color 0.3s;
-}
-.depth-labels span.active {
-  opacity: 0.9; color: var(--accent-ice);
-  text-shadow: 0 0 8px rgba(126,200,200,0.3);
-}
-
 /* ===== Cursor Bubble Trail ===== */
 .cursor-bubble {
   position: fixed; pointer-events: none; z-index: 9999;
@@ -953,10 +933,6 @@ footer a:hover { color: var(--accent-ice); }
   .cms-panel-header { padding: 12px 16px; }
   .cms-panel-header h2 { font-size: 1rem; }
   .cms-content { padding: 16px; }
-  .depth-gauge { right: 6px; }
-  .depth-track { width: 2px; }
-  .depth-dot { width: 5px; height: 5px; margin-left: -2.5px; margin-top: -2.5px; }
-  .depth-labels { display: none; }
 }
 
 /* ===== Responsive: 480px ===== */
@@ -1024,7 +1000,6 @@ footer a:hover { color: var(--accent-ice); }
   html { scroll-behavior: auto; }
   .hero-particles { display: none; }
   .cursor-bubble { display: none; }
-  .depth-dot { transition: none !important; }
 }
 </style>
 </head>
@@ -1120,6 +1095,7 @@ footer a:hover { color: var(--accent-ice); }
 
 <!-- ===== About ===== -->
 <section id="about">
+  <svg class="section-jellyfish" style="top:8%;right:5%;" viewBox="0 0 50 70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8,22 Q8,6 25,6 Q42,6 42,22" fill="none" stroke="#B8A0D8" stroke-width="0.8" opacity="0.45"/><path d="M14,22 Q12,40 16,54" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><path d="M25,22 Q24,42 25,56" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><path d="M36,22 Q38,40 34,54" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><circle cx="25" cy="15" r="1.5" fill="#B8A0D8" opacity="0.35"/></svg>
   <div class="container">
     <div class="section-label">
       <svg class="section-decor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,3 Q14,2 15,4 Q16,7 14,10 Q12,14 14,18 Q15,20 13,21 Q11,22 10,20 Q9,18 10,16 Q11,12 10,8 Q9,5 10,4 Q11,3 12,3Z" fill="none" stroke="#B8A0D8" stroke-width="1" stroke-linecap="round"/></svg>
@@ -1137,6 +1113,7 @@ footer a:hover { color: var(--accent-ice); }
 
 <!-- ===== Education ===== -->
 <section id="education">
+  <svg class="section-jellyfish" style="bottom:6%;left:4%;" viewBox="0 0 50 70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8,22 Q8,6 25,6 Q42,6 42,22" fill="none" stroke="#B8A0D8" stroke-width="0.8" opacity="0.45"/><path d="M14,22 Q12,40 16,54" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><path d="M25,22 Q24,42 25,56" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><path d="M36,22 Q38,40 34,54" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><circle cx="25" cy="15" r="1.5" fill="#B8A0D8" opacity="0.35"/></svg>
   <div class="container">
     <div class="section-label">
       <svg class="section-decor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ellipse cx="12" cy="8" rx="6" ry="5" fill="none" stroke="#7EC8C8" stroke-width="1"/><circle cx="9" cy="7" r="1.5" fill="none" stroke="#7EC8C8" stroke-width="0.7"/><circle cx="14" cy="7" r="1.5" fill="none" stroke="#7EC8C8" stroke-width="0.7"/><path d="M9,13 Q8,18 6,20" fill="none" stroke="#7EC8C8" stroke-width="1.2" stroke-linecap="round"/><path d="M11,13 Q10,19 10,21" fill="none" stroke="#7EC8C8" stroke-width="1.2" stroke-linecap="round"/><path d="M13,13 Q14,19 14,21" fill="none" stroke="#7EC8C8" stroke-width="1.2" stroke-linecap="round"/><path d="M15,13 Q16,18 18,20" fill="none" stroke="#7EC8C8" stroke-width="1.2" stroke-linecap="round"/></svg>
@@ -1149,6 +1126,7 @@ footer a:hover { color: var(--accent-ice); }
 
 <!-- ===== Research ===== -->
 <section id="research">
+  <svg class="section-jellyfish" style="top:5%;left:5%;" viewBox="0 0 50 70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8,22 Q8,6 25,6 Q42,6 42,22" fill="none" stroke="#B8A0D8" stroke-width="0.8" opacity="0.45"/><path d="M14,22 Q12,40 16,54" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><path d="M25,22 Q24,42 25,56" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><path d="M36,22 Q38,40 34,54" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><circle cx="25" cy="15" r="1.5" fill="#B8A0D8" opacity="0.35"/></svg>
   <div class="container">
     <div class="section-label">
       <svg class="section-decor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2,12 Q6,6 10,12 T18,12 T22,12" fill="none" stroke="#7EC8C8" stroke-width="1.2" stroke-linecap="round"/><path d="M2,16 Q6,10 10,16 T18,16 T22,16" fill="none" stroke="#B8A0D8" stroke-width="0.8" stroke-linecap="round" opacity="0.6"/></svg>
@@ -1163,6 +1141,7 @@ footer a:hover { color: var(--accent-ice); }
 
 <!-- ===== Projects (dynamic) ===== -->
 <section id="projects">
+  <svg class="section-jellyfish" style="bottom:8%;right:4%;" viewBox="0 0 50 70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8,22 Q8,6 25,6 Q42,6 42,22" fill="none" stroke="#B8A0D8" stroke-width="0.8" opacity="0.45"/><path d="M14,22 Q12,40 16,54" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><path d="M25,22 Q24,42 25,56" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><path d="M36,22 Q38,40 34,54" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><circle cx="25" cy="15" r="1.5" fill="#B8A0D8" opacity="0.35"/></svg>
   <div class="container">
     <div class="section-label">
       <svg class="section-decor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,2 L14,8 L20,9 L15,14 L16,20 L12,16 L8,20 L9,14 L4,9 L10,8 Z" fill="none" stroke="#F0C8A0" stroke-width="1" stroke-linejoin="round"/></svg>
@@ -1176,6 +1155,7 @@ footer a:hover { color: var(--accent-ice); }
 
 <!-- ===== Internship (dynamic) ===== -->
 <section id="internship" class="dynamic-section">
+  <svg class="section-jellyfish" style="bottom:5%;left:6%;" viewBox="0 0 50 70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8,22 Q8,6 25,6 Q42,6 42,22" fill="none" stroke="#B8A0D8" stroke-width="0.8" opacity="0.45"/><path d="M14,22 Q12,40 16,54" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><path d="M25,22 Q24,42 25,56" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><path d="M36,22 Q38,40 34,54" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><circle cx="25" cy="15" r="1.5" fill="#B8A0D8" opacity="0.35"/></svg>
   <div class="container">
     <div class="section-label">
       <svg class="section-decor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" fill="none" stroke="#C8D8E8" stroke-width="1"/><circle cx="12" cy="12" r="2" fill="none" stroke="#C8D8E8" stroke-width="0.8"/><line x1="12" y1="3" x2="12" y2="7" stroke="#C8D8E8" stroke-width="0.8"/><line x1="21" y1="12" x2="17" y2="12" stroke="#C8D8E8" stroke-width="0.8"/></svg>
@@ -1188,6 +1168,7 @@ footer a:hover { color: var(--accent-ice); }
 
 <!-- ===== Skills ===== -->
 <section id="skills">
+  <svg class="section-jellyfish" style="top:6%;right:5%;" viewBox="0 0 50 70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8,22 Q8,6 25,6 Q42,6 42,22" fill="none" stroke="#B8A0D8" stroke-width="0.8" opacity="0.45"/><path d="M14,22 Q12,40 16,54" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><path d="M25,22 Q24,42 25,56" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><path d="M36,22 Q38,40 34,54" fill="none" stroke="#B8A0D8" stroke-width="0.6" opacity="0.3"/><circle cx="25" cy="15" r="1.5" fill="#B8A0D8" opacity="0.35"/></svg>
   <div class="container">
     <div class="section-label">
       <svg class="section-decor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="10" r="3" fill="none" stroke="#7EC8C8" stroke-width="0.8"/><circle cx="16" cy="8" r="2" fill="none" stroke="#7EC8C8" stroke-width="0.7"/><circle cx="12" cy="14" r="2.5" fill="none" stroke="#7EC8C8" stroke-width="0.7"/><circle cx="6" cy="16" r="1.5" fill="none" stroke="#7EC8C8" stroke-width="0.6"/></svg>
@@ -2640,228 +2621,6 @@ function escHtml(s) {
   }
 })();
 
-/* ===== Section decorations ===== */
-(function() {
-
-  /* ---- Section small random decorations ---- */
-  const decorStyle = document.createElement('style');
-  decorStyle.textContent =
-    '@keyframes decor-float1{0%,100%{transform:translate(0,0)}33%{transform:translate(6px,-8px)}66%{transform:translate(-4px,4px)}}' +
-    '@keyframes decor-float2{0%,100%{transform:translate(0,0)}33%{transform:translate(-5px,-5px)}66%{transform:translate(5px,7px)}}' +
-    '@keyframes decor-float3{0%,100%{transform:translate(0,0)}50%{transform:translate(8px,-3px)}}';
-  document.head.appendChild(decorStyle);
-
-  function injectSectionDecors() {
-    const sections = document.querySelectorAll('section[id]:not(#hero)');
-    const pool = [
-      '<svg viewBox="0 0 20 20" style="width:18px;height:18px;position:absolute;pointer-events:none;z-index:1"><circle cx="10" cy="10" r="7" fill="none" stroke="%237EC8C8" stroke-width="0.7" opacity="0.35"/><circle cx="7" cy="8" r="1.2" fill="%237EC8C8" opacity="0.25"/></svg>',
-      '<svg viewBox="0 0 20 20" style="width:16px;height:16px;position:absolute;pointer-events:none;z-index:1"><path d="M10,3 L12,8 L17,9 L13,13 L14,18 L10,15 L6,18 L7,13 L3,9 L8,8 Z" fill="none" stroke="%23F0C8A0" stroke-width="0.7" stroke-linejoin="round" opacity="0.35"/></svg>',
-      '<svg viewBox="0 0 20 20" style="width:14px;height:14px;position:absolute;pointer-events:none;z-index:1"><circle cx="6" cy="5" r="1.5" fill="%23D8E4F0" opacity="0.3"/><circle cx="12" cy="9" r="1" fill="%23D8E4F0" opacity="0.25"/><circle cx="8" cy="14" r="1.2" fill="%23D8E4F0" opacity="0.22"/></svg>',
-      '<svg viewBox="0 0 20 20" style="width:15px;height:15px;position:absolute;pointer-events:none;z-index:1"><path d="M5,15 Q7,10 10,15 Q13,20 15,15" fill="none" stroke="%23B8A0D8" stroke-width="0.6" opacity="0.3" stroke-linecap="round"/></svg>',
-    ];
-
-    sections.forEach(section => {
-      const container = section.querySelector('.container');
-      if (!container) return;
-      if (container.querySelector('.rand-decor')) return;
-
-      const count = 2 + Math.floor(Math.random() * 3);
-      for (let i = 0; i < count; i++) {
-        const svgStr = pool[Math.floor(Math.random() * pool.length)];
-        const wrapper = document.createElement('span');
-        wrapper.className = 'rand-decor';
-        wrapper.innerHTML = svgStr;
-        const el = wrapper.firstChild;
-        const corner = i;
-        let leftPct, topPct;
-        switch (corner) {
-          case 0: leftPct = 3 + Math.random() * 18; topPct = 2 + Math.random() * 12; break;
-          case 1: leftPct = 78 + Math.random() * 18; topPct = 2 + Math.random() * 12; break;
-          case 2: leftPct = 3 + Math.random() * 18; topPct = 80 + Math.random() * 15; break;
-          case 3: leftPct = 78 + Math.random() * 18; topPct = 80 + Math.random() * 15; break;
-        }
-        el.style.left = leftPct + '%';
-        el.style.top = topPct + '%';
-        el.style.animation = `decor-float${1 + Math.floor(Math.random() * 3)} ${4 + Math.random() * 5}s ease-in-out infinite`;
-        el.style.animationDelay = Math.random() * 4 + 's';
-        container.style.position = 'relative';
-        container.appendChild(el);
-      }
-    });
-  }
-  injectSectionDecors();
-
-  /* ---- Large floating background patterns (replace static CSS backgrounds) ---- */
-  const bgPatternDefs = {
-    about: { w:350,h:260,x:78,y:68,
-      svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 260" style="width:350px;height:260px;position:absolute;pointer-events:none;z-index:0">'+
-        '<path d="M175,24 Q140,12 105,24 Q70,48 58,82 Q52,128 70,164 Q94,198 128,216 Q164,234 198,216 Q234,198 250,170 Q268,128 256,88 Q245,52 210,30 Z" fill="none" stroke="%23F0C8A0" stroke-width="1.5" opacity="0.30"/>'+
-        '<path d="M105,48 Q140,64 164,42 Q186,64 222,48" fill="none" stroke="%23F0C8A0" stroke-width="1.0" opacity="0.22"/>'+
-        '<path d="M88,88 Q116,104 140,76 Q164,104 186,82 Q210,104 234,88" fill="none" stroke="%23F0C8A0" stroke-width="0.85" opacity="0.19"/>'+
-        '<path d="M82,128 Q110,140 134,116 Q158,140 174,122 Q192,140 216,122 Q234,140 244,128" fill="none" stroke="%23F0C8A0" stroke-width="0.75" opacity="0.16"/>'+
-        '<path d="M94,164 Q116,174 140,152 Q168,180 192,158 Q216,174 234,160" fill="none" stroke="%23F0C8A0" stroke-width="0.65" opacity="0.13"/>'+
-        '<circle cx="116" cy="58" r="2" fill="%23D8E4F0" opacity="0.38"/>'+
-        '<circle cx="186" cy="52" r="2.3" fill="%23D8E4F0" opacity="0.33"/>'+
-        '<circle cx="152" cy="112" r="1.5" fill="%237EC8C8" opacity="0.28"/>'+
-        '<circle cx="210" cy="94" r="1.3" fill="%23D8E4F0" opacity="0.25"/>'+
-        '</svg>'},
-    education: { w:240,h:220,x:3,y:68,
-      svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 220" style="width:240px;height:220px;position:absolute;pointer-events:none;z-index:0">'+
-        '<rect x="14" y="24" width="82" height="118" rx="3" fill="none" stroke="%237EC8C8" stroke-width="1.3" opacity="0.28"/>'+
-        '<rect x="24" y="34" width="62" height="98" rx="1" fill="none" stroke="%237EC8C8" stroke-width="0.75" opacity="0.20"/>'+
-        '<line x1="14" y1="48" x2="96" y2="48" stroke="%237EC8C8" stroke-width="0.65" opacity="0.16"/>'+
-        '<line x1="14" y1="72" x2="96" y2="72" stroke="%237EC8C8" stroke-width="0.55" opacity="0.14"/>'+
-        '<line x1="14" y1="96" x2="96" y2="96" stroke="%237EC8C8" stroke-width="0.55" opacity="0.14"/>'+
-        '<ellipse cx="170" cy="94" rx="19" ry="14" fill="none" stroke="%237EC8C8" stroke-width="1.2" opacity="0.26"/>'+
-        '<circle cx="162" cy="90" r="4.2" fill="none" stroke="%237EC8C8" stroke-width="0.75" opacity="0.20"/>'+
-        '<circle cx="178" cy="90" r="4.2" fill="none" stroke="%237EC8C8" stroke-width="0.75" opacity="0.20"/>'+
-        '<path d="M150,108 Q144,134 138,148" fill="none" stroke="%237EC8C8" stroke-width="1.5" opacity="0.18"/>'+
-        '<path d="M160,108 Q156,136 152,150" fill="none" stroke="%237EC8C8" stroke-width="1.5" opacity="0.18"/>'+
-        '<path d="M170,108 Q170,138 170,152" fill="none" stroke="%237EC8C8" stroke-width="1.5" opacity="0.18"/>'+
-        '<path d="M180,108 Q184,136 188,150" fill="none" stroke="%237EC8C8" stroke-width="1.5" opacity="0.18"/>'+
-        '<path d="M190,108 Q196,134 202,148" fill="none" stroke="%237EC8C8" stroke-width="1.5" opacity="0.18"/>'+
-        '</svg>'},
-    research: { w:700,h:100,x:25,y:24,
-      svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 100" style="width:700px;height:100px;position:absolute;pointer-events:none;z-index:0">'+
-        '<path d="M0,45 Q35,12 70,45 T140,45 T210,45 T280,45 T350,45 T420,45 T490,45 T560,45 T630,45 T700,45" fill="none" stroke="%237EC8C8" stroke-width="1.5" opacity="0.38"/>'+
-        '<path d="M0,56 Q35,24 70,56 T140,56 T210,56 T280,56 T350,56 T420,56 T490,56 T560,56 T630,56 T700,56" fill="none" stroke="%23B8A0D8" stroke-width="1.1" opacity="0.30"/>'+
-        '<path d="M0,67 Q35,36 70,67 T140,67 T210,67 T280,67 T350,67 T420,67 T490,67 T560,67 T630,67 T700,67" fill="none" stroke="%237EC8C8" stroke-width="0.85" opacity="0.26"/>'+
-        '<circle cx="140" cy="40" r="3.2" fill="none" stroke="%237EC8C8" stroke-width="0.8" opacity="0.33"/>'+
-        '<circle cx="350" cy="36" r="2.7" fill="none" stroke="%23B8A0D8" stroke-width="0.75" opacity="0.28"/>'+
-        '<circle cx="560" cy="42" r="3.5" fill="none" stroke="%237EC8C8" stroke-width="0.8" opacity="0.33"/>'+
-        '</svg>'},
-    projects: { w:480,h:130,x:25,y:77,
-      svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 130" style="width:480px;height:130px;position:absolute;pointer-events:none;z-index:0">'+
-        '<path d="M0,55 Q48,28 96,55 T192,55 T288,55 T384,55 T480,55" fill="none" stroke="%237EC8C8" stroke-width="1.3" opacity="0.30"/>'+
-        '<path d="M0,66 Q48,40 96,66 T192,66 T288,66 T384,66 T480,66" fill="none" stroke="%23B8A0D8" stroke-width="0.85" opacity="0.22"/>'+
-        '<path d="M96,42 L99,52 L110,52 L101,59 L103,68 L96,62 L89,68 L91,59 L82,52 L93,52 Z" fill="none" stroke="%23F0C8A0" stroke-width="1.1" opacity="0.28"/>'+
-        '<path d="M240,40 L242,48 L250,48 L244,54 L246,62 L240,56 L234,62 L236,54 L230,48 L238,48 Z" fill="none" stroke="%23F0C8A0" stroke-width="0.85" opacity="0.24"/>'+
-        '<path d="M384,45 L386,52 L393,52 L388,57 L390,63 L384,59 L378,63 L380,57 L375,52 L382,52 Z" fill="none" stroke="%23F0C8A0" stroke-width="0.75" opacity="0.20"/>'+
-        '</svg>'},
-    internship: { w:220,h:220,x:3,y:30,
-      svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" style="width:220px;height:220px;position:absolute;pointer-events:none;z-index:0">'+
-        '<circle cx="110" cy="110" r="60" fill="none" stroke="%23C8D8E8" stroke-width="1.3" opacity="0.28"/>'+
-        '<circle cx="110" cy="110" r="45" fill="none" stroke="%23C8D8E8" stroke-width="0.65" opacity="0.20"/>'+
-        '<circle cx="110" cy="110" r="10" fill="none" stroke="%23C8D8E8" stroke-width="0.85" opacity="0.26"/>'+
-        '<line x1="110" y1="48" x2="110" y2="70" stroke="%237EC8C8" stroke-width="1.2" opacity="0.33"/>'+
-        '<line x1="110" y1="150" x2="110" y2="172" stroke="%23C8D8E8" stroke-width="0.75" opacity="0.20"/>'+
-        '<line x1="48" y1="110" x2="70" y2="110" stroke="%23C8D8E8" stroke-width="0.75" opacity="0.20"/>'+
-        '<line x1="150" y1="110" x2="172" y2="110" stroke="%237EC8C8" stroke-width="1.2" opacity="0.33"/>'+
-        '<path d="M110,48 L117,67 L119,72 L110,60 L101,72 L103,67 Z" fill="none" stroke="%237EC8C8" stroke-width="1.1" opacity="0.38"/>'+
-        '<path d="M172,110 L153,103 L148,101 L160,110 L148,119 L153,117 Z" fill="none" stroke="%237EC8C8" stroke-width="1.1" opacity="0.38"/>'+
-        '<circle cx="110" cy="110" r="3.2" fill="%237EC8C8" opacity="0.38"/>'+
-        '</svg>'},
-    skills: { w:560,h:340,x:22,y:28,
-      svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 340" style="width:560px;height:340px;position:absolute;pointer-events:none;z-index:0">'+
-        '<circle cx="90" cy="70" r="5.5" fill="none" stroke="%23B8A0D8" stroke-width="1.0" opacity="0.32"/>'+
-        '<circle cx="280" cy="50" r="6.5" fill="none" stroke="%237EC8C8" stroke-width="1.0" opacity="0.28"/>'+
-        '<circle cx="470" cy="80" r="5" fill="none" stroke="%23B8A0D8" stroke-width="0.85" opacity="0.26"/>'+
-        '<circle cx="170" cy="170" r="6" fill="none" stroke="%237EC8C8" stroke-width="1.0" opacity="0.28"/>'+
-        '<circle cx="400" cy="150" r="4.5" fill="none" stroke="%23B8A0D8" stroke-width="0.85" opacity="0.24"/>'+
-        '<circle cx="70" cy="270" r="5" fill="none" stroke="%237EC8C8" stroke-width="0.85" opacity="0.24"/>'+
-        '<circle cx="310" cy="260" r="6.5" fill="none" stroke="%23B8A0D8" stroke-width="1.0" opacity="0.28"/>'+
-        '<circle cx="500" cy="240" r="4.5" fill="none" stroke="%237EC8C8" stroke-width="0.75" opacity="0.22"/>'+
-        '<line x1="90" y1="70" x2="280" y2="50" stroke="%23B8A0D8" stroke-width="0.55" opacity="0.20"/>'+
-        '<line x1="280" y1="50" x2="470" y2="80" stroke="%237EC8C8" stroke-width="0.55" opacity="0.17"/>'+
-        '<line x1="90" y1="70" x2="170" y2="170" stroke="%237EC8C8" stroke-width="0.5" opacity="0.17"/>'+
-        '<line x1="280" y1="50" x2="170" y2="170" stroke="%23B8A0D8" stroke-width="0.5" opacity="0.17"/>'+
-        '<line x1="470" y1="80" x2="400" y2="150" stroke="%237EC8C8" stroke-width="0.5" opacity="0.17"/>'+
-        '<line x1="170" y1="170" x2="70" y2="270" stroke="%23B8A0D8" stroke-width="0.5" opacity="0.17"/>'+
-        '<line x1="170" y1="170" x2="400" y2="150" stroke="%237EC8C8" stroke-width="0.5" opacity="0.17"/>'+
-        '<line x1="400" y1="150" x2="310" y2="260" stroke="%23B8A0D8" stroke-width="0.5" opacity="0.17"/>'+
-        '<line x1="310" y1="260" x2="70" y2="270" stroke="%237EC8C8" stroke-width="0.5" opacity="0.17"/>'+
-        '<line x1="310" y1="260" x2="500" y2="240" stroke="%23B8A0D8" stroke-width="0.5" opacity="0.17"/>'+
-        '<line x1="470" y1="80" x2="500" y2="240" stroke="%237EC8C8" stroke-width="0.45" opacity="0.14"/>'+
-        '</svg>'},
-    contact: { w:250,h:240,x:3,y:55,
-      svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 240" style="width:250px;height:240px;position:absolute;pointer-events:none;z-index:0">'+
-        '<rect x="25" y="18" width="34" height="66" rx="7" fill="none" stroke="%23F0C8A0" stroke-width="1.3" opacity="0.32"/>'+
-        '<path d="M42,6 L42,18" stroke="%23F0C8A0" stroke-width="1.1" opacity="0.26"/>'+
-        '<path d="M34,10 L50,10" stroke="%23F0C8A0" stroke-width="0.75" opacity="0.20"/>'+
-        '<path d="M25,42 Q30,36 42,36 Q54,36 59,42" fill="none" stroke="%23F0C8A0" stroke-width="0.65" opacity="0.18"/>'+
-        '<path d="M145,48 Q145,24 170,24 Q195,24 195,48" fill="none" stroke="%23B8A0D8" stroke-width="1.2" opacity="0.26"/>'+
-        '<path d="M152,48 Q148,70 156,86" fill="none" stroke="%23B8A0D8" stroke-width="0.75" opacity="0.19"/>'+
-        '<path d="M166,48 Q166,68 160,82" fill="none" stroke="%23B8A0D8" stroke-width="0.75" opacity="0.19"/>'+
-        '<path d="M180,48 Q182,68 176,82" fill="none" stroke="%23B8A0D8" stroke-width="0.75" opacity="0.19"/>'+
-        '<path d="M12,190 Q60,154 108,184 T204,184 T228,190" fill="none" stroke="%237EC8C8" stroke-width="1.1" opacity="0.24"/>'+
-        '</svg>'}
-  };
-
-  const bgDrifters = [];
-  Object.entries(bgPatternDefs).forEach(([id, cfg]) => {
-    const section = document.getElementById(id);
-    if (!section) return;
-    const wrapper = document.createElement('div');
-    wrapper.style.cssText = 'position:absolute;pointer-events:none;z-index:0;';
-    wrapper.innerHTML = cfg.svg;
-    const el = wrapper.firstChild;
-    section.style.position = 'relative';
-    section.insertBefore(el, section.firstChild);
-    bgDrifters.push({
-      el, section, id,
-      x: cfg.x, y: cfg.y,
-      w: cfg.w, h: cfg.h,
-      vx: (Math.random() - 0.5) * 0.011,
-      vy: (Math.random() - 0.5) * 0.008,
-      wobAmp: 3.0 + Math.random() * 7.0,
-      wobFreq: 0.002 + Math.random() * 0.006,
-      wobPhase: Math.random() * Math.PI * 2,
-    });
-  });
-
-  let bgDriftId = 0, bgLastT = 0;
-  function bgDriftLoop(now) {
-    if (!bgLastT) bgLastT = now;
-    const dt = Math.min(now - bgLastT, 120);
-    bgLastT = now;
-    for (const d of bgDrifters) {
-      d.x += d.vx * (dt / 16);
-      d.y += d.vy * (dt / 16);
-      if (d.x < -12) { d.x = -12; d.vx = Math.abs(d.vx) * (0.6 + Math.random() * 0.4); }
-      if (d.x > 93) { d.x = 93; d.vx = -Math.abs(d.vx) * (0.6 + Math.random() * 0.4); }
-      if (d.y < 1) { d.y = 1; d.vy = Math.abs(d.vy) * (0.6 + Math.random() * 0.4); }
-      if (d.y > 90) { d.y = 90; d.vy = -Math.abs(d.vy) * (0.6 + Math.random() * 0.4); }
-      if (Math.random() < 0.0015) {
-        d.vx += (Math.random() - 0.5) * 0.008;
-        d.vy += (Math.random() - 0.5) * 0.006;
-        const spd = Math.sqrt(d.vx * d.vx + d.vy * d.vy);
-        if (spd > 0.05) { d.vx *= 0.035 / spd; d.vy *= 0.035 / spd; }
-        if (spd < 0.005) { d.vx *= 1.6; d.vy *= 1.6; }
-      }
-      const wx = Math.sin(now * d.wobFreq + d.wobPhase) * d.wobAmp;
-      const wy = Math.cos(now * d.wobFreq + d.wobPhase + 1.7) * d.wobAmp * 0.5;
-      d.el.style.left = (d.x + wx * 0.25) + '%';
-      d.el.style.top = (d.y + wy * 0.25) + '%';
-    }
-    bgDriftId = requestAnimationFrame(bgDriftLoop);
-  }
-
-  const bgDriftObserver = new IntersectionObserver((entries) => {
-    const anyVisible = entries.some(e => e.isIntersecting);
-    if (anyVisible && !bgDriftId) { bgLastT = 0; bgDriftId = requestAnimationFrame(bgDriftLoop); }
-  }, { threshold: 0.02 });
-  Object.keys(bgPatternDefs).forEach(id => {
-    const sec = document.getElementById(id);
-    if (sec) bgDriftObserver.observe(sec);
-  });
-
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    bgDriftId = requestAnimationFrame(bgDriftLoop);
-  }
-
-  /* Re-init bg drifters on resize */
-  let bgResizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(bgResizeTimer);
-    bgResizeTimer = setTimeout(() => {
-      bgDrifters.forEach(d => {
-        d.el.style.left = d.x + '%';
-        d.el.style.top = d.y + '%';
-      });
-    }, 500);
-  });
-})();
-
 /* ===== Back to top ===== */
 document.getElementById('backToTop').addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2891,32 +2650,6 @@ mobileMenu.querySelectorAll('a:not([data-track])').forEach(link => link.addEvent
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
 });
-
-/* ===== Depth Gauge ===== */
-(function() {
-  var depthDot = document.getElementById('depthDot');
-  var depthLabels = document.querySelectorAll('.depth-labels span');
-  if (!depthDot) return;
-  var maxDepth = 300;
-  var track = document.querySelector('.depth-track');
-
-  function updateGauge() {
-    var docH = document.documentElement.scrollHeight - window.innerHeight;
-    if (docH <= 0) docH = 1;
-    var scrollPercent = window.scrollY / docH;
-    var depth = Math.min(maxDepth, Math.round(scrollPercent * maxDepth));
-    var trackH = track.offsetHeight;
-    if (trackH > 0) depthDot.style.top = ((depth / maxDepth) * trackH) + 'px';
-    depthLabels.forEach(function(label) {
-      var threshold = parseInt(label.dataset.depth);
-      label.classList.toggle('active', depth >= threshold);
-    });
-  }
-
-  window.addEventListener('scroll', updateGauge, { passive: true });
-  window.addEventListener('resize', updateGauge, { passive: true });
-  updateGauge();
-})();
 
 /* ===== Cursor Bubble Trail ===== */
 (function() {
@@ -3051,15 +2784,5 @@ init();
 
   FONTS: Google Fonts <link> + --font-* variables.
 -->
-<div class="depth-gauge" aria-hidden="true">
-  <div class="depth-track">
-    <div class="depth-dot" id="depthDot"></div>
-  </div>
-  <div class="depth-labels">
-    <span data-depth="0">海面</span>
-    <span data-depth="50">浅海</span>
-    <span data-depth="200">深海</span>
-    <span data-depth="300">海底</span>
-  </div>
-</div></body>
+</body>
 </html>
