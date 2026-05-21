@@ -396,7 +396,7 @@ section[id]:not(#hero) { position: relative; }
 
 /* ===== Transition Quote (embedded at section bottom) ===== */
 .section-transition-quote {
-  display: block; text-align: right; padding: 0 0 16px 0; margin: 0;
+  display: block; text-align: right; padding: 40px 0 20px 0; margin: 0;
   font-family: var(--font-quote-zh); font-size: 0.75rem;
   color: #C8D8E8; opacity: 0.55; letter-spacing: 0.06em;
   max-width: var(--max-width); margin: 0 auto;
@@ -926,7 +926,7 @@ footer a:hover { color: var(--accent-ice); }
   .research-timeline { padding-left: 24px; }
   .research-entry { gap: 16px; }
   .research-body { padding: 18px 16px; }
-  .section-transition-quote { font-size: 0.7rem; padding: 0 0 12px 0; }
+  .section-transition-quote { font-size: 0.7rem; padding: 32px 0 14px 0; }
   .bottle-quote { font-size: 0.72rem; max-width: 150px; }
   .knowledge-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
   .diary-timeline { padding-left: 30px; }
@@ -955,7 +955,7 @@ footer a:hover { color: var(--accent-ice); }
   .research-timeline { padding-left: 22px; }
   .research-entry { gap: 12px; }
   .research-body { padding: 16px 14px; }
-  .section-transition-quote { font-size: 0.65rem; padding: 0 0 10px 0; }
+  .section-transition-quote { font-size: 0.65rem; padding: 28px 0 12px 0; }
   .knowledge-grid { grid-template-columns: 1fr; gap: 12px; }
   .diary-timeline { padding-left: 24px; }
   .diary-entry { padding: 16px; }
@@ -1847,30 +1847,7 @@ window.addEventListener('scroll', () => {
 
 });
 
-/* ===== Hidden Sections ===== */
-const STORAGE_KNOWLEDGE = 'fay_cms_knowledge_cards';
-const STORAGE_DIARY = 'fay_cms_diary_entries';
-
-function getStorage(key, fallback) {
-  try {
-    const raw = localStorage.getItem(key);
-    return raw ? JSON.parse(raw) : fallback;
-  } catch { return fallback; }
-}
-
-function setStorage(key, data) {
-  try { localStorage.setItem(key, JSON.stringify(data)); } catch {}
-}
-
-function defaultKnowledgeCards() {
-  return [];
-}
-
-function defaultDiaryEntries() {
-  return [];
-}
-
-/* Diver Popup */
+/* ===== Diver Popup */
 (function() {
   const diver = document.querySelector('.hero-diver');
   const popup = document.getElementById('diverPopup');
@@ -1933,7 +1910,7 @@ function closeKnowledgePage() {
 function renderKnowledgeCards(filter) {
   const grid = document.getElementById('knowledgeGrid');
   const emptyEl = document.getElementById('knowledgeEmpty');
-  let cards = getStorage(STORAGE_KNOWLEDGE, []);
+  let cards = cmsData('knowledge_cards', []);
   const q = (filter || '').toLowerCase().trim();
   if (q) {
     cards = cards.filter(c =>
@@ -1979,7 +1956,7 @@ function closeDiaryPage() {
 function renderDiaryEntries() {
   const tl = document.getElementById('diaryTimeline');
   const emptyEl = document.getElementById('diaryEmpty');
-  const entries = getStorage(STORAGE_DIARY, []);
+  const entries = cmsData('diary_entries', []);
   entries.sort((a, b) => b.date.localeCompare(a.date));
   if (entries.length === 0) {
     tl.innerHTML = '';
